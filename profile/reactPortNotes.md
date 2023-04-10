@@ -42,62 +42,7 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
   - add .body class to top div
   - delete main code and replace with Placeholder text
   - rename class to className
-  - change log `a` to just be a `div`
-
-# Make menus reactive to the auth state
-
-- Create login/authState.js
-
-  ```
-  export class AuthState {
-    static Unknown = new AuthState('unknown');
-    static Authenticated = new AuthState('authenticated');
-    static Unauthenticated = new AuthState('unauthenticated');
-
-    constructor(name) {
-      this.name = name;
-    }
-  }
-  ```
-
-- import { AuthState } from './login/authState';
-- Create auth state by querying server
-
-  ```js
-  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
-
-  const [authState, setAuthState] = React.useState(AuthState.Unknown);
-  React.useEffect(() => {
-    if (userName) {
-      fetch(`/api/user/${userName}`)
-        .then((response) => {
-          if (response.status === 200) {
-            return response.json();
-          }
-        })
-        .then((user) => {
-          const state = user?.authenticated ? AuthState.Authenticated : AuthState.Unauthenticated;
-          setAuthState(state);
-        });
-    } else {
-      setAuthState(AuthState.Unauthenticated);
-    }
-  }, [userName]);
-  ```
-
-- add use of authState
-
-  ```jsx
-  {
-    authState === AuthState.Authenticated && (
-      <li className='nav-item'>
-        <a className='nav-link' href='play.html'>
-          Play
-        </a>
-      </li>
-    );
-  }
-  ```
+  - change logo at top from `a` to just be a `div`
 
 # Create a placeholder for components
 
@@ -152,21 +97,8 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
 - Add routes
   ```jsx
   <Routes>
-    <Route
-      path='/'
-      element={
-        <Login
-          userName={userName}
-          authState={authState}
-          onAuthChange={(userName, authState) => {
-            setAuthState(authState);
-            setUserName(userName);
-          }}
-        />
-      }
-      exact
-    />
-    <Route path='/play' element={<Play userName={userName} />} />
+    <Route path='/' element={<Login />} exact />
+    <Route path='/play' element={<Play />} />
     <Route path='/scores' element={<Scores />} />
     <Route path='/about' element={<About />} />
     <Route path='*' element={<NotFound />} />
@@ -181,6 +113,87 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
   ```
 
 - test that links work
+
+# Copy scores component
+
+- Copy over HTML
+- CSS `import './scores.css';`
+- Copy over JavaScript
+- useState to keep our scores: `const [scores, setScores] = React.useState([]);`
+- This is then injected into the JSX
+  ```js
+  return (
+    <main className='container-fluid bg-secondary text-center'>
+      <table className='table table-warning table-striped-columns'>
+        <thead className='table-dark'>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id='scores'>{scoreRows}</tbody>
+      </table>
+    </main>
+  );
+  ```
+- useEffect to get the scores from Back end
+  ```js
+  React.useEffect(() => {
+    fetch('/api/scores')
+      .then((response) => response.json())
+      .then((scores) => {
+        setScores(scores);
+        localStorage.setItem('scores', JSON.stringify(scores));
+      })
+      .catch(() => {
+        const scoresText = localStorage.getItem('scores');
+        if (scoresText) {
+          setScores(JSON.parse(scoresText));
+        }
+      });
+  }, []);
+  ```
+- loading of scores into variable `scores` for rendering
+  ```js
+  const scoreRows = [];
+  if (scores.length) {
+    for (const [i, score] of scores.entries()) {
+      scoreRows.push(
+        <tr key={i}>
+          <td>{i}</td>
+          <td>{score.name.split('@')[0]}</td>
+          <td>{score.score}</td>
+          <td>{score.date}</td>
+        </tr>
+      );
+    }
+  } else {
+    scoreRows.push(
+      <tr key='0'>
+        <td colSpan='4'>Be the first to score</td>
+      </tr>
+    );
+  }
+  ```
+
+# Debug in dev environment
+
+- Stop react app
+- Start service running on 3000
+
+- Create ./env.local
+
+```
+PORT=3001
+```
+
+- Add service proxy to ./package.json
+
+```
+  "proxy": "http://localhost:3000"
+```
 
 ## Implement About component
 
@@ -272,6 +285,87 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
   ```
 
   - Test it works
+
+# Make menus reactive to the auth state
+
+- Create login/authState.js
+
+  ```js
+  export class AuthState {
+    static Unknown = new AuthState('unknown');
+    static Authenticated = new AuthState('authenticated');
+    static Unauthenticated = new AuthState('unauthenticated');
+
+    constructor(name) {
+      this.name = name;
+    }
+  }
+  ```
+
+- modify the App.jsx to load the state for auth and the user name
+- import { AuthState } from './login/authState';
+- Create auth state by querying server
+
+  ```js
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+
+  const [authState, setAuthState] = React.useState(AuthState.Unknown);
+  React.useEffect(() => {
+    if (userName) {
+      fetch(`/api/user/${userName}`)
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          }
+        })
+        .then((user) => {
+          const state = user?.authenticated ? AuthState.Authenticated : AuthState.Unauthenticated;
+          setAuthState(state);
+        });
+    } else {
+      setAuthState(AuthState.Unauthenticated);
+    }
+  }, [userName]);
+  ```
+
+- add use of authState
+
+  ```jsx
+  {
+    authState === AuthState.Authenticated && (
+      <li className='nav-item'>
+        <a className='nav-link' href='play.html'>
+          Play
+        </a>
+      </li>
+    );
+  }
+  ```
+
+- in App.jsx
+- Add passing params to routes
+  ```jsx
+  <Routes>
+    <Route
+      path='/'
+      element={
+        <Login
+          userName={userName}
+          authState={authState}
+          onAuthChange={(userName, authState) => {
+            setAuthState(authState);
+            setUserName(userName);
+          }}
+        />
+      }
+      exact
+    />
+    <Route path='/play' element={<Play userName={userName} />} />
+    <Route path='/scores' element={<Scores />} />
+    <Route path='/about' element={<About />} />
+    <Route path='*' element={<NotFound />} />
+  </Routes>
+  ```
 
 # Implement Login components
 
@@ -442,25 +536,6 @@ export function Login({ userName, authState, onAuthChange }) {
   );
 }
 ```
-
-# Debug in dev environment
-
-- Stop react app
-- Start service running on 3000
-
-- Create ./env.local
-
-```
-PORT=3001
-```
-
-- Add service proxy to ./package.json
-
-```
-  "proxy": "http://localhost:3000"
-```
-
-# Copy scores component
 
 # Copy play component
 
