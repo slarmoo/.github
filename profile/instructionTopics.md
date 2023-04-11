@@ -104,18 +104,18 @@ It is expected that you will start at the top of the list and work your way down
 - [Service daemons - PM2](webServices/pm2/pm2.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
 - [Endpoint testing](webServices/endpointTesting/endpointTesting.md)
-- ☑ [Simon service](simon/simon-service/simon-service.md) _(due 3/22)_
+- ☑ [Simon service](simon/simon-service/simon-service.md)
 - [Storage services](webServices/storageServices/storageServices.md)
-- ☑ [Data services](webServices/dataServices/dataServices.md) _(due 3/24)_
-  - ☑ [Simon DB](simon/simon-db/simon-db.md) _(due 3/24)_
+- ☑ [Data services](webServices/dataServices/dataServices.md)
+  - ☑ [Simon DB](simon/simon-db/simon-db.md)
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
   - [Account creation and login](webServices/login/login.md)
-  - ☑ [Simon Login](simon/simon-login/simon-login.md) _(due 3/27)_
+  - ☑ [Simon Login](simon/simon-login/simon-login.md)
 - [WebSocket](webServices/webSocket/webSocket.md)
   - [Debugging WebSocket](webServices/webSocket/debugging.md)
   - [WebSocket chat](webServices/webSocket/chat.md)
-  - ☑ [Simon WebSocket](simon/simon-webSocket/simon-webSocket.md) _(due 3/29)_
-- ☑ [Start up deliverable - Service](webServices/startUpService/startUpService.md) _(due 4/5)_
+  - ☑ [Simon WebSocket](simon/simon-webSocket/simon-webSocket.md)
+- ☑ [Start up deliverable - Service](webServices/startUpService/startUpService.md)
 
 ## Web frameworks
 
