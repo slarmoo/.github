@@ -54,6 +54,12 @@
   - Register each service with PM2
     - `cd ~/services/simon && pm2 start index.js -n simon -- 3000 simon`
     - `cd ~/services/startup && pm2 start index.js -n startup -- 4000 startup`
+    - `pm2 save`
+    - `pm2 startup` will show you the command daemonize PM2. Run that command.
   - Test that they work
     - `curl -v http://localhost:3000/config`
     - `curl -v http://localhost:4000/config`
+- Configure Caddy to run services
+  - edit Caddyfile `sudo vi ~/Caddyfile`
+  - paste the contents of `Caddyfile-base` found in webprogramming260 repo.
+  - save and restart Caddy `sudo service caddy restart`
