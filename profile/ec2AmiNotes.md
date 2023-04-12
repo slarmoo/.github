@@ -1,0 +1,59 @@
+- Create security group (one time action)
+  - `cs260-webserver`
+  - HTTP, HTTPS from everywhere
+  - SSH from BYU `128.187.0.0.16`
+  - Outbound to anywhere
+  - Tag with Owner:cs260
+- Create EC2 instance
+  - Select Ubuntu
+  - Named `cs260-webserver`
+  - Tag with Owner:cs260
+  - t3.micro
+  - Create key pair (one time action) `cs260`
+  - Select security group: `cs260-webserver`
+  - Enabled Credit `specification:Unlimited` in advanced details
+- Store key pair in development environment
+  - chmod 600 ~/keys/cs260/cs260.pem
+- Shell into server
+  - `ssh -i ~/keys/cs260/cs260.pem ubuntu@0.0.0.0` (substitute IP address)
+- Install Caddy
+  - `yum -y install yum-plugin-copr`
+  - `yum -y copr enable @caddy/caddy epel-7-$(arch)`
+  - `yum -y install caddy`
+  - curl localhost should display caddy HTML. You should also be able to hit if from your development environment in your browser
+  - Create symlink for Caddyfile and Caddy static content directory
+    - `ln -s /etc/caddy/Caddyfile Caddyfile`
+    - `ln -s /usr/share/caddy public_html`
+  - Allow the ubuntu user to modify the public_html static files
+    - `sudo chown -R ubuntu public_html`
+- Replace default Caddy static files with file found in the webprogramming260 repo
+  - `scp -i ~/keys/cs260/cs260.pem webServerDefault.html ubuntu@0.0.0.0:public_html/index.html`
+  - Hitting the server from the browser should now display the course default page.
+- Install node.js
+  - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash`
+  - close shell and reopen
+  - `npm install -g npm@latest` (this installed version 9.6.4)
+  - `nvm install --lts` (this installed version 18.15.0)
+- Set up PM2
+  - npm install pm2 -g
+- Add services for Simon and Start up
+  - Create the services directories `mkdir -p ~/services/simon ~/services/startup`
+  - On your development environment clone the `website-express` repo
+    `https://github.com/webprogramming260/website-express.git`
+  - Copy the repo files to a `~/services/simon` and `~/services/startup` directory on the production environment.
+    - `scp -i ~/keys/cs260/cs260.pem -r public index.js package.json ubuntu@18.208.203.190:services/simon`
+    - `scp -i ~/keys/cs260/cs260.pem -r public index.js package.json ubuntu@18.208.203.190:services/startup`
+  - On your production environment install the dependent packages for each service.
+    - `cd ~/services/simon && npm install`
+    - `cd ~/services/startup && npm install`
+  - Test that they work with `node` and `curl`
+    - `cd ~/services/startup`
+    - `node index.js 4000 startup`
+    - `curl -v http://localhost:4000/config`
+    - Stop the server
+  - Register each service with PM2
+    - `cd ~/services/simon && pm2 start index.js -n simon -- 3000 simon`
+    - `cd ~/services/startup && pm2 start index.js -n startup -- 4000 startup`
+  - Test that they work
+    - `curl -v http://localhost:3000/config`
+    - `curl -v http://localhost:4000/config`
