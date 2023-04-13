@@ -95,4 +95,4 @@ This tool provided by [DotComTools](https://www.dotcom-tools.com) allows you to 
 
 ![DotCom Tools](webFrameworksDotComTools.jpg)
 
-Here you can see we perform acceptably from the United States and Europe, but are struggling in Asia. That makes sense considering that our server is located in Ohio. In order to correct this, we need to use a Content Delivery Network (CDN) with an additional location closer to our target users in China.
+Here you can see we perform acceptably from the United States and Europe, but are struggling in Asia. That makes sense considering that our server is located in North Virginia. In order to correct this, we need to use a Content Delivery Network (CDN) with an additional location closer to our target users in China.
