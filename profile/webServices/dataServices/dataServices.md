@@ -165,7 +165,9 @@ All of the major cloud providers offer multiple data services. For this class we
 1. Create a database cluster.
 1. Create your root database user credentials. Remember these for later use.
 1. ⚠ Set network access to your database to be available from anywhere.
+
    ![Atlas IP Anywhere](webServicesMongoIpAnywhere.gif)
+
 1. Copy the connection string and use the information in your code.
 1. Save the connection and credential information in your production and development environments as instructed above.
 
@@ -175,87 +177,51 @@ You can always find the connection string to your Atlas cluster by pressing the 
 
 ## Keeping your keys out of your code
 
-You need to protect your credentials for connecting to your Mongo database. One common mistake is to check them into your code and then post it to a public GitHub repository. Instead you can load your credentials when the application executes. One common way to do that is to read them from environment variables. The JavaScript `process.env` object provides access to the environment.
+You need to protect your credentials for connecting to your Mongo database. One common mistake is to check them into your code and then post it to a public GitHub repository. Instead you can load your credentials when the application executes. One common way to do that is to have a JSON configuration file that contains the credentials that you dynamically load into the JavaScript that makes the database connection. You then use the configuration file in your development environment and deploy it to your production environment, but you **never** commit it to GitHub.
 
-```Javascript
-const userName = process.env.MONGOUSER;
-const password = process.env.MONGOPASSWORD;
-const hostname = process.env.MONGOHOSTNAME;
+In order to accomplish this do the following:
 
-if (!userName) {
-  throw Error("Database not configured. Set environment variables");
-}
+1. Create a file named `dbConfig.json` in the same directory as the database JavaScript (e.g. `database.js`) that you use to make database requests.
+1. Insert your Mongo DB credentials into the `dbConfig.json` file in JSON format using the following example:
+
+   ```json
+   {
+     "hostname": "cs260.abcdefg.mongodb.net",
+     "userName": "myMongoUserName",
+     "password": "toomanysecrets"
+   }
+   ```
+
+1. Import the `dbConfig.json` content into your database.js file using a Node.js require statement and use the data that it represents to create the connection URL.
+
+   ```js
+   const config = require('./dbConfig.json');
+   const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+   ```
+
+⚠ Make sure you include `dbConfig.json` in your `.gitignore` file so that it does not get pushed up to GitHub.
+
+### Testing the connection on start up
+
+It is nice to know that your connection string is correct before your application attempts to access any data. We can do that when the application starts by making an asynchronous request to ping the database. If that fails than either the connection string is incorrect, the credentials are invalid, or the network is not working. The following is an example of testing the Connection
+
+```js
+const config = require('./dbConfig.json');
+
+const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+const client = new MongoClient(url);
+const db = client.db('rental');
+
+(async function testConnection() {
+  await client.connect();
+  await db.command({ ping: 1 });
+})().catch((ex) => {
+  console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+  process.exit(1);
+});
 ```
 
-Following this pattern requires you to set these variables in your development and production environments before you can successfully execute.
-
-### Setting environment variables for your **production** environment
-
-For your production environment, you will add your MongoDB Atlas credentials by using SSH to your server.
-
-```sh
-➜  ssh -i [key pair file] ubuntu@[yourdomainnamehere]
-```
-
-for example,
-
-```sh
-➜  ssh -i ~/keys/production.pem ubuntu@myfunkychickens.click
-```
-
-Then open up the global environment settings file `/etc/environment`.
-
-```
-sudo vi /etc/environment
-```
-
-In the environment file you will find that the credentials are already set to access the class demo MongoDB server. You want to replace those values with your own values so that your data will be stored in your server.
-
-```sh
-export MONGOUSER=<yourmongodbusername>
-export MONGOPASSWORD=<yourmongodbpassword>
-export MONGOHOSTNAME=<yourmongodbhostname>
-```
-
-When you are done modifying the `/etc/environment` with your MongoDB username, password, and hostname, save the file. It will look something like the following.
-
-```sh
-export MONGOUSER=cs260mongo
-export MONGOPASSWORD=toomanysecrets
-export MONGOHOSTNAME=cs260.nan123cs.mongodb.net
-```
-
-Exit your SSH session and reconnect again so that the environment variables are active in the console window you are using.
-
-You then need to tell your Simon and Start Up services to use the new values found in the environment file. To do this you need to tell our service daemon, PM2, to reload its stored environment for all services that it manages. You then need to tell PM2 to save the new configuration so that it will persist when your server restarts. Run these commands from a SSH session on your production server.
-
-```sh
-pm2 restart all --update-env
-pm2 save
-```
-
-### Setting environment variables for your **development** environment
-
-For your development environment add the same environment variables. Depending on what operating system and console you are using, how you add the variables will be different.
-
-**`Linux`**
-
-1. Modify the /etc/environment file to include the three environment variable export statements as defined above.
-
-**`Mac`**
-
-1. Modify your shell resource file to include three environment variable export statements defined above. If you are using Zsh then the file is: `~/.zshrc`. If you are using Bash then the file is: `~/.bashrc`.
-
-**`Windows`**
-
-1. From the Start Menu search for "system environment variables" in the search bar
-1. Go to the Advanced Tab
-1. Click on Environment Variables
-1. Under SYSTEM variables click on NEW
-1. Add each variable individually into the variables information and click APPLY and OK
-1. Restart program needing the variables
-
-If necessary consult the documentation for the operating system, or console shell, you are using for the details on how to set environment variables.
+If your server is not starting, then check your logs for this exception being thrown.
 
 ## Using Mongo from your code
 
@@ -263,17 +229,23 @@ With that all done, you should be good to use Atlas from both your development a
 
 ```js
 const { MongoClient } = require('mongodb');
-
-// Read the credentials from environment variables so that you do not accidentally check in your credentials
-const userName = process.env.MONGOUSER;
-const password = process.env.MONGOPASSWORD;
-const hostname = process.env.MONGOHOSTNAME;
+const config = require('./dbConfig.json');
 
 async function main() {
   // Connect to the database cluster
-  const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+  const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
   const client = new MongoClient(url);
-  const collection = client.db('rental').collection('house');
+  const db = client.db('rental');
+  const collection = db.collection('house');
+
+  // Test that you can connect to the database
+  (async function testConnection() {
+    await client.connect();
+    await db.command({ ping: 1 });
+  })().catch((ex) => {
+    console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+    process.exit(1);
+  });
 
   // Insert a document
   const house = {
@@ -302,10 +274,11 @@ main().catch(console.error);
 To execute the above example, do the following:
 
 1. Create a directory called `mongoTest`
-1. Save the above content to a file named `main.js`
+1. Save the above content to a file named `index.js`
+1. Create a file named `dbConfig.json` that contains your database credentials
 1. Run `npm init -y`
 1. Run `npm install mongodb`
-1. Run `node main.js`.
+1. Run `node index.js`.
 
 This should output something like the following if everything is working correctly.
 

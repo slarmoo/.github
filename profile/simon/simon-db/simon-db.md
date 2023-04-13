@@ -35,7 +35,7 @@ Before you can start writing your own code you need to get a MongoDB Atlas accou
 
 ## Handling credentials
 
-Make sure you follow the instruction given previously about providing and protecting your MongoDB credentials using environment variables.
+Make sure you follow the instruction given previously about providing and protecting your MongoDB credentials in a file named `dbConfig.json`. This file will get deployed to production with the `deployService.sh` script.
 
 ## Working with the database
 
