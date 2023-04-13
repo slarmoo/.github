@@ -34,7 +34,7 @@ You can try some of the other commands, but only if you understand what they are
 | **pm2 describe simon**                                     | Describe detailed process information                                            |
 | **pm2 startup**                                            | Displays the command to run to keep PM2 running after a reboot.                  |
 | **pm2 logs simon**                                         | Display process logs                                                             |
-| **pm2 env 0**                                              | Display environment variables for process. Use `ls` to get the process ID        |
+| **pm2 env 0**                                              | Display environment variables for process. Use `pm2 ls` to get the process ID    |
 
 ## Registering a new web service
 

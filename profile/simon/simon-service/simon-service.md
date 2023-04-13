@@ -142,8 +142,8 @@ Get familiar with what the example code teaches.
   ```
 
 - Review the code and get comfortable with everything it represents.
-- View the code in your browser by hosting it from a VS Code debug session.
-- Use the browser's dev tools to set breakpoints in the code and step through it each line.
+- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your front end code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your back end code inside of Visual Studio.
+- Use the browser's dev tools to set breakpoints in the front end code and step through it each line.
 - Make modifications to the code as desired. Experiment and see what happens.
 
 ## Deploy to production
