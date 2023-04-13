@@ -49,9 +49,10 @@ Get familiar with what this code teaches.
   ```sh
   git clone https://github.com/webprogramming260/simon-db.git
   ```
-- Set up your environment variables with your Atlas credentials.
+- Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
+- Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
 - Review the code and get comfortable with everything it represents.
-- View the code in your browser by hosting it from a VS Code debug session.
+- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your front end code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your back end code inside of Visual Studio.
 - See how data is populated in the database by viewing the contents of the database using the MongoDB Atlas console.
 - Make modifications to the code as desired. Experiment and see what happens.
 
