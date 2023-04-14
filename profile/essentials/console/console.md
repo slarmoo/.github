@@ -106,7 +106,7 @@ There are also keystrokes that have special meaning in the console.
 
 ## ☑ Assignment
 
-Experiment with console commands. Open a console window and create a junk directory that you can play with by executing the command `mkdir junk` (make directory). Then execute the command `cd junk` to change into that directory. Try the following sequence of commands:
+Experiment with console commands. Open a console window and create a junk directory that you can play with by executing the command `mkdir junk` (make directory). Then execute the command `cd junk` to change into that directory. Then execute the following sequence of commands:
 
 ```sh
 mkdir junk
@@ -121,13 +121,17 @@ cat test.txt
 cp test.txt other.txt
 ls
 cat test.txt >> other.txt
-less other.txt # press `q` to exit less
 rm test.txt
+less other.txt # press `q` to exit less
 ls
 cd ..
 ls
 rm -rf junk
-ls
 ```
 
-The better you get at working with the console the more efficient your programming will be. When you are done experimenting, submit a description of something you found interesting to the Canvas assignment.
+Once you have done this, go over to the assignments page in Canvas and submit the text that resulting from running `less other.txt`.
+
+
+ When you are done experimenting, submit a description of something you found interesting to the Canvas assignment.
+
+The better you get at working with the console the more efficient your programming will be. 

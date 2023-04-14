@@ -37,7 +37,11 @@ Our server contains the following channels for asking and answering questions.
   - react
   - mongo
 
-⚠ You should use the channel that is most appropriate for your discussion. Do not ask questions in multiple channels. Only use `general` if it really is not specific to another channel.
+⚠ You should use the channel that is most appropriate for your discussion.
+
+⚠ Do not ask questions in multiple channels.
+
+⚠ Only use `general` if it really is not specific to another channel.
 
 ⚠ If you are replying to someone multiple times then reply in a thread and not in the channel.
 
@@ -53,4 +57,4 @@ When you want to talk with a TA either online or in-person you will use Discord 
 
 Get on the Discord server and review each of the channels and the TA area. Review the previous instruction on asking question. Give some thought about proper forum etiquette.
 
-Figure out who your is your assigned TA by reviewing the [TA schedule](https://docs.google.com/spreadsheets/d/1g1AMtgvyfSwMgp85QcwHuy0mVR-nN3bIGI6XNEJWB1U/edit?usp=sharing). Using their Discord ID open Discord to send them a direct message to introduce yourself.
+Figure out who your is your assigned TA by reviewing the [TA schedule](https://docs.google.com/spreadsheets/d/1g1AMtgvyfSwMgp85QcwHuy0mVR-nN3bIGI6XNEJWB1U/edit?usp=sharing). TAs are assigned by an alphabetical range. Find the range that contains the first letter of your last name. Using their Discord ID, open Discord to send them a direct message (DM) to introduce yourself.

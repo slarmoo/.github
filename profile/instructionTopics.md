@@ -8,6 +8,7 @@ It is expected that you will start at the top of the list and work your way down
 
 ## Development essentials
 
+- ☑ [AWS account](essentials/awsAccount/awsAccount.md)
 - ☑ [Introduction](essentials/introduction/introduction.md)
 - [Demonstration](essentials/demo/demo.md)
 - [History of the web](essentials/history/history.md)

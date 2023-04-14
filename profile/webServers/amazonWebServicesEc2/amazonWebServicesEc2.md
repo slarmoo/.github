@@ -6,25 +6,10 @@ When you rent a web server, it is physically located in a massive data center lo
 
 ![Data center](webServersDataCenter.jpg)
 
-You are going to use Amazon Web Services (AWS) for your work in this course. There are lots of other great vendors out there, but AWS is by far the leader in the space and so it is good for you to get experience with them. This will require you to have an [account with AWS](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). When you create your account make sure you remember your account ID so that you can use it when you log in to the AWS browser console.
-
-## What is this going to cost you?
-
-There is no cost to create an account with AWS, you only pay for what you use, and in many cases they will give you a significant starting credit, and [some services are free](https://aws.amazon.com/free) for a short period of time or monthly usage. The services we are going to use include the following:
-
-| Service        | Purpose                              | Estimated Cost (subject to change)                                                                                     |
-| -------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| EC2            | Server                               | t3.nano $0.0052 an hour ($3.50/month), t3.micro $0.0104 an hour ($7.00/month), t3.small $0.0208 an hour ($14.00/month) |
-| EC2 Elastic IP | Keep your IP address between reboots | First one is free if you keep it associated with a running server. $0.0052 an hour otherwise.                          |
-| Route 53       | Domain name                          | $3/year for `click` TLD. More for others                                                                               |
-| Route 53       | DNS records                          | $0.50 a month for each root domain                                                                                     |
-|                |                                      | Estimated total: `$15` - `$50` for the course. Much cheaper than a textbook.                                           |
-
-There are lots of ways to get free usage of services. For example, as of when this was written, you can get a 750 hours a month, for the first 12 months, of a Linux t2.micro server instance.
 
 ## Creating an AWS server instance
 
-Once you have an AWS account it is time to create your web server.
+Assuming you already have an AWS account it is time to create your web server.
 
 ⚠ Note that the AWS interface changes all of the time and so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
 
@@ -155,12 +140,11 @@ The `t3.nano` instance size has just enough memory and CPU to meet the requireme
 
 ## ☑ Assignment
 
-1. Create your AWS account.
 1. Create an EC2 instance using the class AMI (`ami-0b009f6c56cdd83ed`).
 1. Assign an elastic IP address (highly suggested).
 1. Test that you can see the default class web page from a browser using the server's public IP address.
 
-Submit a URL using your web server's public IP address, along with a comment about something you found interesting, to the Canvas assignment.
+Submit a URL using your web server's public IP address to the Canvas assignment.
 
 Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember. This might include the IP address of your server and the command to remote shell into your server. Do not include the contents of your PEM file, passwords, or keys in your notes.
 
