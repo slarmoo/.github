@@ -28,7 +28,7 @@ You can try some of the other commands, but only if you understand what they are
 | **pm2 delete all**                                         | Delete all processes                                                             |
 | **pm2 save**                                               | Save the current processes across reboot                                         |
 | **pm2 restart all**                                        | Reload all of the processes                                                      |
-| **pm2 restart simon-react --update-env**                   | Reload process and update the node version to the current environment definition |
+| **pm2 restart simon --update-env**                         | Reload process and update the node version to the current environment definition |
 | **pm2 update**                                             | Reload pm2                                                                       |
 | **pm2 start env.js --watch --ignore-watch="node_modules"** | Automatically reload service when index.js changes                               |
 | **pm2 describe simon**                                     | Describe detailed process information                                            |
