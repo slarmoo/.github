@@ -194,17 +194,24 @@ In this class, if you notice something in the instruction that needs to be enhan
 
 Do the following steps to set up your `Start up application repository` in GitHub and clone it to your development environment.
 
+**Set up your startup repository**
 1. Create a GitHub account if you do not already have one.
 1. Create a repository, named `startup`, for your start up application. Your project must be public. Select the option for a default README.md file. This is where you will also keep all of your notes for things that you learn and want to remember.
 1. Clone the repository to your development environment, by getting the repository's URL, and using `git clone`.
-1. Open up the repository directory in VS Code and modify the README.md file.
-1. Use the Git functionality of VS Code to commit your changes and push them to GitHub.
-1. In GitHub modify your README.md file and commit the changes.
+
+**Practice using Git and resolving conflicts**
+1. Open up the repository directory in VS Code and Create a file named `conflictTest.md`. Add some text to the file.
+1. Use the Git functionality of VS Code to add `conflictTest.md` to Git, commit your changes, and push them to GitHub.
+1. In GitHub modify your conflictTest.md file and commit the changes.
 1. In VS Code pull down and review the changes.
-1. Make another change to the README.md file on GitHub and commit the change.
-1. Before you pull the changes to your development environment, change the same line in the README.md file and commit the change.
+1. Make another change to the conflictTest.md file on GitHub and commit the change.
+1. Before you pull the changes to your development environment, change the same line in the conflictTest.md file and commit the change.
 1. Attempt to pull the GitHub changes to your development environment. Note and resolve the merge conflict. Commit the merged changes. Push the merge commit.
 1. On GitHub observe the resolved merge.
-1. Make your first notes in your README.md file about what you learned from this assignment. Commit and push your notes to GitHub.
 
-When you are done, provide the URL of your GitHub start up repository, along with a comment about something you found interesting, to the Canvas assignment.
+**Create your notes.md**
+1. Read the GitHub documentation about the basics of [writing markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+1. Create a file in your repository called `notes.md`. You can use the contents of this file while taking the midterm and final exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `md` files and reference them from your notes.md file in order make it easier to organize your content.
+1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link from the README.md file to your notes.md file. Commit and push your notes to GitHub.
+
+When you are done, provide the URL of your GitHub start up repository to the Canvas assignment.

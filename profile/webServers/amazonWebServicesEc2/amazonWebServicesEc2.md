@@ -146,7 +146,7 @@ The `t3.nano` instance size has just enough memory and CPU to meet the requireme
 
 Submit a URL using your web server's public IP address to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember. This might include the IP address of your server and the command to remote shell into your server. Do not include the contents of your PEM file, passwords, or keys in your notes.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember. This might include the IP address of your server and the command to remote shell into your server. Do not include the contents of your PEM file, passwords, or keys in your notes.
 
 ## Common problems
 

@@ -60,4 +60,4 @@ console.log(p);
 
 Create a CodePen that uses both rest and spread.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.

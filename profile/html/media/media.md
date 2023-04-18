@@ -116,4 +116,4 @@ If you would like to see some examples of complex canvas renderings check out th
 
 This [CodePen](https://codepen.io/leesjensen/pen/OJEwgBa) demonstrates the different media elements. Fork the pen and experiment.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.

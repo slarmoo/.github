@@ -129,6 +129,6 @@ You can also add event listeners directly in the HTML. For example, here is a `o
 
 This [CodePen](https://codepen.io/leesjensen/pen/RwJJZBb) dynamically manipulates the DOM using JavaScript. Create a fork of the pen and take some time to experiment with it. Then make your own codePen that manipulates the DOM.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.

@@ -47,7 +47,7 @@ Doing this will make this deliverable of your start up available from `https://s
   - 10% JavaScript support for future WebSocket.
   - 30% JavaScript support for your application's interaction logic.
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your start up Git repository README.md file documenting what you have learned using JavaScript.
+- 10% - Notes in your start up Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned using JavaScript.
 
 ## Go celebrate
 

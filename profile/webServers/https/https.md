@@ -145,9 +145,9 @@ If you open your browser and navigate to your domain name you will now see that 
 
 Secure your web server communication by configuring Caddy to request a certificate from Let's Encrypt for you domain name.
 
-Submit a URL for web server's hostname, along with a comment about something you found interesting, to the Canvas assignment.
+Submit a URL for web server's hostname to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.
 
 ## Common problems
 

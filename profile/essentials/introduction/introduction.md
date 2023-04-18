@@ -39,4 +39,4 @@ The class should have the energy of a start up. We are on the cutting edge of te
 
 We often send out critical notifications for the course using the Canvas email announcements. Log into the Canvas course and check to make sure you have the correct email address and notification setting associated with your user.
 
-Once you have done that, go over to the assignments page in Canvas and submit that you have completed this.
+Once you are done, go over to Canvas and submit that you have completed this.

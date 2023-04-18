@@ -59,6 +59,6 @@ Replace the quotable service call with a different one. Here are some suggestion
 - **GitHub user** - https://api.github.com/users/octocat
 - **Photos** - https://picsum.photos/id/0/info
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.

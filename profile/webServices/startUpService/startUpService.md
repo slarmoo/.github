@@ -52,7 +52,7 @@ You should also update your website's home page with a link to your project so t
 - 20% - Provides authenticated login with securely stored credentials in MongoDB
 - 10% - Peer communication using webSockets
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your start up Git repository README.md file documenting what you have learned using services, node.js, mongodb, authentication, and webSockets.
+- 10% - Notes in your start up Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned using services, node.js, mongodb, authentication, and webSockets.
 
 ## Go celebrate
 

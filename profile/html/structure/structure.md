@@ -77,4 +77,4 @@ There is a distinction between structure elements that are block vs inline. A bl
 
 Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/GRGBqbw) and experiment.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.

@@ -82,4 +82,4 @@ Closures provide a valuable property when we do things like execute JavaScript w
 
 Create a CodePen that uses the arrow function.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.

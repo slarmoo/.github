@@ -252,4 +252,4 @@ The `create-react-app` CLI is not the only tool that you can use to generate a t
 
 Experiment with `create-react-app` by creating a test application named `test-react-cli`. Run the application using `npm start`. Then alter the code by changing the content, deleting functionality, and adding a simple component. Finally, build a production deployment version of the application with `npm run build`. When you are done submit a comment about something you found interesting, to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.

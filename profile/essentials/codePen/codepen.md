@@ -4,7 +4,7 @@ This course makes extensive use of the coding sandbox website [CodePen](https://
 
 The power of CodePen is that it immediately renders your code in the preview window. This makes it so you can reduce a problem to something small, quickly iterate ideas, and immediately see what the impact is. CodePen also serves as a portfolio of what you have learned so that you can review it later or share it with others.
 
-When working with assignment that use CodePen to submit your work, you will do the following steps:
+When working with assignments that use CodePen to submit your work, you will do the following steps:
 
 1. Either create a new pen, or fork an existing example pen.
 1. Conduct the experiment as defined by the assignment.
@@ -17,4 +17,4 @@ In addition to using CodePen to complete assignments, it is a great place to fin
 
 ## ☑ Assignment
 
-Find an interesting pen that someone else has created. Fork the pen and make a minor change. Save the pen. Submit your CodePen URL, along with a description of what you found interesting, to the Canvas assignment.
+Create your CodePen account. Find an interesting pen that someone else has created. Fork the pen and make a minor change. Save the pen. Submit your CodePen URL, along with a description of what you changed, to the Canvas assignment.

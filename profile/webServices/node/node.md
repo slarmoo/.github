@@ -208,6 +208,6 @@ Install Node.js in your development environment and run the following console co
 
 Then create, and run, a simple web service using the instructions given above. Change the HTML output to something that reflects your personality.
 
-When you are done copy your code to CodePen submit the CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done copy your code to CodePen submit the CodePen URL to the Canvas assignment.
 
 Note that your Node.js code will not work in CodePen, but by saving it there, you will have a persistent copy of it.

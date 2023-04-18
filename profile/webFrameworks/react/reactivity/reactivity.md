@@ -70,9 +70,9 @@ ReactDOM.render(<Survey />, document.getElementById('root'));
 
 Create a fork of this [codePen](https://codepen.io/leesjensen/pen/NWzYzXE) and experiment. Try changing the input from using the color and radio button, to using an edit box that reactively displays the text as you type.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.
 
 ### 🧧 Possible solution (spoilers!)
 

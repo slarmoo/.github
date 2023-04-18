@@ -15,4 +15,4 @@ Make sure you demonstrate you understanding of:
 
 When you are done upload the URL of your CodePen with a description of what you found interesting to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.

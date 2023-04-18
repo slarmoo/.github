@@ -127,7 +127,7 @@ Try the following:
 1. Add a new property to the Demo component that provides the background color for the component.
 2. Add another state variable that changes the color on a mouse over event.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.
 
 ### 🧧 Possible solution (spoilers!)
 

@@ -172,6 +172,6 @@ You can save any HTML file to your computer's disk and then open the file using 
 
 Create a fork of this [codePen](https://codepen.io/leesjensen/pen/abKYRqN) and experiment.
 
-When you are done submit your CodePen URL, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit your CodePen URL to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository README.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.

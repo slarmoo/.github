@@ -323,7 +323,7 @@ beds: 1
 
 First, set up your MongoDB Atlas database service. Then use the instructions aboveRun the example program for testing that you have things set up correctly.
 
-When you are done submit the connection string for your Atlas database cluster, along with a comment about something you found interesting, to the Canvas assignment.
+When you are done submit the connection string for your Atlas database cluster to the Canvas assignment.
 
 Here is an example connection string:
 
