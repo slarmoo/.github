@@ -18,7 +18,7 @@ The following is a possible layout of the main pieces that your application shou
 
 At this point your application will look rather strange because it doesn't have any styling to make it look right. That is fine. You are just focusing on structure and content placeholders in this deliverable.
 
-You must use the same start up GitHub repository that you created for the previous deliverable. Update the README.md file with things that you learn as you work on your start up. As you make changes to your HTML commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+You must use the same start up GitHub repository that you created for the previous deliverable. Update the notes.md file with things that you learn as you work on your start up. As you make changes to your HTML commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
 
 Remember to use the `Live Server VS Code extension` to see what your code looks like in the browser. Also use the browser's debugger window to debug your HTML.
 
@@ -36,14 +36,6 @@ For example,
 
 Doing this will make this deliverable of your start up available from `https://startup.yourdomainname`.
 
-### Update your website's home page
-
-You should also update your website's home page with a link to your project so that you can access everything you have done for this class from the home page. This will make a great portfolio of all your work in this class. You can easily do this by modifying the index.html file that is part of the website-html repository that you created in the earlier instruction and deploying it using the script found in that repository. Make sure you run this script from a console where your working directory is the website-html repository and not your start up repository.
-
-```sh
-./deployWebsite.sh  -k <yourpemkey> -h <yourdomain>
-```
-
 ## ☑ Assignment
 
 1. Create the HTML deliverable of your start up application. Make sure all authors of the code are attributed in the application and that there is a link to your GitHub repository.
@@ -51,7 +43,7 @@ You should also update your website's home page with a link to your project so t
 1. Include placeholders for all of the technology that your application will eventually represent.
 1. Make sure your main HTML file is named `index.html` so that it will load by default.
 1. Periodically commit and push your code to GitHub.
-1. Periodically update your start up repository's README.md file to reflect what you have learned and want to remember.
+1. Periodically update your start up repository's notes.md file to reflect what you have learned and want to remember.
 1. Push your final version of your project to GitHub.
 1. Deploy your start up application to your production environment (your server).
 1. Make sure your application is available from your production environment.
@@ -59,14 +51,15 @@ You should also update your website's home page with a link to your project so t
 
 ## Grading Rubric
 
+- (Required) Simon HTML deployed to your production environment
 - Properly structured HTML
   - 20% HTML pages for each component of your application
   - 10% Links between pages as necessary
   - 10% Application text content
   - 10% Application images
   - 10% Login placeholder, including user name display
-  - 10% Database data placeholder
-  - 10% WebSocket data placeholder
+  - 10% Database data placeholder showing content stored in the database
+  - 10% WebSocket data placeholder showing where realtime communication will go
 - 10% - Multiple Git commits with meaningful comments.
 - 10% - Notes in your start up Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned using HTML.
 

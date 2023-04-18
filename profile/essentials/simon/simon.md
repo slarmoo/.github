@@ -10,7 +10,7 @@ We are going to build a peer to peer multiplayer web application modeled after S
 
 The objective with Simon is to give you an example application that demonstrates each technology concept so that you can then use that technology in your Start Up application.
 
-You should plan on spending 1 to 3 hours reviewing the Simon code. As you review the code take careful notes in your Start Up README.md file about what you have learned.
+You should plan on spending 1 to 3 hours reviewing the Simon code. As you review the code take careful notes in your Start Up notes.md file about what you have learned.
 
 ## Simon versions
 

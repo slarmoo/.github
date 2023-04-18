@@ -56,10 +56,12 @@ You can now make changes to the files in the repository and commit those changes
 
 ![GitHub pull](essentialsGitHubPull.jpg)
 
-The following demonstrates console commands for making a change to the README.md file, committing it, and then pushing it up to GitHub. Of course you can also do this using the Git interface of VS Code.
+The following demonstrates console commands for making a change to a `test.md` file, committing it, and then pushing it up to GitHub. Of course you can also do this using the Git interface of VS Code.
 
 ```sh
-➜  printf "\nChange from my development environment!\n" >> README.md
+➜  printf "\nChange from my development environment!\n" >> test.md
+
+➜  git add test.md
 
 ➜  git commit -am "update(notes) thoughts about start up applications"
 
@@ -85,7 +87,7 @@ Run
 
 Make sure you use the email that you provided for your GitHub account.
 
-After pushing changes GitHub, you then view the changes on GitHub with your browser. In the example above, you would see the changes to the `README.md` file. You can also edit and commit changes directly from GitHub. When looking at a repository file on GitHub you will see a little pencil in the top right hand corner of the file. If you press that you will enter edit mode. You use that to modify the file and then commit the changes with an appropriate comment.
+After pushing changes GitHub, you then view the changes on GitHub with your browser. In the example above, you would see the changes to the `test.md` file. You can also edit and commit changes directly from GitHub. When looking at a repository file on GitHub you will see a little pencil in the top right hand corner of the file. If you press that you will enter edit mode. You use that to modify the file and then commit the changes with an appropriate comment.
 
 ![GitHub edit](essentialsGitHubEdit.jpg)
 
@@ -100,7 +102,7 @@ Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
 ➜  git pull
 Updating d13a9ce..cafe81a
 Fast-forward
- README.md | 4 +++-
+ test.md | 4 +++-
  1 file changed, 3 insertions(+), 1 deletion(-)
 ```
 
@@ -125,12 +127,12 @@ This shows that the cloned repositories have diverged from each other. Normally 
 ```sh
 ➜  git pull
 
-Auto-merging README.md
-CONFLICT (content): Merge conflict in README.md
+Auto-merging test.md
+CONFLICT (content): Merge conflict in test.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-We now need to resolve the merge conflict that it says has happened with our `README.md` file. If you are using VS Code with the GitLens extension installed it will visually walk you through this process. However, so you can understand what is going on, we will do this using the console. The first step is to open up `README.md` in an editor. You will see that git has injected lines that highlight where the conflict is. Both your local change and the change made on GitHub are included.
+We now need to resolve the merge conflict that it says has happened with our `test.md` file. If you are using VS Code with the GitLens extension installed it will visually walk you through this process. However, so you can understand what is going on, we will do this using the console. The first step is to open up `test.md` in an editor. You will see that git has injected lines that highlight where the conflict is. Both your local change and the change made on GitHub are included.
 
 ```diff
 An example start up application
@@ -165,9 +167,11 @@ Now that the conflict is resolved we commit our resolution and push up the resul
 
 If you go look at the file again on GitHub you will see the additional commit in the history and the result of our merge in the file content.
 
-## Keeping notes
+## README.md
 
-Keeping notes of what you have learned and things that you want to remember is an essential step for accelerating your web programming skills. GitHub supports the inclusion of a file with the special name `README.md` in the root of your repository. This file uses `Markdown` syntax. If you have not used Markdown before, then take some time to [learn how to use it](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). For this course you will use your start up application's README.md file and your website's README.md to keep notes.
+Keeping notes of what you have learned and things that you want to remember is an essential step for accelerating your web programming skills. GitHub supports the inclusion of a file with the special name `README.md` in the root of your repository. The `README.md` file is displayed in GitHub when you view your repository. This file uses `Markdown` syntax. If you have not used Markdown before, then take some time to [learn how to use it](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). For this course you will use your start up application's README.md file to describe the modifications and alterations that you make to your startup.
+
+You will also create another Markdown file named `notes.md` to track what you have learned in the course. You can use anything that you put in your notes.md file when taking the midterm or final.
 
 ## Forks
 
@@ -195,11 +199,13 @@ In this class, if you notice something in the instruction that needs to be enhan
 Do the following steps to set up your `Start up application repository` in GitHub and clone it to your development environment.
 
 **Set up your startup repository**
+
 1. Create a GitHub account if you do not already have one.
 1. Create a repository, named `startup`, for your start up application. Your project must be public. Select the option for a default README.md file. This is where you will also keep all of your notes for things that you learn and want to remember.
 1. Clone the repository to your development environment, by getting the repository's URL, and using `git clone`.
 
 **Practice using Git and resolving conflicts**
+
 1. Open up the repository directory in VS Code and Create a file named `conflictTest.md`. Add some text to the file.
 1. Use the Git functionality of VS Code to add `conflictTest.md` to Git, commit your changes, and push them to GitHub.
 1. In GitHub modify your conflictTest.md file and commit the changes.
@@ -210,8 +216,9 @@ Do the following steps to set up your `Start up application repository` in GitHu
 1. On GitHub observe the resolved merge.
 
 **Create your notes.md**
+
 1. Read the GitHub documentation about the basics of [writing markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 1. Create a file in your repository called `notes.md`. You can use the contents of this file while taking the midterm and final exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `md` files and reference them from your notes.md file in order make it easier to organize your content.
-1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link from the README.md file to your notes.md file. Commit and push your notes to GitHub.
+1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link in your README.md file to your notes.md file. Commit and push your notes to GitHub.
 
 When you are done, provide the URL of your GitHub start up repository to the Canvas assignment.

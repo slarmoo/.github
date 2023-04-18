@@ -162,11 +162,6 @@ Get familiar with what the example code teaches.
 
   ⚠ **NOTE** - The deployment script for this project is different than pervious deployment scripts since it needs to set up the Node.js service for your backend code, and copy your front-end code to the `public` directory. You also want to make sure that your node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Start Up you want to make sure that code is configured to listen on port 4000.
 
-- Update your `startup` repository README.md to record, what you modified and added with this deliverable. Also update your notes.md to record what you learned.
+- Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
 - Submit the URL to your production environment for grading using the Canvas assignment page.
-
-## Grading Rubric
-
-- 50% - Simon Service to your production environment
-- 50% - A section in your startup repository README.md about what you modified and added for this deliverable.

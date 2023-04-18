@@ -69,11 +69,6 @@ Get familiar with what this code teaches.
   ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
-- Update your `startup` repository README.md to record, what you modified and added with this deliverable. Also update your notes.md to record what you learned.
+- Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
 - Submit the URL to your production environment for grading using the Canvas assignment page.
-
-## Grading Rubric
-
-- 50% - Simon Login deployed to your production environment
-- 50% - Notes in your start up repository README.md about what you have learned

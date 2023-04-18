@@ -379,15 +379,6 @@ Get familiar with what the example code teaches.
 
   ⚠ **NOTE** - The deployment script for this project is different than pervious deployment scripts since it includes the bundling of your React application.
 
-- Update your `startup` repository README.md to record, what you modified and added with this deliverable. Also update your notes.md to record what you learned.
+- Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
 - Submit the URL to your production environment for grading using the Canvas assignment page.
-
-## Grading Rubric
-
-- 50% - Simon React deployed to your production environment
-- 50% - Notes in your start up repository README.md about what you have learned
-
-## Celebrate
-
-Wow! That is the last Simon deliverable. We hope that you were able to discover and master a lot of new technology by developing this game. You definitely deserve to reward yourself for all the work you have done here. I'm thinking maybe donuts. 🍩

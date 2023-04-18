@@ -46,11 +46,6 @@ Get familiar with what the example code teaches.
 
   ⚠ Make sure you run `deployFiles.sh` from the console in your project directory.
 
-- Update your `startup` repository README.md to record, what you modified and added with this deliverable. Also update your notes.md to record what you learned.
+- Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
 - Submit the URL to your production environment for grading using the Canvas assignment page.
-
-## Grading Rubric
-
-- 50% - Simon HTML deployed to your production environment
-- 50% - A section in your startup repository README.md about what you modified and added for this deliverable.

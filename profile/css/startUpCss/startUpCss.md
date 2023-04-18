@@ -20,14 +20,6 @@ For example,
 
 Doing this will make this deliverable of your start up available from `https://startup.yourdomainname`.
 
-### Update your website's home page
-
-You should also update your website's home page with a link to your project so that you can access everything you have done for this class from the home page. This will make a great portfolio of all your work in this class. You can easily do this by modifying the index.html file that is part of the website-html repository that you created in the earlier instruction and deploying it using the script found in that repository. Make sure you run this script from a console where your working directory is the website-html repository and not your start up repository.
-
-```sh
-./deployWebsite.sh  -k <yourpemkey> -h <yourdomain>
-```
-
 ## ☑ Assignment
 
 1. Create the CSS deliverable of your start up application. Make sure all authors of the code are attributed in the application and that there is a link to your GitHub repository.
@@ -40,6 +32,7 @@ You should also update your website's home page with a link to your project so t
 
 ## Grading Rubric
 
+- (Required) Simon CSS deployed to your production environment
 - Properly styled CSS
   - 20% Header, footer, and main content body
   - 20% Navigation elements
