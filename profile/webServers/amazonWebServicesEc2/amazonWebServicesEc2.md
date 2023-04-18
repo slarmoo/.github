@@ -6,7 +6,6 @@ When you rent a web server, it is physically located in a massive data center lo
 
 ![Data center](webServersDataCenter.jpg)
 
-
 ## Creating an AWS server instance
 
 Assuming you already have an AWS account it is time to create your web server.
@@ -51,7 +50,7 @@ Assuming you already have an AWS account it is time to create your web server.
 
 1. Select the option to `Launch instance`.
 
-It will take a couple minutes for the instance to start up, but once it is marked as `running` it is close to being ready. Look at the properties for the instance and copy the public IP address.
+It will take a couple minutes for the instance to startup, but once it is marked as `running` it is close to being ready. Look at the properties for the instance and copy the public IP address.
 
 Open your browser and paste the public IP address for your server in the location bar along with the prefix `http://`. For example:
 
@@ -146,7 +145,7 @@ The `t3.nano` instance size has just enough memory and CPU to meet the requireme
 
 Submit a URL using your web server's public IP address to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember. This might include the IP address of your server and the command to remote shell into your server. Do not include the contents of your PEM file, passwords, or keys in your notes.
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember. This might include the IP address of your server and the command to remote shell into your server. Do not include the contents of your PEM file, passwords, or keys in your notes.
 
 ## Common problems
 

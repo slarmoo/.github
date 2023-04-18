@@ -48,7 +48,7 @@ If you want to setup another subdomain that accesses a different web service on 
 
 SSH into your server.
 
-Copy the section for the start up subdomain and alter it so that it represents the desired subdomain and give it a different port number that is not currently used on your server. For example:
+Copy the section for the startup subdomain and alter it so that it represents the desired subdomain and give it a different port number that is not currently used on your server. For example:
 
 ```sh
 tacos.cs260.click {

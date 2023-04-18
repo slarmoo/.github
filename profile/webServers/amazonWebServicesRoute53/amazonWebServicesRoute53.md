@@ -87,7 +87,7 @@ The start of authority (`SOA`) record provides contact information about the own
 
 Submit a URL for web server's domain name to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
 
 ## Common problems
 

@@ -201,7 +201,7 @@ In order to accomplish this do the following:
 
 ⚠ Make sure you include `dbConfig.json` in your `.gitignore` file so that it does not get pushed up to GitHub.
 
-### Testing the connection on start up
+### Testing the connection on startup
 
 It is nice to know that your connection string is correct before your application attempts to access any data. We can do that when the application starts by making an asynchronous request to ping the database. If that fails than either the connection string is incorrect, the credentials are invalid, or the network is not working. The following is an example of testing the Connection
 

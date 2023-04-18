@@ -28,7 +28,7 @@ Our server contains the following channels for asking and answering questions.
 - **Technology channels**
   - github
   - aws
-  - start up
+  - startup
   - html
   - css
   - javascript

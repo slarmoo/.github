@@ -39,7 +39,7 @@ app.put('/store/:storeName', (req, res) => {
 module.exports = app;
 ```
 
-In order to allow Jest to start up the HTTP server when running tests, we initialize the application a little bit differently than we have in the past. Normally, we would have just started listening on the Express app object after we defined our endpoints. Instead we export the Express app object from our `server.js` file and then import the app object in the `index.js` file that is used to run our service.
+In order to allow Jest to startup the HTTP server when running tests, we initialize the application a little bit differently than we have in the past. Normally, we would have just started listening on the Express app object after we defined our endpoints. Instead we export the Express app object from our `server.js` file and then import the app object in the `index.js` file that is used to run our service.
 
 **index.js**
 

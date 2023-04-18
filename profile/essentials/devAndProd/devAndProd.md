@@ -98,6 +98,6 @@ rm -rf dist
 
 Can you imagine if you had to do all of that by hand every time? You would dread deploying and would most likely make several time consuming mistakes during the process.
 
-A deployment script exist for each of the Simon projects and you can use them, as is, for your start up application as long as you are doing similar type of deployment actions.
+A deployment script exist for each of the Simon projects and you can use them, as is, for your startup application as long as you are doing similar type of deployment actions.
 
 If you want to learn more about shell scripting you can [read this tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-script.php). Shell scripting is a powerful tool for automating common development tasks and is well worth adding to your bucket of skills.

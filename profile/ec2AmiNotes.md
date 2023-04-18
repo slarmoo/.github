@@ -51,7 +51,7 @@ Now we can install Caddy, NVM, Node, and PM2
   - `npm install -g npm@latest` (this installed version 9.6.4)
 - Set up PM2
   - npm install pm2 -g
-- Add services for Simon and Start up
+- Add services for Simon and Startup
   - Create the services directories `mkdir -p ~/services/simon ~/services/startup`
   - On your development environment clone the `website-express` repo
     `https://github.com/webprogramming260/website-express.git`

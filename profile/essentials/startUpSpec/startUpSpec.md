@@ -1,6 +1,6 @@
-# Start up deliverable - specification
+# Startup deliverable - specification
 
-Your start up application demonstrates your mastery of the instruction presented by this course. Make sure you put significant effort into coming up with a simple yet interesting idea. Your application needs to demonstrate the use of HTML, CSS, JavaScript, calling web services, providing web services, authentication, storing data persistently, and using web sockets for sending realtime data to and from your server.
+Your startup application demonstrates your mastery of the instruction presented by this course. Make sure you put significant effort into coming up with a simple yet interesting idea. Your application needs to demonstrate the use of HTML, CSS, JavaScript, calling web services, providing web services, authentication, storing data persistently, and using web sockets for sending realtime data to and from your server.
 
 Create an elevator pitch for your application. Something that would excite an investment firm if you happen to catch a ride up the elevator with one of their representatives. Or maybe just sound cool to your friends if they are your target audience. This should be no more than a paragraph in length.
 
@@ -24,11 +24,11 @@ Take some time to properly learn how to use Markdown in your README.md and notes
 
 ## ☑ Assignment
 
-Update the README.md file for your start up GitHub repository that you created in the earlier instruction to include your elevator pitch. Include the pitch paragraph, key features, and images.
+Update the README.md file for your startup GitHub repository that you created in the earlier instruction to include your elevator pitch. Include the pitch paragraph, key features, and images.
 
 Make sure you push your changes to the file so that it can be reviewed.
 
-Submit the URL for your GitHub start up repository to the Canvas assignment.
+Submit the URL for your GitHub startup repository to the Canvas assignment.
 
 ## Grading Rubric
 

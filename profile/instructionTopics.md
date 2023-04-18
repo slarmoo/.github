@@ -14,7 +14,7 @@ It is expected that you will start at the top of the list and work your way down
 - [History of the web](essentials/history/history.md)
 - [Asking questions](essentials/askingQuestions/askingQuestions.md)
 - ☑ [Discord](essentials/discord/discord.md)
-- [Start up application](essentials/startUp/startUp.md)
+- [Startup application](essentials/startUp/startUp.md)
 - [Let's play Simon](essentials/simon/simon.md)
 - [Technology stack](essentials/techStack/techStack.md)
 - ☑ [The Console](essentials/console/console.md)
@@ -23,7 +23,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [GitHub](essentials/gitHub/gitHub.md)
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
 - ☑ [CodePen](essentials/codePen/codepen.md)
-- ☑ [Start up deliverable - Specification](essentials/startUpSpec/startUpSpec.md)
+- ☑ [Startup deliverable - Specification](essentials/startUpSpec/startUpSpec.md)
 
 ## Web servers
 
@@ -43,7 +43,7 @@ It is expected that you will start at the top of the list and work your way down
   - ☑ [Media](html/media/media.md)
   - ☑ [HTML website](html/website/website.md)
   - ☑ [Simon HTML](simon/simon-html/simon-html.md)
-  - ☑ [Start up deliverable - HTML](html/startUpHtml/startUpHtml.md)
+  - ☑ [Startup deliverable - HTML](html/startUpHtml/startUpHtml.md)
 - [CSS introduction](css/introduction/introduction.md)
   - [Selectors](css/selectors/selectors.md)
   - [Declarations](css/declarations/declarations.md)
@@ -57,7 +57,7 @@ It is expected that you will start at the top of the list and work your way down
   - ☑ [CSS frameworks](css/frameworks/frameworks.md)
   - ☑ [Simon CSS](simon/simon-css/simon-css.md)
 - ☑ [UX design](uxdesign/uxdesign.md)
-- ☑ [Start up deliverable - CSS](css/startUpCss/startUpCss.md)
+- ☑ [Startup deliverable - CSS](css/startUpCss/startUpCss.md)
 
 ## JavaScript
 
@@ -82,7 +82,7 @@ It is expected that you will start at the top of the list and work your way down
   - ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
   - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
   - ☑ [Simon JavaScript](simon/simon-javascript/simon-javascript.md)
-- ☑ [Start up deliverable - JavaScript](javascript/startUpJavascript/startUpJavascript.md)
+- ☑ [Startup deliverable - JavaScript](javascript/startUpJavascript/startUpJavascript.md)
 
 ## Midterm
 
@@ -116,7 +116,7 @@ It is expected that you will start at the top of the list and work your way down
   - [Debugging WebSocket](webServices/webSocket/debugging.md)
   - [WebSocket chat](webServices/webSocket/chat.md)
   - ☑ [Simon WebSocket](simon/simon-webSocket/simon-webSocket.md)
-- ☑ [Start up deliverable - Service](webServices/startUpService/startUpService.md)
+- ☑ [Startup deliverable - Service](webServices/startUpService/startUpService.md)
 
 ## Web frameworks
 
@@ -130,7 +130,7 @@ It is expected that you will start at the top of the list and work your way down
   - ☑ [React CLI](webFrameworks/react/cli/cli.md) _(due 4/5)_
   - ☑ [Router](webFrameworks/react/router/router.md) _(due 4/7)_
   - ☑ [Simon React](simon/simon-react/simon-react.md) _(due 4/7)_
-- ☑ [Start up deliverable - React](webFrameworks/startUpReact/startUpReact.md) _(due 4/18)_
+- ☑ [Startup deliverable - React](webFrameworks/startUpReact/startUpReact.md) _(due 4/18)_
 
 ## Assorted topics
 

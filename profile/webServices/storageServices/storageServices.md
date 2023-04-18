@@ -24,7 +24,7 @@ There are many such solutions out there, but one of the most popular ones is [AW
 1. You can make your files publicly available directly from S3
 1. You can keep your files private and only accessible to your application
 
-In this course we will not be using an storage services for the Simon project. If however, you want to use S3 as the storage service for your Start Up application then you need to learn how to use the AWS SDK. You can find detailed information about using AWS S3 with Node.js on the [AWS website](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-nodejs.html). Generally, the steps you need to take include:
+In this course we will not be using an storage services for the Simon project. If however, you want to use S3 as the storage service for your Startup application then you need to learn how to use the AWS SDK. You can find detailed information about using AWS S3 with Node.js on the [AWS website](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-nodejs.html). Generally, the steps you need to take include:
 
 1. Creating a S3 bucket to store your data in.
 1. Getting credentials so that your application can access the bucket.

@@ -8,7 +8,7 @@ For this course, we use Caddy for the following reasons.
 
 - Caddy handles all of the creation and rotation of web certificates. This allows us to easily support HTTPS.
 - Caddy serves up all of your static HTML, CSS, and JavaScript files. All of your early application work will be hosted as static files.
-- Caddy acts as a gateway for subdomain requests to your Simon and start up application services. For example, when a request is made to `simon.yourdomain` Caddy will proxy the request to the Simon application running with node.js as an internal web service.
+- Caddy acts as a gateway for subdomain requests to your Simon and startup application services. For example, when a request is made to `simon.yourdomain` Caddy will proxy the request to the Simon application running with node.js as an internal web service.
 
 ![Caddy](webServersCaddy.jpg)
 

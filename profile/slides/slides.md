@@ -39,7 +39,7 @@ The following slide decks are used for in person discussion of the instruction t
 - [4.3 Regex, rest/spread, destructure, exception](https://docs.google.com/presentation/d/1c2_7wC3Bfyec9-3L8SKXxJ415c5W0siUfeKeuVaRErw/edit?usp=sharing)
 - [4.4 Scope, modules, DOM](https://docs.google.com/presentation/d/1SWq0kLCWW3mBKnCeL5cdhNyUobOoji9apZ9QXPCMtn4/edit?usp=sharing)
 - [4.5 Promises, async/await](https://docs.google.com/presentation/d/1_RKk91Px_UJdgroZPNqFkJI_MA_Xsul1ocp66qljET4/edit?usp=sharing)
-- [4.6 Debugging, Simon JS, Start up JS](https://docs.google.com/presentation/d/1ptSWxXFXzhJ-KUqvmzjir1ZtWXTMBH-pS2H9aXGwdLs/edit?usp=sharing)
+- [4.6 Debugging, Simon JS, Startup JS](https://docs.google.com/presentation/d/1ptSWxXFXzhJ-KUqvmzjir1ZtWXTMBH-pS2H9aXGwdLs/edit?usp=sharing)
 
 ## Web services
 

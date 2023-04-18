@@ -1,8 +1,8 @@
-# Start up application
+# Startup application
 
-The primary objective of this course is to help you understand the technologies necessary to launch a web application start up. Towards this goal you will build your very own `start up` application. The actual application you build is entirely up to you, but it must successfully demonstrate the technologies we focus on.
+The primary objective of this course is to help you understand the technologies necessary to launch a web application startup. Towards this goal you will build your very own `startup` application. The actual application you build is entirely up to you, but it must successfully demonstrate the technologies we focus on.
 
-The course is divided into distinct milestones. At each milestone you will evolve your start up application to take on more and more functionality. You start with a conceptual design document and then build a structural shell for the application using HTML. Next comes styling with CSS, interactivity with JavaScript, using third party web services, hosting your own web service, database connectivity for persistent storage, data pushed from the server with WebSockets, and finally, converting to a modern web framework with React.
+The course is divided into distinct milestones. At each milestone you will evolve your startup application to take on more and more functionality. You start with a conceptual design document and then build a structural shell for the application using HTML. Next comes styling with CSS, interactivity with JavaScript, using third party web services, hosting your own web service, database connectivity for persistent storage, data pushed from the server with WebSockets, and finally, converting to a modern web framework with React.
 
 - **HTML** - Basic structural and organizational elements
 - **CSS** - Styling and animating
@@ -13,15 +13,15 @@ The course is divided into distinct milestones. At each milestone you will evolv
 - **WebSocket** - Support for pushing data from the server. This can be peer to peer communication _(e.g. chatting with friends through the browser)_, or realtime data from the server _(e.g. stock prices or the current game leader)_.
 - **Web framework** - Using React to add components and request routing
 
-The [Simon](https://simon.cs260.click) application is meant to give you an example of the level of complexity you are looking for, and how to build your start up application. Use Simon as a chance to experiment with things you are considering doing with your start up application. Once you learn how Simon does something you can leverage that code in your start up.
+The [Simon](https://simon.cs260.click) application is meant to give you an example of the level of complexity you are looking for, and how to build your startup application. Use Simon as a chance to experiment with things you are considering doing with your startup application. Once you learn how Simon does something you can leverage that code in your startup.
 
-Immediately start thinking about what you would like to build. What you do for your start up application is completely up to you. So make it something that is interesting to you. It doesn't have to be complex. In fact **simple is usually better**. Dream big, but pick a very small minimal viable product for your start up application.
+Immediately start thinking about what you would like to build. What you do for your startup application is completely up to you. So make it something that is interesting to you. It doesn't have to be complex. In fact **simple is usually better**. Dream big, but pick a very small minimal viable product for your startup application.
 
 Keep the styling of your application simple. One common mistake is to spend enormous amounts of time trying to make your application look a certain way. Instead leverage what Simon does. Make it look reasonable and then move on to the next technology. You can always come back later and make it look better.
 
 ## Deliverables
 
-You will turn in the following deliverable versions of your start up application.
+You will turn in the following deliverable versions of your startup application.
 
 1. Design
 1. HTML

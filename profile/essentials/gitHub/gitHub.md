@@ -63,7 +63,7 @@ The following demonstrates console commands for making a change to a `test.md` f
 
 ➜  git add test.md
 
-➜  git commit -am "update(notes) thoughts about start up applications"
+➜  git commit -am "update(notes) thoughts about startup applications"
 
 ➜  git push
 ```
@@ -135,7 +135,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 We now need to resolve the merge conflict that it says has happened with our `test.md` file. If you are using VS Code with the GitLens extension installed it will visually walk you through this process. However, so you can understand what is going on, we will do this using the console. The first step is to open up `test.md` in an editor. You will see that git has injected lines that highlight where the conflict is. Both your local change and the change made on GitHub are included.
 
 ```diff
-An example start up application
+An example startup application
 
 Change from my development environment!
 
@@ -153,7 +153,7 @@ We resolve the conflict by modifying the file to remove the textual conflict del
 ```md
 # startup-example
 
-An example start up application
+An example startup application
 
 Change from my development environment and from GitHub
 ```
@@ -169,7 +169,7 @@ If you go look at the file again on GitHub you will see the additional commit in
 
 ## README.md
 
-Keeping notes of what you have learned and things that you want to remember is an essential step for accelerating your web programming skills. GitHub supports the inclusion of a file with the special name `README.md` in the root of your repository. The `README.md` file is displayed in GitHub when you view your repository. This file uses `Markdown` syntax. If you have not used Markdown before, then take some time to [learn how to use it](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). For this course you will use your start up application's README.md file to describe the modifications and alterations that you make to your startup.
+Keeping notes of what you have learned and things that you want to remember is an essential step for accelerating your web programming skills. GitHub supports the inclusion of a file with the special name `README.md` in the root of your repository. The `README.md` file is displayed in GitHub when you view your repository. This file uses `Markdown` syntax. If you have not used Markdown before, then take some time to [learn how to use it](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). For this course you will use your startup application's README.md file to describe the modifications and alterations that you make to your startup.
 
 You will also create another Markdown file named `notes.md` to track what you have learned in the course. You can use anything that you put in your notes.md file when taking the midterm or final.
 
@@ -196,12 +196,12 @@ In this class, if you notice something in the instruction that needs to be enhan
 
 # ☑ Assignment
 
-Do the following steps to set up your `Start up application repository` in GitHub and clone it to your development environment.
+Do the following steps to set up your `Startup application repository` in GitHub and clone it to your development environment.
 
 **Set up your startup repository**
 
 1. Create a GitHub account if you do not already have one.
-1. Create a repository, named `startup`, for your start up application. Your project must be public. Select the option for a default README.md file. This is where you will also keep all of your notes for things that you learn and want to remember.
+1. Create a repository, named `startup`, for your startup application. Your project must be public. Select the option for a default README.md file. This is where you will also keep all of your notes for things that you learn and want to remember.
 1. Clone the repository to your development environment, by getting the repository's URL, and using `git clone`.
 
 **Practice using Git and resolving conflicts**
@@ -221,4 +221,4 @@ Do the following steps to set up your `Start up application repository` in GitHu
 1. Create a file in your repository called `notes.md`. You can use the contents of this file while taking the midterm and final exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `md` files and reference them from your notes.md file in order make it easier to organize your content.
 1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link in your README.md file to your notes.md file. Commit and push your notes to GitHub.
 
-When you are done, provide the URL of your GitHub start up repository to the Canvas assignment.
+When you are done, provide the URL of your GitHub startup repository to the Canvas assignment.

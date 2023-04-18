@@ -61,4 +61,4 @@ Replace the quotable service call with a different one. Here are some suggestion
 
 When you are done submit your CodePen URL to the Canvas assignment.
 
-Don't forget to update your GitHub start up repository notes.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
