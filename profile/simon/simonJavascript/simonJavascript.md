@@ -77,4 +77,3 @@ Get familiar with what the example code teaches.
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
-- Submit the URL to your production environment for grading using the Canvas assignment page.

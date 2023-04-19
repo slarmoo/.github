@@ -173,5 +173,5 @@ Get familiar with what the example code teaches.
 - Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
 - Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
 - Review the code and get comfortable with everything it represents.
-- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your front end code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your back end code inside of Visual Studio.
+- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
 - Make modifications to the code as desired. Experiment and see what happens.

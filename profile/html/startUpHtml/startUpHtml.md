@@ -1,13 +1,14 @@
-# Startup deliverable - HTML
+# Startup HTML
 
 Now that you have learned the basics of HTML, is time to structure your startup application. This includes all of the pages, headers, footers, images, and content necessary to represent what your application will do. The application doesn't have to do anything, but there should be a placeholder for everything that you application will do.
 
-You will want an HTML file for each of the main components of your application. The default component of your application should be represented in a file named `index.html` since that is the file a browser will load by default. Here is what the Simon example pages look like.
+You will want an HTML file for each of the main components of your application. The default component of your application **must** be represented in a file named `index.html` since that is the file a browser will load by default. Here is what the Simon example pages look like.
 
 ![HTML Simon pages](htmlSimonPages.jpg)
 
 You will want a similar layout. Make sure you have a placeholder for all the technologies that you will eventually need to represent in your application. This includes:
 
+- **Application data**: A rendering of application data that you will eventually populate. For Simon, this is the simple SVG graphic buttons.
 - **Authentication**: An input for your user to create an account and login. You will want to display the user's name after they login.
 - **Database data**: A rendering of application data that is stored in the database. For Simon, this is the high scores of all players.
 - **WebSocket data**: A rendering of data that is received from your server. This maybe realtime data sent from other user's (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this represents every time another user creates or ends a game.
@@ -18,7 +19,7 @@ The following is a possible layout of the main pieces that your application shou
 
 At this point your application will look rather strange because it doesn't have any styling to make it look right. That is fine. You are just focusing on structure and content placeholders in this deliverable.
 
-You must use the same startup GitHub repository that you created for the previous deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+You must use the same startup GitHub repository that you created for the specification deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
 
 Remember to use the `Live Server VS Code extension` to see what your code looks like in the browser. Also use the browser's debugger window to debug your HTML.
 
@@ -38,7 +39,7 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## ☑ Assignment
 
-1. Create the HTML deliverable of your startup application. Make sure all authors of the code are attributed in the application and that there is a link to your GitHub repository.
+1. Create the HTML deliverable of your startup application. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
 1. Represent all of the content and structure that your final application will need.
 1. Include placeholders for all of the technology that your application will eventually represent.
 1. Make sure your main HTML file is named `index.html` so that it will load by default.
@@ -52,6 +53,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon HTML deployed to your production environment
+- (Required) A link to your GitHub startup repository
 - Properly structured HTML
   - 20% HTML pages for each component of your application
   - 10% Links between pages as necessary
@@ -65,4 +67,4 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Go celebrate
 
-You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate with cookies.
+You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate with soft serve 🍦.

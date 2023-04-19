@@ -36,7 +36,7 @@ Even if you don't think your application is valuable enough to require security,
 
 ## Security terminology
 
-Web application security, sometimes called AppSec, is a subset of cybersecurity that specifically focuses on preventing security vulnerabilities within end-user applications. Web application security involves securing the front end code running on the user's device and also the back end code running on the web server.
+Web application security, sometimes called AppSec, is a subset of cybersecurity that specifically focuses on preventing security vulnerabilities within end-user applications. Web application security involves securing the frontend code running on the user's device and also the backend code running on the web server.
 
 Here is a list of common phrases used by the security community that you should be familiar with.
 

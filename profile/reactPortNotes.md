@@ -138,7 +138,7 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
     </main>
   );
   ```
-- useEffect to get the scores from Back end
+- useEffect to get the scores from backend
   ```js
   React.useEffect(() => {
     fetch('/api/scores')

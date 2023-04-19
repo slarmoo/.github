@@ -5,7 +5,7 @@
 Welcome to Web Programming 260. By the end of this instruction you will:
 
 - Understand how the internet works at a high level
-- Master the basics of front end web application development
+- Master the basics of frontend web application development
 - Master the basics of web application services
 - Be familiar with fundamental web application technologies
 - Have created your own full stack web application

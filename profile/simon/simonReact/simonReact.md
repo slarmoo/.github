@@ -2,6 +2,9 @@
 
 ![Simon](../simon.png)
 
+🔑 **Required reading**: [Debugging a React application](https://youtu.be/U8MYAOtIm5E)
+📖 **Deeper dive reading**: [Port Simon to React](https://youtu.be/qLc7SObYAQw)
+
 This deliverable demonstrates using React as a web framework. When your application starts getting more and more complex, it becomes necessary to use a web framework that helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
 
 Some frameworks take the additional step of abstracting parts of HTML and CSS to make authoring components easier. When this happens the project must be pre-processed in order to turn it into HTML and CSS that the browser can execute. This process requires a toolchain that executes to produce a browser ready bundle.
@@ -332,7 +335,7 @@ Next, we modify the `package.json` file to include the field `"proxy": "http://l
 }
 ```
 
-We also need to change the front-end WebSocket initialization found in the `gameNotifier.js` constructor to explicitly use the service port (3000) instead of the React HTTP debugger port (3001). Without this the front-end will send the webSocket messages to the React debug HTTP server listening on port 3001 and unlike HTTP traffic, it will not forward them onto port 3000 automatically. To explicitly send webSocket requests to port 3000 we use the dynamically injected process environment variable that is set when webpack creates the application bundle.
+We also need to change the frontend WebSocket initialization found in the `gameNotifier.js` constructor to explicitly use the service port (3000) instead of the React HTTP debugger port (3001). Without this the frontend will send the webSocket messages to the React debug HTTP server listening on port 3001 and unlike HTTP traffic, it will not forward them onto port 3000 automatically. To explicitly send webSocket requests to port 3000 we use the dynamically injected process environment variable that is set when webpack creates the application bundle.
 
 ```js
 let port = window.location.port;
@@ -360,7 +363,7 @@ Get familiar with what the example code teaches.
 - Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
 - Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
 - Review the code and get comfortable with everything it represents.
-- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your front end code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your back end code inside of Visual Studio.
+- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
 - Make modifications to the code as desired. Experiment and see what happens.
 
 ## Deploy to production
@@ -381,4 +384,3 @@ Get familiar with what the example code teaches.
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
-- Submit the URL to your production environment for grading using the Canvas assignment page.

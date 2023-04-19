@@ -1,4 +1,4 @@
-# simon-websocket
+# Simon WebSocket
 
 ![Simon](../simon.png)
 
@@ -29,7 +29,10 @@ Get familiar with what this code teaches.
 - Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
 - Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
 - Review the code and get comfortable with everything it represents.
-- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your front end code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your back end code inside of Visual Studio.
+- Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
+
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+
 - Use the browser's dev tools to set breakpoints in the code and step through it each line.
 - Make modifications to the code as desired. Experiment and see what happens.
 
@@ -49,4 +52,3 @@ Get familiar with what this code teaches.
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
-- Submit the URL to your production environment for grading using the Canvas assignment page.

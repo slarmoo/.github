@@ -77,7 +77,7 @@ You can also use the Chrome debugging Lighthouse tool to run an analysis of your
 
 ### Chrome performance tab
 
-When you are ready to dig into your application's front end performance make sure you experiment with the Chrome debugger's performance tab. This breaks down the details of your application based upon discrete intervals of time so that you can isolate where things are running slow.
+When you are ready to dig into your application's frontend performance make sure you experiment with the Chrome debugger's performance tab. This breaks down the details of your application based upon discrete intervals of time so that you can isolate where things are running slow.
 
 ![Performance tab](webFrameworksChromePerformanceTab.jpg)
 

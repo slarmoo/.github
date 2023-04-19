@@ -67,15 +67,15 @@ function displayQuote(data) {
 
 Converting Simon to a service involved the following steps.
 
-1. Move all the previous deliverable code files (_.html, _.js, \*.css, favicon.ico, and assets) into a sub-directory named `public`. We will use the HTTP Node.js based service to host the front-end application files. This is done with the static file middleware that we will add our service `index.js`.
+1. Move all the previous deliverable code files (_.html, _.js, \*.css, favicon.ico, and assets) into a sub-directory named `public`. We will use the HTTP Node.js based service to host the frontend application files. This is done with the static file middleware that we will add our service `index.js`.
 
    ```js
    app.use(express.static('public'));
    ```
 
-   When running our service the static file middleware takes care of reading the front-end code from the `public` directory and returning it to the browser. The service only directly handles the endpoint requests.
+   When running our service the static file middleware takes care of reading the frontend code from the `public` directory and returning it to the browser. The service only directly handles the endpoint requests.
 
-   ![Simon service](../simon-react/simonProduction.jpg)
+   ![Simon service](../simonReact/simonProduction.jpg)
 
 1. Within the project directory run `npm init -y`. This configures the directory to work with **node.js**.
 1. Modify or create `.gitignore` to ignore `node_modules`.
@@ -87,13 +87,13 @@ Converting Simon to a service involved the following steps.
    const express = require('express');
    const app = express();
 
-   // The service port. In production the front-end code is statically hosted by the service on the same port.
+   // The service port. In production the frontend code is statically hosted by the service on the same port.
    const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
    // JSON body parsing using built-in middleware
    app.use(express.json());
 
-   // Serve up the front-end static content hosting
+   // Serve up the frontend static content hosting
    app.use(express.static('public'));
 
    // Router for service endpoints
@@ -142,8 +142,11 @@ Get familiar with what the example code teaches.
   ```
 
 - Review the code and get comfortable with everything it represents.
-- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your front end code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your back end code inside of Visual Studio.
-- Use the browser's dev tools to set breakpoints in the front end code and step through it each line.
+- Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
+
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+
+- Use the browser's dev tools to set breakpoints in the frontend code and step through it each line.
 - Make modifications to the code as desired. Experiment and see what happens.
 
 ## Deploy to production
@@ -160,8 +163,7 @@ Get familiar with what the example code teaches.
   ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
-  ⚠ **NOTE** - The deployment script for this project is different than pervious deployment scripts since it needs to set up the Node.js service for your backend code, and copy your front-end code to the `public` directory. You also want to make sure that your node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Startup you want to make sure that code is configured to listen on port 4000.
+  ⚠ **NOTE** - The deployment script for this project is different than pervious deployment scripts since it needs to set up the Node.js service for your backend code, and copy your frontend code to the `public` directory. You also want to make sure that your node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Startup you want to make sure that code is configured to listen on port 4000.
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
-- Submit the URL to your production environment for grading using the Canvas assignment page.

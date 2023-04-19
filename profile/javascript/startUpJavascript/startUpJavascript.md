@@ -1,6 +1,16 @@
-# Startup deliverable - JavaScript
+# Startup JavaScript
 
 Now that you have learned how to make an application interactive, it is time to add some JavaScript to your startup application. The main thing you should focus on in this deliverable is making your application minimally viable. The application doesn't have to do everything it will do once you are done, but it should be completely usable to some extent at this point.
+
+To make your application usable you may need to use JavaScript to generate mock data that represents data that you will eventually get from the server, or from another user. For example, if you are building a chat app then you might need to have JavaScript that periodically generates a hard coded message that gets inserted into your application display. One way to do this is to use the `setInterval` function.
+
+```js
+let chat = 'Carpe diem';
+setInterval(() => {
+  chat = `${chat} lorum ipsum`;
+  document.querySelector('#chat-response').textContent = chat;
+}, 5000);
+```
 
 You must use the same startup GitHub repository that you created with your earlier startup deliverables. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML, CSS, and JavaScript commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
 
@@ -8,7 +18,7 @@ Leverage what Simon teaches in order to learn how to read login information, rep
 
 Remember to use the `VS Code Live Server` extension to see what your code looks like in the browser. Also use the browser's debugger window to debug your CSS and JavaScript. This will save you a lot of time if you learn how to leverage these tools.
 
-Once you have developed your application to where you want it, you need to release it to your production environment. **Replace** your previous startup deployment script with a copy of the `deployFiles.sh` script from the [Simon JavaScript repository](https://github.com/webprogramming260/simon-javascript/blob/main/deployFiles.sh) and use `startup` for the service parameter (`-s`)
+Once you have developed your application to where you want it, you need to release it to your production environment. Use the deployment `deployFiles.sh` script from the [Simon JavaScript repository](https://github.com/webprogramming260/simon-javascript/blob/main/deployFiles.sh) to deploy your application. Make sure you specify `startup` for the service parameter (`-s`).
 
 ```sh
 ./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
@@ -31,7 +41,7 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Have JavaScript that mocks your database data and injects it into the DOM.
    1. Use the `localstorage` API to keep data between pages and browser sessions.
    1. Have JavaScript that mocks out the realtime data you expect to get from the server using WebSocket and inject it into the DOM.
-1. Make sure all authors of the code are attributed in the application and that there is a link to your GitHub repository.
+1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
 1. Periodically commit and push your code to GitHub.
 1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
 1. Push your final version of your project to GitHub.
@@ -42,6 +52,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon JavaScript deployed to your production environment
+- (Required) A link to your GitHub startup repository
 - Significant use of JavaScript to create a minimally viable working application.
   - 20% JavaScript support for future login.
   - 20% JavaScript support for future database data.
@@ -52,4 +63,4 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Go celebrate
 
-You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate with ice cream 🍦.
+You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate with cupcakes 🧁.
