@@ -22,6 +22,14 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## ☑ Assignment
 
+1. Review and deploy Simon Login
+   1. Clone the Simon Login repository to your development environment.
+   1. Run `npm install` in root of the project.
+   1. Open the project in VS Code and examine the application's use of JavaScript to support authentication and authorization.
+   1. Create and configure the `dbConfig.json` file with your MongoDB credentials.
+   1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing index.js). Set breakpoints in VS Code and step through the backend JavaScript related to login interactions.
+   1. Open your browser to https://localhost:3000 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Allow new users to create accounts by providing credentials
 1. Store encrypted credentials in your database
 1. Allow existing users to provide credentials

@@ -34,8 +34,13 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## ☑ Assignment
 
-1. Add significant use of JavaScript to your startup application.
-1. Represent each of the required technologies with JavaScript placeholders.
+1. Review and deploy Simon JavaScript
+   1. Clone the Simon JavaScript repository to your development environment.
+   1. Open the project in VS Code and examine the application's use of JavaScript.
+   1. Execute in your development environment using the VS Code Live Server extension.
+   1. Debug using the browser's dev tools to step through the JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+1. Represent each of the required technologies with JavaScript either as a complete implementation or with mocked implementation that will be replaced later.
    1. Have JavaScript that takes user input and adds it to the mocked database data. This should be something simple like an array or object in your JavaScript that will eventually be replaced by service endpoint database calls.
    1. Have JavaScript that reads the login input and displays the user name.
    1. Have JavaScript that mocks your database data and injects it into the DOM.
@@ -52,7 +57,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon JavaScript deployed to your production environment
-- (Required) A link to your GitHub startup repository
+- (Required) A link to your GitHub startup repository prominently display on your home page
 - Significant use of JavaScript to create a minimally viable working application.
   - 20% JavaScript support for future login.
   - 20% JavaScript support for future database data.

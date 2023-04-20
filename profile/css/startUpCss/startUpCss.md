@@ -22,6 +22,12 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## ☑ Assignment
 
+1. Review and deploy Simon CSS
+   1. Clone the Simon CSS repository to your development environment.
+   1. Open the project in VS Code and examine the application's use of CSS.
+   1. Execute in your development environment using the VS Code Live Server extension.
+   1. Debug using the browser's dev tools to examine the styling of the CSS in the Elements tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Create the CSS deliverable of your startup application. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
 1. Periodically commit and push your code to GitHub.
 1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
@@ -33,7 +39,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon CSS deployed to your production environment
-- (Required) A link to your GitHub startup repository
+- (Required) A link to your GitHub startup repository prominently display on your home page
 - Properly styled CSS
   - 20% Header, footer, and main content body
   - 20% Navigation elements

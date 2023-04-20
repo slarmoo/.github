@@ -39,6 +39,12 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## ☑ Assignment
 
+1. Review and deploy Simon HTML
+   1. Clone the HTML Simon repository to your development environment.
+   1. Open the project in VS Code and examine the application's use of HTML.
+   1. Execute in your development environment using the VS Code Live Server extension.
+   1. Debug using the browser's dev tools to examine the loading of the HTML on the Network tab, and the HTML in the Elements tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Create the HTML deliverable of your startup application. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
 1. Represent all of the content and structure that your final application will need.
 1. Include placeholders for all of the technology that your application will eventually represent.
@@ -53,7 +59,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon HTML deployed to your production environment
-- (Required) A link to your GitHub startup repository
+- (Required) A link to your GitHub startup repository prominently display on your home page
 - Properly structured HTML
   - 20% HTML pages for each component of your application
   - 10% Links between pages as necessary

@@ -22,10 +22,18 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## ☑ Assignment
 
+1. Review and deploy Simon React
+   1. Clone the Simon React repository to your development environment.
+   1. Run `npm install` in both the root of the project and the `services` directory.
+   1. Open the project in VS Code and examine the application's use of React.
+   1. Create and configure the `service/dbConfig.json` file with your MongoDB credentials.
+   1. Execute your backend code in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing service/index.js). Set breakpoints in VS Code and step through the backend JavaScript related to login interactions.
+   1. Execute your frontend code in your development environment by running `npm start` from the console in the root of the project. This will automatically open your browser to https://localhost:3001. Use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Convert your startup frontend to use React. This includes:
-1. Creating a template starting application using create-react-app and cleaning up what it created.
-1. Creating a react router the displays stubbed components for the main pieces of your application.
-1. Converting your previous HTML files into the stubbed components.
+   1. Creating a template starting application using create-react-app and cleaning up what it created.
+   1. Creating a react router the displays stubbed components for the main pieces of your application.
+   1. Converting your previous HTML files into the stubbed components.
 1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
 1. Periodically commit and push your code to GitHub.
 1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
