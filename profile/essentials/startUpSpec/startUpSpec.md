@@ -24,7 +24,7 @@ Take some time to properly learn how to use Markdown in your README.md and notes
 
 ## ☑ Assignment
 
-Update the README.md file for your startup GitHub repository that you created in the earlier instruction to include your elevator pitch. Include the pitch paragraph, key features, and images.
+Update the README.md file for your startup GitHub repository that you created in the earlier instruction to include your startup specification. This should include an elevator pitch, key features, a description of how you will use each technology, and design images.
 
 Make sure you push your changes to the file so that it can be reviewed.
 
@@ -32,7 +32,8 @@ Submit the URL for your GitHub startup repository to the Canvas assignment.
 
 ## Grading Rubric
 
-- 20% - Proper use of Markdown in README.md
+- 10% - Proper use of Markdown in README.md
 - 40% - A concise, compelling, elevator pitch in your README.md
 - 10% - Description of key features in your README.md
-- 30% - One or more rough sketches of your application. Images must be embedded in your README.md.
+- 30% - Description of how you will use each technology
+- 30% - One or more rough sketches of your application. Images must be embedded in your README.md
