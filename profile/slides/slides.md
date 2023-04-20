@@ -25,7 +25,7 @@ The following slide decks are used for in person discussion of the instruction t
 ## HTML & CSS
 
 - [3.1 HTML](https://docs.google.com/presentation/d/1e4ZCORiT43CAE33uqRDx89JlaV1OeyqJYyr0yK_3fPg/edit?usp=share_link)
-- [3.2 HTML website, Simon HTML](https://docs.google.com/presentation/d/1gVOTS5HkeiFRDn_FK8-K0TVmzW6Q_zO6YbuG9qVz43A/edit?usp=share_link)
+- [3.2 Simon HTML](https://docs.google.com/presentation/d/1gVOTS5HkeiFRDn_FK8-K0TVmzW6Q_zO6YbuG9qVz43A/edit?usp=share_link)
 - [3.3 CSS rulesets](https://docs.google.com/presentation/d/1JfFeinOhpasd3t5qbEUfrG6OhNx_QwGC98UTvtjk3XQ/edit?usp=share_link)
 - [3.4 Fonts, animation, practice](https://docs.google.com/presentation/d/1mGxLtoNZy8sxbHje3hPixaTfGkohz5EvZanjEC_reoI/edit?usp=share_link)
 - [3.5 Responsive, grid, flex](https://docs.google.com/presentation/d/1GkWkkHjtb_HMrrE6lbf9E0ByB5y7WdMuwvV5-JDu-D8/edit?usp=share_link)

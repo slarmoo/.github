@@ -143,6 +143,8 @@ If you open your browser and navigate to your domain name you will now see that 
 
 ## ☑ Assignment
 
+If you have not already leased a domain name then go back and review that instruction.
+
 Secure your web server communication by configuring Caddy to request a certificate from Let's Encrypt for you domain name.
 
 Submit a URL for web server's hostname to the Canvas assignment.

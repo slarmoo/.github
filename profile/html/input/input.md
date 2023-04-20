@@ -89,6 +89,12 @@ You should also have validation built into your JavaScript that checks input dat
 
 ## ☑ Assignment
 
-This [CodePen](https://codepen.io/leesjensen/pen/dyVdNej) demonstrates all of the major input elements. Fork the pen and experiment.
+This [CodePen](https://codepen.io/leesjensen/pen/dyVdNej) demonstrates all of the major input elements. Fork the pen and do the following:
+
+1. Replace the text input's placeholder with "your name here".
+1. Add an additional optgroup.
+1. Add an additional checkbox.
+1. Add an additional radio button.
+1. Change the color input to default to red.
 
 When you are done submit your CodePen URL to the Canvas assignment.

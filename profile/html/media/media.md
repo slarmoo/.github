@@ -22,10 +22,7 @@ To include an image in your content you use the `img` element and specify the `s
 In order to support accessibility, you should also include an `alt` attribute that describes the image. A full img element would look like the following.
 
 ```html
-<img
-  alt="mountain landscape"
-  src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg"
-/>
+<img alt="mountain landscape" src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" />
 ```
 
 ![mountain landscape](htmlImage.jpg)
@@ -50,9 +47,7 @@ To include a video in your content you use the `video` element and specify the `
 
 ```html
 <video controls width="300" crossorigin="anonymous">
-  <source
-    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-  />
+  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
 </video>
 ```
 
@@ -67,13 +62,7 @@ The internal media elements `svg` and `canvas` allow you to actually create imag
 SVG is an extremely powerful and widely supported way to render graphics inline in your HTML. An example SVG graphic that draws a black border and a red circle looks like this:
 
 ```html
-<svg
-  viewBox="0 0 300 200"
-  xmlns="http://www.w3.org/2000/svg"
-  stroke="red"
-  fill="red"
-  style="border: 1px solid #000000"
->
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="red" style="border: 1px solid #000000">
   <circle cx="150" cy="100" r="50" />
 </svg>
 ```
@@ -89,12 +78,7 @@ Consult the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/SVG
 The `canvas` element was introduced to HTML in order to facilitate 2D drawing and animation. The HTML for the canvas element is fairly simple, but actually drawing on the canvas requires JavaScript support. Here again, is our simple red dot example.
 
 ```html
-<canvas
-  id="canvasDemo"
-  width="300"
-  height="200"
-  style="border: 1px solid #000000"
-></canvas>
+<canvas id="canvasDemo" width="300" height="200" style="border: 1px solid #000000"></canvas>
 <script>
   const ctx = document.getElementById('canvasDemo').getContext('2d');
   ctx.beginPath();
@@ -114,6 +98,10 @@ If you would like to see some examples of complex canvas renderings check out th
 
 ## ☑ Assignment
 
-This [CodePen](https://codepen.io/leesjensen/pen/OJEwgBa) demonstrates the different media elements. Fork the pen and experiment.
+This [CodePen](https://codepen.io/leesjensen/pen/OJEwgBa) demonstrates the different media elements. Fork the pen and do the following:
 
-When you are done submit your CodePen URL to the Canvas assignment.
+1. Change the image to something else.
+1. Change the video to something else.
+1. Change the canvas element to display a blue circle.
+
+When you are done save and submit your CodePen URL to the Canvas assignment.

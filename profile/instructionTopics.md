@@ -31,7 +31,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Web servers](webServers/webServers/webServers.md)
 - ☑ [Amazon Web Services - EC2](webServers/amazonWebServicesEc2/amazonWebServicesEc2.md)
 - [Domain names](webServers/domainNames/domainNames.md)
-- ☑ [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
+- [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
 - [Caddy](webServers/caddy/caddy.md)
 - ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
 
@@ -41,7 +41,6 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Structure](html/structure/structure.md)
 - ☑ [Input](html/input/input.md)
 - ☑ [Media](html/media/media.md)
-- ☑ [HTML website](html/website/website.md)
 - [Simon HTML](simon/simonHtml/simonHtml.md)
 - ☑ [Startup HTML](html/startupHtml/startupHtml.md)
 

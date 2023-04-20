@@ -170,7 +170,11 @@ You can save any HTML file to your computer's disk and then open the file using 
 
 ## ☑ Assignment
 
-Create a fork of this [codePen](https://codepen.io/leesjensen/pen/abKYRqN) and experiment.
+Create a fork of this [codePen](https://codepen.io/leesjensen/pen/abKYRqN) and alter it as follows:
+
+1. Add a header element. Add a h2 element that contains your name.
+1. Add an img element to the main element that contains an image on some other website.
+1. Add a footer element. Put a hyperlink in the footer that points to your GitHub repository.
 
 When you are done submit your CodePen URL to the Canvas assignment.
 

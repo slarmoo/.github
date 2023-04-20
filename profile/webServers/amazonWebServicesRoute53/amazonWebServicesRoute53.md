@@ -78,14 +78,12 @@ The additional `NS` and `SOA` type records that were listed for your domain name
 
 The start of authority (`SOA`) record provides contact information about the owner of this domain name.
 
-## ☑ Assignment
+## Lease a domain name
 
 1. Open the AWS browser console and log in.
 1. Use Route 53 to purchase a domain name.
 1. Set up your DNS records using Route 53. Make sure you have a record representing your root domain name, and a wild card subdomain.
 1. Test that you can access your server using your domain name and any subdomain name.
-
-Submit a URL for web server's domain name to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
 

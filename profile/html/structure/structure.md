@@ -68,13 +68,17 @@ There is a distinction between structure elements that are block vs inline. A bl
 ```html
 <div>He said <b>don't</b> cross the beams.</div>
 
-<p>
-  Authors such as <span>ee cummings</span> often used unconventional structure.
-</p>
+<p>Authors such as <span>ee cummings</span> often used unconventional structure.</p>
 ```
 
 ## ☑ Assignment
 
-Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/GRGBqbw) and experiment.
+Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/GRGBqbw) do the following:
 
-When you are done submit your CodePen URL to the Canvas assignment.
+1. Add a third div element to the header. Replace the text for the three div elements with "Home", "Play", and "About".
+2. Change the section `ul` element text to be "apples", "bananas", and "oranges".
+3. Add an image to the `aside` element.
+4. Add your name to the `header` element span.
+5. Add a hyperlink to the `footer` element.
+
+When you are done save your changes and submit your CodePen URL to the Canvas assignment.
