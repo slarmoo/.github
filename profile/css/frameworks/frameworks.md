@@ -91,4 +91,15 @@ This [CodePen](https://codepen.io/leesjensen/pen/JjZavjW) demonstrates the use o
 
 ## ☑ Assignment
 
-Now that you have experience with Bootstrap you can build a simple home page using Bootstrap components. Fork this [CodePen](https://codepen.io/leesjensen/pen/wvXEmVQ) and experiment with it. Remove the components it demonstrates and replace it with some other Bootstrap components. When you are done upload the URL of your CodePen with a description of what you found interesting to the Canvas assignment.
+Now that you have experience with Bootstrap you can build a simple home page using Bootstrap components. Fork this [CodePen](https://codepen.io/leesjensen/pen/wvXEmVQ) and experiment with it.
+
+Complete the following:
+
+1. Remove the block titled Typography
+1. Insert an accordion component
+
+It should look like this when you are done.
+
+![Bootstrap assignment](bootstrapAssignment.png)
+
+Once you are successful upload the URL of your CodePen to the Canvas assignment.
