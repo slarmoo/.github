@@ -1,6 +1,6 @@
 # CSS Flexbox
 
-**Recommend reading**:
+📖 **Deeper dive reading**:
 
 - [MDN Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 - [CSS Tricks Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
@@ -114,6 +114,20 @@ You can experiment with this on [CodePen](https://codepen.io/leesjensen/pen/MWOV
 
 ## ☑ Assignment
 
-Now it is your turn to build a fully responsive application. You can use Grid and/or Flexbox along with media queries to build something that stretches you. After you are done experimenting with the above example, take some time to sketch out your design. Once you are done coding, submit your CodePen URL to the Canvas assignment.
+Now it is your turn to build a fully responsive application. Create a CodePen that has:
+
+1. Fixed header with evenly spaced menu text on the left
+1. A main content body with the text centered
+1. A footer with the text centered
+
+Here is an example of what you are attempting:
+
+![Responsive Assignment](responsiveAssignment.gif)
+
+Once you are done coding, submit your CodePen URL to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+### 🧧 Possible solution (spoilers!)
+
+If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/abamMqL).
