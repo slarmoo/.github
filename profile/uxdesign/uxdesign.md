@@ -426,7 +426,3 @@ Legal walls usually only protect the application vendor and provide little or no
 ![Cookie acceptance wall](designWallsLegal.png)
 
 Another common example of a legal wall is an application that requires the acceptance of terms and conditions before you can use the application. You want to minimize the impact of legal walls as much as possible since they lessen the user's experience and encourages the user to question why a legal consent is required in the first place.
-
-## ☑ Assignment
-
-Keep a look out for web applications that demonstrate good and bad design. When you find one that is particularly interesting, submit the URL of the application, along with a comment about what you found interesting, to the Canvas assignment.
