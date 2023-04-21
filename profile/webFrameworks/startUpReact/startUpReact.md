@@ -44,13 +44,16 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Grading Rubric
 
-- Convert your application to use React
+- (Required) Simon React deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently display on your home page
+- (Required) Startup deployed to your production environment
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable.
+- Application converted to use React
   - 10% Bundled using Babel as generated from using create-react-app
-  - 30% Multiple react components
-  - 20% React router
+  - 30% Multiple functional react components
+  - 30% React router
   - 20% React hooks
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned using React.
 
 ## Go celebrate
 

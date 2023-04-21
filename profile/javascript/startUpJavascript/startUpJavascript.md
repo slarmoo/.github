@@ -58,13 +58,14 @@ Doing this will make this deliverable of your startup available from `https://st
 
 - (Required) Simon JavaScript deployed to your production environment
 - (Required) A link to your GitHub startup repository prominently display on your home page
-- Significant use of JavaScript to create a minimally viable working application.
+- (Required) Startup deployed to your production environment
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable
+- Significant use of JavaScript to create a viable working application
   - 20% JavaScript support for future login.
   - 20% JavaScript support for future database data.
-  - 10% JavaScript support for future WebSocket.
+  - 20% JavaScript support for future WebSocket.
   - 30% JavaScript support for your application's interaction logic.
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned using JavaScript.
 
 ## Go celebrate
 

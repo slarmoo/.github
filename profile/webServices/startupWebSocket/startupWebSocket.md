@@ -45,12 +45,15 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon WebSocket deployed to your production environment
-- 20% - Backend listens for WebSocket connection
-- 20% - Frontend makes WebSocket connection
-- 20% - Data sent over WebSocket connection
-- 20% - WebSocket data displayed in the application interface
+- (Required) A link to your GitHub startup repository prominently display on your home page
+- (Required) Startup deployed to your production environment
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable.
+- WebSocket support for data pushed from the backend
+  - 20% - Backend listens for WebSocket connection
+  - 20% - Frontend makes WebSocket connection
+  - 20% - Data sent over WebSocket connection
+  - 30% - WebSocket data displayed in the application interface
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned.
 
 ## Go celebrate
 

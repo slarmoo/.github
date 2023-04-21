@@ -46,11 +46,14 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon DB deployed to your production environment
-- 20% - MongoDB Atlas database created
-- 30% - Provides backend endpoints for manipulating application data
-- 30% - Stores application data in MongoDB
+- (Required) A link to your GitHub startup repository prominently display on your home page
+- (Required) Startup deployed to your production environment
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable.
+- Application database support
+  - 20% - MongoDB Atlas database created
+  - 40% - Provides backend endpoints for manipulating application data
+  - 30% - Stores application data in MongoDB
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned.
 
 ## Go celebrate
 

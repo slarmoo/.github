@@ -46,12 +46,15 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon Login deployed to your production environment
-- 20% - Supports new user registration
-- 20% - Supports existing user authentication
-- 20% - Stores and retrieves credentials in MongoDB
-- 20% - Restricts application functionality based upon authentication
+- (Required) A link to your GitHub startup repository prominently display on your home page
+- (Required) Startup deployed to your production environment
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable.
+- Application authentication and authorization
+  - 25% - Supports new user registration
+  - 25% - Supports existing user authentication
+  - 20% - Stores and retrieves credentials in MongoDB
+  - 20% - Restricts application functionality based upon authentication
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned.
 
 ## Go celebrate
 

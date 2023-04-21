@@ -45,13 +45,16 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon Service deployed to your production environment
-- 30% - Create an HTTP service using Node.js and Express
-- 10% - Frontend hosted using express static middleware
-- 10% - Your frontend calls third party service endpoints
-- 20% - Your backend provides service endpoints
-- 10% - Your frontend calls your backend endpoints
+- (Required) A link to your GitHub startup repository prominently display on your home page
+- (Required) Startup deployed to your production environment
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable.
+- Backend web service support and interaction
+  - 30% - Create an HTTP service using Node.js and Express
+  - 10% - Frontend served up using express static middleware
+  - 10% - Your frontend calls third party service endpoints
+  - 20% - Your backend provides service endpoints
+  - 20% - Your frontend calls your service endpoints
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned.
 
 ## Go celebrate
 

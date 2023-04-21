@@ -40,15 +40,16 @@ Doing this will make this deliverable of your startup available from `https://st
 
 - (Required) Simon CSS deployed to your production environment
 - (Required) A link to your GitHub startup repository prominently display on your home page
+- (Required) Startup deployed to your production environment
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable.
 - Properly styled CSS
   - 20% Header, footer, and main content body
   - 20% Navigation elements
   - 10% Responsive to window resizing
-  - 10% Application elements
+  - 20% Application elements
   - 10% Application text content
   - 10% Application images
 - 10% - Multiple Git commits with meaningful comments.
-- 10% - Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. Also add notes in your notes.md file describing what you have learned using CSS.
 
 ## Go celebrate
 
