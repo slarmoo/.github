@@ -296,12 +296,10 @@ beds: 1
 
 First, set up your MongoDB Atlas database service. Then use the instructions aboveRun the example program for testing that you have things set up correctly.
 
-When you are done submit the connection string for your Atlas database cluster to the Canvas assignment.
+When you are done submit the hostname for your Atlas database cluster to the Canvas assignment.
 
-Here is an example connection string:
+Here is an example hostname:
 
 ```
-mongodb+srv://<user>:<password>@cs260.xiu1cqz.mongodb.net/
+cs260.xiu1cqz.mongodb.net
 ```
-
-⚠ Do not include the user or password for your cluster in the connection string. (Unless you want some extra special data added to your applications 😉.)
