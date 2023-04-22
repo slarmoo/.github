@@ -112,6 +112,10 @@ Promises are the standard way to do asynchronous processing in JavaScript, but t
 
 ## ☑ Assignment
 
-This [CodePen](https://codepen.io/leesjensen/pen/RwJJKwj) uses promises to order pizzas. Create a fork of the pen and take some time to experiment with it. Then create your own example of using promises.
+This [CodePen](https://codepen.io/leesjensen/pen/RwJJKwj) uses promises to order pizzas. Create a fork of the pen and take some time to experiment with it. Modify the CodePen to include a new function that makes the pizza and include it in the promise chain.
 
 When you are done submit your CodePen URL to the Canvas assignment.
+
+### 🧧 Possible solution
+
+If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/vYVgpyL).
