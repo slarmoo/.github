@@ -211,9 +211,3 @@ while (true) {
 }
 // OUTPUT: 0 1
 ```
-
-## ☑ Assignment
-
-Create a CodePen that uses conditional and loop statements to log all the odd numbers between 1 and 10 to the console.
-
-When you are done submit your CodePen URL to the Canvas assignment.

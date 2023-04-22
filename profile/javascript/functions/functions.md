@@ -144,9 +144,3 @@ labeler(5);
 labeler('fish');
 // OUTPUT: string=fish
 ```
-
-## ☑ Assignment
-
-Create a CodePen that uses all of the concepts related to functions. This includes writing standard, inner, and anonymous functions, as well as passing parameters and returning values.
-
-When you are done submit your CodePen URL to the Canvas assignment.

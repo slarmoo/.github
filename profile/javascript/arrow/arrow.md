@@ -77,9 +77,3 @@ console.log(a, b);
 ```
 
 Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page, because it can remember the values of variables when the function was created instead of what they are when they are executed.
-
-## ☑ Assignment
-
-Create a CodePen that uses the arrow function.
-
-When you are done submit your CodePen URL to the Canvas assignment.

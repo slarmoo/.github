@@ -49,6 +49,16 @@ console.log(a.length);
 
 ## ☑ Assignment
 
-Create a CodePen that uses arrays.
+Create a CodePen that defines a function named `testAll` that takes two parameters. The first parameter is an input array. The second parameter is a tester function that checks all the values of the input array. If the tester function returns true for each value in the input array, then `testAll` returns true.
 
-When you are done submit your CodePen URL to the Canvas assignment.
+Call `testAll` with an array of strings as the first parameter and an arrow function that returns true if the input has a length greater than 3.
+
+Output the result of the call to `testAll` with the `console.log` function.
+
+Once you are done coding, submit your CodePen URL to the Canvas assignment.
+
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+### 🧧 Possible solution
+
+If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/LYgxzKd).
