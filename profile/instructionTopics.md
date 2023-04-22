@@ -101,7 +101,7 @@ It is expected that you will start at the top of the list and work your way down
 - [SOP and CORS](webServices/cors/cors.md)
 - ☑ [Fetch](webServices/fetch/fetch.md)
 - [Service design](webServices/design/design.md)
-- ☑ [Node.js](webServices/node/node.md)
+- [Node.js](webServices/node/node.md)
 - ☑ [Express](webServices/express/express.md)
 - [Debugging Node.js](webServices/debuggingNode/debuggingNode.md)
 - [Service daemons - PM2](webServices/pm2/pm2.md)

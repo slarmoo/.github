@@ -286,4 +286,4 @@ Create a web service with Express using the following steps.
 
    ![HTTP request](httpRequestSequenceDiagram.jpg)
 
-When you are done write a description of something you found interesting to the Canvas assignment.
+When you are done executing the above commands copy the output from the console window and paste it into the Canvas assignment.
