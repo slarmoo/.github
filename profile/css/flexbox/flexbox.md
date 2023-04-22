@@ -128,6 +128,6 @@ Once you are done coding, submit your CodePen URL to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
 
-### 🧧 Possible solution (spoilers!)
+### 🧧 Possible solution
 
 If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/abamMqL).

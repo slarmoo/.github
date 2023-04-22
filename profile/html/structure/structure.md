@@ -75,10 +75,15 @@ There is a distinction between structure elements that are block vs inline. A bl
 
 Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/GRGBqbw) do the following:
 
-1. Add a third div element to the header. Replace the text for the three div elements with "Home", "Play", and "About".
-2. Change the section `ul` element text to be "apples", "bananas", and "oranges".
-3. Add an image to the `aside` element.
-4. Add your name to the `header` element span.
-5. Add a hyperlink to the `footer` element.
+1. Replace the navigation div elements with anchor elements that have hyperlinks to BYU and FamilySearch.
+1. Change the section `ul` element text to be "apples", "bananas", and "oranges".
+1. Add an img element to the `aside` element. Use the URL of an image on some other website. Use the width attribute to size it properly.
+1. Add another row to the table with the text HTML, CSS, and JavaScript.
+1. Add your name in a h1 element to the `header` element.
+1. Add a hyperlink to the `footer` element to your GitHub repository.
 
 When you are done save your changes and submit your CodePen URL to the Canvas assignment.
+
+![HTML structure assignment](htmlStructureAssignment.png)
+
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.

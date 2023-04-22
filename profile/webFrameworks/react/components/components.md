@@ -129,7 +129,7 @@ Try the following:
 
 When you are done submit your CodePen URL to the Canvas assignment.
 
-### 🧧 Possible solution (spoilers!)
+### 🧧 Possible solution
 
 If you get stuck here is a possible solution.
 

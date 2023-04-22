@@ -37,7 +37,7 @@ It is expected that you will start at the top of the list and work your way down
 
 ## HTML
 
-- ☑ [HTML introduction](html/introduction/introduction.md)
+- [HTML introduction](html/introduction/introduction.md)
 - ☑ [Structure](html/structure/structure.md)
 - ☑ [Input](html/input/input.md)
 - ☑ [Media](html/media/media.md)

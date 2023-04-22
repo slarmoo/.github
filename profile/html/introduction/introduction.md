@@ -167,15 +167,3 @@ By default a web server will display the HTML file named `index.html` when a web
 You can save any HTML file to your computer's disk and then open the file using your browser. You can also open the HTML file in VS Code and use the Live Server extension to display the HTML. Another way to easily play with HTML is to use a sandbox like [CodePen](https://codepen.io). However, when you use CodePen it is not necessary to supply the HTML DocType header or the root `html` element since CodePen already assumes you are providing HTML. Here is our example HTML document rendered in CodePen.
 
 ![CodePen HTML introduction](htmlIntroductionCodePen.png)
-
-## ☑ Assignment
-
-Create a fork of this [codePen](https://codepen.io/leesjensen/pen/abKYRqN) and alter it as follows:
-
-1. Add a header element. Add a h2 element that contains your name.
-1. Add an img element to the main element that contains an image on some other website.
-1. Add a footer element. Put a hyperlink in the footer that points to your GitHub repository.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.

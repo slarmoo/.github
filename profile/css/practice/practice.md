@@ -4,18 +4,17 @@ Now that you know how to create CSS rules using selectors to apply declarations 
 
 ## ☑ Assignment
 
-Create a CodePen that uses multiple CSS rules to style an HTML page
+Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/ExdZwgK) and use CSS to style it so that it looks like the following.
 
-Make sure your CodePen includes:
-
-1. Multiple rule sets
-1. Selectors by ID, class, and element
-1. Declarations for color, font, and positioning
-1. Animation
+![CSS practice](cssPracticeAssignment.gif)
 
 When you are done upload the URL of your CodePen to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+### 🧧 Possible solution
+
+If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/VwEPMxQ).
 
 ## Advanced examples
 
