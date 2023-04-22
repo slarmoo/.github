@@ -127,8 +127,24 @@ You can also add event listeners directly in the HTML. For example, here is a `o
 
 ## ☑ Assignment
 
-This [CodePen](https://codepen.io/leesjensen/pen/RwJJZBb) dynamically manipulates the DOM using JavaScript. Create a fork of the pen and take some time to experiment with it. Then make your own codePen that manipulates the DOM.
+This [CodePen](https://codepen.io/leesjensen/pen/RwJJZBb) dynamically manipulates the DOM using JavaScript. Create a fork of the pen and take some time to experiment with it. Then complete the following:
+
+1. Add a new table that represents the seven peaks of Utah County.
+
+   - name: "Timpanogos", height: 11750, quality: 4.8
+   - name: "Santaquin", height: 10687, quality: 3.8
+   - name: "Lone Peak", height: 11253, quality: 5
+   - name: "Provo Peak", height: 11068, quality: 4.1
+   - name: "Cascade", height: 10908, quality: 3.2
+   - name: "Nebo", height: 11928, quality: 4.8
+   - name: "Spanish Fork", height: 10192, quality: 3.4
+
+1. Sort the table when a header is clicked on
 
 When you are done submit your CodePen URL to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+### 🧧 Possible solution
+
+If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/yLRgpej).
