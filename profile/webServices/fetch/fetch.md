@@ -53,11 +53,11 @@ Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/ExRoqPz) and e
 
 Replace the quotable service call with a different one. Here are some suggestions.
 
-- **Quote** - https://api.quotable.io/random
 - **Random user** - https://randomuser.me/api/
 - **Jokes** - https://api.chucknorris.io/jokes/random
 - **GitHub user** - https://api.github.com/users/octocat
 - **Photos** - https://picsum.photos/id/0/info
+- **Quote** - https://api.quotable.io/random
 
 When you are done submit your CodePen URL to the Canvas assignment.
 

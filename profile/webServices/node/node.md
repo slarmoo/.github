@@ -63,7 +63,7 @@ You can execute a line of JavaScript with Node.js from your console with the `-e
 2
 ```
 
-However, to do real work you need to execute an entire project composed of dozens or even hundreds of JavaScript files. You do this by creating a single starting JavaScript file, named something like `main.js`, that references the code found in the rest your project. You then execute your code by running `node` with main.js as a parameter. For example, with the following JavaScript saved to a file named `main.js`
+However, to do real work you need to execute an entire project composed of dozens or even hundreds of JavaScript files. You do this by creating a single starting JavaScript file, named something like `index.js`, that references the code found in the rest your project. You then execute your code by running `node` with index.js as a parameter. For example, with the following JavaScript saved to a file named `index.js`
 
 ```js
 function countdown() {
@@ -79,7 +79,7 @@ countdown();
 We can execute the JavaScript by passed the file to node, and receive the following result.
 
 ```sh
-➜  node main.js
+➜  node index.js
 Counting ... 1
 Counting ... 2
 Counting ... 3
@@ -136,7 +136,7 @@ giveMeAJoke.getRandomDadJoke((joke) => {
 If we run this code using node we get the following result.
 
 ```sh
-➜  node main.js
+➜  node index.js
 What do you call a fish with no eyes? A fsh.
 ```
 
@@ -147,30 +147,27 @@ This may seem like a lot of work but after you do it a few times it will begin t
 1. Make sure `.gitignore` file contains `node-modules`
 1. Install any desired packages with `npm install <package name here>`
 1. Add `require('<package name here>')` to your JavaScript code
-1. Run your code with `node main.js`
+1. Run your code with `node index.js`
 
 ## Creating a web service
 
 With JavaScript we can write code that listens on a server port (e.g. 8080), receives HTTP requests, processes them, and then responds. We can use this to create a simple web service that we then execute using Node.js.
 
-The following example first initializes the use of NPM and installs the package `http`. The http package contains the functionality for listening on server ports and manipulating HTTP requests.
+First create your project.
 
 ```sh
 ➜ mkdir webservicetest
 ➜ cd webservicetest
 ➜ npm init -y
-➜ npm install http
 ```
 
-Now we can create our HTTP server using the `http.createServer` function and provide it with a callback function that takes a request (`req`) and response (`res`) object. That function is called whenever the server receives an HTTP request. In our example, the callback always returns the same HTML snippet, with a status code of 200, and a Content-Type header, no matter what request is made. Basically this is just a simple dynamically generated HTML page. A real web service would examine the HTTP path and return meaningful content based upon the purpose of the endpoint.
-
-The `server.listen` call starts listening on port 8080 and blocks until the program is terminated.
+Now, open VS Code and create a file named `index.js`. Paste the following code into the file and save.
 
 ```js
 const http = require('http');
 const server = http.createServer(function (req, res) {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello Node.js!</h1>');
+  res.write(`<h1>Hello Node.js! [${req.method}] ${req.url}</h1>`);
   res.end();
 });
 
@@ -179,10 +176,14 @@ server.listen(8080, () => {
 });
 ```
 
-We execute the program by passing our JavaScript to Node. If the service starts up correctly then it should look like the following.
+This code uses the built in `http` package to create our HTTP server using the `http.createServer` function and provide it with a callback function that takes a request (`req`) and response (`res`) object. That function is called whenever the server receives an HTTP request. In our example, the callback always returns the same HTML snippet, with a status code of 200, and a Content-Type header, no matter what request is made. Basically this is just a simple dynamically generated HTML page. A real web service would examine the HTTP path and return meaningful content based upon the purpose of the endpoint.
+
+The `server.listen` call starts listening on port 8080 and blocks until the program is terminated.
+
+We execute the program by going back to our console window and running Node.js to execute our index.js file. If the service starts up correctly then it should look like the following.
 
 ```sh
-➜ node main.js
+➜ node index.js
 Web service listening on port 8080
 ```
 
@@ -190,24 +191,12 @@ You can now open you browser and point it to `localhost:8080` and view the resul
 
 ![Node HTTP](webServicesNodeHttp.jpg)
 
-You can kill the process by pressing `CTRL-C` in the console.
+Use different URL paths in the browser and note that it will echo the HTTP method and path back in the document. You can kill the process by pressing `CTRL-C` in the console.
+
+Note that you can also start up Node and execute the index.js code directly in VS Code. To do this open index.js in VS Code and press the 'F5' key. This should ask you what program you want to run. Select `node.js`. This starts up Node.js with the index.js file, but also attaches a debugger so that you can set breakpoints in the code and step through each line of code.
+
+⚠ Make sure you complete the above steps. For the rest of the course you will be executing your code using Node.js to run your backend code and serve up your frontend code to the browser. This means you will no longer be using the `VS Code Live Server extension` to serve you frontend code in the browser.
 
 ## Deno and Bun
 
 You should be aware that Ryan has created a successor to Node.js called [`Deno`](https://deno.land/). This version is more compliant with advances in ECMAScript and has significant performance enhancements. There are also competitor server JavaScript applications. One of the more interesting rising stars is called [`Bun`](https://bun.sh/). If you have the time you should learn about them.
-
-# ☑ Assignment
-
-Install Node.js in your development environment and run the following console commands to make sure it is running correctly.
-
-```sh
-➜ node -v
-➜ npm -g list
-➜ nvm ls
-```
-
-Then create, and run, a simple web service using the instructions given above. Change the HTML output to something that reflects your personality.
-
-When you are done copy your code to CodePen submit the CodePen URL to the Canvas assignment.
-
-Note that your Node.js code will not work in CodePen, but by saving it there, you will have a persistent copy of it.
