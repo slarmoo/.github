@@ -69,11 +69,3 @@ let a = 22;
 console.log(a);
 // OUTPUT: 1
 ```
-
-## ☑ Assignment
-
-Create a CodePen that uses both array and object destructuring.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.

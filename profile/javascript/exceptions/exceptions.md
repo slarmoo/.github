@@ -58,9 +58,3 @@ function getScores() {
   }
 }
 ```
-
-## ☑ Assignment
-
-Create a CodePen that uses exception handling.
-
-When you are done submit your CodePen URL to the Canvas assignment.

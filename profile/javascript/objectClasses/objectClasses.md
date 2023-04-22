@@ -163,8 +163,63 @@ console.log(e.print());
 
 ## ☑ Assignment
 
-Create a CodePen that uses objects and classes.
+Create a CodePen that starts with the following code
 
-When you are done submit your CodePen URL to the Canvas assignment.
+```js
+class Phone {
+  // Implement the constructor
+
+  // Implement the Connected constant getter
+
+  connect(...numberParts) {
+    // Return an object if the number matches the regEx
+    // Otherwise thrown an exception
+  }
+}
+
+const phone = new Phone(/\d{3}-\d{3}-\d{4}/);
+
+const calls = [
+  { name: 'Li', number: ['333', '333', '3333'] },
+  { name: 'Juan', number: ['222', '222', '2222'] },
+  { name: 'Meg', number: ['8E26F', '811F'] },
+];
+
+for (const call of calls) {
+  try {
+    const { result } = phone.connect(...call.number);
+    if (result === Phone.Connected) {
+      console.log(`called ${call.name}`);
+    }
+  } catch (ex) {
+    console.log(`${ex.message} for ${call.name}`);
+  } finally {
+    console.log('done');
+  }
+}
+```
+
+and implements the following functionality of the Phone class:
+
+1. Has a constructor that accepts a regular expression as a parameter. The regular expression is stored on the object for future reference.
+1. Has a `Connected` getter that defines a constant for the class that is set to a value of 'connected'.
+1. Has a `connect` method that takes a variable number of values. The method joins the values together into a string that is separated by a '-' character and attempts to match it with the regular expression given in the constructor. If it fails it throws an exception. Otherwise it passes back an object that has an `id` and `result` property, where the result is set to Phone.Connected.
+
+Once you have implemented the Phone class. Examine the CodePen console output. It should look like this:
+
+```sh
+called Li
+done
+called Juan
+done
+invalid number for Meg
+done
+```
+
+When you get this result, submit your CodePen URL to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+### 🧧 Possible solution
+
+If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/yLRgPNa).

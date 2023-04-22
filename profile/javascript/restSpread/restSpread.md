@@ -55,9 +55,3 @@ const p = person(...['Ryan', 'Dahl']);
 console.log(p);
 // OUTPUT: {first: 'Ryan', last: 'Dahl'}
 ```
-
-## ☑ Assignment
-
-Create a CodePen that uses both rest and spread.
-
-When you are done submit your CodePen URL to the Canvas assignment.

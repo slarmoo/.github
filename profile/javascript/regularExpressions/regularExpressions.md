@@ -26,9 +26,3 @@ text.replace(petRegex, 'animal');
 petRegex.test(text);
 // RETURNS: true
 ```
-
-## ☑ Assignment
-
-Create a CodePen that uses regular expressions.
-
-When you are done submit your CodePen URL to the Canvas assignment.
