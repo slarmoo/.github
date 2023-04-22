@@ -114,9 +114,9 @@ You can experiment with this on [CodePen](https://codepen.io/leesjensen/pen/MWOV
 
 ## ☑ Assignment
 
-Now it is your turn to build a fully responsive application. Create a CodePen that has:
+Now it is your turn to build a fully responsive application. Create a CodePen that has a:
 
-1. Fixed header with evenly spaced menu text on the left
+1. A fixed header with evenly spaced menu text on the left
 1. A main content body with the text centered
 1. A footer with the text centered
 
