@@ -55,6 +55,16 @@
         color: #f3cf8c;
       }
 
+      a {
+        padding: 0 1em 0 0;
+        text-decoration: none;
+        color: #557aa0;
+      }
+
+      .small a {
+        color: #f3cf8c;
+      }
+
       @keyframes fly-in {
         0% {
           transform: translateX(-200%);
@@ -84,14 +94,20 @@
   <body>
     <main>
       <div class="large">
-        <p>Welcome to your</p>
+        <p>Welcome to</p>
         <div class="course">
           <div class="courseName">Web<br />Programming</div>
           <div class="courseNum">260</div>
         </div>
-        <p id="serviceName">website</p>
+        <p id="serviceName">
+          <a href="https://github.com/webprogramming260/.github/blob/main/profile/instructionTopics.md">Course</a>
+          <a href="https://simon.cs260.click">Simon</a>
+          <a href="https://startup.cs260.click">Startup</a>
+        </p>
       </div>
-      <div class="small">260</div>
+      <div class="small">
+        <a href="https://github.com/webprogramming260/.github/blob/main/profile/instructionTopics.md">260</a>
+      </div>
     </main>
   </body>
 </html>
