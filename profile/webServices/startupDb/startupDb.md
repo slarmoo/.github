@@ -46,9 +46,8 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon DB deployed to your production environment
-- (Required) A link to your GitHub startup repository prominently display on your home page
-- (Required) Startup deployed to your production environment
-- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable.
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
 - Application database support
   - 20% - MongoDB Atlas database created
   - 40% - Provides backend endpoints for manipulating application data

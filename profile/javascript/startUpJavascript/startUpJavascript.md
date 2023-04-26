@@ -57,8 +57,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
 
 - (Required) Simon JavaScript deployed to your production environment
-- (Required) A link to your GitHub startup repository prominently display on your home page
-- (Required) Startup deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
 - (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable
 - Significant use of JavaScript to create a viable working application
   - 20% JavaScript support for future login.
