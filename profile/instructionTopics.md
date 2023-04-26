@@ -135,7 +135,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [React CLI](webFrameworks/react/cli/cli.md)
 - ☑ [Router](webFrameworks/react/router/router.md)
 - [Simon React](simon/simonReact/simonReact.md)
-- ☑ [Startup React](webFrameworks/startUpReact/startUpReact.md)
+- ☑ [Startup React](webFrameworks/startupReact/startUpReact.md)
 
 ## Assorted topics
 
