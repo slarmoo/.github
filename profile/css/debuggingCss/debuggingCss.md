@@ -64,3 +64,8 @@ Now, notice that if you resize the browser so that it is wider, the centered tex
 See if you can figure out what the problem is, and then correct the CSS so that the text always appears centered in the box.
 
 Experiment with debugging and altering the CSS. Note that you can open up any website and use the debugger to see how they implemented their design and even do temporary alterations to the CSS properties to see how that impacts the display. Debugging other people's code is a great way to learn how to improve your CSS skills.
+
+
+### 🧧 Possible solution
+
+If you get stuck consider the `text-align` declaration.
