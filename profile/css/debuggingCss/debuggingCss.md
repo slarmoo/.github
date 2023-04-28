@@ -68,4 +68,4 @@ Experiment with debugging and altering the CSS. Note that you can open up any we
 
 ### 🧧 Possible solution
 
-If you get stuck consider the `text-align` declaration.
+If you get stuck consider [this](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align).
