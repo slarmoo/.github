@@ -6,4 +6,4 @@ On the last day of class we will celebrate your amazing work as part of a demo d
 
 From the submitted applications we will pick the top 10. If your application is selected, and you present it on Demo Day, you will receive an extra 45 points for your startup application. The audience will vote on their favorites and the top 3 will receive the coveted Ghirardelli prize and a letter of recommendation from the Instructor.
 
-![Ghirardelli prize](../../essentials/startUp/ghirardelli.png)
+![Ghirardelli prize](../../essentials/startup/ghirardelli.png)

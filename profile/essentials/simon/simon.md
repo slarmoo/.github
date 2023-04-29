@@ -16,7 +16,7 @@ You should plan on spending 1 to 3 hours reviewing the Simon code. As you review
 
 You can play the example production release [here](https://simon.cs260.click).
 
-![Simon](../startUp/simonPlay.gif)
+![Simon](../startup/simonPlay.gif)
 
 The following are the different technologies we are going to demonstrate with our Simon iterations.
 
