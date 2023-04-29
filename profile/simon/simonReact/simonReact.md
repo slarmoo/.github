@@ -370,6 +370,8 @@ Get familiar with what the example code teaches.
 
 - Deploy to your production environment using a copy of the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
 
+  ⚠ **NOTE** - The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `react-script` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment and served up using the Express static files middleware.
+
   ```sh
   ./deployReact.sh -k <yourpemkey> -h <yourdomain> -s simon
   ```
@@ -379,8 +381,6 @@ Get familiar with what the example code teaches.
   ```sh
   ./deployReact.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
-
-  ⚠ **NOTE** - The deployment script for this project is different than pervious deployment scripts since it includes the bundling of your React application.
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
