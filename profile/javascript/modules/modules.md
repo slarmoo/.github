@@ -1,4 +1,4 @@
-## JavaScript modules
+# JavaScript modules
 
 📖 **Deeper dive reading**: [MDN JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 
@@ -23,7 +23,7 @@ You can import the module's exported function into another module using the `imp
 **main.js**
 
 ```js
-import { alertDisplay } from './alert.js';
+import {alertDisplay} from './alert.js';
 
 alertDisplay('called from main.js');
 ```
@@ -38,7 +38,7 @@ From your HTML, you can differentiate that you are using a ES module by includin
 <html>
   <body>
     <script type="module">
-      import { alertDisplay } from './alert.js';
+      import {alertDisplay} from './alert.js';
       window.btnClick = alertDisplay;
     </script>
     <button onclick="btnClick('called from index.html')">Press me</button>
