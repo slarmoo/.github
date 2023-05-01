@@ -1,6 +1,6 @@
 # JavaScript introduction
 
-<img src="esLogo.png" width=70/>
+![ES Logo](esLogo.png)
 
 📖 **Deeper dive reading**:
 

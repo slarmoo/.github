@@ -14,13 +14,13 @@ Once you have defined your primary objects you can create sequence diagrams that
 
 Web services are usually provided over HTTP, and so HTTP greatly influences the design of the service. The HTTP verbs such as GET, POST, PUT, and DELETE often mirror the designed actions of a web service. For example, a web service for managing comments might list the comments (GET), create a comment (POST), update a comment (PUT), and delete a comment (DELETE). Likewise, the MIME content types defined by IANA are a natural fit for defining the types of content that you want to provide (e.g. HTML, PNG, MP3, and MP4). The goal is to leverage those technologies as much as possible so that you don't have to recreate the functionality they provide and instead take advantage of the significant networking infrastructure built up around HTTP. This includes caching servers that increase your performance, edge servers that bring your content closer, and replication servers that provide redundant copies of your content and make your application more resilient to network failures.
 
-<img src='webServicesHTTPServices.jpg' width=400 />
+![HTTP](webServicesHTTPServices.jpg)
 
 ## Endpoints
 
 A web service is usually divided up into multiple service endpoints. Each endpoint provides a single functional purpose. All of the criteria that you would apply to creating well designed code functions also applies when exposing service endpoints.
 
-<img src='webServicesHTTPEndpoints.jpg' width=400 />
+![HTTP](webServicesHTTPEndpoints.jpg)
 
 ⚠ Note that service endpoints are often called an Application Programming Interface (API). This is a throwback to old desktop applications and the programming interfaces that they exposed. Sometimes the term API refers to the entire collection of endpoints, and sometimes it is used to refer to a single endpoint.
 
@@ -120,7 +120,7 @@ Here is an example GraphQL query.
 ```graphql
 query {
   getOrder(id: "2197") {
-    orders(filter: { date: { allofterms: "20220505" } }) {
+    orders(filter: {date: {allofterms: "20220505"}}) {
       store
       description
       orderedBy

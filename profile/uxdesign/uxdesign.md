@@ -97,7 +97,7 @@ You want to partition a large application into functional areas and place links 
 
 One of the first things you should consider as you design your application is the color scheme that you will employ. This usually involves picking a a primary, secondary, and focus color.
 
-<img src="designColorPalette.jpg" width="400" />
+![Color Palette](designColorPalette.jpg)
 
 > Source: paletton.com
 
@@ -105,13 +105,13 @@ There are lots of tools out there that help you create a color scheme. These wil
 
 Some free tools you should explore include [Paletton](https://paletton.com/) and [Adobe](https://color.adobe.com/create/color-wheel).
 
-<img src="designColorTools.jpg" width="400" />
+![Color Tools](designColorTools.jpg)
 
 > Source: paletton.com
 
 With your core colors selected, you can use different shades of the colors to reduce the starkness of the limited number of colors without turning your application into a rainbow.
 
-<img src="designColorApplication.jpg" width="400" />
+![Color Application](designColorApplication.jpg)
 
 Just make sure you stick with your color scheme and even consider it when selecting font colors and images.
 

@@ -1,6 +1,6 @@
 # Node.js
 
-<img src='NodeIcon.png' width='75px' />
+![Node Icon](NodeIcon.png)
 
 In 2009 Ryan Dahl created `Node.js`. It was the first successful application for deploying JavaScript outside of a browser. This changed the JavaScript mindset from a browser technology to one that could run on the server as well. This means that JavaScript can power your entire technology stack. One language to rule them all. Node.js is often just referred to as Node, and is currently maintained by the [Open.js Foundation](https://openjsf.org/).
 
@@ -166,7 +166,7 @@ Now, open VS Code and create a file named `index.js`. Paste the following code i
 ```js
 const http = require('http');
 const server = http.createServer(function (req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.writeHead(200, {'Content-Type': 'text/html'});
   res.write(`<h1>Hello Node.js! [${req.method}] ${req.url}</h1>`);
   res.end();
 });

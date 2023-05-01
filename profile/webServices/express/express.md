@@ -1,7 +1,5 @@
 # Express
 
-<img src="expressIcon.png" width="75px" />
-
 📖 **Deeper dive reading**: [MDN Express/Node introduction](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction)
 
 In the previous instruction you saw how to use Node.js to create a simple web server. This works great for little projects where you are trying to quickly serve up some web content, but to build a production ready application you need a framework with a bit more functionality for easily implementing a full web service. This is where the Node package `Express` come in. Express provides support for:
@@ -41,7 +39,7 @@ HTTP endpoints are implemented in Express by defining routes that call a functio
 
 ```js
 app.get('/store/provo', (req, res, next) => {
-  res.send({ name: 'provo' });
+  res.send({name: 'provo'});
 });
 ```
 
@@ -55,7 +53,7 @@ In our example above we hard coded the store name to be `provo`. A real store en
 
 ```js
 app.get('/store/:storeName', (req, res, next) => {
-  res.send({ name: req.params.storeName });
+  res.send({name: req.params.storeName});
 });
 ```
 
@@ -72,10 +70,10 @@ The route path can also include a limited wildcard syntax or even full regular e
 
 ```js
 // Wildcard - matches /store/x and /star/y
-app.put('/st*/:storeName', (req, res) => res.send({ update: req.params.storeName }));
+app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
 
 // Pure regular expression
-app.delete(/\/store\/(.+)/, (req, res) => res.send({ delete: req.params[0] }));
+app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
 ```
 
 Notice that in these examples the `next` parameter was omitted. Since we are not calling `next` we do not need to include it as a parameter. However, if you do not call next then no following middleware functions will be invoked for the request.
@@ -136,11 +134,11 @@ app.use(cookieParser());
 
 app.post('/cookie/:name/:value', (req, res, next) => {
   res.cookie(req.params.name, req.params.value);
-  res.send({ cookie: `${req.params.name}:${req.params.value}` });
+  res.send({cookie: `${req.params.name}:${req.params.value}`});
 });
 
 app.get('/cookie', (req, res, next) => {
-  res.send({ cookie: req.cookies });
+  res.send({cookie: req.cookies});
 });
 ```
 
@@ -158,7 +156,7 @@ If you wanted to add a simple error handler for anything that might go wrong whi
 
 ```js
 app.use(function (err, req, res, next) {
-  res.status(500).send({ type: err.name, message: err.message });
+  res.status(500).send({type: err.name, message: err.message});
 });
 ```
 
@@ -191,11 +189,11 @@ app.use(cookieParser());
 
 app.post('/cookie/:name/:value', (req, res, next) => {
   res.cookie(req.params.name, req.params.value);
-  res.send({ cookie: `${req.params.name}:${req.params.value}` });
+  res.send({cookie: `${req.params.name}:${req.params.value}`});
 });
 
 app.get('/cookie', (req, res, next) => {
-  res.send({ cookie: req.cookies });
+  res.send({cookie: req.cookies});
 });
 
 // Creating your own middleware - logging
@@ -209,12 +207,12 @@ app.use(express.static('public'));
 
 // Routing middleware
 app.get('/store/:storeName', (req, res) => {
-  res.send({ name: req.params.storeName });
+  res.send({name: req.params.storeName});
 });
 
-app.put('/st*/:storeName', (req, res) => res.send({ update: req.params.storeName }));
+app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
 
-app.delete(/\/store\/(.+)/, (req, res) => res.send({ delete: req.params[0] }));
+app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
 
 // Error middleware
 app.get('/error', (req, res, next) => {
@@ -222,7 +220,7 @@ app.get('/error', (req, res, next) => {
 });
 
 app.use(function (err, req, res, next) {
-  res.status(500).send({ type: err.name, message: err.message });
+  res.status(500).send({type: err.name, message: err.message});
 });
 
 // Listening to a network port

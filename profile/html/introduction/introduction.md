@@ -1,6 +1,6 @@
 # Hypertext Markup Language
 
-<img src="htmlLogo.png" width=70/>
+![HTML Logo](htmlLogo.png)
 
 📖 **Deeper dive reading**:
 
