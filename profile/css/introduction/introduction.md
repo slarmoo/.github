@@ -1,6 +1,6 @@
 # Cascading Style Sheets
 
-<img src="cssLogo.png" width=70/>
+![CSS Logo](cssLogo.png)
 
 📖 **Deeper dive reading**: [MDN CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 

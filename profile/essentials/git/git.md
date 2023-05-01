@@ -1,8 +1,8 @@
 # Git
 
-<img src="essentialsGitIcon.png" width="75" />
+![Git Icon](essentialsGitIcon.png)
 
-Incredibly [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the creator of Linux, was fed up with the proprietary version control software that he was using to track the code for the Linux kernel and so over a weekend he built Git, the world's most popular version control system.
+[Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the creator of Linux, was fed up with the proprietary version control software that he was using to track the code for the Linux kernel and so over a weekend he built Git, the world's most popular version control system.
 
 ![Linus Torvalds](linusTorvalds.jpg)
 

@@ -10,7 +10,7 @@ Having a basic knowledge of the history of web programming helps you to understa
 
 The essential first step to enabling what we now call web programming was the formation of a global communications network that was reliable and publicly available. This was made possible when the United States Department of Defense created the ARPANET as a means of sharing information between universities doing defense related research.
 
-<img src="arpanet1970s.jpg">
+![Arpanet](arpanet1970s.jpg)
 
 — ARPANET access points in the 1970s (**Source**: _Wikipedia_)
 
@@ -22,7 +22,7 @@ The management of the Internet is controlled by two major organizations. The Int
 
 ## Hypertext Markup Language (HTML)
 
-<img src="timBernersLee.jpg" width=200 />
+![Tim Berners Lee](timBernersLee.jpg)
 
 > “I just had to take the hypertext idea and connect it to the TCP and DNS ideas and—ta-da!—the World Wide Web.”
 >
@@ -30,7 +30,7 @@ The management of the Internet is controlled by two major organizations. The Int
 
 Starting in 1980, Tim Berners-Lee was working at the research laboratory Cern. He was tasked with building a system that would allow researchers to share documents between remote academic institutions. Realizing that the ARPANET provided the necessary connectivity, he defined the protocols for document sharing that formed the underpinning of what would be termed the World Wide Web. Berners-Lee named the document format the HyperText Markup Language ([HTML](https://en.wikipedia.org/wiki/HTML)) based on inspiration from the digital publishing industry's Standard Generalized Markup Language (SGML). One of the key innovations of HTML was the idea that documents could be interconnected with what he termed hyperlinks to allow immediate access to related documents. In 1990 he put all the pieces together and built the world's first web server on his desktop NeXT computer. You can visit a reproduction of the first web site at [info.cern.ch](http://info.cern.ch/).
 
-<img src="firstWebServer.jpg" />
+![First web server](firstWebServer.jpg)
 
 — First web server (**Source**: _Cern_)
 
@@ -62,7 +62,7 @@ Accept: text/html
 
 Cascading Style Sheets ([CSS](https://en.wikipedia.org/wiki/CSS)) was first proposed in 1994 by Håkon Wium Lie, a contemporary of Berners-Lee at CERN, in order to give HTML documents visual styling independent of the content's structure. Before the introduction of CSS, HTML was going down the path of hard coding the visual appearance of the content with HTML elements. This would have resulted in a single visual style for the entire web that was completely defined by the browser vendors.
 
-<img src="hakonLie.jpg" width=200 />
+![Hakon Lie](hakonLie.jpg)
 
 > “If we hadn’t developed CSS, we could have ended up with the web being a giant fax machine”
 >
@@ -85,7 +85,7 @@ The ability of CSS to style a web page has increased significantly from its orig
 
 In 1995 Netscape (the maker of the popular browser Navigator) decided to add the ability to script web pages. The initial implementation was led by Brendan Eich and given the name JavaScript. JavaScript turned the previously static web into an interactive experience where a web page could dynamically change based upon a user's interaction.
 
-<img src="brendanEich.jpg" width=200 />
+![Brendan Eich](brendanEich.jpg)
 
 > “Always bet on JS”
 >

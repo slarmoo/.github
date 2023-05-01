@@ -1,6 +1,6 @@
 # GitHub
 
-<img src="essentialsGitHubLogo.png" width="75px"/>
+![GitHub logo](essentialsGitHubLogo.png)
 
 🔑 **Required reading**:
 

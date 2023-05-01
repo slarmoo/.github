@@ -6,7 +6,7 @@ For your work with this instruction I would highly suggest you use two editors. 
 
 ## Visual Studio Code
 
-<img src="essentialsVscodeIcon.png" width=75 />
+![VS Code icon](essentialsVscodeIcon.png)
 
 **Website**: [VS Code](https://code.visualstudio.com/)
 
