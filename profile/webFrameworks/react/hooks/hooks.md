@@ -2,10 +2,10 @@
 
 📖 **Recommended reading**: [Reactjs.org - Hooks Overview](https://reactjs.org/docs/hooks-overview.html)
 
-React hooks allow React function style components to be able to do everything that a class style component can do and more. Additionally, as new features are added to React they are including them as hooks. This makes function style components the preferred way of doing things in React. You have already see one use of hooks to declare and update state in a function component with the `useState` hook.
+React hooks allow React function style components to be able to do everything that a class style component can do and more. Additionally, as new features are added to React they are including them as hooks. This makes function style components the preferred way of doing things in React. You have already seen one use of hooks to declare and update state in a function component with the `useState` hook.
 
 ```jsx
-function Clicker({ initialCount }) {
+function Clicker({initialCount}) {
   const [count, updateCount] = React.useState(initialCount);
   return <div onClick={() => updateCount(count + 1)}>Click count: {count}</div>;
 }
