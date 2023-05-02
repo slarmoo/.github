@@ -92,9 +92,9 @@ Once it has connected, you are now looking at a console window for the web serve
 ➜  ls -l
 
 total 4
-lrwxrwxrwx 1 ubuntu ubuntu   20 Nov 17 23:03 Caddyfile -> /etc/caddy/Caddyfile
-lrwxrwxrwx 1 ubuntu ubuntu   16 Nov 17 03:42 public_html -> /usr/share/caddy
-drwxrwxr-x 6 ubuntu ubuntu 4096 Nov 30 22:42 services
+lrwxrwxrwx 1 ubuntu ubuntu   20 Apr 13 15:06 Caddyfile -> /etc/caddy/Caddyfile
+lrwxrwxrwx 1 ubuntu ubuntu   16 Apr 13 15:06 public_html -> /usr/share/caddy
+drwxrwxr-x 4 ubuntu ubuntu 4096 Apr 13 16:48 s
 ```
 
 The `Caddyfile` is the configuration file for your web service gateway. The `public_html` directory contains all of the static files that you are serving up directly through Caddy when using it as a web service. We will cover Caddy configuration in a later instruction. The `services` directory is the place where you are going to install all of your web services once you build them.
