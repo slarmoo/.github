@@ -86,7 +86,7 @@ For example,
 
 ⚠ As it connects to the server it might warn you that it hasn't seen this server before. You can confidently say yes since you are sure of the identity of this server.
 
-Once it has connected, you are now looking at a console window for the web server that you just launched and you should be in the ubuntu user's home directory. If you run `ls -l`, you should see the following.
+Once it has connected, you are now looking at a console window for the web server that you just launched and you should be in the ubuntu user's home directory. If you run `ls -l`, you should see something like the following. (Note that the dates might appear different.)
 
 ```sh
 ➜  ls -l
