@@ -8,7 +8,7 @@ Also known as the command line, shell, or terminal, the console window is an ess
 
 There are many console applications that you can chose from. All operating systems come with a default console, but you will probably want to install one in order to get the best experience. Here is an example of [Warp](https://www.warp.dev/) running on a Mac.
 
-<img src="warp.png" >
+![Warp]("warp.png")
 
 ## Make sure you have a console application
 
