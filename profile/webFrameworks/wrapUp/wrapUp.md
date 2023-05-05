@@ -17,3 +17,5 @@ After everything has been graded, you should consider cleaning up your resources
 ## ☑ Assignment - Optional
 
 Please take the time to provide us with honest feedback by responding to the university student ratings survey.
+
+If you complete the student ratings survey you will receive 5 bonus points towards your midterm/final grade. In order to receive the bonus you must release your name as part of the survey so that I can see that you completed the survey. Note that releasing your name does not allow me to associate your responses with your name. It only informs me that you completed the survey. Thanks in advance for helping to make the course better.
