@@ -1,13 +1,18 @@
 cs260.click {
   root * /usr/share/caddy
   file_server
-	@font {
-		path /fonts/*
-	}
-	header @font Content-Type font/woff2
-	header Access-Control-Allow-Origin *
-	header -etag
-	header -server
+  header Access-Control-Allow-Origin *
+  header -etag
+  header -server
+}
+
+learn.cs260.click {
+  root * /usr/share/caddy/instruction
+  file_server
+  header Access-Control-Allow-Origin *
+  header -etag
+  header -server
+  try_files {path} /
 }
 
 simon.cs260.click {
