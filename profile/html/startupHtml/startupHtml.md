@@ -8,16 +8,16 @@ You will want an HTML file for each of the main components of your application. 
 
 You will want a similar layout. Make sure you have a placeholder for all the technologies that you will eventually need to represent in your application. This includes:
 
-- **Application data**: A rendering of application data that you will eventually populate. For Simon, this is the simple SVG graphic buttons.
+- **Application data**: A rendering of application data that you will eventually populate. For Simon, this is the simple SVG graphic buttons, the user name, and a random inspriational quote.
 - **Authentication**: An input for your user to create an account and login. You will want to display the user's name after they login.
 - **Database data**: A rendering of application data that is stored in the database. For Simon, this is the high scores of all players.
-- **WebSocket data**: A rendering of data that is received from your server. This maybe realtime data sent from other user's (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this represents every time another user creates or ends a game.
+- **WebSocket data**: A rendering of data that is received from your server. This may be realtime data sent from other users (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this updates every time another user creates or ends a game.
 
 The following is a possible layout of the main pieces that your application should have. Note that you do not have to have four HTML pages. You should create the number of pages that makes sense for your application. This maybe only one, or it could be many.
 
 ![HTML pages](htmlExamplePages.jpg)
 
-At this point your application will look rather strange because it doesn't have any styling to make it look right. That is fine. You are just focusing on structure and content placeholders in this deliverable.
+At this point, your application will look rather strange because it doesn't have any styling to make it look right. That is fine. You are just focusing on structure and content placeholders in this deliverable.
 
 You must use the same startup GitHub repository that you created for the specification deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
 
