@@ -2,6 +2,8 @@
 
 ![Simon](../simon.png)
 
+🔑 **Required reading**: [Simon HTML](https://www.youtube.com/watch?v=zg7eDNRMnWA)
+
 This deliverable demonstrates the use of basic HTML elements for structure, basic formatting, input, output, links, and drawing.
 
 Because we are not using any CSS for styling we are limited on how visually pleasing our application is. Do not worry about that. At this point we are simply trying to provide structure and content that we will later style and make interactive.
