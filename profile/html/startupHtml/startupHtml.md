@@ -64,7 +64,7 @@ Doing this will make this deliverable of your startup available from `https://st
 - Properly structured HTML
   - 20% HTML pages for each component of your application
   - 10% Links between pages as necessary
-  - 20% Application textual content
+  - 20% Application textual content (including a placeholder for your 3rd party service calls)
   - 10% Application images
   - 10% Login placeholder, including user name display
   - 10% Database data placeholder showing content stored in the database
