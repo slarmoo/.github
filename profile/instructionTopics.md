@@ -159,9 +159,9 @@ It is expected that you will start at the top of the list and work your way down
 
 ## Legend
 
-| Icon | Meaning                                                      |
-| ---- | ------------------------------------------------------------ |
-| ⚠    | Important concepts, or pitfalls, to note                     |
-| ☑    | Assignments that you must submit in Canvas |
-| 🔑   | Required reading                                             |
-| 📖   | Deeper dive reading for when you want to learn more          |
+| Icon | Meaning                                             |
+| ---- | --------------------------------------------------- |
+| ⚠    | Important concepts, or pitfalls, to note            |
+| ☑    | Assignments that you must submit in Canvas          |
+| 🔑   | Required reading                                    |
+| 📖   | Deeper dive reading for when you want to learn more |
