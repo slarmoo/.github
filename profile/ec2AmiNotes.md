@@ -1,3 +1,5 @@
+# Creating a cs260 web server from scratch
+
 First we want to configure AWS and rent the server using AWS EC2. Using the AWS browser console do the following.
 
 - Open the AWS EC2 Browser Console
@@ -84,3 +86,22 @@ At this point you have a fully functioning web server. Now build an AMI.
 - Open the AWS EC2 Browser Console and choose the create AMI option.
 - After the AMI creates, select it and change it to be publicly available.
 - Use a different AWS account and test that you can create and instance from the image.
+
+## Class demos
+
+If you want to install all of the class examples then run the following:
+
+- Run `./deployall.sh` from the webprogramming260 repo. Also deploy websocket-chat.
+- `cd ~/services/simon-html && pm2 start index.js -n simon-html -- 3001 simon-html`
+- `cd ~/services/simon-css && pm2 start index.js -n simon-css -- 3002 simon-css`
+- `cd ~/services/simon-javascript && pm2 start index.js -n simon-javascript -- 3003 simon-javascript`
+- `cd ~/services/simon-db && pm2 start index.js -n simon-db -- 3004 simon-db`
+- `cd ~/services/simon-login && pm2 start index.js -n simon-login -- 3005 simon-login`
+- `cd ~/services/simon-websocket && pm2 start index.js -n simon-websocket -- 3006 simon-websocket`
+- `cd ~/services/simon-react && pm2 start index.js -n simon-react -- 3007 simon-react`
+- `cd ~/services/simon-pwa && pm2 start index.js -n simon-pwa -- 3008 simon-pwa`
+- `cd ~/services/chat && pm2 start index.js -n chat -- 5000 chat`
+- Configure Caddy to run services
+  - edit Caddyfile `sudo vi ~/Caddyfile`
+  - replace the contents of the Caddyfile with `Caddyfile-webserver` found in webprogramming260 repo.
+  - save and restart Caddy `sudo service caddy restart`
