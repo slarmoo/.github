@@ -1,18 +1,22 @@
 <head>
   <style>
-    span {
-      margin: 1em;
+    * {
+      font-family: sans-serif;
     }
-    .c0 {
-      color: green;
+    .seq {
+      color: hsl(216deg 59% 49%);
     }
-    .c1 {
-      color: blue;
+    #output {
+      background: #dbd9e2;
+      padding: 1em 0.5em;
+      margin: 1em 0;
+      min-height: 3em;
     }
   </style>
 </head>
 <body>
   <h1>Debugging</h1>
-  <ol id="out" />
-  <script src="index.js"></script>
+  <input type="text" id="input" placeholder="#" />
+  <button onclick="computeHandler()">Compute</button>
+  <div id="output" />
 </body>

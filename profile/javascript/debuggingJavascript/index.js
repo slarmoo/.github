@@ -1,21 +1,28 @@
-var count1 = 20;
-let count2 = 20;
-
-const outEl = document.querySelector('#out');
-
-append('initial', count1, count2);
-
-for (var count1 = 1; count1 < 3; count1++) {
-  for (let count2 = 1; count2 <= 5; count2++) {
-    append('loop', count1, count2);
-  }
+function computeHandler() {
+  const inputEl = document.querySelector('#in');
+  computeAndDisplay(inputEl.value);
 }
 
-append('final', count1, count2);
+function computeAndDisplay(num) {
+  fib = fibonacci(num);
+  display(num, fib);
+}
 
-function append(note, ...counts) {
-  let r = counts.reduce((p, c, i) => {
-    return p + `<span class='c${i}'>${c}</span>`;
-  });
-  outEl.innerHTML = outEl.innerHTML + `<li><b>${note}</b> ${r}</li>`;
+function fibonacci(num) {
+  let fib = [0];
+  if (num > 0) {
+    fib.push(1);
+    for (let i = 2; i <= num; i++) {
+      const next = fib[fib.length - 1] + fib[fib.length];
+      fib.push(next);
+    }
+  }
+  return fib;
+}
+
+function display(num, fib) {
+  document.querySelector('#output').innerHTML = `
+    <div><b>${num}</b>: ${fib[fib.length - 1]}</div>
+    <li class='seq'>${fib.join(`</li><li class='seq'>`)}</li>
+  `;
 }

@@ -5,11 +5,11 @@
 // 'x'.name = 'rat';
 
 // ---------- start -------------
-function start() {
+function start(fn) {
   console.log(`%c JavaScript Demo`, 'font-size:2em; color: red;');
   debugger;
 
-  let fn = equality;
+  fn = fn || types;
   while (fn) {
     console.clear();
     console.log('%c %s', 'font-size:1.5em; color:red;', fn.name);
@@ -18,6 +18,38 @@ function start() {
   console.clear();
   console.log('%c JavaScript Demo', 'font-size:1.5em; color:green;');
   debugger;
+}
+
+// ---------- types -------------
+function types() {
+  debugger;
+
+  // Weak typing allows for reassignment
+  let x = 'fish';
+  console.log('type changed: ', typeof x, x);
+  x = 1;
+  console.log('type changed: ', typeof x, x);
+  x = [1, 2];
+  console.log('type changed: ', typeof x, x);
+  x = {};
+  console.log('type changed: ', typeof x, x);
+  x = { v: 2, z: 'fish' };
+  console.log('type changed: ', typeof x, x);
+  x = null;
+  console.log('type changed: ', typeof x, x);
+  x = undefined;
+  console.log('type changed: ', typeof x, x);
+
+  // Automatic conversions
+  console.log('rat' + [' fink']);
+  console.log(1 + 'rat');
+  console.log('rat' + 1);
+  console.log(1 * 'rat');
+  console.log([2] + [3]);
+  console.log(true + null);
+  console.log(true + undefined);
+
+  return equality;
 }
 
 // ---------- equality -------------
@@ -44,38 +76,6 @@ function variables() {
   var x = 1; // deprecated
   let y = 1;
   const z = 'tacos';
-
-  return types;
-}
-
-// ---------- types -------------
-function types() {
-  debugger;
-
-  // Weak typing allows for automatic conversions
-  let x = 'fish';
-  console.log('type changed: ', typeof x, x);
-  x = 1;
-  console.log('type changed: ', typeof x, x);
-  x = [1, 2];
-  console.log('type changed: ', typeof x, x);
-  x = {};
-  console.log('type changed: ', typeof x, x);
-  x = { v: 2, z: 'fish' };
-  console.log('type changed: ', typeof x, x);
-  x = null;
-  console.log('type changed: ', typeof x, x);
-  x = undefined;
-  console.log('type changed: ', typeof x, x);
-
-  // Automatic conversions
-  console.log('rat' + [' fink']);
-  console.log(1 + 'rat');
-  console.log('rat' + 1);
-  console.log(1 * 'rat');
-  console.log([2] + [3]);
-  console.log(true + null);
-  console.log(true + undefined);
 
   return conditionals;
 }
