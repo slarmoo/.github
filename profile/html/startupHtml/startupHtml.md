@@ -1,6 +1,6 @@
 # Startup HTML
 
-Now that you have learned the basics of HTML, is time to structure your startup application. This includes all of the pages, headers, footers, images, and content necessary to represent what your application will do. The application doesn't have to do anything, but there should be a placeholder for everything that you application will do.
+Now that you have learned the basics of HTML, is time to structure your startup application. This includes all of the pages, headers, footers, images, and content necessary to represent what your application will do. The application doesn't have to do anything, but there should be a placeholder for everything that your application will do.
 
 You will want an HTML file for each of the main components of your application. The default component of your application **must** be represented in a file named `index.html` since that is the file a browser will load by default. Here is what the Simon example pages look like.
 
@@ -13,7 +13,7 @@ You will want a similar layout. Make sure you have a placeholder for all the tec
 - **Database data**: A rendering of application data that is stored in the database. For Simon, this is the high scores of all players.
 - **WebSocket data**: A rendering of data that is received from your server. This may be realtime data sent from other users (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this updates every time another user creates or ends a game.
 
-The following is a possible layout of the main pieces that your application should have. Note that you do not have to have four HTML pages. You should create the number of pages that makes sense for your application. This maybe only one, or it could be many.
+The following is a possible layout of the main pieces that your application should have. Note that you do not have to have four HTML pages. You should create the number of pages that makes sense for your application. This may be only one, or it could be many.
 
 ![HTML pages](htmlExamplePages.jpg)
 
