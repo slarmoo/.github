@@ -55,6 +55,19 @@ Call `testAll` with an array of strings as the first parameter and an arrow func
 
 Output the result of the call to `testAll` with the `console.log` function.
 
+Here is a template for you to start with.
+
+```js
+function testAll(input, tester) {
+  const result = // Your code here
+  return result
+}
+
+const result = testAll(/* Your parameters here */);
+
+console.log(result);
+```
+
 Once you are done coding, submit your CodePen URL to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.

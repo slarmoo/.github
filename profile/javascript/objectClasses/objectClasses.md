@@ -167,7 +167,9 @@ Create a CodePen that starts with the following code
 
 ```js
 class Phone {
-  // Implement the constructor
+  constructor(regEx) {
+    // Implement the constructor
+  }
 
   // Implement the Connected constant getter
 
