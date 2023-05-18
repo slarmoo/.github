@@ -16,7 +16,7 @@ const y = 2;
 
 ## Type
 
-JavaScript defines several primitives types.
+JavaScript defines several primitive types.
 
 | Type        | Meaning                                                    |
 | ----------- | ---------------------------------------------------------- |
@@ -47,7 +47,7 @@ When dealing with a number variable, JavaScript supports standard mathematical o
 
 ## Type conversions
 
-JavaScript is a weakly typed language. That means that a variable always has a type, but the variable can change type when it is assigned a new value, or that types can be automatically converted based upon the context that they are used in. Sometime the results of automatic conversions can be unexpected from programmers who are use to strongly typed languages. Consider the following examples.
+JavaScript is a weakly typed language. That means that a variable always has a type, but the variable can change type when it is assigned a new value, or that types can be automatically converted based upon the context that they are used in. Sometime the results of automatic conversions can be unexpected from programmers who are used to strongly typed languages. Consider the following examples.
 
 ```js
 2 + '3';
@@ -122,7 +122,7 @@ if (true && (!false || true)) {
 
 ### Loops
 
-JavaScript support many common programming language looping constructs. This includes `for`, `for in`, `for of`, `while`, `do while`, and `switch`. Here are some examples.
+JavaScript supports many common programming language looping constructs. This includes `for`, `for in`, `for of`, `while`, `do while`, and `switch`. Here are some examples.
 
 ### for
 
