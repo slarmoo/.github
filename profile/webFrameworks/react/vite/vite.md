@@ -25,7 +25,7 @@ Once you have played around with the application in your browser, you can return
 
 ## Generated project
 
-Now, let's explore the application files the Vite created. From the console, use VS Code (`code .`) to open project directory and take a look at the files.
+Now, let's explore the application files that Vite created. From the console, use VS Code (`code .`) to open the project directory and take a look at the files.
 
 | Directory    | File              | Purpose                                                                                                                   |
 | ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -39,7 +39,7 @@ Now, let's explore the application files the Vite created. From the console, use
 |              | main.jsx          | Entry point for code execution. This simply loads the App component found in `App.jsx`.                                   |
 |              | index.css         | CSS for the entire application.                                                                                           |
 |              | App.jsx           | JSX for top level application component. This displays the logs and implements the click counter.                         |
-|              | App.css           | CSS for top level application component.                                                                                  |
+|              | App.css           | CSS for the top level application component.                                                                              |
 | ./src/assets |                   |                                                                                                                           |
 |              | react.svg         | React logo for display in the app.                                                                                        |
 
@@ -51,11 +51,11 @@ The main files in the application are `index.html`, `main.jsx`, and `App.jsx`. T
 
 ## JSX vs JS
 
-The `Vite` CLI uses the `.jsx` extension for JSX files instead of the JavaScript `.js` extension. The Babel transpiler will work with either one, but some editor tools will work differently based upon the extension. For this reason, you should prefer `.jsx` for files that represent React components. The developers at AirBNB had an interesting [conversation](https://github.com/airbnb/javascript/pull/985) on this topic that you might browse if you would like to consider the differing opinions on this subject.
+The `Vite` CLI uses the `.jsx` extension for JSX files instead of the JavaScript `.js` extension. The Babel transpiler will work with either one, but some editor tools will work differently based upon the extension. For this reason, you should prefer `.jsx` for files that contain JSX. The developers at AirBNB had an interesting [conversation](https://github.com/airbnb/javascript/pull/985) on this topic that you might browse if you would like to consider the differing opinions on this subject.
 
 ## Building a production release
 
-Then you execute `npm run dev` you are bundling the code to a temporary directory that the Vite HTTP debugger loads from. When you want to bundle your application to a directory that you can deploy to a production environment you need to run `npm run build`. This executes the `build` script found in your `package.json` and invokes the `Vite` CLI. `vite build` transpiles, minifies, and injects the proper JavaScript, and then outputs everything to a deployment ready version contained in a subdirectory named `dist`, which is short for distribution.
+When you execute `npm run dev` you are bundling the code to a temporary directory that the Vite debug HTTP server loads from. When you want to bundle your application so that you can deploy to a production environment you need to run `npm run build`. This executes the `build` script found in your `package.json` and invokes the `Vite` CLI. `vite build` transpiles, minifies, injects the proper JavaScript, and then outputs everything to a deployment ready version contained in a distribution subdirectory named `dist`.
 
 ```sh
 ➜  npm run build
@@ -72,21 +72,23 @@ dist/assets/index-58d24859.js   143.42 kB │ gzip: 46.13 kB
 ✓ built in 382ms
 ```
 
-The deployment script for Simon React creates a production distribution by calling `npm run build` and then copying the resulting `dist` directory to your production server.
+## Deploying a production release
 
-Take some time to build a production release and then examine what Vite actually builds by examining the `dist` directory. For example, if you look at the `dist/assets` directory you will see the bundled and minified JavaScript and CSS files.
+The deployment script for Simon React (`deployReact.sh`) creates a production distribution by calling `npm run build` and then copying the resulting `dist` directory to your production server.
+
+Take some time to build a production release by running `npm run build`. Then examine what Vite actually builds by examining the `dist` directory. For example, if you look at the `dist/assets` directory you will see the bundled and minified JavaScript and CSS files.
 
 ## ☑ Assignment
 
-Now that you have reviewed the application in VS Code, take a moment to manipulate the files and see what impact your changes have. If you break the application, and can't figure out how to fix it, just delete the demo directory and start again. The more you play around with this code the better you will understand how all the pieces of the application fit together.
+Now that you have reviewed the application in VS Code, take a moment to manipulate the files and see what impact your changes have. If you break the application, and can't figure out how to fix it, just delete the demo directory and start again. The more you play around with this code, the better you will understand how all the pieces of the application fit together.
 
-For example try the following:
+Make the following modifications:
 
-1. Change colors to be in light mode.
+1. Change background and text colors to be in "light" mode.
 1. Replace the text in the App component with your name.
-1. Change the counter to increment by 10.
+1. Change the counter to increment by 10 instead of by one.
 
-When you are done the application should look similar to this:
+When you are done, the application should look similar to this:
 
 ![React altered](reactAppAltered.png)
 
