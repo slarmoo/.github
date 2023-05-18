@@ -2,7 +2,7 @@
 
 📖 **Deeper dive reading**: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-Strings are a primitive type in JavaScript. A string variable is specified by surround a sequence of characters with single quotes (`'`), double quotes (`"`), or backticks (\`). The meaning of single or double quotes are equivalent, but the backtick defines a string literal that may contain JavaScript that is evaluated in place and concatenated into the string. A string literal replacement specifier is declared with a dollar sign followed by a curly brace pair. Anything inside the curly braces is evaluated as JavaScript. You can also use backticks to create multiline strings without having to explicitly escape the newline characters using `\n`.
+Strings are a primitive type in JavaScript. A string variable is specified by surrounding a sequence of characters with single quotes (`'`), double quotes (`"`), or backticks (`` ` ``). The meaning of single or double quotes are equivalent, but the backtick defines a string literal that may contain JavaScript that is evaluated in place and concatenated into the string. A string literal replacement specifier is declared with a dollar sign followed by a curly brace pair. Anything inside the curly braces is evaluated as JavaScript. You can also use backticks to create multiline strings without having to explicitly escape the newline characters using `\n`.
 
 ```js
 'quoted text'; // " also works
@@ -26,14 +26,14 @@ However, there are several important steps you must take in order to make your w
 
 The string object has several interesting functions associated with it. Here are some of the commonly used ones.
 
-| Function    | Meaning                                                      |
-| ----------- | ------------------------------------------------------------ |
-| length      | The number of characters in the string                       |
-| indexOf     | The starting index of a given substring                      |
-| split       | Split the string into an array on the given delimiter string |
-| startsWith  | True if the string has a given prefix                        |
-| endsWith    | True if the string has a given suffix                        |
-| toLowerCase | Converts all characters to lowercase                         |
+| Function      | Meaning                                                      |
+| ------------- | ------------------------------------------------------------ |
+| length        | The number of characters in the string                       |
+| indexOf()     | The starting index of a given substring                      |
+| split()       | Split the string into an array on the given delimiter string |
+| startsWith()  | True if the string has a given prefix                        |
+| endsWith()    | True if the string has a given suffix                        |
+| toLowerCase() | Converts all characters to lowercase                         |
 
 ```js
 const s = 'Example:조선글';
