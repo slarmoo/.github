@@ -66,7 +66,7 @@ If that is what you see, then congratulations! You are now running your very own
 
 ## SSH into your server
 
-Now, let's remote shell into your server and see what is under the hood. Go to your console window and use SSH to shell into the server. You will need to supply the public IP address (copied from the EC2 instance details) and the location of your key pair file that you created/used when you launched your instance. Hopefully, you saved that off to a safe location in your development environment, otherwise you will need to terminate your instance and create a new one, with a new key.
+Now, let's remote shell into your server and see what is under the hood. Go to your console window and use SSH to shell into the server. You will need to supply the public IP address (copied from the EC2 instance details) and the location of your key pair file that you created/used when you launched your instance. Hopefully, you saved that off to a safe location in your development environment; otherwise you will need to terminate your instance and create a new one, with a new key.
 
 ```sh
 ➜  ssh -i [key pair file] ubuntu@[ip address]
@@ -94,7 +94,7 @@ Once it has connected, you are now looking at a console window for the web serve
 total 4
 lrwxrwxrwx 1 ubuntu ubuntu   20 Apr 13 15:06 Caddyfile -> /etc/caddy/Caddyfile
 lrwxrwxrwx 1 ubuntu ubuntu   16 Apr 13 15:06 public_html -> /usr/share/caddy
-drwxrwxr-x 4 ubuntu ubuntu 4096 Apr 13 16:48 s
+drwxrwxr-x 4 ubuntu ubuntu 4096 Apr 13 16:48 services
 ```
 
 The `Caddyfile` is the configuration file for your web service gateway. The `public_html` directory contains all of the static files that you are serving up directly through Caddy when using it as a web service. We will cover Caddy configuration in a later instruction. The `services` directory is the place where you are going to install all of your web services once you build them.
