@@ -6,9 +6,9 @@ A web framework router provides essential functionality for single page applicat
 
 React does not have a standard router package, and there are many that you can choose from. We will use [react-router-dom](https://www.npmjs.com/package/react-router-dom) Version 6. The simplified routing functionality of React-router-dom derives from the project [react-router](https://www.npmjs.com/package/react-router) for its core functionality. Do not confuse the two, or versions of react-router-dom before version 6, when reading tutorials and documentation.
 
-<img src="reactRouter.jpg">
+![React Router](routerExample.gif)
 
-A basic implementation of the router consists of a `BrowserRouter` component that encapsulates the entire application and controls the routing action. The `Link` component captures user navigation events and modifies what is rendered by the `Routes` component by matching up the `to` and `path` attributes.
+A basic implementation of the router consists of a `BrowserRouter` component that encapsulates the entire application and controls the routing action. The `Link`, or `NavLink`, component captures user navigation events and modifies what is rendered by the `Routes` component by matching up the `to` and `path` attributes.
 
 ```jsx
 // Inject the router into the application root DOM element
@@ -40,7 +40,7 @@ root.render(
 
 ## ☑ Assignment
 
-Create a fork of this [codePen](https://codepen.io/leesjensen/pen/poKLKaX) and experiment.
+Create a fork of this [codePen](https://codepen.io/leesjensen/pen/poKLKaX) and add another component for the path of `/scores`.
 
 When you are done submit your CodePen URL to the Canvas assignment.
 

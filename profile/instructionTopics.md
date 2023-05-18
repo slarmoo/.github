@@ -131,9 +131,9 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md) _(due 6/9)_
 - ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md) _(due 6/9)_
 - [Hooks](webFrameworks/react/hooks/hooks.md)
+- ☑ [Router](webFrameworks/react/router/router.md) _(due 6/9)_
 - [Toolchains](webFrameworks/react/toolChains/toolChains.md)
 - ☑ [Vite](webFrameworks/react/vite/vite.md) _(due 6/9)_
-- ☑ [Router](webFrameworks/react/router/router.md) _(due 6/9)_
 - [Simon React](simon/simonReact/simonReact.md)
 - ☑ [Startup React](webFrameworks/startupReact/startupReact.md) _(due 6/15)_
 
