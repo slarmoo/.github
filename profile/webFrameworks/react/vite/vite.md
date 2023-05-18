@@ -88,7 +88,7 @@ Make the following modifications:
 1. Replace the text in the App component with your name.
 1. Change the counter to increment by 10 instead of by one.
 
-When you are done, the application should look similar to this:
+After these changes, the application should look similar to this:
 
 ![React altered](reactAppAltered.png)
 
