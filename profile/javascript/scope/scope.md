@@ -8,7 +8,7 @@
 
 Understanding JavaScript scope is essential for making your programs run as you expect. Scope is defined as the variables that are visible in the current context of execution. JavaScript has four different types of scope:
 
-1. **Gobal** - Visible to all code
+1. **Global** - Visible to all code
 1. **Module** - Visible to all code running in a module
 1. **Function** - Visible within a function
 1. **Block** - Visible within a block of code delimited by curly braces
