@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-This will create a new web application in the `demoVite` directory, download the required 3rd party packages, and start up the application using a local HTTP debugging server.
+This will create a new web application in the `demoVite` directory, download the required 3rd party packages, and start up the application using a local HTTP debugging server. You can tell Vite to open your browser to the URL that is hosting your application by pressing `o`, or press `h` to see all of the Vite CLI options.
 
 ![Vite Demo](viteDemo.gif)
 
