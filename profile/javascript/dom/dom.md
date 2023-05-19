@@ -56,7 +56,7 @@ for (const el of listElements) {
 
 ## Modifying the DOM
 
-The DOM supports the ability insert, modify, or delete the elements in the DOM. To create a new element you first create the element on the DOM document. You then insert the new element into the DOM tree by appending it to an existing element in the tree.
+The DOM supports the ability to insert, modify, or delete the elements in the DOM. To create a new element you first create the element on the DOM document. You then insert the new element into the DOM tree by appending it to an existing element in the tree.
 
 ```js
 function insertChild(parentSelector, text) {
@@ -73,12 +73,12 @@ insertChild('#courses', 'new course');
 To delete elements call the `removeChild` function on the parent element.
 
 ```js
-function deleteChild(parentSelector) {
-  const el = document.querySelector(parentSelector);
+function deleteElement(elementSelector) {
+  const el = document.querySelector(elementSelector);
   el.parentElement.removeChild(el);
 }
 
-deleteChild('#courses div');
+deleteElement('#courses div');
 ```
 
 ## Injecting HTML
@@ -96,7 +96,7 @@ However, directly injecting HTML as a block of text is a common attack vector fo
 <img src="bogus.png" onerror="console.log('All your base are belong to us')" />
 ```
 
-Make sure that if you are injecting HTML that it cannot be manipulated by a user. Common injection paths include HTML input controls, URL parameters, and HTTP headers. Either sanitize any HTML that contains variables, or simply use DOM manipulation functions instead of using `innerHTML`.
+If you are injecting HTML, make sure that it cannot be manipulated by a user. Common injection paths include HTML input controls, URL parameters, and HTTP headers. Either sanitize any HTML that contains variables, or simply use DOM manipulation functions instead of using `innerHTML`.
 
 ## Event Listeners
 
