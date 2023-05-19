@@ -27,7 +27,7 @@ console.log(b, c, others);
 // OUTPUT: 1, 2, [4,5]
 ```
 
-This works in a similar manner for objects. Except with arrays, the assignment of the associated value was assumed by the positions in the two arrays. When object destructuring, you explicitly specify the properties you want to pull from the source object.
+This works in a similar manner for objects, except with arrays, the assignment of the associated value was assumed by the positions in the two arrays. When destructuring objects, you explicitly specify the properties you want to pull from the source object.
 
 ```js
 const o = { a: 1, b: 'animals', c: ['fish', 'cats'] };
