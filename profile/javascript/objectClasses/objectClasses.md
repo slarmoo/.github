@@ -7,9 +7,7 @@ A JavaScript object represents a collection of name value pairs referred to as p
 Objects can be created with the new operator. This causes the object's constructor to be called. Once declared you can add properties to the object by simply referencing the property name in an assignment. Any type of variable can be assigned to a property. This includes a sub-object, array, or function. The properties of an object can be referenced either with dot (`obj.prop`) or bracket notation (`obj['prop']`).
 
 ```js
-const obj = new Object();
-
-obj['a'] = 3;
+const obj = new Object({a:3});
 obj['b'] = 'fish';
 obj.c = [1, 2, 3];
 obj.hello = function () {
