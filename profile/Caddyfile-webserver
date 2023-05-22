@@ -15,6 +15,16 @@ learn.cs260.click {
   try_files {path} /
 }
 
+
+class.cs260.click {
+  root * /usr/share/caddy/utilities
+  file_server
+  header Access-Control-Allow-Origin *
+  header -etag
+  header -server
+  try_files {path} /
+}
+
 simon.cs260.click {
   reverse_proxy * localhost:3000
   header Cache-Control none
