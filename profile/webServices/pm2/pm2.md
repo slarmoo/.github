@@ -73,7 +73,9 @@ Now Caddy will attempt to proxy the requests, but there is no web service listen
 
 Copy the ~/services/startup directory to a directory that represents the purpose of your service. For example:
 
+```sh
 cp -r ~/services/startup ~/services/tacos
+```
 
 If you list the directory you should see an `index.js` file that is the main JavaScript file for your web service. It has the code to listen on the designated network port and respond to requests. The following is the JavaScript that causes the web service to listen on a port that is provided as an argument to the command line.
 
