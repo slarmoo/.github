@@ -58,16 +58,26 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
 - Start up the Vite debug HTTP server: `npm run dev`
 - Test the app. Make sure API and WebSocket requests work.
 
+# Install bootstrap react components
+
+We want to be able to use BootStrap both as a CSS library and as React components. This is done by installing the following packages.
+
+- `npm install bootstrap react-bootstrap`
+
 # Set up React
 
 - `npm install react react-dom react-router-dom`
 - Rename `index.html` to `login.html`
-- Create an App placeholder components in a `src/app.jsx` directory
+- Create an App placeholder components in `src/app.jsx`
+
   ```jsx
-  export function App() {
-    return <div>Simon</div>;
+  import React from 'react';
+
+  export default function App() {
+    return <div className='body bg-dark text-light'>App will display here</div>;
   }
   ```
+
 - Create the `index.html` React version of the homepage.
 
   ```html
@@ -151,12 +161,6 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
 - Rename `sound1-4.mp3` to `button-bottom/top-left/right.mp3`
 - Move favicon.ico to `public`
 - View the result in the browser and make sure everything is displayed.
-
-# Install bootstrap react components
-
-We want to be able to use BootStrap both as a CSS library and as React components. This is done by installing the following packages.
-
-- `npm install bootstrap react-bootstrap`
 
 # Populate app.jsx with header and footer
 

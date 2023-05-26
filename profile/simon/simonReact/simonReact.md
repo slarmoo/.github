@@ -5,52 +5,82 @@
 🔑 **Required reading**: [Debugging a React application](https://youtu.be/U8MYAOtIm5E)
 📖 **Deeper dive reading**: [Port Simon to React](https://youtu.be/qLc7SObYAQw)
 
-This deliverable demonstrates using React as a web framework. When your application starts getting more and more complex, it becomes necessary to use a web framework that helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
+This deliverable demonstrates using [React](https://reactjs.org/) as a web framework and Vite as your frontend tooling. This helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
 
-Some frameworks take the additional step of abstracting parts of HTML and CSS to make authoring components easier. When this happens the project must be pre-processed in order to turn it into HTML and CSS that the browser can execute. This process requires a toolchain that executes to produce a browser ready bundle.
-
-The introduction of React converts our application from a **multi-page application** to a **single page application**. In a single page application, the browser only loads a single HTML file (index.html), and then we use JavaScript to interactively change the rendered content and components. This is a significant architectural shift to the application and will require you to reorganize your code to fit the single page, component driven, model.
-
-For this deliverable, we use the [React](https://reactjs.org/) framework and the associated `create-react-app` package to convert Simon into a React based application.
+As part of the move to React we convert Simon from a **multi-page application** to a **single page application**. In a single page application, the browser only loads a single HTML file (index.html), and then we use JavaScript to interactively change the rendered content and components. This is a significant architectural shift to the application and will require you to reorganize your code to fit the single page, component driven, model.
 
 # Steps to convert Simon to React
 
-The following section discusses the general steps taken to convert the Simon application from a simple HTML/CSS/JavaScript application to a React application. You will need to take similar steps for your startup project and so it is important to understand what is happening at each step conversion process. You don't necessarily have to go through this process with the Simon demonstration application, but it is a safe place to try since you have both the starting version (simon-websocket) and the ending version (simon-react) to reference.
+The following section discusses the general steps taken to convert the Simon application from a simple HTML/CSS/JavaScript application to a React application. You will need to take similar steps for your startup project and so it is important to understand what is happening at each step of the conversion process. You don't necessarily have to go through this process with the Simon demonstration application, but it is a safe place to try since you have both the starting version (simon-websocket) and the ending version (simon-react) to reference.
 
-The first step uses `create-react-app` to create a React template application that is moved into the Simon code repository. The HTML, CSS, and JavaScript is then reworked into React components. The React components are then refactored to take advantage of functionality that React provides including function style components, modularization, and a React representation of Bootstrap.
+We begin introducing `vite` our frontend tooling. The HTML, CSS, and JavaScript is then reworked into React components. The React components are then reworked to take advantage of functionality that React provides. This includes function style components, modularization, reactive interactions, and a React representation of Bootstrap.
 
-Here is a complete list of all the steps involved to convert Simon to a React application. Steps with a ⭐ prefix are detailed below in order to help clarify some of the more complicated parts.
+Here is a complete list of all the steps involved to convert Simon to a React application. When you port your startup to React you will want to commit your changes as you complete each step in the process.
 
-1. ⭐ **Reorganize Simon**
-1. **Commit**: Commit this version in Git as the starting place for the conversion to React. It won't run, but by committing at this point can revert if necessary, instead of starting over. Make sure you keep testing and committing throughout this process.
-1. **Create template React application**. Run `npx create-react-app template-react`. This creates a new directory named `template-react` that contains the basic configuration and template React application code.
-1. **Clean up template code**
-   1. Uninstall and NPM packages you won't use (e.g. stats, test)
-   1. Delete the unnecessary create-react-app files (e.g. images)
-   1. Rename `js` JSX files have `jsx` extension
-   1. Replace the `favicon.ico` with the Simon icon
-   1. Update `manifest.json` to represent Simon
-   1. Clean up the `index.html` file to have the proper fields for Simon
-1. ⭐ **Move template files to Simon**
-1. ⭐ **Convert to React Bootstrap**
-1. ⭐ **Populate App.jsx**
-1. ⭐ **Create view components**
-1. ⭐ **Create the router**
-1. ⭐ **Convert to React components**
-1. ⭐ **Set up to debug**
-1. Refactor play.jsx into simonGame.jsx, simonButton.jsx, and players.jsx
-1. Refactor components to take advantage of React specific functionality and to create sub-components
-1. Move webSocket code from play.jsx to gameNotifier.js
+1. Clone the `simon-websocket` repository
+1. Reorganize the code
+1. Install and configure Vite
+1. Convert to React Bootstrap
+1. Enabling React
+1. Create app component
+1. Create view components
+1. Create the router
+1. Convert to React components
 
-The final Simon project structure look like the following.
+To give you a picture of where we will end up after porting to React, the final Simon project structure look like the following.
 
-![Simon project structure](simonReactProjectStructure.jpg)
+```sh
+├─ vite.config.js              # Config for Vite dev debugging
+├─ deployReact.sh              # React specific deployment
+├─ index.html                  # Single HTML file for the App
+├─ index.jsx                   # Loads the top level component
+├─ package.json                # Defines dependent modules
+├─ public                      # Static assets used in the app
+│   ├─ button-bottom-left.mp3
+│   ├─ button-bottom-right.mp3
+│   ├─ button-top-left.mp3
+│   ├─ button-top-right.mp3
+│   ├─ error.mp3
+│   └─ favicon.ico
+├─ service                     # Backend service code
+│   ├─ database.js
+│   ├─ dbConfig.json
+│   ├─ index.js
+│   ├─ package-lock.json
+│   ├─ package.json
+│   └─ peerProxy.js
+└─ src                         # Frontend React code
+    ├─ app.jsx                 # Top level component
+    ├─ app.css
+    ├─ about                   # About component
+    │   ├─ about.css
+    │   └─ about.jsx
+    ├─ login                   # Login component
+    │   ├─ login.jsx           # Renders auth sub-components
+    │   ├─ authState.js        # Enum for auth state
+    │   ├─ unauthenticated.jsx # Renders if unauthenticated
+    │   ├─ authenticated.jsx   # Renders if authenticated
+    │   ├─ authenticated.css
+    │   └─ messageDialog.jsx
+    ├─ play                    # Game play component
+    │   ├─ delay.js
+    │   ├─ gameNotifier.js
+    │   ├─ play.jsx
+    │   ├─ players.css
+    │   ├─ players.jsx
+    │   ├─ simonButton.jsx
+    │   ├─ simonGame.css
+    │   └─ simonGame.jsx
+    └─ scores                 # Scores component
+        ├─ scores.css
+        └─ scores.jsx
+```
 
-## Reorganize Simon
+## Reorganize the code
 
-Because we are hosting both the Simon React application and the Simon service web service in the same project we need to put them each in separate directories. We want the service code in a `service` directory and the React code in the `src` directory. To accomplish this, first delete the `node_modules` directory from the `simon` directory. Then move the service code (`package.json`, `package-lock.json`, `index.js`, `database.js`, and `peerProxy.js`) into a subdirectory named `service`. Then run `npm install` in the `service` directory in order to get the NPM packages for the service.
+Because we are hosting both the Simon React application and the Simon service web service in the same project we need to put them each in separate directories. We want the service code in a `service` directory and the React code in the `src` directory. To accomplish this, first delete the `node_modules` directory from the `simon` directory. Then move the service code (`package.json`, `package-lock.json`, `index.js`, `database.js`, `peerProxy.js`, and `dbConfig.json`) into a subdirectory named `service`. Then run `npm install` in the `service` directory in order to get the NPM packages for the service.
 
-Once you move the service to the `service` directory, you can test that the service is still working by running `node index.js` from a console window in the `service` directory. Try it out and make sure you can hit the service endpoints using Curl.
+Once you move the service to the `service` directory, you can test that the service is still working by running `node index.js` from a console window in the `service` directory, or by pressing `F5` in VS Code. Try it out and make sure you can hit the service endpoints using Curl.
 
 ```sh
 ➜  curl 'localhost:3000/api/user/joe'
@@ -58,11 +88,62 @@ Once you move the service to the `service` directory, you can test that the serv
 {"msg":"Unknown"}
 ```
 
-Next, we want to put the existing UI code in a temporary place where we can then copy from as we move it to the React componentized version contained in the React `src` directory. To do this we rename the `public` directory to `old-public`. Once we have moved all the code over, we can delete the `old-public` directory.
+Next, we want to put the existing UI code to a location that Vite expects to find it. To do this we move all of the files out of `public` into the project root directory. This will allow us to run our existing code under Vite to make sure everything is working. Once we start porting over to React, we will convert each of these files to React components located in a directory called `src`. From the root project directory run:
 
-## Move template files to Simon
+```sh
+mv public/* .
+rm -r public
+```
 
-Copy over the generated files from the `template-react` directory to the `simon` repository directory. You can now delete the template `template-react` directory. All steps from this point on are done in the `simon` repository directory. Run `npm install` in the root of the `simon` directory to get all of the NPM packages that React uses.
+## Install and configure Vite
+
+Install Vite as a development dependency by running:
+
+```sh
+ npm install vite@latest -D
+```
+
+Then insert/replace the `scripts` found in `package.json` to include the commands for running Vite.
+
+```json
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+```
+
+### Configuring Vite for debugging
+
+When running in production, the Simon web service running under Node.js on port 3000 serves up the Simon React application code when the browser requests `index.html`. This is the same as we did with previous Simon deliverables. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory that we set up when we build the production distribution package.
+
+![Setting up React ports](simonProduction.jpg)
+
+However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running. One for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
+
+By default Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP and WebSocket requests to the Node.js HTTP server by providing a configuration file name `vite.config.js` with the following contents.
+
+```js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+      '/ws': {
+        target: 'ws://localhost:3000',
+        ws: true,
+      },
+    },
+  },
+});
+```
+
+When running in this configuration the network requests now flow as shown below. Without this you will not be able to debug your React application in your development environment.
+
+![Setting up React ports](simonDevelopmentDebugging.jpg)
+
+With our server running, and our files in the place where Vite expects them we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup make sure that you commit your changes.
 
 ## Convert to React Bootstrap
 
@@ -74,23 +155,102 @@ To use the React version of Bootstrap import the NPM package.
 npm install bootstrap react-bootstrap
 ```
 
-Now, in the components where you want to refer to the Bootstrap styles, you can import the css from the
+Now, in the components where you want to refer to the Bootstrap styles, you can import the Bootstrap style sheet from the
 imported NPM package just like you would other CSS files.
 
 ```jsx
 import 'bootstrap/dist/css/bootstrap.min.css';
 ```
 
-For example, you can add that import to the `app.jsx` component in order to enable bootstrap.
+To use a React Bootstrap component you would import and reference the specific component you want to use. Here is an example of using the `Button` component.
+
+```jsx
+import Button from 'react-bootstrap/Button';
+
+export function NavButton({ text, url }) {
+  const navigate = useNavigate();
+  return (
+    <Button variant='primary' onClick={() => navigate({ url })}>
+      {text}
+    </Button>
+  );
+}
+```
 
 For Simon we converted the modal dialog and button implementations to use the React Bootstrap components.
 
-## Populate App.jsx
+## Enabling React
 
-One of the big advantages of React is the ability to represent your web application as a modular single page application instead of a set of interconnected redundant HTML pages. Instead of an HTML page for each functional piece, you now have a React component for each functional piece. The `app.jsx` file represents the application component that is the parent of all our other components. To make `app.jsx` the Simon application component, we first move the header and footer HTML into the render function for the app. Since, this is now JSX instead of HTML we rename the `class` attribute to be `className` so that it doesn't conflict with the JavaScript `class` keyword.
+We now have everything set up to start using React for the application. To make this happen we need to install the React components for the basic functionality, DOM manipulation, and request routing to display individual components. React is installed by running the following console command:
+
+```sh
+npm install react react-dom react-router-dom
+```
+
+### index.html and index.jsx
+
+With React we have a single HTML file that dynamically loads all of the other application components into its DOM using JavaScript. We replace the existing `index.html` file with the following React version.
+
+**index.html**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <title>Simon React</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
+  </body>
+</html>
+```
+
+Notice that the div with an ID of `root` is where all the content will be injected. The script reference for `index.jsx` causes the injection of the top level component named `App`. To hook the `index.html` to our top level `App` component we create the following `index.jsx` file.
+
+**index.jsx**
 
 ```jsx
-function App() {
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './src/app';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+
+## Create App component
+
+To begin the transformation to using React components in our application, we create a top level component, stored in `src/app.jsx`, and add some placeholder content that will get replaced later. In order for the styling to show up, we include Bootstrap, move the `main.css` content into a file named `src/app.css`, and import the CSS file into the app.jsx file. Because we don't have a `body` element in our App component we modify the `app.css` so that the selector for the `body` element is changed to a class selector `.body`.
+
+**app.jsx**
+
+```jsx
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
+
+export default function App() {
+  return <div className='body bg-dark text-light'>App will display here</div>;
+}
+```
+
+You should be able to view the results of these changes by running `npm run dev` from the console and pressing the `o` key to open it in the browser. The result won't be very exciting, but this successfully demonstrates the first step towards moving to React. When you reach this point with your startup make sure that you commit your changes.
+
+![First React component](firstReactComponent.png)
+
+To make `app.jsx` represent the actual Simon content, we enhance the `app.jsx` file to contain the header and footer HTML found in each of our previous HTML files, into the return value for the App component function. Next, we rename the `class` attribute to be `className` so that it doesn't conflict with the JavaScript `class` keyword. The `className` keyword will get transpiled to valid HTML by our toolchain. When completed the App component should look like this:
+
+**app.jsx**
+
+```jsx
+export default function App() {
   return (
     <div className='body bg-dark text-light'>
       <header className='container-fluid'>
@@ -100,7 +260,7 @@ function App() {
           </div>
           <menu className='navbar-nav'>
             <li className='nav-item'>
-              <a className='nav-link active' href='index.html'>
+              <a className='nav-link' href='index.html'>
                 Home
               </a>
             </li>
@@ -123,6 +283,8 @@ function App() {
         </nav>
       </header>
 
+      <main>App components go here</main>
+
       <footer className='bg-dark text-dark text-muted'>
         <div className='container-fluid'>
           <span className='text-reset'>Author Name(s)</span>
@@ -136,58 +298,15 @@ function App() {
 }
 ```
 
-In order for the styling to show up, move the `main.css` content into a file named `app.css` and import the CSS file into the app.jsx file.
+This will display the header, navigation elements, placeholder content, and the footer. When you reach this point with your startup make sure that you commit your changes.
 
-```jsx
-import `./app.css`
-```
-
-### Checking the authentication state
-
-Next, we want to disable the ability to access the play and scores if the user is not authenticated. We do this with a React `useEffect` hook that will run whenever the user name changes. The hook will call out to the simon `getUser` endpoint and set a state variable based on the result. The state is then used to show or hide the play and scores NavLinks.
-
-```jsx
-const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
-
-// Asynchronously determine if the user is authenticated by calling the service
-const [authState, setAuthState] = React.useState(AuthState.Unknown);
-React.useEffect(() => {
-  if (userName) {
-    fetch(`/api/user/${userName}`)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        }
-      })
-      .then((user) => {
-        const state = user?.authenticated ? AuthState.Authenticated : AuthState.Unauthenticated;
-        setAuthState(state);
-      });
-  } else {
-    setAuthState(AuthState.Unauthenticated);
-  }
-}, [userName]);
-```
-
-### Showing or hiding the navigation elements based on the authentication state
-
-```jsx
-{
-  authState === AuthState.Authenticated && (
-    <li className='nav-item'>
-      <a className='nav-link' href='play.html'>
-        Play
-      </a>
-    </li>
-  );
-}
-```
+![App React component](appReactComponent.png)
 
 ## Create view components
 
-We now create React component files `login.jsx`, `play.jsx`, `scores.jsx`, and `about.jsx` to represent each of the application views. To begin with these are just stubs that we will populate as we move functionality from the old `js` files into the `jsx` components. We place each of the stubbed components in a separate directory (e.g. `src/login/login.jsx) so that we can keep all of the component files together.
+We now create React component files `login.jsx`, `play.jsx`, `scores.jsx`, and `about.jsx` to represent each of the application views. To begin with, these are just stubs that we will populate as we move functionality from the old `js` files into the `jsx` components. We place each of the stubbed components in a separate directory (e.g. `src/login/login.jsx) so that we can keep all of the component files together.
 
-Here is the `login.jsx` stub before any code is converted over. The other components would be similar.
+Here is the `login.jsx` stub before any code is converted over. The other components are similar.
 
 ```jsx
 import React from 'react';
@@ -203,26 +322,26 @@ export function Login() {
 
 ## Create the router
 
-With `app.jsx` containing the header and footer and all the application view component stubs created, we can now create the router that will display each component as the navigation UI requests it.
-
-This is done by inserting the `react-router-dom` package into the project. First, install the package with `npm install react-router-dom` and then include the router component in the `index.jsx` and `app.jsx` files.
-
-### index.jsx
-
-The router controls the whole application by determining what component to display based upon what navigation the user chooses. In order for the router to be able to do this the `BrowserRouter` component element must have the `App` element as a child.
+With `app.jsx` containing the header and footer, and all the application view component stubs created, we can now create the router that will display each component as the navigation UI requests it. The router controls the whole application by determining what component to display based upon what navigation the user chooses. To implement the router, we import the router component into App component, and wrap all of the App component's elements with the `BrowserRouter` component. We also import all of our view components.
 
 ```jsx
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Login } from './login/login';
+import { Play } from './play/play';
+import { Scores } from './scores/scores';
+import { About } from './about/about';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App />
+    <div className='body bg-dark text-light'><!-- sub-elements here --></div>
   </BrowserRouter>
 );
 ```
 
-### app.jsx
+### Navigating routes
 
-In the App component, we replace `a` elements with the router's `NavLink` component. The `href` attribute is replaced with the router's `to` attribute. The NavLink component prevents the browser's default navigation functionality and instead handles it by replacing the currently display component.
+We then we replace the `a` elements with the router's `NavLink` component. The anchor element's `href` attribute is replaced with the router's `to` attribute. The NavLink component prevents the browser's default navigation functionality and instead handles it by replacing the currently display component.
 
 ```jsx
 <a className="nav-link" href="play.html">Play</a>
@@ -232,7 +351,7 @@ In the App component, we replace `a` elements with the router's `NavLink` compon
 <NavLink className='nav-link' to='play'>Play</NavLink>
 ```
 
-The nav bar now looks like the following.
+The `nav` element's code now looks like the following.
 
 ```jsx
 <nav className='navbar fixed-top navbar-dark'>
@@ -245,20 +364,16 @@ The nav bar now looks like the following.
         Login
       </NavLink>
     </li>
-    {authState === AuthState.Authenticated && (
-      <li className='nav-item'>
-        <NavLink className='nav-link' to='play'>
-          Play
-        </NavLink>
-      </li>
-    )}
-    {authState === AuthState.Authenticated && (
-      <li className='nav-item'>
-        <NavLink className='nav-link' to='scores'>
-          Scores
-        </NavLink>
-      </li>
-    )}
+    <li className='nav-item'>
+      <NavLink className='nav-link' to='play'>
+        Play
+      </NavLink>
+    </li>
+    <li className='nav-item'>
+      <NavLink className='nav-link' to='scores'>
+        Scores
+      </NavLink>
+    </li>
     <li className='nav-item'>
       <NavLink className='nav-link' to='about'>
         About
@@ -268,9 +383,25 @@ The nav bar now looks like the following.
 </nav>
 ```
 
-The router definitions are then inserted so that the router knows what component to display for a given path.
+### Handling unknown routes
+
+When routing the user's requests it is possible that they can put something in the browser's location bar that does exist. We handle this by creating a component for a path that is not found. We place this component at the bottom of our `src/app.jsx` file.
+
+```js
+function NotFound() {
+  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+}
+```
+
+### Injecting the routed component
+
+The router definitions are then inserted so that the router knows what component to display for a given path. The the router changes the rendered component, it appears in the place of the `Routes` element. The `Routes` element replaces the `main` element in the component HTML.
 
 ```jsx
+ <main>App components go here</main>
+
+ // to
+
 <Routes>
   <Route path='/' element={<Login />} exact />
   <Route path='/play' element={<Play />} />
@@ -288,67 +419,28 @@ function NotFound() {
 }
 ```
 
-At this point the React application should run. You can test this.
+At this the application should support navigating to the different component. When you reach this point with your startup make sure that you commit your changes.
+
+![Routing](routingComponents.gif)
 
 ## Converting to React components
 
-Each of the HTML pages in the original code needs to be converted to a component represented by a corresponding `jsx` file. Each of the components is a bit different, and so you want to inspect them to see what they look like as a React component.
+The code for each of the HTML pages needs to now be converted to the different React components. Each of the components is a bit different, and so you want to review them to determine what they look like as a React component.
 
 The basic steps for converting the component include the following.
 
-- Copy the HTML over and put it in the return value of the component.
+- Copy the `main` element HTML over and put it in the return value of the component. Don't copy the header and footer HTML since they are now represented in `app.jsx`.
 - The `class` attribute is renamed to `className` so that it doesn't conflict with the JavaScript keyword `class`.
-
-- Delete the header and footer HTML since they are now represented in `app.jsx`.
 - Copy the JavaScript over and turn the functions into inner functions of the React component.
-- Create a file for the CSS and use an import statement in the component `jsx` file.
+- Move the CSS over to the component directory and use an import statement to bring it into component's `jsx` file.
 - Create React state variables for each of the stateful objects in the component.
 - Replaced DOM query selectors with React state variables.
 - Move state up to parent components as necessary. For example, authentication state, or user name state.
 - Create child components as necessary. For example, a SimonGame and SimonButton component.
 
-## Setup to debug
-
-When running in production, the Simon web service running under Node.js on port 3000 serves up the Simon React application code when the browser requests `index.html`. This is the same as we did with previous Simon deliverables. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory that we set up when we build the production distribution package.
-
-![Setting up React ports](simonProduction.jpg)
-
-However, when the application is running in debug mode on your development environment we actually need two HTTP servers running. One for the Node.js web service, so that we can debug the service endpoints, and one for the React client HTTP debugger, so that we can develop and debug the React application code.
-
-To make this work when doing development debugging, we configure the React debugger HTTP server to listen on port 3001 and leave the Node.js server to listen on port 3000.
-
-![Setting up React ports](simonDevelopmentDebugging.jpg)
-
-To configure the React HTTP debugger to listen on port 3001 when running in our local development environment, we create a file named `.env.local` in the root of the project, and insert the following text.
-
-```
-PORT=3001
-```
-
-Next, we modify the `package.json` file to include the field `"proxy": "http://localhost:3000"`. This tells the React HTTP debugger that if a request is made for a service endpoint, it forwards it to port 3000, where our Node.js service is listening.
-
-```json
-{
-  "name": "simon-react",
-  // ...
-  "proxy": "http://localhost:3000"
-}
-```
-
-We also need to change the frontend WebSocket initialization found in the `gameNotifier.js` constructor to explicitly use the service port (3000) instead of the React HTTP debugger port (3001). Without this the frontend will send the webSocket messages to the React debug HTTP server listening on port 3001 and unlike HTTP traffic, it will not forward them onto port 3000 automatically. To explicitly send webSocket requests to port 3000 we use the dynamically injected process environment variable that is set when webpack creates the application bundle.
-
-```js
-let port = window.location.port;
-if (process.env.NODE_ENV !== 'production') {
-  port = 3000;
-}
-```
-
-This is a bit of annoying configuration, but without it you won't be able to debug your entire application in your development environment.
-
 ## Test as you go
 
-That was a lot of changes and it is easy to make a mistake during the process. When you do this with your startup application you will find it easier if you start with the working app that `create-react-app` builds and then test that it runs (using `npm run start`) without error. Then make sure you understand everything it is doing before it gets more complex. After that, make a small change, and test that it still works. If it does, commit that change to Git. That way you can see where things get broken before it gets out of hand.
+That was a lot of changes and it is easy to make a mistake during the process. When you do this with your startup application you will find it easier if you make a small change, and test that it still works. If it does, commit that change to Git. That way you can recover when things get broken before it gets out of hand.
 
 ## Study this code
 
@@ -370,7 +462,7 @@ Get familiar with what the example code teaches.
 
 - Deploy to your production environment using a copy of the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
 
-  ⚠ **NOTE** - The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `react-script` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment and served up using the Express static files middleware.
+  ⚠ **NOTE** - The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment and served up using the Express static files middleware.
 
   ```sh
   ./deployReact.sh -k <yourpemkey> -h <yourdomain> -s simon
