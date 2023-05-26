@@ -25,7 +25,8 @@ Here is a complete list of all the steps involved to convert Simon to a React ap
 1. Create app component
 1. Create view components
 1. Create the router
-1. Convert to React components
+1. Convert scores component
+1. Convert other components
 
 To give you a picture of where we will end up after porting to React, the final Simon project structure look like the following.
 
@@ -241,7 +242,7 @@ export default function App() {
 }
 ```
 
-You should be able to view the results of these changes by running `npm run dev` from the console and pressing the `o` key to open it in the browser. The result won't be very exciting, but this successfully demonstrates the first step towards moving to React. When you reach this point with your startup make sure that you commit your changes.
+You should be able to view the results of these changes by running `npm run dev` from the console and pressing the `o` key to open it in the browser. The result won't be very exciting, but this successfully demonstrates the first visible step towards moving to React. When you reach this point with your startup make sure that you commit your changes.
 
 ![First React component](firstReactComponent.png)
 
@@ -437,6 +438,87 @@ The basic steps for converting the component include the following.
 - Replaced DOM query selectors with React state variables.
 - Move state up to parent components as necessary. For example, authentication state, or user name state.
 - Create child components as necessary. For example, a SimonGame and SimonButton component.
+
+In order for you to have a feel for how this is done we will demonstrate how this is done with the `Scores` component.
+
+## Convert scores component
+
+The first step to implementing the scores component is to create a state variable that will represent the scores that we read from the server. We will update the scores as a side effect when our fetch request to get the scores asynchronously completes. This is done with the following code:
+
+```jsx
+const [scores, setScores] = React.useState([]);
+
+React.useEffect(() => {
+  fetch('/api/scores')
+    .then((response) => response.json())
+    .then((scores) => {
+      setScores(scores);
+      localStorage.setItem('scores', JSON.stringify(scores));
+    })
+    .catch(() => {
+      const scoresText = localStorage.getItem('scores');
+      if (scoresText) {
+        setScores(JSON.parse(scoresText));
+      }
+    });
+}, []);
+```
+
+When we get the scores back from the backend server, we want to convert them to JSX. This is done by iterating through the scores and pushing them into a variable named `scoreRows` that represents an array of JSX elements for each high score.
+
+```jsx
+const scoreRows = [];
+if (scores.length) {
+  for (const [i, score] of scores.entries()) {
+    scoreRows.push(
+      <tr key={i}>
+        <td>{i}</td>
+        <td>{score.name.split('@')[0]}</td>
+        <td>{score.score}</td>
+        <td>{score.date}</td>
+      </tr>
+    );
+  }
+} else {
+  scoreRows.push(
+    <tr key='0'>
+      <td colSpan='4'>Be the first to score</td>
+    </tr>
+  );
+}
+```
+
+Now we can bring over the `main` element from the existing `scores.html` file to the `src/scores/scores.jsx` file and place it as the return value from the component function. Next, we insert a reference to the `scoreRows` variable that will display the score JSX. That should look like the following:
+
+```jsx
+return (
+  <main className='container-fluid bg-secondary text-center'>
+    <table className='table table-warning table-striped-columns'>
+      <thead className='table-dark'>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id='scores'>{scoreRows}</tbody>
+    </table>
+  </main>
+);
+```
+
+That completes the conversion of the HTML and JavaScript files that represent the scores functionality. You can safely delete the original `scores.html` and `scores.js` files.
+
+Now we just need to move `scores.css` to `src/scores/scores.css` and import the CSS into the `src/scores/scores.jsx`.
+
+```jsx
+import './scores.css';
+```
+
+With that all done the scores show render nicely. You can follow a similar process to convert the other three application views to components.
+
+![Scores component](scoresComponent.png)
 
 ## Test as you go
 
