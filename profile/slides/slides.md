@@ -43,8 +43,8 @@ The following slide decks are used for in person discussion of the instruction t
 
 ## Web services
 
-- [5.1 URL, ports, HTP](https://docs.google.com/presentation/d/1JP5Hyj6UI11scag7JYIkxbUDdAPHxA5_kH67DKWT0zA/edit?usp=sharing)
-- [5.2 CORS, fetch, service design](https://docs.google.com/presentation/d/16zmr_WX4J4eawcJak-0qSS0pYcYbtQ6shndo_Jdn0vg/edit?usp=sharing)
+- [5.1 fetch, URL, ports, HTTP](https://docs.google.com/presentation/d/1JP5Hyj6UI11scag7JYIkxbUDdAPHxA5_kH67DKWT0zA/edit?usp=sharing)
+- [5.2 CORS, service design](https://docs.google.com/presentation/d/16zmr_WX4J4eawcJak-0qSS0pYcYbtQ6shndo_Jdn0vg/edit?usp=sharing)
 - [5.3 Node.js](https://docs.google.com/presentation/d/18OUsoi_NUvyH0kZZfKoUgAdPtKvdHh-QrxzvmyTomos/edit?usp=sharing)
 - [5.4 Debugging node, daemons, Express](https://docs.google.com/presentation/d/1DruXFbSRNTJr_oQhyNKWqziJROfbitFkW_vB0-LUavM/edit?usp=sharing)
 - [5.5 Simon service, UI & endpoint testing](https://docs.google.com/presentation/d/1VfUdlnvLz2c5btkjhrobhDE8nztgPqhxbQ8N6T2M0ho/edit?usp=sharing)
