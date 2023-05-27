@@ -15,7 +15,7 @@ The course is divided into distinct milestones. At each milestone you will evolv
 
 The [Simon](https://simon.cs260.click) application is meant to give you an example of the level of complexity you are looking for, and how to build your startup application. Use Simon as a chance to experiment with things you are considering doing with your startup application. Once you learn how Simon does something you can leverage that code in your startup.
 
-Immediately start thinking about what you would like to build. What you do for your startup application is completely up to you. So make it something that is interesting to you. It doesn't have to be complex. In fact **simple is usually better**. Dream big, but pick a very small minimal viable product for your startup application.
+Immediately start thinking about what you would like to build. What you do for your startup application is completely up to you. So make it something that is interesting to you. It doesn't have to be complex. In fact **simple is usually better**. Dream big, but pick a very small, minimal viable product, for your startup application.
 
 Keep the styling of your application simple. One common mistake is to spend enormous amounts of time trying to make your application look a certain way. Instead leverage what Simon does. Make it look reasonable and then move on to the next technology. You can always come back later and make it look better.
 
@@ -72,6 +72,17 @@ The [Simon](https://simon.cs260.click) demonstration application provides a good
 This realtime [voting application](https://startup.cs260.click) provides another reasonable example.
 
 ![Voter startup](startupExampleVoter.gif)
+
+## Common mistakes
+
+Here are some common mistakes that will slow down the development of your startup.
+
+1. **Not putting in consistent effort**. The technology deliverables build on each other. If you get behind, it becomes increasingly difficult to deliver the final product. Rather than cramming your effort into the night before the deliverable is due, set aside a specific time each day to research and add to your startup. Doing this will result in a better application, and make the process much more satisfying.
+1. **Too many UI pieces**. Resist the urge to create lots of user inputs and components when one input or component will demonstrate the functionality. Complexity kills in software development. This is true for both the amount of effort it takes to implement and enhance, as well as the poor user experience it creates.
+1. **Getting stuck on doing something a specific way**. There are common patterns for doing things in web applications that have been refined over decades of experience. If you find yourself hitting a brick wall because you can't get something to work the way you have designed, then it might be because it goes against the way things are normally done. Instead, look for inspiration in how popular frameworks solve a pattern, and leverage the examples and code that they provide. Common examples of this mistake include writing your own navigation bar, or creating an interactive game by moving HTML elements around pixel by pixel.
+1. **Focusing too much on the UI**. In many ways it is the functionality that matters. Make sure that the application does something interesting and utilizes all the required technologies first. You can always make it look nicer once you have made it work.
+1. **Implementing too many features**. Focus on delivering a core feature really well. Once you have completely built out that functionality, then you can add additional features. A common mistake is to start building lots of features at the start, and then not completing any of them. For example, if you are writing a stock trading application, then make sure you can display stocks and save your favorites, before you start designing the ability to see your friend's picks, chat about the market, display historical charts, or use AI to predict the future.
+1. **Forgetting that programming is an art**. Building a web application is a creative expression of who you are, what you know, and the vision you have. Don't get frustrated because you cannot immediately realize your potential. That will take time and effort. Just remember that as you develop your skills, it will become increasingly satisfying to see what amazing things you can build and what an positive impact you can make for so many people. God has given you specific talents, and as you develop them, you are going to do great things for good with them.
 
 ## Demo day
 
