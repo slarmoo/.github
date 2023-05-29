@@ -79,8 +79,8 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Objects and classes](javascript/objectClasses/objectClasses.md) _(due 5/19)_
 - [Scope](javascript/scope/scope.md)
 - [Modules](javascript/modules/modules.md)
-- [LocalStorage](javascript/localStorage/localStorage.md)
 - ☑ [Document object model (DOM)](javascript/dom/dom.md) _(due 5/19)_
+- [LocalStorage](javascript/localStorage/localStorage.md)
 - ☑ [Promises](javascript/promises/promises.md) _(due 5/24)_
 - ☑ [Async/await](javascript/asyncAwait/asyncAwait.md) _(due 5/24)_
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
