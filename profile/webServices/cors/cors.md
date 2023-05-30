@@ -21,7 +21,7 @@ Host: byu.instructure.com
 Origin: https://byu.iinstructure.com
 ```
 
-In response the banking website would return:
+In response the course website would return:
 
 ```http
 HTTP/2 200 OK
@@ -30,7 +30,7 @@ Access-Control-Allow-Origin: https://byu.instructure.com
 
 The browser would then see that the actual origin of the request does not match the allowed origin and so the browser blocks the response and generates an error.
 
-Notice that with CORS, it is the browser that is protecting the user from accessing the banking website's authentication endpoint from the wrong origin. CORS is only meant to alert the user that something nefarious is being attempted. A hacker can still proxy requests through their own server to the banking website and completely ignore the `Access-Control-Allow-Origin` header. Therefore the banking website needs to implement its own precautions to stop a hacker for using its services inappropriately.
+Notice that with CORS, it is the browser that is protecting the user from accessing the banking website's authentication endpoint from the wrong origin. CORS is only meant to alert the user that something nefarious is being attempted. A hacker can still proxy requests through their own server to the banking website and completely ignore the `Access-Control-Allow-Origin` header. Therefore the banking website needs to implement its own precautions to stop a hacker from using its services inappropriately.
 
 ## Using third party services
 
