@@ -124,8 +124,9 @@ If you again examine the contents of the `package.json` file you will see a refe
 
 When you clone your source code from GitHub to a new location, just run `npm install` in the project directory. This will cause NPM to download all of the previously installed packages and recreate the `node-modules` directory. The `package-lock.json` file tracks the version of the package that you installed. That way if rebuild your `node-modules` directory you will have the version of the package you initially installed and not the latest available version, which might not be compatible with your code.
 
-With NPM and the joke package installed, you can now use the package in a JavaScript file by referencing the package name as a parameter to the `require` function. This is then followed by a call the joke object's `getRandomDadJoke` function to actually generate a joke.
+With NPM and the joke package installed, you can now use the package in a JavaScript file by referencing the package name as a parameter to the `require` function. This is then followed by a call the joke object's `getRandomDadJoke` function to actually generate a joke. Create a file named `index.js` and paste the following into it.
 
+**index.js**
 ```js
 const giveMeAJoke = require('give-me-a-joke');
 giveMeAJoke.getRandomDadJoke((joke) => {
@@ -133,7 +134,7 @@ giveMeAJoke.getRandomDadJoke((joke) => {
 });
 ```
 
-If we run this code using node we get the following result.
+If you run this code using `node.js` you should get a result similar to the following.
 
 ```sh
 ➜  node index.js
