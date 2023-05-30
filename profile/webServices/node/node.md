@@ -112,7 +112,24 @@ NPM knows how to access a massive repository of preexisting packages. You can se
 
 ## Package.json
 
-If you list the files in directory you will notice that it has created a file named `package.json`. This file contains three main things: 1) Metadata about your project such as its name and the default entry JavaScript file, 2) commands that you can execute to do things like run, test, or distribute your code, and 3) packages that this project depends upon. With NPM initialized to work with your project, you can now use it to install a node package. As a simple example, we will install a package that knows how to tell jokes. This package is called `give-me-a-joke`. You can search for it on the [NPM website](https://www.npmjs.com/), see how often it is installed, examine the source code, and learn about who created it. You install the package using `npm install` followed by the name of the package.
+If you list the files in directory you will notice that it has created a file named `package.json`. This file contains three main things: 1) Metadata about your project such as its name and the default entry JavaScript file, 2) commands (scripts) that you can execute to do things like run, test, or distribute your code, and 3) packages that this project depends upon. The following shows what you `package.json` looks like currently. It has some default metadata and a simple placeholder script the just runs the echo command when you execute `npm run test` from the console.
+
+```json
+{
+  "name": "npmtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+```
+
+With NPM initialized to work with your project, you can now use it to install a node package. As a simple example, we will install a package that knows how to tell jokes. This package is called `give-me-a-joke`. You can search for it on the [NPM website](https://www.npmjs.com/), see how often it is installed, examine the source code, and learn about who created it. You install the package using `npm install` followed by the name of the package.
 
 ```sh
 ➜  npm install give-me-a-joke
@@ -120,13 +137,34 @@ If you list the files in directory you will notice that it has created a file na
 
 If you again examine the contents of the `package.json` file you will see a reference to the newly installed package dependency. If you decide you no longer want a package dependency you can always remove it with the `npm uninstall <package name here>` console command.
 
-⚠ Note that when you start installing package dependencies NPM will create an additional file named `package-lock.json` and a directory named `node-modules` in your project directory. The `node-modules` directory contains the actual JavaScript for the package and all of its dependent packages. As you install several packages this directory will start to get very large. You do **not** want to check this directory into your source control system since it is so large and can be rebuilt using the information contained in the `package.json` and `package-lock.json` files. So make sure you include `node-modules` in your `.gitignore` file.
+With the dependency added, the unnecessary metadata removed, the addition of a useful script to run the program, and also adding a description, the `package.json` file should look like this:
 
-When you clone your source code from GitHub to a new location, just run `npm install` in the project directory. This will cause NPM to download all of the previously installed packages and recreate the `node-modules` directory. The `package-lock.json` file tracks the version of the package that you installed. That way if rebuild your `node-modules` directory you will have the version of the package you initially installed and not the latest available version, which might not be compatible with your code.
+```json
+{
+  "name": "npmtest",
+  "version": "1.0.0",
+  "description": "Simple Node.js demo",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "give-me-a-joke": "^0.5.1"
+  }
+}
+```
 
-With NPM and the joke package installed, you can now use the package in a JavaScript file by referencing the package name as a parameter to the `require` function. This is then followed by a call the joke object's `getRandomDadJoke` function to actually generate a joke. Create a file named `index.js` and paste the following into it.
+⚠ Note that when you start installing package dependencies, NPM will create an additional file named `package-lock.json` and a directory named `node-modules` in your project directory. The `node-modules` directory contains the actual JavaScript files for the package and all of its dependent packages. As you install several packages this directory will start to get very large. You do **not** want to check this directory into your source control system since it can be very large and can be rebuilt using the information contained in the `package.json` and `package-lock.json` files. So make sure you include `node-modules` in your `.gitignore` file.
+
+When you clone your source code from GitHub to a new location, the first things you should do is run `npm install` in the project directory. This will cause NPM to download all of the previously installed packages and recreate the `node-modules` directory.
+
+The `package-lock.json` file tracks the version of the package that you installed. That way if rebuild your `node-modules` directory you will have the version of the package you initially installed and not the latest available version, which might not be compatible with your code.
+
+With NPM and the joke package installed, you can now use the joke package in a JavaScript file by referencing the package name as a parameter to the `require` function. This is then followed by a call the joke object's `getRandomDadJoke` function to actually generate a joke. Create a file named `index.js` and paste the following into it.
 
 **index.js**
+
 ```js
 const giveMeAJoke = require('give-me-a-joke');
 giveMeAJoke.getRandomDadJoke((joke) => {
@@ -147,12 +185,13 @@ This may seem like a lot of work but after you do it a few times it will begin t
 1. Initialize it for use with NPM by running `npm init -y`
 1. Make sure `.gitignore` file contains `node-modules`
 1. Install any desired packages with `npm install <package name here>`
-1. Add `require('<package name here>')` to your JavaScript code
+1. Add `require('<package name here>')` to your application's JavaScript
+1. Use the code the package provides in your JavaScript
 1. Run your code with `node index.js`
 
 ## Creating a web service
 
-With JavaScript we can write code that listens on a server port (e.g. 8080), receives HTTP requests, processes them, and then responds. We can use this to create a simple web service that we then execute using Node.js.
+With JavaScript we can write code that listens on a network port (e.g. 80, 443, 3000, or 8080), receives HTTP requests, processes them, and then responds. We can use this to create a simple web service that we then execute using Node.js.
 
 First create your project.
 
@@ -167,7 +206,7 @@ Now, open VS Code and create a file named `index.js`. Paste the following code i
 ```js
 const http = require('http');
 const server = http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write(`<h1>Hello Node.js! [${req.method}] ${req.url}</h1>`);
   res.end();
 });
@@ -177,7 +216,7 @@ server.listen(8080, () => {
 });
 ```
 
-This code uses the built in `http` package to create our HTTP server using the `http.createServer` function and provide it with a callback function that takes a request (`req`) and response (`res`) object. That function is called whenever the server receives an HTTP request. In our example, the callback always returns the same HTML snippet, with a status code of 200, and a Content-Type header, no matter what request is made. Basically this is just a simple dynamically generated HTML page. A real web service would examine the HTTP path and return meaningful content based upon the purpose of the endpoint.
+This code uses the Node.js built in `http` package to create our HTTP server using the `http.createServer` function along with a callback function that takes a request (`req`) and response (`res`) object. That function is called whenever the server receives an HTTP request. In our example, the callback always returns the same HTML snippet, with a status code of 200, and a Content-Type header, no matter what request is made. Basically this is just a simple dynamically generated HTML page. A real web service would examine the HTTP path and return meaningful content based upon the purpose of the endpoint.
 
 The `server.listen` call starts listening on port 8080 and blocks until the program is terminated.
 
