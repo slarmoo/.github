@@ -70,7 +70,7 @@ Now, instead of pressing `F5` to continue, press `F11` to step into the `res.sen
 
 ## Nodemon
 
-Once you start writing complex web applications you will find yourself making changes in the middle of debugging sessions and you would to like have `node` restart automatically and update the browser as the changes are saved. This seems like a simple thing, but over the course of hundreds of changes, every second you can save really starts to add up.
+Once you start writing complex web applications you will find yourself making changes in the middle of debugging sessions and you would like to have `node` restart automatically and update the browser as the changes are saved. This seems like a simple thing, but over the course of hundreds of changes, every second you can save really starts to add up.
 
 The [Nodemon package](https://www.npmjs.com/package/nodemon) is basically a wrapper around `node` that watches for files in the project directory to change. When it detects that you saved something it will automatically restart `node`.
 
