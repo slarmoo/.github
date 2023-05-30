@@ -58,7 +58,7 @@ Doing this will make this deliverable of your startup available from `https://st
 
 - (Required) Simon JavaScript deployed to your production environment
 - (Required) A link to your GitHub startup repository prominently displayed on your application's home page
-- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
 - Significant use of JavaScript to create a viable working application
   - 20% JavaScript support for future login.
   - 20% JavaScript support for future database data.
