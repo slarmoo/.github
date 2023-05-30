@@ -2,8 +2,8 @@
 
 The midterm will cover all topics from the start of class until the end of the JavaScript instruction. Here are the details:
 
-- The test is available on online with Canvas during the open dates.
-- You must take taken during the open dates. Consult Canvas for open dates. No late days.
+- The test is available online with Canvas during the open dates.
+- The test must be taken during the open dates. Consult Canvas for open dates. No late days.
 - Multiple choice format.
 - There is no time limit.
 - The average time to take the test is less than 60 minutes.
