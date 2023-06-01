@@ -1,10 +1,10 @@
 # PM2
 
-When you run a program from the console the program will automatically terminate when you close the console or if the computer restarts. In order to keep programs running after a shutdown you need to register it as a `daemon`. The term daemon comes from the idea of something that is always there working in the background. Hopefully you only have good daemons running in your background.
+When you run a program from the console, the program will automatically terminate when you close the console or if the computer restarts. In order to keep programs running after a shutdown you need to register it as a `daemon`. The term daemon comes from the idea of something that is always there working in the background. Hopefully you only have good daemons running in your background.
 
-We want our web services to continue running as a daemon. We would also like a easy way to start and stop our services. That is what [Process Manager 2](https://pm2.keymetrics.io/docs/usage/quick-start/) (PM2) does.
+We want our web services to continue running as a daemon. We would also like an easy way to start and stop our services. That is what [Process Manager 2](https://pm2.keymetrics.io/docs/usage/quick-start/) (PM2) does.
 
-PM2 is already installed on your production server as part of the AWS AMI that you selected when you launched your server. Additionally, the deployment scripts found with the Simon projects automatically modify PM2 to register and restart your web services. That means you should not need to do anything with PM2. However, if you run into problems such as your services are not running, then here are some commands that you might find useful.
+PM2 is already installed on your production server as part of the AWS AMI that you selected when you launched your server. Additionally, the deployment scripts found with the Simon projects automatically modify PM2 to register and restart your web services. That means you should not need to do anything with PM2. However, if you run into problems such as your services not running, then here are some commands that you might find useful.
 
 You can SSH into your server and see PM2 in action by running the following command.
 
@@ -71,7 +71,7 @@ Now Caddy will attempt to proxy the requests, but there is no web service listen
 
 ### Create the web service
 
-Copy the ~/services/startup directory to a directory that represents the purpose of your service. For example:
+Copy the `~/services/startup` directory to a directory that represents the purpose of your service. For example:
 
 ```sh
 cp -r ~/services/startup ~/services/tacos
@@ -86,7 +86,7 @@ app.listen(port, () => {
 });
 ```
 
-There is also a directory named `public` that has static HTML/CSS/JavaScript files that your web service will respond with when requested. The index.js file enables this with the following code:
+There is also a directory named `public` that has static HTML/CSS/JavaScript files that your web service will respond with when requested. The `index.js` file enables this with the following code:
 
 ```js
 app.use(express.static('public'));
@@ -98,7 +98,7 @@ You can start up the web service, listening on port 5000, using Node as follows.
 node index.js 5000
 ```
 
-You can now access your web service through the browser, or curl.
+You can now access your web service through the browser, or `curl`.
 
 ```sh
 curl https://tacos.cs260.click
