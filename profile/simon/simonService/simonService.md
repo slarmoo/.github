@@ -2,7 +2,7 @@
 
 ![Simon](../simon.png)
 
-This deliverable demonstrates converting the JavaScript application into a web application by implementing a web service that listens on a network port for HTTP requests. The web service provide endpoints for getting and updating the scores. The application also uses a couple third party endpoints to display inspirational quotes on the about page and show a random header image.
+This deliverable demonstrates converting the JavaScript application into a web application by implementing a web service that listens on a network port for HTTP requests. The web service provides endpoints for getting and updating the scores. The application also uses a couple third party endpoints to display inspirational quotes on the about page and show a random header image.
 
 We will use Node.js and Express to create our HTTP service.
 
@@ -12,7 +12,7 @@ You can view this application running here: [Example Simon Service](https://simo
 
 ## Service endpoint definitions
 
-Here is our design, documented using curl commands, for the two endpoints that the Simon web service provides.
+Here is our design, documented using `curl` commands, for the two endpoints that the Simon web service provides.
 
 **GetScores** - Get the latest high scores.
 
@@ -40,7 +40,7 @@ curl -X POST /api/score -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"
 
 ## Third party endpoints
 
-The about.js file contains code for making calls to third party endpoints using fetch. We make one call to `picsum.photos` to get a random picture and another to `quotable.io` to get a random quote. Once the endpoint asynchronously returns, the DOM is updated with the requested data. Here is an example of the quote endpoint call.
+The `about.js` file contains code for making calls to third party endpoints using `fetch`. We make one call to `picsum.photos` to get a random picture and another to `quotable.io` to get a random quote. Once the endpoint asynchronously returns, the DOM is updated with the requested data. Here is an example of the quote endpoint call.
 
 ```js
 function displayQuote(data) {
@@ -144,7 +144,7 @@ Get familiar with what the example code teaches.
 - Review the code and get comfortable with everything it represents.
 - Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
 
-  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of VS Code.
 
 - Use the browser's dev tools to set breakpoints in the frontend code and step through it each line.
 - Make modifications to the code as desired. Experiment and see what happens.
@@ -163,7 +163,7 @@ Get familiar with what the example code teaches.
   ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
-  ⚠ **NOTE** - The deployment script for this project is different than pervious deployment scripts since it needs to set up the Node.js service for your backend code, and copy your frontend code to the `public` directory. You also want to make sure that your node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Startup you want to make sure that code is configured to listen on port 4000.
+  ⚠ **NOTE** - The deployment script for this project is different from previous deployment scripts, since it needs to set up the Node.js service for your backend code, and copy your frontend code to the `public` directory. You also want to make sure that your Node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Startup you want to make sure that code is configured to listen on port 4000.
 
-- Update your `startup` repository notes.md with what you learned.
+- Update your `startup` repository `notes.md` with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
