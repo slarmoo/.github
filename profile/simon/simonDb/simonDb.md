@@ -8,7 +8,7 @@ This deliverable demonstrates using a database service, MongoDB, to persistently
 1. Web service - Caddy, Node.js, Express
 1. Database service - MongoDB
 
-You can view this application running here: [Example Simon DB](https://simon-db.cs260.click). Although you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved persistently in the database.
+You can view this application running here: [Example Simon DB](https://simon-db.cs260.click). However, you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved persistently in the database.
 
 ## Connecting to the database
 
@@ -31,7 +31,7 @@ client.connect(err => {
 
 ## Create a MongoDB Atlas cluster
 
-Before you can start writing your own code you need to get a MongoDB Atlas account and create a database cluster that you can use as your database service. If you have not done that yet go back and review the instruction on data services.
+Before you can start writing your own code, you need to get a MongoDB Atlas account and create a database cluster that you can use as your database service. If you have not done that yet, go back and review the instruction on data services.
 
 ## Handling credentials
 
@@ -73,5 +73,5 @@ Get familiar with what this code teaches.
   ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
-- Update your `startup` repository notes.md with what you learned.
+- Update your `startup` repository `notes.md` with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
