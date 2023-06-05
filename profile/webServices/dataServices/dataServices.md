@@ -87,9 +87,9 @@ const userName = 'holowaychuk';
 const password = 'express';
 const hostname = 'mongodb.com';
 
-const uri = `mongodb+srv://${userName}:${password}@${hostname}`;
+const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
-const client = new MongoClient(uri);
+const client = new MongoClient(url);
 ```
 
 With the client connection you can then get a database object and from that a collection object. The collection object allows you to insert, and query for, documents. You do not have to do anything special to insert a JavaScript object as a Mongo document. You just call the `insertOne` function on the collection object and pass it the JavaScript object. When you insert a document, if the database or collection does not exist, Mongo will automatically create them for you. When the document is inserted into the collection it will automatically be assigned a unique ID.
