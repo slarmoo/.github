@@ -2,9 +2,6 @@
 
 ![Simon](../simon.png)
 
-🔑 **Required reading**: [Debugging a React application](https://youtu.be/U8MYAOtIm5E)
-📖 **Deeper dive reading**: [Port Simon to React](https://youtu.be/qLc7SObYAQw)
-
 This deliverable demonstrates using [React](https://reactjs.org/) as a web framework and Vite as your frontend tooling. This helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
 
 As part of the move to React we convert Simon from a **multi-page application** to a **single page application**. In a single page application, the browser only loads a single HTML file (index.html), and then we use JavaScript to interactively change the rendered content and components. This is a significant architectural shift to the application and will require you to reorganize your code to fit the single page, component driven, model.
