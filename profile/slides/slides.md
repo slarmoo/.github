@@ -55,8 +55,8 @@ The following slide decks are used for in person discussion of the instruction t
 ## Web frameworks
 
 - [6.1 Introduction](https://docs.google.com/presentation/d/1CAsw6anyXiAjx8HbefZOysFMqqV3qyTsHpsQGnt9w0Y/edit?usp=sharing)
-- [6.2 Reactivity, hooks, tic-tac-toe](https://docs.google.com/presentation/d/1WjUi0otU3Ryoo7b4LK3BxkG89gMaJJd873lWbBuRvkw/edit?usp=sharing)
-- [6.3 Toolchain, CLI, router](https://docs.google.com/presentation/d/1fUek7tV2uWRPYppo-DrhqXL1fYIwNRBQKyGtmu23jGk/edit?usp=sharing)
+- [6.2 Toolchain, Vite, router](https://docs.google.com/presentation/d/1fUek7tV2uWRPYppo-DrhqXL1fYIwNRBQKyGtmu23jGk/edit?usp=sharing)
+- [6.3 Reactivity, hooks, tic-tac-toe](https://docs.google.com/presentation/d/1WjUi0otU3Ryoo7b4LK3BxkG89gMaJJd873lWbBuRvkw/edit?usp=sharing)
 - [6.4 Simon React](https://docs.google.com/presentation/d/1gNmzsbvm5DNPVfTdbGRQz_IFcvz4OkBMF_0Jfs-vBxk/edit?usp=sharing)
 
 ## Assorted topics
