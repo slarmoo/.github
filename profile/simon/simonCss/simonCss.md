@@ -2,7 +2,7 @@
 
 ![Simon](../simon.png)
 
-🔑 **Required reading**: [Simon CSS](https://youtu.be/N7DVKsvUJgM)
+🎥 **Instruction video**: [Simon CSS](https://youtu.be/N7DVKsvUJgM)
 
 This application deliverable demonstrates the use of basic CSS for styling and a responsive design.
 

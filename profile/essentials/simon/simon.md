@@ -20,14 +20,14 @@ You can play the example production release [here](https://simon.cs260.click).
 
 The following are the different technologies we are going to demonstrate with our Simon iterations.
 
-| Iteration                                      | Video                                 | Code                                                                 | Production release                              |
-| ---------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------- |
-| Simon HTML                                     | [video](https://youtu.be/zg7eDNRMnWA) | [code](https://github.com/webprogramming260/simon-html#readme)       | [example](https://simon-html.cs260.click)       |
-| Simon CSS                                      | [video](https://youtu.be/N7DVKsvUJgM) | [code](https://github.com/webprogramming260/simon-css#readme)        | [example](https://simon-css.cs260.click)        |
-| Simon JavaScript                               | [video](https://youtu.be/hqzXN-n2Q5I) | [code](https://github.com/webprogramming260/simon-javascript#readme) | [example](https://simon-javascript.cs260.click) |
-| Simon Service                                  |                                       | [code](https://github.com/webprogramming260/simon-service#readme)    | [example](https://simon-service.cs260.click)    |
-| Simon DB                                       |                                       | [code](https://github.com/webprogramming260/simon-db#readme)         | [example](https://simon-db.cs260.click)         |
-| Simon Login                                    |                                       | [code](https://github.com/webprogramming260/simon-login#readme)      | [example](https://simon-login.cs260.click)      |
-| Simon WebSocket                                |                                       | [code](https://github.com/webprogramming260/simon-websocket#readme)  | [example](https://simon-websocket.cs260.click)  |
-| Simon React                                    |                                       | [code](https://github.com/webprogramming260/simon-react#readme)      | [example](https://simon-react.cs260.click)      |
-| Simon Progressive Web Application (_optional_) |                                       | [code](https://github.com/webprogramming260/simon-pwa#readme)        | [example](https://simon-pwa.cs260.click)        |
+| Iteration                                      | Video                                 | Code                                                                 | Production release                           |
+| ---------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------- |
+| Simon HTML                                     | [video](https://youtu.be/zg7eDNRMnWA) | [code](https://github.com/webprogramming260/simon-html#readme)       | [play](https://simon-html.cs260.click)       |
+| Simon CSS                                      | [video](https://youtu.be/N7DVKsvUJgM) | [code](https://github.com/webprogramming260/simon-css#readme)        | [play](https://simon-css.cs260.click)        |
+| Simon JavaScript                               | [video](https://youtu.be/hqzXN-n2Q5I) | [code](https://github.com/webprogramming260/simon-javascript#readme) | [play](https://simon-javascript.cs260.click) |
+| Simon Service                                  |                                       | [code](https://github.com/webprogramming260/simon-service#readme)    | [play](https://simon-service.cs260.click)    |
+| Simon DB                                       |                                       | [code](https://github.com/webprogramming260/simon-db#readme)         | [play](https://simon-db.cs260.click)         |
+| Simon Login                                    |                                       | [code](https://github.com/webprogramming260/simon-login#readme)      | [play](https://simon-login.cs260.click)      |
+| Simon WebSocket                                | [video](https://youtu.be/oVO2VIG0zfI) | [code](https://github.com/webprogramming260/simon-websocket#readme)  | [play](https://simon-websocket.cs260.click)  |
+| Simon React                                    | [video](https://youtu.be/wO20-h3qNXE) | [code](https://github.com/webprogramming260/simon-react#readme)      | [play](https://simon-react.cs260.click)      |
+| Simon Progressive Web Application (_optional_) |                                       | [code](https://github.com/webprogramming260/simon-pwa#readme)        | [play](https://simon-pwa.cs260.click)        |

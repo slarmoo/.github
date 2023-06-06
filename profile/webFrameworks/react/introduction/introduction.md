@@ -2,6 +2,8 @@
 
 ![React Logo](reactLogo.png)
 
+🎥 **Instruction video**: [React introduction](https://youtu.be/R2I89JGr2TM)
+
 📖 **Recommended reading**:
 
 - [MDN React Introduction Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
@@ -35,7 +37,7 @@ Babel will convert that into valid JavaScript:
 const i = 3;
 const list = React.createElement(
   'ol',
-  {class: 'big'},
+  { class: 'big' },
   React.createElement('li', null, 'Item ', i),
   React.createElement('li', null, 'Item ', 3 + i)
 );

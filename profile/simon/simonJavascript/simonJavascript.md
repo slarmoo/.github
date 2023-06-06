@@ -1,6 +1,6 @@
 # Simon JavaScript
 
-🔑 **Required reading**: [Simon JavaScript](https://youtu.be/hqzXN-n2Q5I)
+🎥 **Instruction video**: [Simon JavaScript](https://youtu.be/hqzXN-n2Q5I)
 
 ![Simon](../simon.png)
 

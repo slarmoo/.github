@@ -1,5 +1,7 @@
 # Simon React
 
+🎥 **Instruction video**: [Simon React](https://youtu.be/wO20-h3qNXE)
+
 ![Simon](../simon.png)
 
 This deliverable demonstrates using [React](https://reactjs.org/) as a web framework and Vite as your frontend tooling. This helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.

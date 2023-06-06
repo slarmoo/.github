@@ -1,5 +1,7 @@
 # Simon WebSocket
 
+🎥 **Instruction video**: [Simon WebSocket](https://youtu.be/oVO2VIG0zfI)
+
 ![Simon](../simon.png)
 
 This deliverable demonstrates peer to peer communication using WebSocket. The functionality that Simon provides for peer communication is intentionally limited to display notifications between users. This was done so that the application would clearly demonstrate how WebSocket works rather than clutter the application with functionality that uses WebSockets.
