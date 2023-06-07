@@ -100,10 +100,10 @@ Follow these steps, and then add in the code from the sections that follow. Ther
 
 1. Create a directory called `authTest` that we will work in.
 1. Save the above content to a file named `main.js`. This is our starting web service.
-1. Run `npm init -y` to initial the project to work with node.js.
+1. Run `npm init -y` to initialize the project to work with node.js.
 1. Run `npm install express cookie-parser mongodb uuid bcrypt` to install all of the packages we are going to use.
 1. Run `node main.js` or press `F5` in VS Code to start up the web service.
-1. You can now open a console window and use curl to try out one of the endpoints.
+1. You can now open a console window and use `curl` to try out one of the endpoints.
 
    ```sh
    ➜  curl -X POST localhost:8080/auth/create
@@ -181,7 +181,7 @@ async function createUser(email, password) {
 }
 ```
 
-But, we are missing a couple of things. We need to a real authentication token, and we cannot simply store a clear text password in our database.
+But, we are missing a couple of things. We need a real authentication token, and we cannot simply store a clear text password in our database.
 
 ## Generating authentication tokens
 
@@ -199,7 +199,7 @@ Next we need to securely store our passwords. Failing to do so is a major securi
 
 So instead of storing the password directly, we want to cryptographically hash the password so that we never store the actual password. When we want to validate a password during login, we can hash the login password and compare it to our stored hash of the password.
 
-To hash our passwords we will use the `bcrypt` package. This creates a very secure one way hash of the password. If you are interested in understanding how [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) works, it is definitely worth the time.
+To hash our passwords we will use the `bcrypt` package. This creates a very secure one-way hash of the password. If you are interested in understanding how [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) works, it is definitely worth the time.
 
 ```js
 const bcrypt = require('bcrypt');
@@ -223,7 +223,7 @@ async function createUser(email, password) {
 
 We now need to pass our generated authentication token to the browser when the login endpoint is called, and get it back on subsequent requests. To do this we use HTTP cookies. The `cookie-parser` package provides middleware for cookies and so we will leverage that.
 
-We import the `cookieParser` object and then tell our app to use it. When a user is successfully created, or logs in, we set the cookie header. Since we are storing an authentication token in the cookie we want to make it as secure as possible, and so we use the `httpOnly`, `secure`, and `sameSite` options.
+We import the `cookieParser` object and then tell our app to use it. When a user is successfully created, or logs in, we set the cookie header. Since we are storing an authentication token in the cookie, we want to make it as secure as possible, and so we use the `httpOnly`, `secure`, and `sameSite` options.
 
 - `httpOnly` tells the browser to not allow JavaScript running on the browser to read the cookie.
 - `secure` requires HTTPS to be used when sending the cookie back to the server.
@@ -385,7 +385,7 @@ app.listen(port, function () {
 
 ## Experiment
 
-With everything implemented we can use curl to try it out. First start up the web service from VS Code by pressing `F5` and selecting `node.js` as the debugger if you have not already done that. You can set breakpoints on all of the different endpoints to see what they do and inspect the different variables. Then open a console window and run the following curl commands. You should see similar results as what is shown below. Note that the `-c` and `-b` parameters tell curl to store and use cookies with the given file.
+With everything implemented we can use `curl` to try it out. First start up the web service from VS Code by pressing `F5` and selecting `node.js` as the debugger if you have not already done that. You can set breakpoints on all of the different endpoints to see what they do and inspect the different variables. Then open a console window and run the following `curl` commands. You should see similar results as what is shown below. Note that the `-c` and `-b` parameters tell curl to store and use cookies with the given file.
 
 ```sh
 ➜  curl -X POST localhost:8080/auth/create -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
