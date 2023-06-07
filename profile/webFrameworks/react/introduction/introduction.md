@@ -9,7 +9,7 @@
 - [MDN React Introduction Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
 - [React Quick Start](https://react.dev/learn#components)
 
-React and its associated projects provide a powerful web programming framework. The name React comes from its focus on making reactive web page components that automatically update based on user interactions or changes in the underlying data.
+React, and its associated projects, provide a powerful web programming framework. The name React comes from its focus on making reactive web page components that automatically update based on user interactions or changes in the underlying data.
 
 ![Jordan Walke](jordanWalke.jpg)
 
