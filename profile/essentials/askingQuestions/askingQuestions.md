@@ -15,7 +15,7 @@
 | Instructor | Online or in person | Discord, Class, Office | Office Hours, Class Times       |
 | Peers      | Online or in person | Discord, Class         | Depends on how friendly you are |
 
-## Whom to ask questions
+## Who to ask questions
 
 You have a lot of resources to help you find answers. Here is the order that you should use them.
 
