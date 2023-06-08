@@ -155,11 +155,11 @@ With the dependency added, the unnecessary metadata removed, the addition of a u
 }
 ```
 
-⚠ Note that when you start installing package dependencies, NPM will create an additional file named `package-lock.json` and a directory named `node-modules` in your project directory. The `node-modules` directory contains the actual JavaScript files for the package and all of its dependent packages. As you install several packages this directory will start to get very large. You do **not** want to check this directory into your source control system since it can be very large and can be rebuilt using the information contained in the `package.json` and `package-lock.json` files. So make sure you include `node-modules` in your `.gitignore` file.
+⚠ Note that when you start installing package dependencies, NPM will create an additional file named `package-lock.json` and a directory named `node_modules` in your project directory. The `node_modules` directory contains the actual JavaScript files for the package and all of its dependent packages. As you install several packages this directory will start to get very large. You do **not** want to check this directory into your source control system since it can be very large and can be rebuilt using the information contained in the `package.json` and `package-lock.json` files. So make sure you include `node_modules` in your `.gitignore` file.
 
-When you clone your source code from GitHub to a new location, the first thing you should do is run `npm install` in the project directory. This will cause NPM to download all of the previously installed packages and recreate the `node-modules` directory.
+When you clone your source code from GitHub to a new location, the first thing you should do is run `npm install` in the project directory. This will cause NPM to download all of the previously installed packages and recreate the `node_modules` directory.
 
-The `package-lock.json` file tracks the version of the package that you installed. That way if rebuild your `node-modules` directory you will have the version of the package you initially installed and not the latest available version, which might not be compatible with your code.
+The `package-lock.json` file tracks the version of the package that you installed. That way if rebuild your `node_modules` directory you will have the version of the package you initially installed and not the latest available version, which might not be compatible with your code.
 
 With NPM and the joke package installed, you can now use the joke package in a JavaScript file by referencing the package name as a parameter to the `require` function. This is then followed by a call to the joke object's `getRandomDadJoke` function to actually generate a joke. Create a file named `index.js` and paste the following into it.
 
@@ -183,7 +183,7 @@ This may seem like a lot of work but after you do it a few times it will begin t
 
 1. Create your project directory
 1. Initialize it for use with NPM by running `npm init -y`
-1. Make sure `.gitignore` file contains `node-modules`
+1. Make sure `.gitignore` file contains `node_modules`
 1. Install any desired packages with `npm install <package name here>`
 1. Add `require('<package name here>')` to your application's JavaScript
 1. Use the code the package provides in your JavaScript
