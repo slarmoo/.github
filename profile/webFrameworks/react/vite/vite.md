@@ -84,7 +84,7 @@ Now that you have reviewed the application in VS Code, take a moment to manipula
 
 Make the following modifications:
 
-1. Change background and text colors to be in "light" mode.
+1. Alter the CSS to change background and text colors to something different.
 1. Replace the text in the App component with your name.
 1. Change the counter to increment by 10 instead of by one.
 
