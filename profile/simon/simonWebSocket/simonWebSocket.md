@@ -4,7 +4,7 @@
 
 ![Simon](../simon.png)
 
-This deliverable demonstrates peer to peer communication using WebSocket. The functionality that Simon provides for peer communication is intentionally limited to display notifications between users. This was done so that the application would clearly demonstrate how WebSocket works rather than clutter the application with functionality that uses WebSockets.
+This deliverable demonstrates peer-to-peer communication using WebSocket. The functionality that Simon provides for peer communication is intentionally limited to display notifications between users. This was done so that the application would clearly demonstrate how WebSocket works rather than clutter the application with functionality that uses WebSockets.
 
 You can view this application running here: [Example Simon WebSocket](https://simon-websocket.cs260.click)
 
@@ -18,7 +18,7 @@ The `public/play.js` file contains the functions for connecting, broadcasting, r
 
 ![Simon WebSocket](simonWebSocket.jpg)
 
-Leveraging the concepts demonstrated in this deliverable, you can implement addition functionality that uses peer to peer interactions. For example, you could make it so each connected peer has to complete one of the Simon patterns in turn.
+Leveraging the concepts demonstrated in this deliverable, you can implement additional functionality that uses peer-to-peer interactions. For example, you could make it so each connected peer has to complete one of the Simon patterns in turn.
 
 ## Study this code
 
