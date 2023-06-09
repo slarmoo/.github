@@ -52,7 +52,7 @@ myName.addEventListener('keyup', (e) => {
 });
 ```
 
-We then create a function that will update the displayed messages by selecting the element with the `chat-text` ID and appending the new message to its HTML. Security minded developers will realize that manipulating the DOM in this way will allow any chat user execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
+We then create a function that will update the displayed messages by selecting the element with the `chat-text` ID and appending the new message to its HTML. Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
 
 ```js
 function appendMsg(cls, from, msg) {
@@ -224,7 +224,7 @@ ws.on('pong', () => {
 });
 ```
 
-Any connection that did not response will remain in the not alive state and get cleaned up on the next pass.
+Any connection that did not respond will remain in the not alive state and get cleaned up on the next pass.
 
 # Experiment
 
