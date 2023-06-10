@@ -6,7 +6,7 @@ Now that we have covered the basics of React, we want to extend our usage to inc
 
 For our toolchain we are going to use [Vite](https://vitejs.dev/). Vite bundles your code quickly, has great debugging support, and allows you to easily support JSX, TypeScript, and different CSS flavors. To get started with Vite, let's first build a simple web application. Later we will convert Simon over to React using Vite. This will teach you what you need to know in order to move your startup to React.
 
-To create a new React based web application using Vite, open your console and run the following commands:
+To create a new React-based web application using Vite, open your console and run the following commands:
 
 ```sh
 npm create vite@latest demoVite -- --template react
@@ -19,7 +19,7 @@ This will create a new web application in the `demoVite` directory, download the
 
 ![Vite Demo](viteDemo.gif)
 
-Congratulations! You have just create your first React enabled web application.
+Congratulations! You have just created your first React-enabled web application.
 
 Once you have played around with the application in your browser, you can return to your console and stop Vite from hosting the application by pressing `q`.
 
@@ -29,8 +29,9 @@ Now, let's explore the application files that Vite created. From the console, us
 
 | Directory    | File              | Purpose                                                                                                                   |
 | ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| ./           | index.html        | Primary page for the application. This is the starting point to load all of the JSX components beginning with `main.jsx`. |
-|              | package-json      | NPM definition for package dependencies and script commands. This is what maps `npm run dev` to actually start up Vite.   |
+| ./           |                   |                                                                                                                                |
+|              | index.html        | Primary page for the application. This is the starting point to load all of the JSX components beginning with `main.jsx`. |
+|              | package.json      | NPM definition for package dependencies and script commands. This is what maps `npm run dev` to actually start up Vite.   |
 |              | package-lock.json | Version constraints for included packages (do not edit this).                                                             |
 |              | vite.config.js    | Configuration setting for Vite. Specifically this sets up React for development.                                          |
 | ./public     |                   |                                                                                                                           |
@@ -55,7 +56,7 @@ The `Vite` CLI uses the `.jsx` extension for JSX files instead of the JavaScript
 
 ## Building a production release
 
-When you execute `npm run dev` you are bundling the code to a temporary directory that the Vite debug HTTP server loads from. When you want to bundle your application so that you can deploy to a production environment you need to run `npm run build`. This executes the `build` script found in your `package.json` and invokes the `Vite` CLI. `vite build` transpiles, minifies, injects the proper JavaScript, and then outputs everything to a deployment ready version contained in a distribution subdirectory named `dist`.
+When you execute `npm run dev` you are bundling the code to a temporary directory that the Vite debug HTTP server loads from. When you want to bundle your application so that you can deploy to a production environment you need to run `npm run build`. This executes the `build` script found in your `package.json` and invokes the `Vite` CLI. `vite build` transpiles, minifies, injects the proper JavaScript, and then outputs everything to a deployment-ready version contained in a distribution subdirectory named `dist`.
 
 ```sh
 ➜  npm run build
@@ -94,4 +95,4 @@ After these changes, the application should look similar to this:
 
 When you are done, submit a screen capture of the altered application to the Canvas assignment.
 
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+Don't forget to update your GitHub startup repository `notes.md` with all of the things you learned and want to remember.
