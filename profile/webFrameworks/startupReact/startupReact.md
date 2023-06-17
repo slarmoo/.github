@@ -56,4 +56,4 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Go celebrate
 
-With the completion of your application you have become a Startup Founder. Way to go! Time to grab some friends, recruit them to market your soon to be viral application, and celebrate by going out to lunch. I'm thinking tacos. 🌮
+With the completion of your application you have become a Startup Founder. Way to go! Time to grab some friends, recruit them to market your soon-to-be-viral application, and celebrate by going out to lunch. I'm thinking tacos. 🌮
