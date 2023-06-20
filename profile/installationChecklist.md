@@ -56,7 +56,7 @@
 - Added git aliases and pull default
   ```sh
   git config --global alias.s status
-  git config --global alias.l "log --all --graph --decorate --oneline --pretty=format:'%C(bold red)%d%Creset %cr %C(bold yellow)%h%Creset - %C(green)%an%Creset %s'"
+  git config --global alias.l "log --all --graph --decorate --oneline --pretty=format:'%C(bold red)%d%Creset %cr %C(bold yellow)%h%Creset - %C(green)%an%Creset %s' -20"
   git config pull.rebase true
   git config --global core.pager cat
   ```
