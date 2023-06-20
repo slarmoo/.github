@@ -382,17 +382,6 @@ The `nav` element's code now looks like the following.
   </menu>
 </nav>
 ```
-
-### Handling unknown routes
-
-When routing the user's requests, it is possible that they can put something in the browser's location bar that does exist. We handle this by creating a component for a path that is not found. We place this component at the bottom of our `src/app.jsx` file.
-
-```js
-function NotFound() {
-  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
-}
-```
-
 ### Injecting the routed component
 
 The router definitions are then inserted so that the router knows what component to display for a given path. The router changes the rendered component; it appears in the place of the `Routes` element. The `Routes` element replaces the `main` element in the component HTML.
@@ -411,7 +400,13 @@ The router definitions are then inserted so that the router knows what component
 </Routes>
 ```
 
-Notice that the `*` (default matcher) was added to handle the case where an unknown path is requested. A simple `NotFound` component was added to the `app.jsx` file to handle the default.
+Notice that the `*` (default matcher) was added to handle the case where an unknown path is requested. We handle this by creating a component for a path that is not found. We place this component at the bottom of our `src/app.jsx` file.
+
+```js
+function NotFound() {
+  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+}
+```
 
 At this point the application should support navigating to the different components. When you reach this point with your startup, make sure that you commit your changes.
 
