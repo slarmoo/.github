@@ -8,6 +8,8 @@ Always remember to continually invest in your tech, art, social, and discovery s
 
 After everything has been graded, you should consider cleaning up your resources on AWS.
 
+![Clean up meme](turnOffAws.jpg)
+
 - Terminate your EC2 instance ($3.00 - $5.00/month depending upon instance type)
 - Disassoicate and release your elastic IP address ($3.00/month for unassociated instances)
 - Make sure you do not have auto renew set for your domain name ($3.00/year for .click)
