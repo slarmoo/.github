@@ -1,10 +1,10 @@
 
 # resize image
-ffmpeg -i $imageFile -vf scale=$size:-1 $newImageFile
+ffmpeg -i $imageFile -vf scale=$size:-1 -q 1 $newImageFile
 
 
 # resize png image without loosing transparency
-ffmpeg -i caddyLogo.png -vf scale=75:-1 -pred mixed -y  -pix_fmt rgba caddyLogoS.png
+ffmpeg -i x.png -vf scale=75:-1 -pred mixed -y  -pix_fmt rgba caddyLogoS.png
 
 
 # animated gif creation
