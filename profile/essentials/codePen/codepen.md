@@ -9,7 +9,7 @@ When working with assignments that use CodePen to submit your work, you will do 
 1. Either create a new pen, or fork an existing example pen.
 1. Conduct the experiment as defined by the assignment.
 1. Save your assignment periodically so that you don't lose any work. In order to keep your CodePen account organized you should consider using pen collections for different technologies.
-1. Submit the pen's URL in Canvas along with a description on some interesting thing that you learned.
+1. Submit the pen's URL in Canvas along with a description of some interesting thing that you learned.
 
 ![CodePen](codePen.jpg)
 
