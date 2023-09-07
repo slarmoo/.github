@@ -34,7 +34,7 @@ Every repository in GitHub has a unique URL assigned to it. Assuming the reposit
 
 ![GitHub clone](essentialsGitHubClone.jpg)
 
-You clone a repository by providing the GitHub repository's URL as a parameter to the `git clone` command from in a console window. You can get a copy of the URL from the repository's GitHub page and clicking on the green `Code` button, and then clicking on the copy button next to the HTTPS url.
+You clone a repository by providing the GitHub repository's URL as a parameter to the `git clone` command from in a console window. You can get a copy of the URL from the repository's GitHub page and clicking on the green `Code` button, and then clicking on the copy button next to the HTTPS URL.
 
 ![GitHub clone URL](essentialsGitUrlButton.jpg)
 
@@ -87,11 +87,11 @@ Run
 
 Make sure you use the email that you provided for your GitHub account.
 
-After pushing changes GitHub, you then view the changes on GitHub with your browser. In the example above, you would see the changes to the `test.md` file. You can also edit and commit changes directly from GitHub. When looking at a repository file on GitHub you will see a little pencil in the top right hand corner of the file. If you press that you will enter edit mode. You use that to modify the file and then commit the changes with an appropriate comment.
+After pushing changes to GitHub, you can then view the changes on GitHub with your browser. In the example above, you would see the changes to the `test.md` file. You can also edit and commit changes directly from GitHub. When looking at a repository file on GitHub you will see a little pencil in the top right hand corner of the file. If you press that you will enter edit mode. You use that to modify the file and then commit the changes with an appropriate comment.
 
 ![GitHub edit](essentialsGitHubEdit.jpg)
 
-Now that there is a commit that GitHub has that you do not have in your development environment. If we run the `fetch` Git command, you will get the latest information about the changes on GitHub without actually changing your local repository. We then run the `status` Git command to see the differences between the clones and see that we are missing a commit. You can pull it down using the `pull` Git command. You can also use the Git functionality in VS Code to view the status and sync up your repository.
+Now there is a commit that GitHub has, but you do not have in your development environment. If we run the `fetch` Git command, you will get the latest information about the changes on GitHub without actually changing your local repository. We then run the `status` Git command to see the differences between the clones and see that we are missing a commit. You can pull it down using the `pull` Git command. You can also use the Git functionality in VS Code to view the status and sync up your repository.
 
 ```sh
 ➜  git fetch
@@ -141,11 +141,11 @@ Change from my development environment!
 
 Change from GitHub
 
-<<<<<<< HEAD
+<<<<<< HEAD
 Conflict change made in development environment
 =======
 Conflict change made in GitHub
->>>>>>> b9f4c53c91eff509993d7291e60148f903827de0
+>>>>>> b9f4c53c91eff509993d7291e60148f903827de0
 ```
 
 We resolve the conflict by modifying the file to remove the textual conflict delimiters and modifying the file to keep the changes we want. When we are done editing, our file contains what we want from both commits.
@@ -169,15 +169,15 @@ If you go look at the file again on GitHub you will see the additional commit in
 
 ## README.md
 
-Keeping notes of what you have learned and things that you want to remember is an essential step for accelerating your web programming skills. GitHub supports the inclusion of a file with the special name `README.md` in the root of your repository. The `README.md` file is displayed in GitHub when you view your repository. This file uses `Markdown` syntax. If you have not used Markdown before, then take some time to [learn how to use it](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). For this course you will use your startup application's README.md file to describe the modifications and alterations that you make to your startup.
+Keeping notes of what you have learned and things that you want to remember is an essential step for accelerating your web programming skills. GitHub supports the inclusion of a file with the special name `README.md` in the root of your repository. The `README.md` file is displayed in GitHub when you view your repository. This file uses `Markdown` syntax. If you have not used Markdown before, then take some time to [learn how to use it](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). For this course you will use your startup application's `README.md` file to describe the modifications and alterations that you make to your startup.
 
-You will also create another Markdown file named `notes.md` to track what you have learned in the course. You can use anything that you put in your notes.md file when taking the midterm or final.
+You will also create another Markdown file named `notes.md` to track what you have learned in the course. You can use anything that you put in your `notes.md` file when taking the midterm or final.
 
 ## Forks
 
 A GitHub fork provides the ability to create a copy of a GitHub repository. Usually you [fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to get a copy of an open source code base that you want to experiment with, or contribute to (such as these instuctions). A fork is similar to cloning a repository to your development environment, but it clones to GitHub instead. Then pull the fork down to your development environment to work on it. The fork maintains a link to the upstream (original) repository that allows you to easily pull down updates and merge them with your fork. A fork also allows you to create a pull request in order to push suggested changes to the original repository.
 
-If you have never forked a repository before you should go find an open source project that interests you. For example, here the [Dad Jokes API](https://github.com/DadJokes-io/Dad_Jokes_API). This simple web service provides an endpoint to get a joke. Consider forking this repository in order to experiment with how it works. Don't worry too much about what the code is doing. That will make more sense as the class goes on.
+If you have never forked a repository before you should go find an open source project that interests you. For example, here is the [Dad Jokes API](https://github.com/DadJokes-io/Dad_Jokes_API). This simple web service provides an endpoint to get a joke. Consider forking this repository in order to experiment with how it works. Don't worry too much about what the code is doing. That will make more sense as the class goes on.
 
 ![GitHub fork](essentialsGitHubFork.jpg)
 
@@ -206,19 +206,19 @@ Do the following steps to set up your `Startup application repository` in GitHub
 
 #### Practice using Git and resolving conflicts
 
-1. Open up the repository directory in VS Code and Create a file named `conflictTest.md`. Add some text to the file.
+1. Open up the repository directory in VS Code and create a file named `conflictTest.md`. Add some text to the file.
 1. Use the Git functionality of VS Code to add `conflictTest.md` to Git, commit your changes, and push them to GitHub.
-1. In GitHub modify your conflictTest.md file and commit the changes.
+1. In GitHub modify your `conflictTest.md` file and commit the changes.
 1. In VS Code pull down and review the changes.
-1. Make another change to the conflictTest.md file on GitHub and commit the change.
-1. Before you pull the changes to your development environment, change the same line in the conflictTest.md file and commit the change.
+1. Make another change to the `conflictTest.md` file on GitHub and commit the change.
+1. Before you pull the changes to your development environment, change the same line in the `conflictTest.md` file and commit the change.
 1. Attempt to pull the GitHub changes to your development environment. Note and resolve the merge conflict. Commit the merged changes. Push the merge commit.
 1. On GitHub observe the resolved merge.
 
 #### Create your notes.md
 
 1. Read the GitHub documentation about the basics of [writing markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-1. Create a file in your repository called `notes.md`. You can use the contents of this file while taking the midterm and final exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `.md` files and reference them from your notes.md file in order make it easier to organize your content.
-1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link in your README.md file to your notes.md file. Commit and push your notes to GitHub.
+1. Create a file in your repository called `notes.md`. You can use the contents of this file while taking the midterm and final exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `.md` files and reference them from your `notes.md` file in order make it easier to organize your content.
+1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link in your `README.md` file to your `notes.md` file. Commit and push your notes to GitHub.
 
 When you are done, provide the URL of your GitHub startup repository to the Canvas assignment.

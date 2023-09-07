@@ -33,7 +33,7 @@ You will turn in the following deliverable versions of your startup application.
 1. WebSocket
 1. React
 
-You can change your project as the class progresses, but each deliverable submission must includes all the functionality defined by the previous milestones. For that reason, it is suggested that you do not change your project, and carefully consider your project from the beginning, as the longer you go, the more expensive it will be to repeat your previous work.
+You can change your project as the class progresses, but each deliverable submission must include all the functionality defined by the previous milestones. For that reason, it is suggested that you do not change your project, and carefully consider your project from the beginning, because the longer you go, the more expensive it will be to repeat your previous work.
 
 ## Submitting your deliverable
 
@@ -41,7 +41,7 @@ In order to make the submission and grading process as efficient as possible it 
 
 1. Deploy the deliverable to your production environment
 1. Include a link to your GitHub startup repository prominently displayed on your application's home page
-1. Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example. Please reference the items from the rubric for each deliverable in your description of what you did, and what you did not.
+1. Notes in your startup Git repository `README.md` file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example. Please reference the items from the rubric for each deliverable in your description of what you did, and what you did not.
 
 Deliverables that do not include the above will not be graded.
 
