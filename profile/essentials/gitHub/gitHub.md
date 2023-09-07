@@ -141,11 +141,11 @@ Change from my development environment!
 
 Change from GitHub
 
-<<<<<< HEAD
+<<<<< HEAD
 Conflict change made in development environment
 =======
 Conflict change made in GitHub
->>>>>> b9f4c53c91eff509993d7291e60148f903827de0
+>>>>> b9f4c53c91eff509993d7291e60148f903827de0
 ```
 
 We resolve the conflict by modifying the file to remove the textual conflict delimiters and modifying the file to keep the changes we want. When we are done editing, our file contains what we want from both commits.
