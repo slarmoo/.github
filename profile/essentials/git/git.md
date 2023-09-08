@@ -58,7 +58,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-`git status` tells you that it detects a new file named `hello.txt`, but it isn't currently tracking versions for that file. To begin tracking versions you need to add it. Usually you track all files in a repository directory and so you can tell Git to track everything that it doesn't know about with `git add .` (don't forget the period). Follow this with another call to `git status`.
+`git status` tells you that it detects a new file named `hello.txt`, but it isn't currently tracking versions for that file. To begin tracking versions you need to add it. Usually you track all files in a repository directory and so you can tell Git to track everything that it doesn't know about with `git add .`. Make sure you include the period at the end of the command. Follow the add command with another call to `git status` in order to see what the repo looks like now.
 
 ```sh
 ➜  git add .
@@ -84,9 +84,9 @@ On branch master
 nothing to commit, working tree clean
 ```
 
-Congratulations! You have just committed your first file to a Git repository. It is important to note that we were only working with a single file in this example. However, a commit can represent multiple files. You just need to add them all before you execute the commit. Also, note that the point of the stage (`git add`) step, is so that you can commit some files while still leaving other modified files out of the commit. Only files you've staged will be committed.
+Congratulations! You have just committed your first file to a Git repository. It is important to note that we were only working with a single file in this example. However, a commit can represent multiple files. You just need to add them all before you execute the commit. Also, note that the point of the stage, `git add` step, is so that you can commit some files while still leaving other modified files out of the commit. Only files you've staged will be committed.
 
-Let's make an edit to our file and commit it again. This time we will tell Git that we want to add all the tracked modified files to our commit (without having to `git add` them again) by including the `-a` parameter along with our message parameter.
+Let's make an edit to our file and commit it again. This time we will tell Git that we want to add all the modified tracked files to our commit, without having to `git add` them again, by including the `-a` parameter along with our message parameter.
 
 ```sh
 ➜  echo goodbye world > hello.txt
@@ -131,7 +131,7 @@ HEAD is now at d43b07b initial draft
 hello world
 ```
 
-The above output omits a big message saying that you are no longer looking at the latest version, but the important thing is that you can see that we are now looking at our old version. (Careful: commits made here can do funky things.) To get back to the top of the version chain, use the `checkout` command and reference the branch name, which is by default `master`.
+The above output omits a big message saying that you are no longer looking at the latest version, but the important thing is that you can see that we are now looking at our old version. Note that you don't want to make commits at this point since it will create a branch that is not for the latest code. To get back to the top of the version chain, use the `checkout` command and reference the branch name, which is by default `master`.
 
 ```sh
 ➜  git checkout master
