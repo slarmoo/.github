@@ -33,7 +33,7 @@ Submit the URL for your GitHub startup repository to the Canvas assignment.
 ## Grading Rubric
 
 - 10% - Proper use of Markdown in `README.md`
-- 40% - A concise and compelling elevator pitch in your `README.md`
+- 20% - A concise and compelling elevator pitch in your `README.md`
 - 10% - Description of key features in your `README.md`
 - 30% - Description of how you will use each technology
 - 30% - One or more rough sketches of your application. Images must be embedded in your `README.md`.
