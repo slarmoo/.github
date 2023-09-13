@@ -89,11 +89,11 @@ For our work we are using the web service Caddy to act as a gateway to our diffe
    ➜  ssh -i ~/keys/production.pem ubuntu@myfunkychickens.click
    ```
 
-1. Edit Caddy's configuration (`Caddyfile`) file found in the ubuntu user's home directory. Note that since this file is owned by the root user you need to use `sudo` to elevate your user to have the rights to change the file.
+1. Edit Caddy's configuration (`Caddyfile`) file found in the ubuntu user's home directory.
 
    ```sh
    ➜  cd ~
-   ➜  sudo vi Caddyfile
+   ➜  vi Caddyfile
    ```
 
 1. Modify the Caddy rule for handling requests to port 80 (HTTP), to instead handle request for your domain name. By not specifying a port the rule will serve up files using port 443 (HTTPS), and any request to port 80 will automatically redirect the browser to port 443. Replace `:80` with your domain name (e.g. `myfunkychickens.click`). Make sure that you delete the colon.
@@ -131,7 +131,7 @@ For our work we are using the web service Caddy to act as a gateway to our diffe
 
 1. Save the file and exit VI (`:wq`)
 
-1. Restart Caddy so that your changes take effect.
+1. Restart Caddy so that your changes take effect. Note that since this requires you nto use `sudo` to elevate your user to have the rights to restart the gateway.
 
    ```sh
    sudo service caddy restart
