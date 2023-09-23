@@ -10,7 +10,7 @@ When you rent a web server, it is physically located in a massive data center lo
 
 Assuming you already have an AWS account it is time to create your web server.
 
-⚠ Note that the AWS interface changes all of the time and so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
+⚠ Note that the AWS interface changes all the time, so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
 
 1. Open the AWS console in your browser and log in.
 1. Navigate to the EC2 service.
