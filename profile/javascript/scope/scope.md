@@ -39,8 +39,8 @@ console.log('end', x);
 The keyword `this` represents a variable that points to an object that contains the context within the scope of the currently executing line of code. The `this` variable is automatically declared and you can reference `this` anywhere in a JavaScript program. Because the value of `this` depends upon the context in which it is referenced, there are three different context that this can refer to:
 
 1. **Global** - When `this` is referenced outside a function or object it refers to the `globalThis` object. The globalThis object represents the context for runtime environment. For example, when running in a browser, globalThis refers to the browser's window object.
-1. **Function** - When `this` is referenced in a function it refers to the object that owns the function. That is either an object you defined or globalThis if the function is defined outside of an object. Note that when running is JavaScript strict mode, a global function's this variable is undefined instead of globalThis.
-1. **Object** - When `this` is referenced in a object it refers to the object.
+1. **Function** - When `this` is referenced in a function it refers to the object that owns the function. That is either an object you defined or globalThis if the function is defined outside of an object. Note that when running in JavaScript strict mode, a global function's this variable is undefined instead of globalThis.
+1. **Object** - When `this` is referenced in an object it refers to the object.
 
 ```js
 'use strict';
@@ -84,9 +84,9 @@ Note that if we were not using JavaScript strict mode then globalFunctionThis wo
 
 ## Closure
 
-A closure is defined as a function and its surrounding state. That means whatever variables are accessible when a function is created are available inside of that function. This holds true even if you pass the function outside of the scope of its original creation.
+A closure is defined as a function and its surrounding state. That means whatever variables are accessible when a function is created are available inside that function. This holds true even if you pass the function outside of the scope of its original creation.
 
-Here is an example of a function that is created as part of an object. That means that function has access to the object's this pointer.
+Here is an example of a function that is created as part of an object. That means that function has access to the object's `this` pointer.
 
 ```js
 globalThis.x = 'global';
@@ -102,7 +102,7 @@ obj.f();
 // OUTPUT: object
 ```
 
-Arrow functions are a bit different because they inherit the this pointer of their creation context. So if we change our previous example to return an arrow function, then this pointer at the time of creation will be globalThis.
+Arrow functions are a bit different because they inherit the `this` pointer of their creation context. So if we change our previous example to return an arrow function, then the `this` pointer at the time of creation will be globalThis.
 
 ```js
 globalThis.x = 'global';
@@ -116,7 +116,7 @@ obj.f();
 // OUTPUT: global
 ```
 
-However, if we make function in our object that **returns** an arrow function, then the this pointer will be the object's this pointer since that was the active context at the time the arrow function was created.
+However, if we make function in our object that **returns** an arrow function, then the `this` pointer will be the object's `this` pointer since that was the active context at the time the arrow function was created.
 
 ```js
 globalThis.x = 'global';
