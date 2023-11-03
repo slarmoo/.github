@@ -1,6 +1,6 @@
 # Final study guide
 
-The midterm will cover all topics from the end of the JavaScript instruction until the end of class. Here are the details:
+The final will cover all topics from the end of the JavaScript instruction until the end of class. Here are the details:
 
 - The test is available on online with Canvas during the open dates.
 - You must take taken during the open dates. Consult Canvas for open dates. No late days.
