@@ -150,18 +150,18 @@ app.post('/auth/create', async (req, res) => {
 
 ## Using the database
 
-We want to persistently store our users in Mongo and so we need to set up our code to connect to and use the database. This code is explained in the instruction on data services if you want to review what it is doing.
+We want to persistently store our users in Mongo and so we need to set up our code to connect to and use the database. This code is explained in the instruction on [../dataServices/dataServices.md](data services) if you want to review what it is doing.
 
 ```js
 const { MongoClient } = require('mongodb');
 
-const userName = process.env.MONGOUSER;
-const password = process.env.MONGOPASSWORD;
-const hostname = process.env.MONGOHOSTNAME;
+const userName = 'holowaychuk';
+const password = 'express';
+const hostname = 'mongodb.com';
 
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+
 const client = new MongoClient(url);
-const collection = client.db('authTest').collection('user');
 ```
 
 With a Mongo collection object we can implement the `getUser` and `createUser` functions.
