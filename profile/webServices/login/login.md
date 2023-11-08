@@ -150,7 +150,7 @@ app.post('/auth/create', async (req, res) => {
 
 ## Using the database
 
-We want to persistently store our users in Mongo and so we need to set up our code to connect to and use the database. This code is explained in the instruction on [../dataServices/dataServices.md](data services) if you want to review what it is doing.
+We want to persistently store our users in Mongo and so we need to set up our code to connect to and use the database. This code is explained in the instruction on [data services](../dataServices/dataServices.md) if you want to review what it is doing.
 
 ```js
 const { MongoClient } = require('mongodb');
