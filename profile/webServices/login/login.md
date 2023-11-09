@@ -106,8 +106,9 @@ Follow these steps, and then add in the code from the sections that follow. Ther
 1. You can now open a console window and use `curl` to try out one of the endpoints.
 
    ```sh
-   ➜  curl -X POST localhost:8080/auth/create
-
+   curl -X POST localhost:8080/auth/create
+   ```
+   ```sh
    {"id":"user@id.com"}
    ```
 
@@ -128,8 +129,9 @@ app.post('/auth/create', (req, res) => {
 ```
 
 ```sh
-➜  curl -X POST localhost:8080/auth/create -H 'Content-Type:application/json' -d '{"email":"marta@id.com", "password":"toomanysecrets"}'
-
+curl -X POST localhost:8080/auth/create -H 'Content-Type:application/json' -d '{"email":"marta@id.com", "password":"toomanysecrets"}'
+```
+```sh
 {"id":"user@id.com","email":"marta@id.com","password":"toomanysecrets"}
 ```
 
@@ -388,17 +390,22 @@ app.listen(port, function () {
 With everything implemented we can use `curl` to try it out. First start up the web service from VS Code by pressing `F5` and selecting `node.js` as the debugger if you have not already done that. You can set breakpoints on all of the different endpoints to see what they do and inspect the different variables. Then open a console window and run the following `curl` commands. You should see similar results as what is shown below. Note that the `-c` and `-b` parameters tell curl to store and use cookies with the given file.
 
 ```sh
-➜  curl -X POST localhost:8080/auth/create -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
-
+curl -X POST localhost:8080/auth/create -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
+```
+```sh
 {"id":"639bb9d644416bf7278dde44"}
+```
 
-
-➜  curl -c cookie.txt -X POST localhost:8080/auth/login -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
-
+```sh
+curl -c cookie.txt -X POST localhost:8080/auth/login -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
+```
+```sh
 {"id":"639bb9d644416bf7278dde44"}
+```
 
-
-➜  curl -b cookie.txt localhost:8080/user/me
-
+```sh
+curl -b cookie.txt localhost:8080/user/me
+```
+```sh
 {"email":"지안@id.com"}
 ```
