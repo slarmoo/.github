@@ -307,9 +307,9 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const app = express();
 
-const userName = process.env.MONGOUSER;
-const password = process.env.MONGOPASSWORD;
-const hostname = process.env.MONGOHOSTNAME;
+const userName = 'holowaychuk';
+const password = 'express';
+const hostname = 'mongodb.com';
 
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 const client = new MongoClient(url);
