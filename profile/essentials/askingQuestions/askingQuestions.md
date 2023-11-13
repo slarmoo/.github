@@ -7,7 +7,7 @@
 - Instructions on how to use [Discord](../discord/discord.md)
 - Consult this [document](https://docs.google.com/spreadsheets/d/1g1AMtgvyfSwMgp85QcwHuy0mVR-nN3bIGI6XNEJWB1U/edit?usp=sharing) to view the TA schedule
 - In-person TAs are located in 1066 TMCB cube #4
-- Professor Jensen's office hours: 2264 TMCB
+- Professor Jensen's office: 2264 TMCB
 
 | Who        | How                 | Where                  | When                            |
 | ---------- | ------------------- | ---------------------- | ------------------------------- |
