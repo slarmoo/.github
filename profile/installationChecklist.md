@@ -1,11 +1,16 @@
+- Setup trackpad
+- Use `F keys` as standard function keys
+- [Warp Console](https://app.warp.dev/get_warp)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - XCode Command Line Developer Tools. This was initiated by typing `git` from the default terminal. This caused git to be installed.
-- [Warp Console](https://app.warp.dev/get_warp)
 - Created `.zshrc` Add alias and disable printing % at the end of commands that don't output a newline.
 
   ```sh
   alias c=code
   alias ll='ls -lh'
+  alias idea='open -na "IntelliJ IDEA CE.app" --args '
+  alias c=code
+  alias obs='open -n -a OBS.app'
 
   set +o prompt_cr +o prompt_sp
   ```
@@ -14,6 +19,13 @@
   ```sh
   git config --global user.email "your email"
   git config --global user.name "your user name"
+  git config --global alias.s status
+  git config --global alias.l log --all --graph --decorate --oneline --pretty=format:'%C(bold red)%d%Creset %cr %C(bold yellow)%h%Creset - %C(green)%an%Creset %s' -20
+  git config --global pull.rebase true
+  git config --global core.editor code
+  git config --global core.pager cat
+  git config --global core.autocrlf input
+  git config --global init.defaultbranch main
   ```
   On commit git asked me for credentials. Supplied gitHub user name and personal access token (PAS). To get PAS click on User Profile Pic/Settings/Developer settings/Personal access tokens
 - Cloned course documentation repository
