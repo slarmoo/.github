@@ -20,7 +20,7 @@
   git config --global user.email "your email"
   git config --global user.name "your user name"
   git config --global alias.s status
-  git config --global alias.l log --all --graph --decorate --oneline --pretty=format:'%C(bold red)%d%Creset %cr %C(bold yellow)%h%Creset - %C(green)%an%Creset %s' -20
+  git config --global alias.l "log --all --graph --decorate --oneline --pretty=format:'%C(bold red)%d%Creset %cr %C(bold yellow)%h%Creset - %C(green)%an%Creset %s' -20"
   git config --global pull.rebase true
   git config --global core.editor code
   git config --global core.pager cat
@@ -65,10 +65,3 @@
 - Installed Homebrew
 - Used `brew install ffmpeg`
 - Changed VS Code setting to format on file save.
-- Added git aliases and pull default
-  ```sh
-  git config --global alias.s status
-  git config --global alias.l "log --all --graph --decorate --oneline --pretty=format:'%C(bold red)%d%Creset %cr %C(bold yellow)%h%Creset - %C(green)%an%Creset %s' -20"
-  git config pull.rebase true
-  git config --global core.pager cat
-  ```
