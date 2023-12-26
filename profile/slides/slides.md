@@ -64,4 +64,6 @@ The following slide decks are used for in person discussion of the instruction t
 - [7.1 OWASP](https://docs.google.com/presentation/d/1qFUwZ9SbrCbJDTckmlCYoy9xMGqZZXscqMKJYkZEb_U/edit?usp=sharing)
 - [7.2 Security practice](https://docs.google.com/presentation/d/1JRNL_qD5arlae9LnvvoqUg8tBf72v_tGuTWTrVbi3C8/edit?usp=sharing)
 - [7.3 TypeScript, performance](https://docs.google.com/presentation/d/1AhPMoZjoBZnqUkPlfdC8luvtY0pC0jaGnD6Xw_XWCw0/edit?usp=sharing)
-- [7.4 SEO, device features](https://docs.google.com/presentation/d/1gU2zWCU3vPlmEwjJ7sGoqGchoeZBIl2arTDI-n3SZL0/edit?usp=sharing)
+- [7.4 SEO](https://docs.google.com/presentation/d/1gU2zWCU3vPlmEwjJ7sGoqGchoeZBIl2arTDI-n3SZL0/edit?usp=sharing)
+- [7.5 Device APIs](https://docs.google.com/presentation/d/1jnODtX8YSW1Lr1VzLPwcRg_c2hGZH50ogIdt05fARsk/edit?usp=sharing)
+- [7.6 Progressive Web Apps](https://docs.google.com/presentation/d/1ZyvoG3IQlByw5ZsnU4cRVUJCigDxdaZEqD081B5c_8s/edit?usp=sharing)
