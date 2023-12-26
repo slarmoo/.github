@@ -14,7 +14,8 @@ Assuming you already have an AWS account it is time to create your web server.
 
 1. Open the AWS console in your browser and log in.
 1. Navigate to the EC2 service.
-1. Change your region (top right corner) to `US East (N. Virginia) - us-east-1`. Changing your region to N. Virginia will make it so that your server is located there. ⚠ This is crucial because the Amazon Machine Image (AMI) you will designate in a moment is only available in N. Virginia.
+1. Change your region (top right corner) to `US East (N. Virginia) - us-east-1`. Changing your region to N. Virginia will make it so that your server is located there.
+   ⚠ This is crucial because the Amazon Machine Image (AMI) you will use is only available in N. Virginia.
 1. Select the option to `Launch instance`.
 1. Give your instance a meaningful name. Perhaps use a convention such as [owner]-[purpose]-[version].
 
