@@ -4,7 +4,9 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 It is expected that you will start at the top of the list and work your way down. Make sure that you complete every assignment (marked with the ☑ icon) and submit the result in Canvas so that you can receive credit for what you have mastered.
 
-[Slides for in person discussions](slides/slides.md)
+### 🔑 [App Instruction Version](https://learn.cs260.click)
+
+### 🔑 [Course schedule](schedule/2023winter.md)
 
 ## Development essentials
 
@@ -15,6 +17,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Asking questions](essentials/askingQuestions/askingQuestions.md)
 - ☑ [Discord](essentials/discord/discord.md)
 - [Startup application](essentials/startup/startup.md)
+- ☑ [Startup Specification](essentials/startupSpec/startupSpec.md)
 - [Let's play Simon](essentials/simon/simon.md)
 - [Technology stack](essentials/techStack/techStack.md)
 - ☑ [The Console](essentials/console/console.md)
@@ -23,7 +26,6 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [GitHub](essentials/gitHub/gitHub.md)
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
 - ☑ [CodePen](essentials/codePen/codepen.md)
-- ☑ [Startup Specification](essentials/startupSpec/startupSpec.md)
 
 ## Web servers
 
