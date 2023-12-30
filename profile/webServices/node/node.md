@@ -34,7 +34,7 @@ In the console application install the long term support (LTS) version of Node.
 If you are using Linux or MacOS then you can install NVM with the following console commands.
 
 ```sh
-➜ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+➜ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 ➜ . ~/.nvm/nvm.sh
 ```
@@ -51,7 +51,7 @@ The node.js console application is simply called `node`. You can verify that Nod
 
 ```sh
 ➜ node -v
-v18.13.0
+v20.10.0
 ```
 
 ## Running programs
