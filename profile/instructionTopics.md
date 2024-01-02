@@ -4,47 +4,43 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 It is expected that you will start at the top of the list and work your way down. Make sure that you complete every assignment (marked with the ☑ icon) and submit the result in Canvas so that you can receive credit for what you have mastered.
 
-### 🔑 [Instruction Application](https://learn.cs260.click)
-
-### 🔑 [Course schedule](schedule/2023winter.md)
-
 ## Development essentials
 
-- ☑ [Introduction](essentials/introduction/introduction.md)
-- ☑ [AWS account](essentials/awsAccount/awsAccount.md)
+- ☑ [Introduction](essentials/introduction/introduction.md) _(due 1/10)_
+- ☑ [AWS account](essentials/awsAccount/awsAccount.md) _(due 1/10)_
 - [Demonstration](essentials/demo/demo.md)
-- [History of the web](essentials/history/history.md)
-- [Asking questions](essentials/askingQuestions/askingQuestions.md)
-- ☑ [Discord](essentials/discord/discord.md)
 - [Startup application](essentials/startup/startup.md)
-- ☑ [Startup Specification](essentials/startupSpec/startupSpec.md)
+- ☑ [Startup Specification](essentials/startupSpec/startupSpec.md) _(due 1/17)_
 - [Let's play Simon](essentials/simon/simon.md)
 - [Technology stack](essentials/techStack/techStack.md)
-- ☑ [The Console](essentials/console/console.md)
+- [History of the web](essentials/history/history.md)
+- [Asking questions](essentials/askingQuestions/askingQuestions.md)
+- ☑ [Discord](essentials/discord/discord.md) _(due 1/17)_
+- ☑ [The Console](essentials/console/console.md) _(due 1/19)_
 - [Editors](essentials/editors/editors.md)
 - [Git](essentials/git/git.md)
-- ☑ [GitHub](essentials/gitHub/gitHub.md)
+- ☑ [GitHub](essentials/gitHub/gitHub.md) _(due 1/19)_
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
-- ☑ [CodePen](essentials/codePen/codepen.md)
+- ☑ [CodePen](essentials/codePen/codepen.md) _(due 1/24)_
 
 ## Web servers
 
 - [The internet](webServers/internet/internet.md)
 - [Web servers](webServers/webServers/webServers.md)
-- ☑ [Amazon Web Services - EC2](webServers/amazonWebServicesEc2/amazonWebServicesEc2.md)
+- ☑ [Amazon Web Services - EC2](webServers/amazonWebServicesEc2/amazonWebServicesEc2.md) _(due 1/26)_
 - [Domain names](webServers/domainNames/domainNames.md)
 - [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
 - [Caddy](webServers/caddy/caddy.md)
-- ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
+- ☑ [HTTPS, TLS, and certificates](webServers/https/https.md) _(due 1/31)_
 
 ## HTML
 
 - [HTML introduction](html/introduction/introduction.md)
-- ☑ [Structure](html/structure/structure.md)
-- ☑ [Input](html/input/input.md)
-- ☑ [Media](html/media/media.md)
+- ☑ [Structure](html/structure/structure.md) _(due 2/2)_
+- ☑ [Input](html/input/input.md) _(due 2/2)_
+- ☑ [Media](html/media/media.md) _(due 2/2)_
 - [Simon HTML](simon/simonHtml/simonHtml.md)
-- ☑ [Startup HTML](html/startupHtml/startupHtml.md)
+- ☑ [Startup HTML](html/startupHtml/startupHtml.md) _(due 2/9)_
 
 ## CSS
 
@@ -53,14 +49,14 @@ It is expected that you will start at the top of the list and work your way down
 - [Declarations](css/declarations/declarations.md)
 - [Fonts](css/fonts/fonts.md)
 - [Animation](css/animation/animation.md)
-- ☑ [CSS practice](css/practice/practice.md)
+- ☑ [CSS practice](css/practice/practice.md) _(due 2/9)_
 - [Responsive design](css/responsive/responsive.md)
   - [Grid](css/grid/grid.md)
-  - ☑ [Flex](css/flexbox/flexbox.md)
+  - ☑ [Flex](css/flexbox/flexbox.md) _(due 2/12)_
 - [Debugging CSS](css/debuggingCss/debuggingCss.md)
-- ☑ [CSS frameworks](css/frameworks/frameworks.md)
+- ☑ [CSS frameworks](css/frameworks/frameworks.md) _(due 2/14)_
 - [Simon CSS](simon/simonCss/simonCss.md)
-- ☑ [Startup CSS](css/startupCss/startupCss.md)
+- ☑ [Startup CSS](css/startupCss/startupCss.md) _(due 2/20)_
 - [UX design](uxdesign/uxdesign.md)
 
 ## JavaScript
@@ -72,28 +68,28 @@ It is expected that you will start at the top of the list and work your way down
 - [String](javascript/string/string.md)
 - [Functions](javascript/functions/functions.md)
 - [Arrow functions](javascript/arrow/arrow.md)
-- ☑ [Arrays](javascript/array/array.md)
+- ☑ [Arrays](javascript/array/array.md) _(due 2/21)_
 - [JSON](javascript/json/json.md)
 - [Regular expressions](javascript/regularExpressions/regularExpressions.md)
 - [Rest and spread](javascript/restSpread/restSpread.md)
 - [Exceptions](javascript/exceptions/exceptions.md)
 - [Destructuring](javascript/destructuring/destructuring.md)
-- ☑ [Objects and classes](javascript/objectClasses/objectClasses.md)
+- ☑ [Objects and classes](javascript/objectClasses/objectClasses.md) _(due 2/21)_
 - [Scope](javascript/scope/scope.md)
 - [Modules](javascript/modules/modules.md)
-- ☑ [Document object model (DOM)](javascript/dom/dom.md)
+- ☑ [Document object model (DOM)](javascript/dom/dom.md) _(due 2/26)_
 - [LocalStorage](javascript/localStorage/localStorage.md)
-- ☑ [Promises](javascript/promises/promises.md)
-- ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
+- ☑ [Promises](javascript/promises/promises.md) _(due 2/28)_
+- ☑ [Async/await](javascript/asyncAwait/asyncAwait.md) _(due 2/28)_
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
 - [Simon JavaScript](simon/simonJavascript/simonJavascript.md)
-- ☑ [Startup JavaScript](javascript/startupJavascript/startupJavascript.md)
+- ☑ [Startup JavaScript](javascript/startupJavascript/startupJavascript.md) _(due 3/6)_
 
 ## Midterm
 
 ⚠ Make sure you take the midterm in Canvas during the open period.
 
-- [Midterm study guide](test/midterm.md)
+- [Midterm study guide](test/midterm.md) _(due 3/4)_
 
 ## Web services
 
@@ -101,42 +97,43 @@ It is expected that you will start at the top of the list and work your way down
 - [URL](webServices/url/url.md)
 - [Ports](webServices/ports/ports.md)
 - [HTTP](webServices/http/http.md)
-- ☑ [Fetch](webServices/fetch/fetch.md)
+- ☑ [Fetch](webServices/fetch/fetch.md) _(due 3/6)_
 - [SOP and CORS](webServices/cors/cors.md)
 - [Service design](webServices/design/design.md)
 - [Node.js](webServices/node/node.md)
-- ☑ [Express](webServices/express/express.md)
+- ☑ [Express](webServices/express/express.md) _(due 3/13)_
 - [Debugging Node.js](webServices/debuggingNode/debuggingNode.md)
 - [Service daemons - PM2](webServices/pm2/pm2.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
 - [Endpoint testing](webServices/endpointTesting/endpointTesting.md)
 - [Simon service](simon/simonService/simonService.md)
-- ☑ [Startup Service](webServices/startupService/startupService.md)
+- ☑ [Startup Service](webServices/startupService/startupService.md) _(due 3/15)_
 - [Storage services](webServices/storageServices/storageServices.md)
-- ☑ [Data services](webServices/dataServices/dataServices.md)
+- ☑ [Data services](webServices/dataServices/dataServices.md) _(due 3/18)_
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
   - [Account creation and login](webServices/login/login.md)
   - [Simon Login](simon/simonLogin/simonLogin.md)
-  - ☑ [Startup Login](webServices/startupLogin/startupLogin.md)
+  - ☑ [Startup Login](webServices/startupLogin/startupLogin.md) _(due 3/22)_
 - [WebSocket](webServices/webSocket/webSocket.md)
   - [Debugging WebSocket](webServices/webSocket/debugging.md)
   - [WebSocket chat](webServices/webSocket/chat.md)
   - [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
-  - ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
+  - ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md) _(due 3/27)_
 
 ## Web frameworks
 
 - [Web frameworks](webFrameworks/introduction/introduction.md)
 - [React](webFrameworks/react/introduction/introduction.md)
-- ☑ [Components](webFrameworks/react/components/components.md)
+- ☑ [Components](webFrameworks/react/components/components.md) _(due 3/25)_
 - [Toolchains](webFrameworks/react/toolChains/toolChains.md)
-- ☑ [Vite](webFrameworks/react/vite/vite.md)
-- ☑ [Router](webFrameworks/react/router/router.md)
-- ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
-- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
+- ☑ [Vite](webFrameworks/react/vite/vite.md) _(due 3/27)_
+- ☑ [Router](webFrameworks/react/router/router.md) _(due 3/27)_
+- ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md) _(due 3/29)_
+- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md) _(due 3/29)_
 - [Hooks](webFrameworks/react/hooks/hooks.md)
 - [Simon React](simon/simonReact/simonReact.md)
-- ☑ [Startup React](webFrameworks/startupReact/startupReact.md)
+- ☑ [Startup React](webFrameworks/startupReact/startupReact.md) _(due 4/10)_
+- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md) _(due 4/10)_
 
 ## Assorted topics
 
@@ -149,14 +146,13 @@ It is expected that you will start at the top of the list and work your way down
 - [Device APIs](webFrameworks/device/device.md)
 - [Progressive web applications](webFrameworks/pwa/pwa.md)
   - [Simon PWA](simon/simonPwa/simonPwa.md)
-- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
-- ☑ [Wrap up](webFrameworks/wrapUp/wrapUp.md)
+- ☑ [Wrap up](webFrameworks/wrapUp/wrapUp.md) _(due 4/17)_
 
 ## Final
 
 ⚠ Make sure you take the final in Canvas during the open period.
 
-- [Final study guide](test/final.md)
+- [Final study guide](test/final.md) _(due 4/24)_
 
 ## Legend
 
