@@ -89,7 +89,7 @@ It is expected that you will start at the top of the list and work your way down
 
 ⚠ Make sure you take the midterm in Canvas during the open period.
 
-- [Midterm study guide](test/midterm.md) _(due 3/4)_
+- [Midterm study guide](test/midterm.md) _(due 3/8)_
 
 ## Web services
 
