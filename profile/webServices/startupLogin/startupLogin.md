@@ -1,6 +1,6 @@
 # Startup Login
 
-Now that you have learned how to authenticate and authorize users, it is time to add the ability to login to your startup application. The main things you should focus on in this deliverable include creating and accepting credentials for your user, validating and properly storing credentials in your database, and restricting functionality based on the user's authorized rights.
+Now that you have learned how to use a database and authenticate users, it is time to add the ability to db and login to your startup application. The main things you should focus on in this deliverable include connecting to the database, creating endpoints that accept and return data, storing and retrieving data from the database, creating and accepting credentials for your user, validating and properly storing credentials in your database, and restricting functionality based on the user's authorized rights.
 
 You must use the same startup GitHub repository that you created in the earlier instruction. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML, CSS, and JavaScript commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
 
@@ -25,11 +25,15 @@ Doing this will make this deliverable of your startup available from `https://st
 1. Review and deploy Simon Login
    1. Clone the Simon Login repository to your development environment.
    1. Run `npm install` in root of the project.
-   1. Open the project in VS Code and examine the application's use of JavaScript to support authentication and authorization.
+   1. Open the project in VS Code and examine the application's use of JavaScript to support database storage and user authentication.
    1. Create and configure the `dbConfig.json` file with your MongoDB credentials.
    1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing index.js). Set breakpoints in VS Code and step through the backend JavaScript related to login interactions.
    1. Open your browser to https://localhost:3000 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+1. Add code for connecting to the database
+1. Provide endpoints for adding, updating, and deleting your application data in the database
+1. Persist data in MongoDB.
+1. Display the user data in the frontend by manipulating the DOM.
 1. Allow new users to create accounts by providing credentials
 1. Store encrypted credentials in your database
 1. Allow existing users to provide credentials
@@ -49,8 +53,9 @@ Doing this will make this deliverable of your startup available from `https://st
 - (Required) A link to your GitHub startup repository prominently displayed on your application's home page
 - (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
 - Application authentication and authorization
-  - 25% - Supports new user registration
-  - 25% - Supports existing user authentication
+  - 15% - Supports new user registration
+  - 15% - Supports existing user authentication
+  - 20% - Stores application data in MongoDB
   - 20% - Stores and retrieves credentials in MongoDB
   - 20% - Restricts application functionality based upon authentication
 - 10% - Multiple Git commits with meaningful comments.

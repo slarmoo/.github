@@ -2,7 +2,7 @@
 
 The primary objective of this course is to help you understand the technologies necessary to launch a web application startup. Towards this goal you will build your very own `startup` application. The actual application you build is entirely up to you, but it must successfully demonstrate the technologies we focus on.
 
-The course is divided into distinct milestones. At each milestone you will evolve your startup application to take on more and more functionality. You start with a conceptual design document and then build a structural shell for the application using HTML. Next comes styling with CSS, interactivity with JavaScript, using third party web services, hosting your own web service, database connectivity for persistent storage, data pushed from the server with WebSockets, and finally, converting to a modern web framework with React.
+The course is divided into distinct milestones. At each milestone you will evolve your startup application to take on more and more functionality. You start with a conceptual design document and then build a structural shell for the application using HTML. Next comes styling with CSS, interactivity with JavaScript, using third party web services, hosting your own web service, database connectivity for persistent storage, authentication, data pushed from the server with WebSockets, and finally, converting to a modern web framework with React.
 
 - **HTML** - Basic structural and organizational elements
 - **CSS** - Styling and animating
@@ -28,7 +28,6 @@ You will turn in the following deliverable versions of your startup application.
 1. CSS
 1. JavaScript
 1. Web service
-1. Database
 1. Login
 1. WebSocket
 1. React

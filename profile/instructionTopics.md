@@ -114,8 +114,6 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Startup Service](webServices/startupService/startupService.md)
 - [Storage services](webServices/storageServices/storageServices.md)
 - ☑ [Data services](webServices/dataServices/dataServices.md)
-  - [Simon DB](simon/simonDb/simonDb.md)
-  - ☑ [Startup DB](webServices/startupDb/startupDb.md)
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
   - [Account creation and login](webServices/login/login.md)
   - [Simon Login](simon/simonLogin/simonLogin.md)
