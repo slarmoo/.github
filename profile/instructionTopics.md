@@ -4,14 +4,14 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 It is expected that you will start at the top of the list and work your way down. Make sure that you complete every assignment (marked with the ☑ icon) and submit the result in Canvas so that you can receive credit for what you have mastered.
 
-### 🔑 [App Instruction Version](https://learn.cs260.click)
+### 🔑 [Instruction Application](https://learn.cs260.click)
 
 ### 🔑 [Course schedule](schedule/2023winter.md)
 
 ## Development essentials
 
-- ☑ [AWS account](essentials/awsAccount/awsAccount.md)
 - ☑ [Introduction](essentials/introduction/introduction.md)
+- ☑ [AWS account](essentials/awsAccount/awsAccount.md)
 - [Demonstration](essentials/demo/demo.md)
 - [History of the web](essentials/history/history.md)
 - [Asking questions](essentials/askingQuestions/askingQuestions.md)
