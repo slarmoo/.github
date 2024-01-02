@@ -17,7 +17,7 @@ The course hosts all the repositories for the instruction and assignments. This 
 - [Simon: Demonstration web application](https://github.com/webprogramming260/.github/blob/main/profile/essentials/simon/simon.md)
 - Assignments, quizzes, and tests are submitted through Canvas
 
-# Technologies and Instruction
+# Technologies
 
 The course covers a full stack of web programming technologies and topics.
 

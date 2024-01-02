@@ -19,7 +19,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [The Console](essentials/console/console.md) _(due 1/19)_
 - [Editors](essentials/editors/editors.md)
 - [Git](essentials/git/git.md)
-- ☑ [GitHub](essentials/gitHub/gitHub.md) _(due 1/19)_
+- ☑ [GitHub](essentials/gitHub/gitHub.md) _(due 1/22)_
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
 - ☑ [CodePen](essentials/codePen/codepen.md) _(due 1/24)_
 
