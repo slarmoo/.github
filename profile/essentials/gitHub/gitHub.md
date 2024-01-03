@@ -194,15 +194,52 @@ GitHub allows you to create a fork of any repository on GitHub. You just push th
 
 In this class, if you notice something in the instruction that needs to be enhanced, feel free to fork the repo, and make a pull request. This will give you experience with this practice and improve the instruction for others at the same time. Plus your name will be included as a contributor. How cool is that!
 
-# ☑ Assignment
+## ☑ Assignment
+
+The majority of your course work will revolve around your Startup Application GitHub repository. In this assignment you will create your repository. For each of your Startup deliverables you will add to, and enhance, the content you have created in a GitHub repository. The commit history that you establish through the course serves the following valuable purposes:
+
+1. **Backup** - Every semester at least one student's computer dies. Having the ability to clone the repo to a new computer could save your grade in the course.
+1. **Portfolio** - The code you develop in this course serves as a valuable portfolio artifact that you can use to demonstrate your mastery to future employers.
+1. **Proof of work** - You can demonstrate your authorship of your code by consistently, and frequently, committing your work.
+1. **Exploration** - The ability to create branches allows you to continuously experiment with different ideas without losing the main thread of your development. Likewise, you can try and implement something, realize it is not working and then simply reset to your last commit.
+1. **Experience** - Git is the de facto versioning system. The experience you gain in this class will help prepare you for professional work.
+
+All of this requires that you commit often. You should get in the habit of consistently making a small stable change and then committing.
+
+1. Verify you have the latest code (`git pull`)
+1. Refactor, test, and/or implement a small portion of cohesive code (`test` `code` `test`)
+1. Commit and push (`git commit` `git push`)
+1. Repeat
+
+You will be most successful in this course if you set aside time each day, or every other day, to work on your startup. Those consistent work sessions should be complemented with consistent commits. If you are not creating multiple commits every workday, then you are not reflecting the code management practices you need in order to be successful in a production development environment.
+
+For all of the above reasons, it is required that you use GitHub for your startup project. Additionally, you must use it consistently and frequently.
+
+⚠ **IMPORTANT**: **It is a prerequisite for all deliverables that you have at least 10 commits evenly spread across the assignment period for the deliverable.**
+
+If you do not have the required number of commits, or if they are all clustered in a single burst of activity, then you will need to justify the discrepancy before the deliverable will be accepted.
 
 Do the following steps to set up your `Startup application repository` in GitHub and clone it to your development environment.
 
-### Set up your startup repository
+### Creating Your Startup GitHub Repository
 
-1. Create a GitHub account if you do not already have one.
-1. Create a repository, named `startup`, for your startup application. Your project must be public. Select the option for a default README.md file. This is where you will also keep all of your notes for things that you learn and want to remember.
-1. Clone the repository to your development environment, by getting the repository's URL, and using `git clone`.
+1. Open your web browser to [GitHub](https://github.com)
+1. Create a GitHub repository for your startup project
+
+   1. Name it `startup`.
+   1. Mark the repository as `public` so that it can be reviewed by the TAs and instructors.
+   1. Select the option to create a license file and README.md.
+
+      ![create repo](create-repo.png)
+
+1. Open a command line console window.
+1. Clone the repository to your development environment. Make sure you put the clone of the repository in a directory that you use for this class's coursework. These commands will look something like the following.
+
+   ```sh
+   cd ~/byu/cs260
+   git clone https://github.com/YOURACCOUNTHERE/startup.git
+   cd startup
+   ```
 
 ### Practice using Git and resolving conflicts
 
