@@ -41,14 +41,14 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Simon CSS deployed to your production environment
 - **Prerequisite**: A link to your GitHub startup repository prominently displayed on your application's home page
 - **Prerequisite**: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
+- **Prerequisite**: At least 10 git commits spread consistently throughout the assignment period.
 - Properly styled CSS
-  - 20% Header, footer, and main content body
+  - 30% Header, footer, and main content body
   - 20% Navigation elements
   - 10% Responsive to window resizing
   - 20% Application elements
   - 10% Application text content
   - 10% Application images
-- 10% - Multiple Git commits with meaningful comments.
 
 ## Go celebrate
 
