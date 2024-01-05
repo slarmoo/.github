@@ -12,7 +12,7 @@ Welcome to Web Programming 260. By the end of this instruction you will:
 
 The course hosts all the repositories for the instruction and assignments. This includes interacting with [CodePen](https://codepen.io) assignments, building a demonstration application, and creating and hosting your own startup web application.
 
-- [Course schedule](https://github.com/webprogramming260/.github/blob/main/profile/schedule/2023winter.md)
+- [Course schedule](https://github.com/webprogramming260/.github/blob/main/profile/schedule/schedule.md)
 - [Instruction](https://learn.cs260.click)
 - [Simon: Demonstration web application](https://github.com/webprogramming260/.github/blob/main/profile/essentials/simon/simon.md)
 - Assignments, quizzes, and tests are submitted through Canvas
