@@ -8,7 +8,7 @@ Then sketch out what the application looks like. You can use a tool like [NinjaM
 
 ![Ninja Mocks](essentialsNinjaMocks.png)
 
-Here is an [example design](https://github.com/webprogramming260/startup-example/blob/main/README.md).
+Here is an [example design](https://github.com/webprogramming260/startup-example/blob/main).
 
 ## Represent all technologies
 
@@ -20,7 +20,7 @@ Make sure that your specification represents how you will represent all of the c
 
 ## Using Markdown
 
-Take some time to properly learn how to use Markdown in your `README.md` and `notes.md` files. Read the [GitHub documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for examples on how to use Markdown. Refer to the [example design](https://github.com/webprogramming260/startup-example/blob/main/README.md) to see how to embed images. Make sure your images are in a format that browsers natively support such as JPG, GIF, or PNG.
+Take some time to properly learn how to use Markdown in your `README.md` and `notes.md` files. Read the [GitHub documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for examples on how to use Markdown. Refer to the [example design](https://github.com/webprogramming260/startup-example/blob/main) to see how to embed images. Make sure your images are in a format that browsers natively support such as JPG, GIF, or PNG.
 
 ## ☑ Assignment
 
