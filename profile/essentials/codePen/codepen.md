@@ -15,6 +15,6 @@ When working with assignments that use CodePen to submit your work, you will do 
 
 In addition to using CodePen to complete assignments, it is a great place to find coding examples. Browsing CodePen will expose you to new ideas from their large community of contributors. You might consider making a daily habit of finding and reviewing a pen. If you find a really interesting pen then share it with others on Discord.
 
-## ☑ Assignment
+## Experiment
 
-Create your CodePen account. Find an interesting pen that someone else has created. Fork the pen and make a minor change. Save the pen. Submit your CodePen URL, along with a description of what you changed, to the Canvas assignment.
+Create your CodePen account. Find an interesting pen that someone else has created. Fork the pen and make a minor change. Save the pen.

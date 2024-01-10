@@ -7,7 +7,7 @@ A JavaScript object represents a collection of name value pairs referred to as p
 Objects can be created with the new operator. This causes the object's constructor to be called. Once declared you can add properties to the object by simply referencing the property name in an assignment. Any type of variable can be assigned to a property. This includes a sub-object, array, or function. The properties of an object can be referenced either with dot (`obj.prop`) or bracket notation (`obj['prop']`).
 
 ```js
-const obj = new Object({a:3});
+const obj = new Object({ a: 3 });
 obj['b'] = 'fish';
 obj.c = [1, 2, 3];
 obj.hello = function () {
@@ -160,68 +160,3 @@ const e = new Employee('Eich', 'programmer');
 console.log(e.print());
 // OUTPUT: My name is Eich. I am a programmer
 ```
-
-## ☑ Assignment
-
-Create a CodePen that starts with the following code
-
-```js
-class Phone {
-  constructor(regEx) {
-    // Implement the constructor
-  }
-
-  // Implement the Connected constant getter
-
-  connect(...numberParts) {
-    // Return an object if the number matches the regEx
-    // Otherwise thrown an exception
-  }
-}
-
-const phone = new Phone(/\d{3}-\d{3}-\d{4}/);
-
-const calls = [
-  { name: 'Li', number: ['333', '333', '3333'] },
-  { name: 'Juan', number: ['222', '222', '2222'] },
-  { name: 'Meg', number: ['8E26F', '811F'] },
-];
-
-for (const call of calls) {
-  try {
-    const { result } = phone.connect(...call.number);
-    if (result === Phone.Connected) {
-      console.log(`called ${call.name}`);
-    }
-  } catch (ex) {
-    console.log(`${ex.message} for ${call.name}`);
-  } finally {
-    console.log('done');
-  }
-}
-```
-
-and implements the following functionality of the Phone class:
-
-1. Has a constructor that accepts a regular expression as a parameter. The regular expression is stored on the object for future reference.
-1. Has a `Connected` getter that defines a constant for the class that is set to a value of 'connected'.
-1. Has a `connect` method that takes a variable number of values. The method joins the values together into a string that is separated by a '-' character and attempts to match it with the regular expression given in the constructor. If it fails it throws an exception. Otherwise it passes back an object that has an `id` and `result` property, where the result is set to Phone.Connected.
-
-Once you have implemented the Phone class. Examine the CodePen console output. It should look like this:
-
-```sh
-called Li
-done
-called Juan
-done
-invalid number for Meg
-done
-```
-
-When you get this result, submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
-
-### 🧧 Possible solution
-
-If you get stuck here is a [possible solution](https://codepen.io/leesjensen/pen/yLRgPNa).
