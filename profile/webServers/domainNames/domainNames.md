@@ -71,6 +71,8 @@ When you enter a domain name into a browser, the browser first checks to see if 
 
 As you can see, there is a lot of levels of name caching. This is done for performance reasons, but it also can be frustrating when you are trying to update the information associated with your domain name. This is where the `time to live` (`TTL`) setting for a domain record comes into play. You can set this to be something short like 5 minutes or as long as several days. The different caching layers should then honor the TTL and clear their cache after the requested period has passed.
 
-## Buying a domain name
+## Leasing a domain name
 
 You can pay to lease an unused domain name for a specific period of time. Before the lease expires, you have the right to extend the lease for an additional amount of time. The cost to buy the domain varies from something like $3 to $200 a year. Buying, or sub-leasing, an existing domain name from a private party can be very expensive, and so you are better off buying something obscure like `idigfor.gold` (currently available for only $101). This is one reason why companies have such strange names these days.
+
+Refer to the instruction on using [Route 53](../amazonWebServicesRoute53/amazonWebServicesRoute53.md) if you are interested in leasing a domain name.
