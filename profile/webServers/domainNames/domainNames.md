@@ -74,3 +74,5 @@ As you can see, there is a lot of levels of name caching. This is done for perfo
 ## Buying a domain name
 
 You can pay to lease an unused domain name for a specific period of time. Before the lease expires, you have the right to extend the lease for an additional amount of time. The cost to buy the domain varies from something like $3 to $200 a year. Buying, or sub-leasing, an existing domain name from a private party can be very expensive, and so you are better off buying something obscure like `idigfor.gold` (currently available for only $101). This is one reason why companies have such strange names these days.
+
+You can find a detailed walkthrough for purchasing a domain name through Amazon Route 53 ![here](https://github.com/webprogramming260/.github/blob/main/profile/webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
