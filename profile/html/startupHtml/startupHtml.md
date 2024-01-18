@@ -19,7 +19,7 @@ The following is a possible layout of the main pieces that your application shou
 
 At this point, your application will look rather strange because it doesn't have any styling to make it look right. That is fine. You are just focusing on structure and content placeholders in this deliverable.
 
-You must use the same startup GitHub repository that you created for the specification deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+You must use the same startup GitHub repository that you created for the specification deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML commit those changes and push them to GitHub. You will need at least ten commits to get full credit, but in reality you should have many more than that.
 
 Remember to use the `Live Server VS Code extension` to see what your code looks like in the browser. Also use the browser's debugger window to debug your HTML.
 
