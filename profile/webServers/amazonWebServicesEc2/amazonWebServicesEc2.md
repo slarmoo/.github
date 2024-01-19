@@ -82,7 +82,7 @@ For example,
 ⚠ You may get a warning that your key pair file permissions are too open. If so then you can restrict the permissions on your file so that they are not accessible to all users by running the `chmod` console command:
 
 ```sh
- `chmod  600 [key pair file]`
+chmod  600 [key pair file]
 ```
 
 ⚠ As it connects to the server it might warn you that it hasn't seen this server before. You can confidently say yes since you are sure of the identity of this server.
