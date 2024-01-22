@@ -2,7 +2,7 @@
 
 Now that you have learned the basics of CSS, is time to style your startup application. The application doesn't have to do anything, but it should appear basically like what you expect your final application to look like. This includes styling of placeholder data that you expect to get from the user logging in, application data, and webSocket data. In the next deliverable you will add JavaScript to make your application functional.
 
-You must use the same startup GitHub repository that you created for the previous deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your CSS commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+You must use the same startup GitHub repository that you created for the previous deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your CSS commit those changes and push them to GitHub. You will need at least ten commits to get full credit, but in reality you should have many more than that.
 
 Remember to use the `Live Server VS Code extension` to see what your code looks like in the browser. Also use the browser's debugger window to debug your CSS.
 

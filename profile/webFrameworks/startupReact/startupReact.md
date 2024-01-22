@@ -2,7 +2,7 @@
 
 Now that you have experience with using a web framework, it is time to convert your application to use React. This will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
 
-You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. You will need at least ten commits to get full credit, but in reality you should have many more than that.
 
 Remember to use the the browser's debugger window to debug your CSS and JavaScript. You can also debug your service JavaScript running on Node.js using the built in VS Code Node.js debugger.
 
