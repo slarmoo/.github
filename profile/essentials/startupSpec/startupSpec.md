@@ -12,11 +12,31 @@ Here is an [example design](https://github.com/webprogramming260/startup-example
 
 ## Represent all technologies
 
+The purpose of having you specify how you are going to use the technologies is so that you don't get halfway through the startup and realized you forgot about calling 3rd party service endpoints or how you are going to use websocket. So **1**: make sure you understand at a general level what the technologies are, and **2**: make sure you have a placeholder in every deliverable for the technologies.
 Make sure that your specification represents how you will represent all of the class technologies. This includes the following:
 
+- **HTML** - Basic structural and organizational elements
+- **CSS** - Styling and animating
+- **JavaScript** - Interactivity _(e.g. What happens when a user presses a button)_
+- **Web service** - Remote functions that your application calls on your, and someone else's, web server _(e.g. saveScores, getWeather, chatWithFriend)_
 - **Authentication**: An input for your user to create an account and login. You will want to display the user's name after they login.
 - **Database data**: A rendering of application data that is stored in the database. For Simon, this is the high scores of all players.
 - **WebSocket data**: A rendering of data that is received from your server. This may be realtime data sent from other users (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this represents every time another user creates or ends a game.
+
+### Example of representing all technologies
+
+Here is an theoretical example of what a voter application might supply in a specification.
+
+- **HTML** - Uses correct HTML structure for application. Two HTML pages. One for login and one for voting. Hyperlinks to choice artifact.
+- **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
+- **JavaScript** - Provides login, choice display, applying votes, display other users votes, backend endpoint calls.
+- **Service** - Backend service with endpoints for:
+  - retrieving choices
+  - submitting votes
+  - retrieving vote status
+- **DB/Login** - Store users, choices, and votes in database. Register and login users. Credentials securely stored in database. Can't vote unless authenticated.
+- **WebSocket** - As each user votes, their votes are broadcast to all other users.
+- **React** - Application ported to use the React web framework.
 
 ## Using Markdown
 
@@ -25,6 +45,8 @@ Take some time to properly learn how to use Markdown in your `README.md` and `no
 ## ☑ Assignment
 
 Update the `README.md` file for your startup GitHub repository that you created in the earlier instruction to include your startup specification. This should include an elevator pitch, key features, a description of how you will use each technology, and design images.
+
+You only need to provide the specification for this deliverable. Do not include information about future deliverables.
 
 Make sure you push your changes to the file so that it can be reviewed.
 
