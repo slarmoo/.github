@@ -83,7 +83,7 @@ The following short list of commands should allow you to do most of what you wil
 | `:w`      | write file (save)                                                                                                                              |
 | `:q`      | quit. Use `:q!` to exit without saving                                                                                                         |
 
-The great thing about learning these commands is that you will find that they work with a lot of the POSIX console programs. For example, with the file viewing utility `less` you can use `G` and `gg` to jump to the top and bottom of a file. Here is a [cheat sheet](https://vim.rtorr.com/) if you want to see all the commands.
+The great thing about learning these commands is that you will find that they work with a lot of the POSIX console programs. For example, with the file viewing utility `less` you can use `gg` and `G` to jump to the top and bottom of a file. Here is a [cheat sheet](https://vim.rtorr.com/) if you want to see all the commands.
 
 ### VI humor
 
