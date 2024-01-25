@@ -131,7 +131,7 @@ For our work we are using the web service Caddy to act as a gateway to our diffe
 
 1. Save the file and exit VI (`:wq`)
 
-1. Restart Caddy so that your changes take effect. Note that since this requires you nto use `sudo` to elevate your user to have the rights to restart the gateway.
+1. Restart Caddy so that your changes take effect. Note that since this requires you to use `sudo` to elevate your user to have the rights to restart the gateway.
 
    ```sh
    sudo service caddy restart
