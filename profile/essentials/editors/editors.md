@@ -10,7 +10,7 @@ For your work with this instruction I would highly suggest you use two editors. 
 
 **Website**: [VS Code](https://code.visualstudio.com/)
 
-Created by Microsoft, Visual Studio Code (VS Code), is free and supported by a large community of open source developers. The [2021 Stack Overflow](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-integrated-development-environment) developer survey put VS Code as the number one choice for 71% of professional developers.
+Created by Microsoft, Visual Studio Code (VS Code), is free and supported by a large community of open source developers. The [2021 Stack Overflow](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-integrated-development-environment) developer survey put VS Code as the number one most common IDE, used by 71% of professional developers.
 
 ![Editor survey](essentialsEditorSurvey.jpg)
 
