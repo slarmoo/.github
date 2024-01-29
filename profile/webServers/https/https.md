@@ -109,7 +109,7 @@ For our work we are using the web service Caddy to act as a gateway to our diffe
       header Cache-Control no-store
       header -etag
       header -server
-      }
+   }
 
 
    startup.myfunkychickens.click {
