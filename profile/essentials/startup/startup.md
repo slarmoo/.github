@@ -7,7 +7,7 @@ The course is divided into distinct milestones. At each milestone you will evolv
 - **HTML** - Basic structural and organizational elements
 - **CSS** - Styling and animating
 - **JavaScript** - Interactivity _(e.g. What happens when a user presses a button)_
-- **Web service** - Remote functions that your application calls on your, or someone else's, web server _(e.g. saveScores, getWeather, chatWithFriend)_
+- **Web service** - Remote functions that your application calls on your, and someone else's, web server _(e.g. saveScores, getWeather, chatWithFriend)_
 - **Authentication** - Creating accounts and logging in
 - **Database persistence** - Storing user data in a database _(e.g. Save the high scores and login information)_
 - **WebSocket** - Support for pushing data from the server. This can be peer to peer communication _(e.g. chatting with friends through the browser)_, or realtime data from the server _(e.g. stock prices or the current game leader)_.

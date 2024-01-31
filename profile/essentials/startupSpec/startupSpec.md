@@ -18,7 +18,10 @@ Make sure that your specification represents how you will represent all of the c
 - **HTML** - Basic structural and organizational elements
 - **CSS** - Styling and animating
 - **JavaScript** - Interactivity _(e.g. What happens when a user presses a button)_
-- **Web service** - Remote functions that your application calls on your, and someone else's, web server _(e.g. saveScores, getWeather, chatWithFriend)_
+- **Web service** - Remote functions that your application calls on your, and someone else's, web server _(e.g. saveScores, getWeather, chatWithFriend)_.
+
+  ⚠ Note that in addition to calling your own service, you must include at least one call to a service that you didn't write. You can view a list of APIs here: [https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis).
+
 - **Authentication**: An input for your user to create an account and login. You will want to display the user's name after they login.
 - **Database data**: A rendering of application data that is stored in the database. For Simon, this is the high scores of all players.
 - **WebSocket data**: A rendering of data that is received from your server. This may be realtime data sent from other users (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this represents every time another user creates or ends a game.
@@ -34,6 +37,7 @@ Here is an theoretical example of what a voter application might supply in a spe
   - retrieving choices
   - submitting votes
   - retrieving vote status
+  - displayed a random dog picture using the https://dog.ceo/api/breeds/image/random service.
 - **DB/Login** - Store users, choices, and votes in database. Register and login users. Credentials securely stored in database. Can't vote unless authenticated.
 - **WebSocket** - As each user votes, their votes are broadcast to all other users.
 - **React** - Application ported to use the React web framework.
