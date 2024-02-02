@@ -17,7 +17,7 @@ In addition to referencing standard fonts found on the user's computer you can s
 ```css
 @font-face {
   font-family: 'Quicksand';
-  src: url('https://cs260.click/fonts/quicksand.woff2');
+  src: url('https://cs260.click/fonts/quicksand.ttf');
 }
 
 p {
