@@ -48,7 +48,7 @@ Get familiar with what the example code teaches.
   ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
-  ⚠ Make sure you run `deployFiles.sh` from the console in your project directory.
+  ⚠ Make sure you using a POSIX compliant console (not PowerShell or CMD) and that you run `deployFiles.sh` from the project directory that you want to deploy.
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
