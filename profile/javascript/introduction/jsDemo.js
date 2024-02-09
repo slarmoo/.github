@@ -9,7 +9,7 @@ function start(fn) {
   console.log(`%c JavaScript Demo`, 'font-size:2em; color: red;');
   debugger;
 
-  fn = fn || types;
+  fn = fn || variables;
   while (fn) {
     console.clear();
     console.log('%c %s', 'font-size:1.5em; color:red;', fn.name);
@@ -20,6 +20,18 @@ function start(fn) {
   debugger;
 }
 
+// ---------- variables -------------
+let g = 1000;
+function variables() {
+  debugger;
+
+  var x = 1; // deprecated
+  let y = 1;
+  const z = 'tacos';
+
+  return types;
+}
+
 // ---------- types -------------
 function types() {
   debugger;
@@ -27,7 +39,7 @@ function types() {
   // Dynamic typing allows for reassignment
 
   // null
-  x = null;
+  let x = null;
   console.log('type changed: ', typeof x, x);
 
   // undefined
@@ -35,7 +47,7 @@ function types() {
   console.log('type changed: ', typeof x, x);
 
   // string
-  let x = 'fish';
+  x = 'fish';
   console.log('type changed: ', typeof x, x);
 
   // number
@@ -51,12 +63,13 @@ function types() {
   // array
   x = [1, 2];
   console.log('type changed: ', typeof x, x);
-  console.log(Array.isArray(arr));
+  console.log(Array.isArray(x));
+  console.log(x instanceof Array);
 
   // date
   x = new Date();
   console.log('type changed: ', typeof x, x);
-  console.log(console.log(x instanceof Date));
+  console.log(x instanceof Date);
 
   // function
   x = function () {
@@ -64,7 +77,7 @@ function types() {
   };
   console.log('type changed: ', typeof x, x);
 
-  // Automatic conversions
+  // Dynamic conversions
   console.log('rat' + [' fink']);
   console.log(1 + 'rat');
   console.log('rat' + 1);
@@ -80,7 +93,13 @@ function types() {
 function equality() {
   debugger;
 
-  // Always use strict equality
+  // Always use strict equality ===
+
+  console.log(0 === 0);
+  console.log(false === false);
+  console.log('taco' === 'taco');
+  console.log(undefined === undefined);
+
   console.log(0 === false);
   console.log('' === false);
   console.log('' === 0);
@@ -89,18 +108,6 @@ function equality() {
   console.log([1, 2] === '1,2');
   console.log([1, 2] === [1, 2]); // Objects compared by reference
   console.log(null === undefined);
-
-  return variables;
-}
-
-// ---------- variables -------------
-let g = 1000;
-function variables() {
-  debugger;
-
-  var x = 1; // deprecated
-  let y = 1;
-  const z = 'tacos';
 
   return conditionals;
 }
@@ -201,13 +208,11 @@ function closures() {
 
   // A function and its surrounding state.
 
-  function dup(i, sep = ':') {
-    let dupLimit = i;
-
+  function dup(dupLimit, sep = ':') {
     return (t) => {
-      let dupCount = dupLimit;
+      let dupCount = 0;
       let out = t;
-      while (dupCount-- > 1) {
+      while (dupCount++ < dupLimit) {
         out += sep + t;
       }
       return out;
@@ -226,7 +231,8 @@ function closures() {
 function strings() {
   debugger;
 
-  const s = 'Cats Dogs Rats Mice';
+  const s = 'Cats Dogs Rats Mice'; // string literal
+  s = new String('Cats Dogs Rats Mice'); // string object
 
   console.log('casefold: ', s.toUpperCase(), s.toLowerCase());
   console.log('split: ', s.split(' '));
@@ -243,11 +249,11 @@ function regex() {
 
   const text = 'Both cats and dogs are pets, but not rocks.';
 
-  const objRegex = new RegExp('cat?', 'i');
-  const literalRegex = /cat?/i;
+  const objRegex = new RegExp('cat.?', 'i'); // cat, cats, catz
+  const literalRegex = /cat.?/i;
   console.log(text.match(literalRegex));
 
-  const petRegex = /(dog)|(cat)|(bird)/gim;
+  const petRegex = /(dog)|(cat)|(bird)/gim; // global, case insensitive, multiline
 
   console.log(text.match(petRegex));
   console.log(text.replace(petRegex, 'animal'));
@@ -292,6 +298,10 @@ function arrayOperations() {
   console.log(
     'reduce',
     numbers.reduce((p, c) => p + c)
+  );
+  console.log(
+    'forEach',
+    numbers.forEach((n) => console.log(n % 2))
   );
   console.log(
     'filter',
