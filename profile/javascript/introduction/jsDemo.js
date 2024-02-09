@@ -1,8 +1,8 @@
 'use strict';
-// unknownVarName = 3;
-// var undefined = 3;
-// function bad(a, a, b) {}
-// 'x'.name = 'rat';
+// unknownVarName = 3;      - Must declare variables
+// var undefined = 3;       - Keywords can't be variables
+// function bad(a, a, b) {} - Duplicate parameters
+// 'x'.name = 'rat';        - Can't add properties to primitives
 
 // ---------- start -------------
 function start(fn) {
@@ -24,20 +24,31 @@ function start(fn) {
 function types() {
   debugger;
 
-  // Weak typing allows for reassignment
+  // Dynamic typing allows for reassignment
+  // string
   let x = 'fish';
   console.log('type changed: ', typeof x, x);
+  // number
   x = 1;
   console.log('type changed: ', typeof x, x);
+  // array
   x = [1, 2];
   console.log('type changed: ', typeof x, x);
+  // object
   x = {};
   console.log('type changed: ', typeof x, x);
   x = { v: 2, z: 'fish' };
   console.log('type changed: ', typeof x, x);
+  // null
   x = null;
   console.log('type changed: ', typeof x, x);
+  // undefined
   x = undefined;
+  console.log('type changed: ', typeof x, x);
+  // function
+  x = function () {
+    return 3;
+  };
   console.log('type changed: ', typeof x, x);
 
   // Automatic conversions
