@@ -25,26 +25,39 @@ function types() {
   debugger;
 
   // Dynamic typing allows for reassignment
+
+  // null
+  x = null;
+  console.log('type changed: ', typeof x, x);
+
+  // undefined
+  x = undefined;
+  console.log('type changed: ', typeof x, x);
+
   // string
   let x = 'fish';
   console.log('type changed: ', typeof x, x);
+
   // number
   x = 1;
   console.log('type changed: ', typeof x, x);
-  // array
-  x = [1, 2];
-  console.log('type changed: ', typeof x, x);
+
   // object
   x = {};
   console.log('type changed: ', typeof x, x);
   x = { v: 2, z: 'fish' };
   console.log('type changed: ', typeof x, x);
-  // null
-  x = null;
+
+  // array
+  x = [1, 2];
   console.log('type changed: ', typeof x, x);
-  // undefined
-  x = undefined;
+  console.log(Array.isArray(arr));
+
+  // date
+  x = new Date();
   console.log('type changed: ', typeof x, x);
+  console.log(console.log(x instanceof Date));
+
   // function
   x = function () {
     return 3;
@@ -74,6 +87,7 @@ function equality() {
   console.log('0' === 0);
   console.log('17' === 17);
   console.log([1, 2] === '1,2');
+  console.log([1, 2] === [1, 2]); // Objects compared by reference
   console.log(null === undefined);
 
   return variables;
