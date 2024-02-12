@@ -7,7 +7,6 @@
 // ---------- start -------------
 function start(fn) {
   console.log(`%c JavaScript Demo`, 'font-size:2em; color: red;');
-  debugger;
 
   fn = fn || variables;
   while (fn) {
@@ -116,7 +115,7 @@ function equality() {
 function conditionals() {
   debugger;
 
-  // falsy (0, -0, '', NaN, null, undefined)
+  // falsy (false, 0, -0, '', NaN, null, undefined)
   // truthy = !falsy
 
   if (true) {
@@ -163,16 +162,23 @@ function conditionals() {
 function functions() {
   debugger;
 
-  // parameters and return value
-  let f = function (i) {
+  // inner function
+  function f() {
+    return 1;
+  }
+  console.log(f());
+
+  // anonymous function with parameters and return value
+  f = function (i) {
     return i;
   };
   console.log(f(3));
 
+  // no return value
   f = function (i) {
     i;
   };
-  console.log(f());
+  console.log(f(5));
 
   // optional parameters
   f = function (a, b, c = 'rat') {
@@ -210,7 +216,7 @@ function closures() {
 
   function dup(dupLimit, sep = ':') {
     return (t) => {
-      let dupCount = 0;
+      let dupCount = 1;
       let out = t;
       while (dupCount++ < dupLimit) {
         out += sep + t;
@@ -231,7 +237,7 @@ function closures() {
 function strings() {
   debugger;
 
-  const s = 'Cats Dogs Rats Mice'; // string literal
+  let s = 'Cats Dogs Rats Mice'; // string literal
   s = new String('Cats Dogs Rats Mice'); // string object
 
   console.log('casefold: ', s.toUpperCase(), s.toLowerCase());
@@ -253,6 +259,7 @@ function regex() {
   const literalRegex = /cat.?/i;
   console.log(text.match(literalRegex));
 
+  // literal regex with flags
   const petRegex = /(dog)|(cat)|(bird)/gim; // global, case insensitive, multiline
 
   console.log(text.match(petRegex));
@@ -350,7 +357,7 @@ function specialOperators() {
 
   // Logical OR
   // Uses right if left is falsy
-  // falsy: (0, -0, '', NaN, null, undefined)
+  // falsy: (false, 0, -0, '', NaN, null, undefined)
   let x = null || 5;
   console.log('logical or: ', x);
   x = x || 10;
@@ -454,7 +461,12 @@ function objectArrayOperations() {
   console.table(beaches.map((n) => ({ ...n, island: 'Oahu' })));
 
   // reduce down to counts for each shore
-  console.table(beaches.reduce((totals, p) => ({ ...totals, [p.shore]: (totals[p.shore] || 0) + 1 }), {}));
+  console.table(
+    beaches.reduce(
+      (totals, p) => ({ ...totals, [p.shore]: (totals[p.shore] || 0) + 1 }),
+      {}
+    )
+  );
 
   // Filter to the east shore
   console.table(beaches.filter((n) => n.shore == 'east'));
@@ -641,7 +653,9 @@ function classes() {
   const beaches = [sunsetBeach, new Beach('Kailua')];
 
   for (let beach of beaches) {
-    console.log(`${beach.weather} weather at ${beach.name} beach on the ${beach.location} shore`);
+    console.log(
+      `${beach.weather} weather at ${beach.name} beach on the ${beach.location} shore`
+    );
   }
 
   return compatibility;
