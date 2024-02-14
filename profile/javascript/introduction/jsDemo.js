@@ -304,7 +304,7 @@ function arrayOperations() {
   );
   console.log(
     'reduce',
-    numbers.reduce((p, c) => p + c)
+    numbers.reduce((a, c) => a + c)
   );
   console.log(
     'forEach',
