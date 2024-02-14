@@ -412,6 +412,10 @@ function objects() {
     console.log(`name:${property}, value:${obj[property]}`);
   }
 
+  for (const value of Object.keys(obj)) {
+    console.log(`value:${value}`);
+  }
+
   return spread;
 }
 
@@ -579,7 +583,7 @@ function destructuringReturns() {
   console.log('array return: ', x, y, z);
 
   function of({ a = 3, b = 'rat' } = {}) {
-    return { a, b, animal: b + ' cat' };
+    return { a, b, animal: 'animal-' + b };
   }
 
   const { a, animal, ...rest } = of({ a: 10 });
@@ -714,6 +718,6 @@ function compatibility() {
 // ---------- document -------------
 function wo(msg) {
   // Interact with the DOM
-  const output = document.getElementById('output');
+  const output = document.querySelector('button');
   output.innerText = msg;
 }
