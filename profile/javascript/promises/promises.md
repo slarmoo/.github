@@ -108,7 +108,7 @@ coinToss
 
 ## The observer pattern
 
-Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The `Observer` pattern, popularized by web programming frameworks such as `Angular`, use a model called `Observer`. The major difference between Observers and Promises is that Promises immediately begin to execute when the Promise is created, but Observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an Observable to be saved as a history of a particular execution.
+Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The popular web programming framework `Angular` uses the `Observer` pattern. The major difference between Observers and Promises is that Promises immediately begin to execute when the Promise is created, but Observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an Observable, to be saved as an execution history.
 
 ## ☑ Assignment
 
