@@ -115,7 +115,7 @@ With async/await, you can clarify the code intent by hiding the promise syntax, 
 ```js
 const httpResponse = await fetch('https://simon.cs260.click/api/user/me');
 const jsonResponse = await httpResponse.json();
-console.log(jsonResponse));
+console.log(jsonResponse);
 console.log('done');
 
 // OUTPUT: {email: 'bud@mail.com', authenticated: true}
