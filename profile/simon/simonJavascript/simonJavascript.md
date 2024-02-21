@@ -16,7 +16,7 @@ You can view this application running here: [Example Simon JavaScript](https://s
 
 ### index.html and login.js
 
-The first place we used JavaScript in Simon, allows the user to provide their name. We then store that name in the Browser's local storage cache. Once in the cache we can read the value from other html pages, or even later browser sessions on the same device.
+The first place we used JavaScript in Simon, allows the user to provide their name. We then store that name in the browser's local storage cache. Once in the cache we can read the value from other html pages, or even later browser sessions on the same device.
 
 Notice the inclusion of a `onclick` call to the `login` function found in the `login.js` file. We reference the `login.js` file by including an HTML `script` element.
 
@@ -41,7 +41,7 @@ function login() {
 
 ### scores.js
 
-The `scores.js` reads the current high scores out of local storage and injects the values into the DOM usinng `createElement` and `appendChild` calls.
+The `scores.js` reads the current high scores out of local storage and injects the values into the DOM using `createElement` and `appendChild` calls.
 
 ### play.js
 
