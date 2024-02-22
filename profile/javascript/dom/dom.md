@@ -28,7 +28,7 @@ p {
 
 For everything in an HTML document there is a node in the DOM. This includes elements, attributes, text, comments, and whitespace. All of these nodes form a big tree, with the document node at the top.
 
-<img src="dom.jpg"/>
+![dom](dom.jpg)
 
 ## Accessing the DOM
 
