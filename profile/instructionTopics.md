@@ -105,6 +105,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Debugging Node.js](webServices/debuggingNode/debuggingNode.md)
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
 - [Storage services](webServices/storageServices/storageServices.md)
+- [Uploading files](webServices/uploadingFiles/uploadingFiles.md)
 - ☑ [Data services](webServices/dataServices/dataServices.md)
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
 - [Account creation and login](webServices/login/login.md)
