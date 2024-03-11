@@ -2,7 +2,7 @@
 
 Web applications often need to upload one or more files from the frontend application running in the browser to the backend service. We can accomplish this by using the HTML `input` element of type `file` on the frontend, and the `Multer` NPM package on the backend.
 
-![uploading app](uploadingApp.png)
+![upload flow](uploadFlow.png)
 
 ## Frontend Code
 
