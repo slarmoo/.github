@@ -157,7 +157,8 @@ Historically each application development team would have developers that manage
 
 All of the major cloud providers offer multiple data services. For this class we will use the data service provided by MongoDB called [Atlas](https://www.mongodb.com/atlas/database). No credit card or payment is required to set up and use Atlas, as long as you stick to the shared cluster environment.
 
-[![Mongo sign up](webServicesMongoSignUp.jpg)](https://www.mongodb.com/atlas/database)
+![Mongo sign up](webServicesMongoSignUp.jpg)
+[MongoDB Atlas sign up](https://www.mongodb.com/atlas/database)
 
 ⚠ This [video tutorial](https://www.youtube.com/watch?v=daIH4o75KE8) will step you through the process of creating your account and setting up your database. You really want to watch this video. Note that some of the Atlas website interface may be slightly different, but the basic concepts should all be there in some shape or form. The main steps you need to take are:
 
