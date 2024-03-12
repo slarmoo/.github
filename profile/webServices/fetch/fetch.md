@@ -54,7 +54,7 @@ Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/ExRoqPz) and e
 Replace the quotable service call with a different one. Here are some suggestions.
 
 - **Random user** - https://randomuser.me/api/
-- **Jokes** - https://api.chucknorris.io/jokes/random
+- **Jokes** - https://api.chucknorris.io/jokes/random?category=dev
 - **GitHub user** - https://api.github.com/users/octocat
 - **Photos** - https://picsum.photos/id/0/info
 - **Quote** - https://api.quotable.io/random
