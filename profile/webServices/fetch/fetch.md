@@ -8,7 +8,7 @@ Today, the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_AP
 
 The basic usage of fetch takes a URL and returns a promise. The promise `then` function takes a callback function that is asynchronously called when the requested URL content is obtained. If the returned content is of type `application/json` you can use the `json` function on the response object to convert it to a JavaScript object.
 
-The following example makes a fetch request to get and display an inspirational quote.
+The following example makes a fetch request to get and display an inspirational quote. If the request method is unspecified, it defaults to GET.
 
 ```js
 fetch('https://api.quotable.io/random')
