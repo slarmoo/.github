@@ -64,7 +64,7 @@ Doing this will make this deliverable of your startup available from `https://st
   - 20% JavaScript support for future login.
   - 20% JavaScript support for future database data.
   - 20% JavaScript support for future WebSocket.
-  - 40% JavaScript support for your application's interaction logic.
+  - 40% JavaScript support for your application's functionality.
 
 ## Go celebrate
 
