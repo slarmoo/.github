@@ -86,7 +86,7 @@ It is expected that you will start at the top of the list and work your way down
 
 - [Midterm study guide](test/midterm.md)
 
-## Web services
+## HTTP service
 
 - [The internet](webServers/internet/internet.md)
 - [Web servers](webServers/webServers/webServers.md)
@@ -104,6 +104,9 @@ It is expected that you will start at the top of the list and work your way down
 - [Service design](webServices/design/design.md)
 - [Debugging Node.js](webServices/debuggingNode/debuggingNode.md)
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
+
+## Data and authentication services
+
 - [Uploading files](webServices/uploadingFiles/uploadingFiles.md)
 - [Storage services](webServices/storageServices/storageServices.md)
 - ☑ [Data services](webServices/dataServices/dataServices.md)
@@ -114,11 +117,17 @@ It is expected that you will start at the top of the list and work your way down
 - [Service daemons - PM2](webServices/pm2/pm2.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
 - [Endpoint testing](webServices/endpointTesting/endpointTesting.md)
+
+## WebSocket
+
 - [WebSocket](webServices/webSocket/webSocket.md)
 - [Debugging WebSocket](webServices/webSocket/debugging.md)
 - [WebSocket chat](webServices/webSocket/chat.md)
 - [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
 - ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
+
+## Security
+
 - [Security](security/overview/overview.md)
 - [OWASP top 10](security/owasp/owasp.md)
 - [Security Practice](security/practice/practice.md)
