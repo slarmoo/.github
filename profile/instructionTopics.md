@@ -130,7 +130,7 @@ It is expected that you will start at the top of the list and work your way down
 
 - [Security](security/overview/overview.md)
 - [OWASP top 10](security/owasp/owasp.md)
-- [Security Practice](security/practice/practice.md)
+- [Security practice](security/practice/practice.md)
 
 ## Web frameworks
 
