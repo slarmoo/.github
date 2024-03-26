@@ -44,17 +44,37 @@ http://localhost:3000/#/score-board
 1/168 challenges solved.
 After you successfully get the score-board to show up, it is displayed in the hamburger menu from then on.
 
-## Demos
+## Application config
 
-I searched for easy challenges that are good for demos.
+This endpoint found in `main.js` show all of the configuration for the app.
 
-- DOM XSS - Easy and tutorial
-- Privacy Policy
-- Confidential Document
+http://localhost:3000/rest/admin/application-configuration
 
-### DOM XSS
+Lots of interesting things in there, like a reference to an easter egg, all of the Google SSO whitelist URLs, all the products, details for the chatbot. If I could change this document i would have a lot of power.
 
-Basically you just need to put `<iframe src="javascript:alert(`xss`)">` in the search box. This really isn't much of a hack since it only changes your own browser, but if it saved and displayed searches from other users then it would be XSS.
+## DOM XSS
+
+Basically you just need to put `<iframe src="javascript:alert(`xss`)">` in the search box. This really isn't much of a hack since it only changes your own browser, but if it is persisted and displayed searches from other users then it would be a persisted XSS and you can steal from other users.
+
+## Bonus payload
+
+very much like DOM XSS, just embedded content in the dom that plays a song.
+
+```
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+```
+
+## Reflected XSS
+
+Try to get <iframe src="javascript:alert(`xss`)"> to render. The order track result page allows you to supply an `id` param on the url. This gets injected into the DOM.
+
+http://localhost:3000/#/track-result/new?id=%3Ciframe%20src%3D%22javascript:alert(%60xss%60)%22%3E
+
+You might need to reload the page to get it to trigger.
+
+## View basket
+
+Go to local storage and change the basket ID. Refresh the page. You will see someone else's basket.
 
 ## Privacy Policy
 
@@ -64,34 +84,83 @@ This is strange. You just read the privacy policy. Hummm.
 
 Admin email is in the Apple Juice review. `admin@juice-sh.op`. Try to login with a brute force attack. I discovered `admin123`. I changed it to `admin1234`.
 
+## Login Admin
+
+Alternatively you can do a SQL injection to login.
+
+It looks like the login middleware has a possible SQL injection vulnerability.
+
+```js
+models.sequelize.query(
+  `SELECT * FROM Users WHERE email = '${req.body.email || ''}' AND password = '${security.hash(
+    req.body.password || ''
+  )}' AND deletedAt IS NULL`,
+  { model: UserModel, plain: true }
+);
+```
+
+Yes it does. Register a new user with `' or 1=1--` as the email address and password `abcde`. Remove the Client side check on the email validation. This will log you in as `admin@juice-sh.op` because the query returns the first user in the database.
+
 ## Admin Section
 
-Now that I can auth as an admin I can access `/administration` view. This shows mea ll the registered users along with their feedback.
+Now that I can auth as an admin I can access `/administration` view. This endpoint was exposed in the `main.js` file. This shows me all the registered users along with their feedback.
+
+## Five-Star Feedback
+
+After logging in as admin and going to the `/administration` view. Delete all the five star feedback.
+
+## Post some feedback in another user's name
+
+In the feedback from, remove the disable flag from the author and change it to something else.
+
+## Register a user as an admin
+
+You can see the API request `/api/Users` being called when you register a new user. Since everything is validated on the frontend you can create users all day long with curl.
+
+What if you add `"role":"admin"` to the request?
+
+```sh
+curl -X POST http://localhost:3000/api/Users -d '{"email":"j@j.com","password":"admin","role":"admin"}' -H "Content-Type: application/json"
+```
+
+Tada! Oh yeah admin.
+
+## Persistent XSS
+
+Use the add user hack to create a user with a XSS injection that will trigger on the administration page.
+
+```sh
+curl -X POST http://localhost:3000/api/Users -d '{"email":"<iframe src=\"javascript:alert(`xss`)\">","password":"admin","role":"admin"}' -H "Content-Type: application/json"
+```
 
 ## Error Handling
 
-I went to `/order-completion/../xxx` this triggered a `/rest/` request that generated a 500 response. The error also has the stack in it.
+I went to `http://localhost:3000/rest/xxx/` and that generated a 500 response. The error also has the stack in it.
 
 ```json
 {
   "error": {
     "message": "Unexpected path: /rest/",
-    "stack": "Error: Unexpected path: /rest/\n    at /Users/lee/Desktop/demo/juice-shop/build/routes/angular.js:38:18\n    at Layer.handle [as handle_request] (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:328:13)\n    at /Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:286:9\n    at Function.process_params (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:280:10)\n    at /Users/lee/Desktop/demo/juice-shop/build/routes/verify.js:168:5\n    at Layer.handle [as handle_request] (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:328:13)\n    at /Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:286:9\n    at Function.process_params (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:280:10)\n    at /Users/lee/Desktop/demo/juice-shop/build/routes/verify.js:105:5\n    at Layer.handle [as handle_request] (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:328:13)\n    at /Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:286:9\n    at Function.process_params (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:280:10)\n    at logger (/Users/lee/Desktop/demo/juice-shop/node_modules/morgan/index.js:144:5)\n    at Layer.handle [as handle_request] (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:328:13)\n    at /Users/lee/Desktop/demo/juice-shop/node_modules/express/lib/router/index.js:286:9"
+    "stack": "Error: Unexpected path: /rest/\n    at /Users/lee/Desktop/demo/juice-shop/build/routes/angular.js:38:18\n    at Layer.handle [as handle_request]..."
   }
 }
 ```
+
+## Zero stars
+
+Go to the customer feedback. Don't give a rating, but fill in everything else. Remove the disabled attribute from the submit button.
+
+Go to `About us` page and see the zero star (null) result.
+
+## 403 endpoint?
 
 The endpoint `http://localhost:3000/#/403` does something very strange. It displays a big red box that says 403. Not sure what this is for.
 
 ## Confidential document
 
-Apparently there is an ftp endpoint that will list the file we are looking for. I'm not sure how I was supposed to know that was there.
+If you create an order and look at the order confirmation PDF you will see it is in a directory called `http://localhost:3000/ftp`. That is completely open for public listing.
 
-http://localhost:3000/ftp/acquisitions.md
-
-I was able to find a reference to the ftp endpoint when I tried to download my order invoice.
-
-http://localhost:3000/ftp/order_5267-c03562a8ec9e97be.pdf
+Check out the `http://localhost:3000/ftp/acquisitions.md`.
 
 There is a reference to this endpoint in the `main.js`.
 
@@ -106,6 +175,38 @@ http://localhost:3000/api-docs
 ## Password strength
 
 This is a really good one as the fix does good instruction.
+Admin email is found on Apple Juice product review. `admin@juice-sh.op`
+
+## Exposed metrics
+
+It uses Prometheus for monitoring. In the [Prometheus guide](https://prometheus.io/docs/introduction/first_steps/) it describes the `http://localhost:9090/metrics` endpoint. This exposes all of the server metrics (CPU, GC, network, memory)as well as metrics about the challenges. This also partially solves `Access Log`.
+
+## Access log
+
+http://localhost:3000/support/logs as found in `main.js`.
+
+## Bully chatbot
+
+This one is strange. Just put `can i have a coupon` in the chat box until it gives you one.
+
+`o*IVjg+yBo` 10% off.
+
+## Missing encoding
+
+This is just fixing the encoding of the `#` character to be `%23`.
+
+http://localhost:3000/assets/public/images/uploads/%F0%9F%98%BC-%23zatschi-%23whoneedsfourlegs-1572600969477.jpg
+
+## Repetitive registration
+
+create a new user. Put in a password `abcdefg` put in the password a second time until it matches. Go back and change the original one. No error is generated. Which password did it use? Put your password in twice is a bad design. Better to have the reveal password button.
+
+## Crash the server
+
+Go to checkout
+change localstorage to make the total -1000
+This allows you to checkout with wallet when you have no wallet money
+purchase ... crash
 
 ## Explore
 
@@ -128,8 +229,6 @@ This is a really good one as the fix does good instruction.
    1. Sources
       1. main.js reveals a lot of views and endpoints we can call.
 
-## Create an account
+## Solutions
 
-user: juice@shop.com pw: juice
-
-1. When I log in the token is sent in the response, cookie, and localstorage. Cookie has no restrictions on its access or usage. I should be able to send the token to a different website if I can do a XSS attack.
+https://help.owasp-juice.shop/appendix/solutions.html
