@@ -137,7 +137,7 @@ If you get stuck here is a possible solution.
 function App() {
   return (
     <div>
-      Function Style Component: <Demo who='function' color='yellow' />
+      Function Style Component: <Demo who='function' initialColor='yellow' />
     </div>
   );
 }
