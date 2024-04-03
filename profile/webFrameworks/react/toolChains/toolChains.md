@@ -2,8 +2,8 @@
 
 As web programming becomes more and more complex it became necessary to abstract away some of that complexity with a series of tools. Some common functional pieces in a web application tool chain include:
 
-- **Code repository** - Stores code in a shared, versioned, location.
-- **Linter** - Removes, or warns, of non-idiomatic code usage.
+- **Code repository** - Stores code in a shared, versioned location.
+- **Linter** - Removes, or warns of, non-idiomatic code usage.
 - **Prettier** - Formats code according to a shared standard.
 - **Transpiler** - Compiles code into a different format. For example, from JSX to JavaScript, TypeScript to JavaScript, or SCSS to CSS.
 - **Polyfill** - Generates backward compatible code for supporting old browser versions that do not support the latest standards.
