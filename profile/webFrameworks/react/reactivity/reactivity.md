@@ -4,14 +4,11 @@ Making the UI react to changes in user input or data, is one of the architectura
 
 When a component's JSX is rendered, React parses the JSX and creates a list of any references to the component's `state` or `prop` objects. React then monitors those objects and if it detects that they have changed it will call the component's `render` function so that the impact of the change is visualized.
 
-The following example contains two components: a parent `<Survey/>` component and a child `<Question/>` component. The Survey has a state named `color`. The Question has a property named `color`. The Survey passes its `color` state to the Question as a property. This means that any change to the Survey's color will also be reflected in the Question's color. This is a powerful means for a parent to control a child's functionality.
+The following example contains two components: a parent `<Survey/>` component and a child `<Question/>` component. The Survey has a state named `color`. The Question has a property named `answer`. The Survey passes its `color` state to the Question as a property. This means that any change to the Survey's color will also be reflected in the Question's color. This is a powerful means for a parent to control a child's functionality.
 
-The Question component also has a state named `answer`. The value of answer is displayed as part of the Question's content. The user can interact with this state through HTML radio input elements. When one of the inputs is changed the Question's `onChange` function is called and the answer state is updated to reflect the user's choice. This automatically causes the display of the answer to be updated.
-
-Be careful about your assumptions of when state is updated. Just because you called `updateState` does not mean that you can access the updated state on the next line of code. The update happens asynchronously, and therefore you never really know when it is going to happen; you only know that it will eventually happen.
+Be careful about your assumptions of when state is updated. Just because you called `updateState` does not mean that you can access the updated state on the next line of code. The update happens asynchronously, and therefore you never really know when it is going to happen. You only know that it will eventually happen.
 
 ```jsx
-// The Survey component
 const Survey = () => {
   const [color, updateColor] = React.useState('#737AB0');
 
@@ -19,17 +16,19 @@ const Survey = () => {
   const onChange = (e) => {
     updateColor(e.target.value);
   };
+
   return (
     <div>
       <h1>Survey</h1>
-      {/* Pass the Survey color state as a property to the Question.
-          When the color changes the Question property will also be updated and rendered. */}
-      <Question color={color} />
+
+      {/* Pass the Survey color  as a parameter to the Question.
+          When the color changes the Question parameter will also be updated and rendered. */}
+      <Question answer={color} />
 
       <p>
         <span>Pick a color: </span>
-        {/* Pass the Survey color state as a property to the input element.
-            When the color changes, the input property will also be updated and rendered. */}
+        {/* Set the Survey color state as a the value of the color picker.
+            When the color changes, the value will also be updated and rendered. */}
         <input type='color' onChange={(e) => onChange(e)} value={color} />
       </p>
     </div>
@@ -37,27 +36,10 @@ const Survey = () => {
 };
 
 // The Question component
-const Question = ({ color }) => {
-  const [answer, updateAnswer] = React.useState('pending...');
-
-  function onChange({ target }) {
-    updateAnswer(target.value);
-  }
-
+const Question = ({ answer }) => {
   return (
     <div>
-      <span>Do you like this</span>
-      {/* Color rerendered whenever the property changes */}
-      <span style={{ color: color }}> color</span>?
-      <label>
-        <input type='radio' name='answer' value='yes' onChange={(e) => onChange(e)} />
-        Yes
-      </label>
-      <label>
-        <input type='radio' name='answer' value='no' onChange={(e) => onChange(e)} />
-        No
-      </label>
-      {/* Answer rerendered whenever the state changes */}
+      {/* Answer rerendered whenever the parameter changes */}
       <p>Your answer: {answer}</p>
     </div>
   );
@@ -93,17 +75,21 @@ const Survey = () => {
 
       <p>
         <span>Type some text: </span>
-        <input type='text' onChange={(e) => onChange(e)} placeholder='type here' />
+        <input
+          type='text'
+          onChange={(e) => onChange(e)}
+          placeholder='type here'
+        />
       </p>
     </div>
   );
 };
 
 // The Question component
-const Question = ({ text }) => {
+const Question = ({ answer }) => {
   return (
     <div>
-      <p>You typed: {text}</p>
+      <p>You typed: {answer}</p>
     </div>
   );
 };
