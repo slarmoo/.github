@@ -61,7 +61,6 @@ Don't forget to update your GitHub startup repository `notes.md` with all of the
 If you get stuck here is a possible solution.
 
 ```jsx
-// The Survey component
 const Survey = () => {
   const [text, updateText] = React.useState('');
 
@@ -71,7 +70,7 @@ const Survey = () => {
   return (
     <div>
       <h1>Survey</h1>
-      <Question text={text} />
+      <Question answer={text} />
 
       <p>
         <span>Type some text: </span>
@@ -85,7 +84,6 @@ const Survey = () => {
   );
 };
 
-// The Question component
 const Question = ({ answer }) => {
   return (
     <div>
