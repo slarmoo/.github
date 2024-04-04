@@ -6,7 +6,7 @@ You must use the same startup GitHub repository that you created in the earlier 
 
 Remember to use the browser's debugger window to debug your frontend HTML, CSS and JavaScript. You can also debug your backend service JavaScript running on Node.js using the built in VS Code Node.js debugger.
 
-Once you have developed your application to where you want it, you need to release it to your production environment. Use the `deployService.sh` script from the [Simon DB repository](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
+Once you have developed your application to where you want it, you need to release it to your production environment. Use the `deployService.sh` script from the [Simon Login repository](https://github.com/webprogramming260/simon-login/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
 
 ```sh
 ./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
