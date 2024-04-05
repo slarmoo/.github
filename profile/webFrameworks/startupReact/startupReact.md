@@ -31,7 +31,7 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Execute your frontend code in your development environment by running `npm start` from the console in the root of the project. This will automatically open your browser to https://localhost:3001. Use the browser's dev tools to step through the frontend JavaScript using the Source tab.
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Convert your startup frontend to use React. This includes:
-   1. Creating a template starting application using `create-react-app` and cleaning up what it created.
+   1. Creating a template starting application using `vite` and cleaning up what it created.
    1. Creating a react router that displays stubbed components for the main pieces of your application.
    1. Converting your previous HTML files into the stubbed components.
 1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
