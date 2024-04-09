@@ -145,10 +145,18 @@ If you would like to experiment with TypeScript you can use [CodePen](https://co
 
 ![typescript playground](typescriptPlayground.jpg)
 
-To use TypeScript in your web application you can create your project using the `create-react-app` CLI and specifying the `--template typescript` switch. This will configure the template application to use TypeScript.
+To use TypeScript in your web application you can create your project using `vite`. Vite knows how to use typescript without any additional configuration.
 
 ```sh
-npx create-react-app my-app --template typescript
+npm create vite@latest
+✔ Project name: … viteDemo
+✔ Select a framework: › React
+? Select a variant: › - Use arrow-keys. Return to submit.
+❯   TypeScript
+    TypeScript + SWC
+    JavaScript
+    JavaScript + SWC
+    Remix ↗
 ```
 
 If you want to convert an existing application, then install the NPM `typescript` package to your development dependencies.
