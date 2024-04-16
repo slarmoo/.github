@@ -2,6 +2,14 @@
 
 ![Caddy](caddyLogo.png)
 
+📖 **Recommended reading**: [Getting Started](https://caddyserver.com/docs/getting-started)
+
+![MattHolt](mattHolt.png)
+
+> “Imperfect member of the restored Church of Jesus Christ. Husband. Father. Stepdad.”
+>
+> — Matt Holt (_Source_: [Twitter](https://twitter.com/mholt6))
+
 Caddy is a web service that listens for incoming HTTP requests. Caddy then either serves up the requested static files or routes the request to another web service. This ability to route requests is called a `gateway`, or `reverse proxy`, and allows you to expose multiple web services (i.e. your project services) as a single external web service (i.e. Caddy).
 
 For this course, we use Caddy for the following reasons.
