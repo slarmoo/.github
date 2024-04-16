@@ -10,6 +10,8 @@
 >
 > — Matt Holt (_Source_: [Twitter](https://twitter.com/mholt6))
 
+Released in 2020, Matt Holt combined the power of building an HTTP server using the [Go programming language](https://go.dev/) with the ease of generating TLS certificates using [LetsEncrypt](https://letsencrypt.org/).
+
 Caddy is a web service that listens for incoming HTTP requests. Caddy then either serves up the requested static files or routes the request to another web service. This ability to route requests is called a `gateway`, or `reverse proxy`, and allows you to expose multiple web services (i.e. your project services) as a single external web service (i.e. Caddy).
 
 For this course, we use Caddy for the following reasons.
