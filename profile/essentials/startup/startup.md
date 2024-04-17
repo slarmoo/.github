@@ -81,11 +81,47 @@ Thesaurdle enables players to start with one word and work towards a goal word b
 
 ![Thesaurdle](thesaurdle.gif)
 
+> BJ Foutz & Jared Black
+
 ### Zen Garden
 
 Zen Garden demonstrates the power of elegant, clean, UI design to create a custom plants that you add to your personal collection.
 
 ![Zen Garden](zen-garden.gif)
+
+> Riana Jones & Jared Kitchen
+
+### Virtual Friend
+
+Come hang out with all of your friends in a virtual room.
+
+![Virtual Friend](startupVirtualFriend.gif)
+
+> Hugh Takara
+
+### Christofori's Cafe
+
+Create a music room where you can play piano and chat with your friends.
+
+![Cristofori's Cafe](startupCristoforisCafe.gif)
+
+> Diego Blaylock
+
+### Infinisweeper
+
+Play an infinite game of mine sweeper with all of your fiends.
+
+![Infinisweeper](startupInfinisweeper.gif)
+
+> Axel Reynolds
+
+### Musicards
+
+Learn how to quickly read notes. Compete for the high score.
+
+![Misicards](startupMusicards.gif)
+
+> Merica Rowley
 
 ## Common mistakes
 
