@@ -100,7 +100,8 @@ rm -r public
 While in your project root directory, install Vite as a development dependency by running:
 
 ```sh
- npm install vite@latest -D
+npm init -y
+npm install vite@latest -D
 ```
 
 Then insert/replace the `scripts` found in the newly created `package.json` file located in your project root directory to include the commands for running Vite.
