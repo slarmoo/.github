@@ -37,6 +37,7 @@ Doing this will make this deliverable of your startup available from `https://st
 1. Allow new users to create accounts by providing credentials
 1. Store encrypted credentials in your database
 1. Allow existing users to provide credentials
+1. Allow existing users to logout
 1. Authenticate users by comparing provided credentials against those stored in the database
 1. Restrict access to parts of the application that require authorization
 1. Debug your application using VS Code's Node debugger and the browser's dev tools, in your development environment to verify it is working correctly.
@@ -55,7 +56,7 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: At least 10 git commits spread consistently throughout the assignment period.
 - Application authentication and authorization
   - 20% - Supports new user registration
-  - 20% - Supports existing user authentication
+  - 20% - Supports existing user authentication and logout
   - 20% - Stores application data in MongoDB
   - 20% - Stores and retrieves credentials in MongoDB
   - 20% - Restricts application functionality based upon authentication
