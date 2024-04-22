@@ -12,7 +12,7 @@ git clone https://github.com/webprogramming260/simon-websocket.git simon
 - create service dir
 - move service code to new service dir (database.js, index.js, peerProxy.js, package.json, package-lock.json)
 - `cd service && npm install`
-- Copy or create `dbConfig.js` with the database credentials.
+- Copy or create `dbConfig.json` with the database credentials.
 - start up service `node index.js` or F5 in VS Code.
 - test with curl `curl localhost:3000/api/user/test`
 

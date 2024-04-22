@@ -98,6 +98,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Fetch](webServices/fetch/fetch.md)
 - [Node.js](webServices/node/node.md)
 - ☑ [Express](webServices/express/express.md)
+- [Troubleshoot 502](webServices/troubleshoot502/troubleshoot502.md)
 - [Simon service](simon/simonService/simonService.md)
 - ☑ [Startup Service](webServices/startupService/startupService.md)
 - [SOP and CORS](webServices/cors/cors.md)
