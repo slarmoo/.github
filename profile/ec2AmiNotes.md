@@ -27,7 +27,7 @@ Now we can install Caddy, NVM, Node, and PM2
 - Install Caddy
 
   ```sh
-  sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+  sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
   curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
   curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
   sudo apt update
@@ -35,6 +35,7 @@ Now we can install Caddy, NVM, Node, and PM2
   ```
 
   - Test. `curl localhost` should display caddy HTML. You should also be able to hit if from your development environment in your browser using the instance's IP address
+
   - Allow the ubuntu user to modify the public_html static files and Caddyfile
     - `sudo chown -R ubuntu /usr/share/caddy`
     - `sudo chown -R ubuntu /etc/caddy/Caddyfile`
@@ -46,11 +47,9 @@ Now we can install Caddy, NVM, Node, and PM2
   - `scp -i ~/keys/cs260/cs260.pem webServerDefault.html ubuntu@0.0.0.0:public_html/index.html`
   - Hitting the server from the browser should now display the course default page.
 - Install node.js
-  - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash`
-  - close shell and reopen
-  - `nvm install --lts` (this installed version 18.15.0)
-  - Upgrade npm to the latest stable version
-  - `npm install -g npm@latest` (this installed version 9.6.4)
+  - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
+  - `. ~/.nvm/nvm.sh`
+  - `nvm install --lts` (this installed version 20.12.2)
 - Set up PM2
   - npm install pm2 -g
 - Add services for Simon and Startup
