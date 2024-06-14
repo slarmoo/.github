@@ -2,7 +2,7 @@
 
 We hope that you have enjoyed learning how to build a web application. The concepts you have mastered from this instruction are the same ones that professional software engineers use on a daily basis.
 
-Always remember to continually invest in your tech, art, social, and discovery skills as you make the world a better place.
+Always remember to continually invest in your capabilities, collaboration, curiosity, creativity, and Christlike skills as you make the world a better place.
 
 ## Clean up AWS
 
