@@ -11,7 +11,7 @@ After everything has been graded, you should consider cleaning up your resources
 ![Clean up meme](turnOffAws.jpg)
 
 - Terminate your EC2 instance ($3.00 - $5.00/month depending upon instance type)
-- Disassoicate and release your elastic IP address ($3.00/month for unassociated instances)
+- Disassociate and release your elastic IP address ($3.00/month for unassociated instances)
 - Make sure you do not have auto renew set for your domain name ($3.00/year for .click)
 - Delete your Route 53 hosted zone for your domain name ($0.50/month)
 - Clean up your security group and key pair. Note that there is no charge for these.
