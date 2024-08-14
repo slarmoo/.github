@@ -2,7 +2,7 @@
 
 Now that you have experience with using a web framework, it is time to convert your application to use React. This will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
 
-You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. You will need at least ten commits to get full credit, but in reality you should have many more than that.
+You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. Make sure you have enough commits that you can demonstrate your ownership of the code and protect yourself from loss. Usually this will mean at least ten commits, but in reality you may have many more than that. Failing to fully document your work may result in the rejection of your submission.
 
 Remember to use the the browser's debugger window to debug your CSS and JavaScript. You can also debug your service JavaScript running on Node.js using the built in VS Code Node.js debugger.
 
@@ -24,11 +24,7 @@ Doing this will make this deliverable of your startup available from `https://st
 
 1. Review and deploy Simon React
    1. Clone the Simon React repository to your development environment.
-   1. Run `npm install` in both the root of the project and the `services` directory.
-   1. Open the project in VS Code and examine the application's use of React.
-   1. Create and configure the `service/dbConfig.json` file with your MongoDB credentials.
-   1. Execute your backend code in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing `service/index.js`). Set breakpoints in VS Code and step through the backend JavaScript related to login interactions.
-   1. Execute your frontend code in your development environment by running `npm start` from the console in the root of the project. This will automatically open your browser to https://localhost:3001. Use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Execute your frontend code in your development environment by running `npm run dev` from the console in the root of the project. This will automatically open your browser to https://localhost:5173. Use the browser's dev tools to step through the frontend JavaScript using the Source tab.
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Convert your startup frontend to use React. This includes:
    1. Creating a template starting application using `vite` and cleaning up what it created.
@@ -47,7 +43,7 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Simon React deployed to your production environment
 - **Prerequisite**: A link to your GitHub startup repository prominently displayed on your application's home page
 - **Prerequisite**: Notes in your startup Git repository `README.md` file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
-- **Prerequisite**: At least 10 git commits spread consistently throughout the assignment period.
+- **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread accross multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Application converted to use React
   - 10% Bundled using Vite
   - 30% Multiple functional react components
@@ -56,4 +52,4 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Go celebrate
 
-With the completion of your application you have become a Startup Founder. Way to go! Time to grab some friends, recruit them to market your soon-to-be-viral application, and celebrate by going out to lunch. I'm thinking tacos. 🌮
+With the addition of interactivity to your startup it should be basically functional. Anything that remains should be stubbed out in some way that makes the application usable. Time to celebrate. I'm thinking tacos. 🌮
