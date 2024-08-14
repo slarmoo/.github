@@ -8,6 +8,28 @@ This deliverable demonstrates peer-to-peer communication using WebSocket. The fu
 
 You can view this application running here: [Example Simon WebSocket](https://simon-websocket.cs260.click)
 
+## Configuring Vite to proxy ws requests
+
+Just like we configured Vite to proxy endpoint requests with the Simon Service deliverable, we need to proxy WebSocket requests while debugging our frontend in our development environment.
+
+This is done by modifying `vite.config.js` and adding the path for `/ws`.
+
+```js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+      '/ws': {
+        target: 'ws://localhost:3000',
+        ws: true,
+      },
+    },
+  },
+});
+```
+
 ## Handling WebSocket requests
 
 After installing the `ws` NPM package the next step is to attach a WebSocket listener to the HTTP server that was created in an earlier deliverable. This work is all done in the PeerProxy class implemented in the `peerProxy.js` file. The PeerProxy class contains the protocol upgrade from HTTP to WebSocket, tracks new WebSocket connections, passes (or proxies) requests between connections, and implements ping/pong to keep connections alive.

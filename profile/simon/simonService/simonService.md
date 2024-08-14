@@ -2,7 +2,7 @@
 
 ![Simon](../simon.png)
 
-This deliverable demonstrates converting the JavaScript application into a web application by implementing a web service that listens on a network port for HTTP requests. The web service provides endpoints for getting and updating the scores. The application also uses a couple third party endpoints to display inspirational quotes on the about page and show a random header image.
+This deliverable demonstrates adding a backend web service that serves up the frontend, handles HTTP endpoint requests, and stores information in memory on the server. The web service provides endpoints for getting and updating the scores. The application also uses a couple third party endpoints to display inspirational quotes on the about page and show a random header image.
 
 We will use Node.js and Express to create our HTTP service.
 
@@ -12,14 +12,50 @@ You can view this application running here: [Example Simon Service](https://simo
 
 ## Service endpoint definitions
 
-Here is our design, documented using `curl` commands, for the two endpoints that the Simon web service provides.
+Here is our design, documented using `curl` commands, for the endpoints that the Simon web service provides.
+
+**CreateAuth** - Create a new user.
+
+```sh
+curl -X POST $host/api/auth/create -H 'Content-Type: application/json' -d '{"email":"s@byu.edu", "password":"byu"}'
+
+# Response 200
+{"token":"6b2ab581-05ca-4df0-8897-5671e7febdd8"}
+```
+
+**GetAuth** - Login an existing user.
+
+```sh
+curl -X POST $host/api/auth/login -H 'Content-Type: application/json' -d '{"email":"s@byu.edu", "password":"byu"}'
+
+# Response 200
+{"token":"6b2ab581-05ca-4df0-8897-5671e7febdd8"}
+```
+
+**DeleteAuth** - Logout a user
+
+```sh
+curl -v -X DELETE $host/api/auth/logout -
+H 'Content-Type: application/json' -d '{"token":"6b2ab581-05ca-4df0-8897-5671e7febdd8"}'
+
+# Response 204
+```
+
+**GetUser** - Get information about a user
+
+```sh
+curl $host/api/user/s@byu.edu
+
+# Response 200
+{"email":"s@byu.edu","authenticated":true}
+```
 
 **GetScores** - Get the latest high scores.
 
 ```sh
-curl -X GET /api/scores
+curl $host/api/scores
 
-#Response
+# Response
 { "scores":[
   {"name":"Harvey", "score":"337", "date":"2022/11/20"},
   {"name":"도윤 이", "score":"95", "date":"2019/05/20"}
@@ -29,76 +65,134 @@ curl -X GET /api/scores
 **SubmitScore** - Submit a score for consideration in the list of high scores.
 
 ```sh
-curl -X POST /api/score -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}'
+curl -X POST $host/api/score  -H 'Content-Type: application/json' -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}'
 
-#Response
-{ "scores":[
+# Response
+[
   {"name":"Harvey", "score":"337", "date":"2022/11/20"},
   {"name":"도윤 이", "score":"95", "date":"2019/05/20"}
-]}
+]
 ```
 
-## Third party endpoints
+## Steps to add the backend service
 
-The `about.js` file contains code for making calls to third party endpoints using `fetch`. We make one call to `picsum.photos` to get a random picture and another to `quotable.io` to get a random quote. Once the endpoint asynchronously returns, the DOM is updated with the requested data. Here is an example of the quote endpoint call.
+We create our service with a new directory in the root of the project named `service`. To initialize the service code we open up a command console window and setup the NPM project and install **Express**.
+
+```sh
+mkdir service && cd service
+npm init -y
+npm install express
+```
+
+In that directory create a file named `index.js` in the root of the project. This is the entry point that **node.js** will call when you run your web service.
+
+Add the basic Express JavaScript code needed to make a service.
 
 ```js
-function displayQuote(data) {
-  fetch('https://api.quotable.io/random')
-    .then((response) => response.json())
-    .then((data) => {
-      const containerEl = document.querySelector('#quote');
+const express = require('express');
+const app = express();
 
-      const quoteEl = document.createElement('p');
-      quoteEl.classList.add('quote');
-      const authorEl = document.createElement('p');
-      authorEl.classList.add('author');
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
-      quoteEl.textContent = data.content;
-      authorEl.textContent = data.author;
+app.get('*', (_req, res) => {
+  res.send({ msg: 'Simon service' });
+});
 
-      containerEl.appendChild(quoteEl);
-      containerEl.appendChild(authorEl);
-    });
-}
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
 ```
 
-## Steps to convert Simon to a service
+Now we can run the application with `node index.js` and hit then service with any Curl URL.
 
-Converting Simon to a service involved the following steps.
+```sh
+node index.js &
+curl localhost:3000
 
-1. Move all the previous deliverable code files (_.html, _.js, \*.css, favicon.ico, and assets) into a sub-directory named `public`. We will use the HTTP Node.js based service to host the frontend application files. This is done with the static file middleware that we will add our service `index.js`.
+{"msg":"Simon service"}
+
+# use fg to foreground and kill the process
+```
+
+### Add the endpoints
+
+Now that we have the service up and running, we want to add the Simon backend service endpoints. To support our endpoints we do the following:
+
+1. **Install UUID**. The service represents its tokens with a UUID and so we need to import that NPM package using `npm install uuid` and then import it into the code.
 
    ```js
-   app.use(express.static('public'));
+   const uuid = require('uuid');
    ```
 
-   When running our service the static file middleware takes care of reading the frontend code from the `public` directory and returning it to the browser. The service only directly handles the endpoint requests.
-
-   ![Simon service](simonProduction.jpg)
-
-1. Within the project directory run `npm init -y`. This configures the directory to work with **node.js**.
-1. Modify or create `.gitignore` to ignore `node_modules`.
-1. Install the Express package by running `npm install express`. This will write the Express package dependency in the `package.json` file and install all the Express code to the `node_modules` directory.
-1. Create a file named `index.js` in the root of the project. This is the entry point that **node.js** will call when you run your web service.
-1. Add the basic Express JavaScript code needed to host the application static content and the desired endpoints.
+1. **Parse JSON**. All of our endpoints use JSON and so we want Express to automatically parse that for us.
 
    ```js
-   const express = require('express');
-   const app = express();
-
-   // The service port. In production the frontend code is statically hosted by the service on the same port.
-   const port = process.argv.length > 2 ? process.argv[2] : 3000;
-
-   // JSON body parsing using built-in middleware
    app.use(express.json());
+   ```
 
-   // Serve up the frontend static content hosting
-   app.use(express.static('public'));
+1. **Create the memory data structures**. Add data structures for both the users and the scores. That means whenever the service is restarted the users and scores will be lost. When we introduce the database in a later deliverable, the data will be persistent there.
 
-   // Router for service endpoints
-   const apiRouter = express.Router();
+   ```js
+   let users = {};
+   let scores = [];
+   ```
+
+1. **Set up a router path for the endpoints**. We want all of our endpoints to have a path prefix of `/api` so that we can distinguish them from requests to load the front end files. This is done with a `express.Router` call.
+
+   ```js
+   var apiRouter = express.Router();
    app.use(`/api`, apiRouter);
+   ```
+
+1. **Delete the placeholder endpoint**. Delete the placeholder endpoint `app.get('*' ...` that we created to demonstrate that the service was working.
+
+1. **Add the service endpoints**. Add all of the code for the different Simon endpoints.
+
+   ```js
+   // CreateAuth a new user
+   apiRouter.post('/auth/create', async (req, res) => {
+     const user = users[req.body.email];
+     if (user) {
+       res.status(409).send({ msg: 'Existing user' });
+     } else {
+       const user = { email: req.body.email, password: req.body.password, token: uuid.v4() };
+       users[user.email] = user;
+
+       res.send({ token: user.token });
+     }
+   });
+
+   // GetAuth login an existing user
+   apiRouter.post('/auth/login', async (req, res) => {
+     const user = users[req.body.email];
+     if (user) {
+       if (req.body.password === user.password) {
+         user.token = uuid.v4();
+         res.send({ token: user.token });
+         return;
+       }
+     }
+     res.status(401).send({ msg: 'Unauthorized' });
+   });
+
+   // DeleteAuth logout a user
+   apiRouter.delete('/auth/logout', (req, res) => {
+     const user = Object.values(users).find((u) => u.token === req.body.token);
+     if (user) {
+       delete user.token;
+     }
+     res.status(204).end();
+   });
+
+   // GetUser returns information about a user
+   apiRouter.get('/user/:email', async (req, res) => {
+     const user = users[req.params.email];
+     if (user) {
+       res.send({ email: user.email, authenticated: !!user.token });
+       return;
+     }
+     res.status(404).send({ msg: 'Unknown' });
+   });
 
    // GetScores
    apiRouter.get('/scores', (_req, res) => {
@@ -111,35 +205,60 @@ Converting Simon to a service involved the following steps.
      res.send(scores);
    });
 
-   // Return the application's default page if the path is unknown
-   app.use((_req, res) => {
-     res.sendFile('index.html', { root: 'public' });
-   });
+   // updateScores considers a new score for inclusion in the high scores.
+   function updateScores(newScore, scores) {
+     let found = false;
+     for (const [i, prevScore] of scores.entries()) {
+       if (newScore.score > prevScore.score) {
+         scores.splice(i, 0, newScore);
+         found = true;
+         break;
+       }
+     }
 
-   app.listen(port, () => {
-     console.log(`Listening on port ${port}`);
-   });
+     if (!found) {
+       scores.push(newScore);
+     }
+
+     if (scores.length > 10) {
+       scores.length = 10;
+     }
+
+     return scores;
+   }
    ```
 
-1. Modify the Simon application code to make service endpoint requests to our newly created HTTP service code.
+Now we can start the service up by pressing `F5` inside of VS code and then open a command console window to execute some Curl commands.
 
-   ```js
-   async function loadScores() {
-     const response = await fetch("/api/scores")
-     const scores = await response.json()
+```sh
+host=http://localhost:3000
 
-     // Modify the DOM to display the scores
-   ```
+curl -X POST $host/api/score  -H 'Content-Type: application/json' -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}'
+
+curl $host/api/scores
+```
+
+### Serving the frontend static file
+
+In addition to serving up endpoints, we also the Simon service to serve the static files generated when we bundled the React frontend. Our endpoints will be service on the `/api` path and everything else will look in the `public` directory of the service. If it finds a match, for `index.html` for example, then that file is returned.
+
+![Simon service](simonProduction.jpg)
+
+To make this happen, we only need to add the Express middleware to serve static files from the the `public` directory.
+
+```js
+app.use(express.static('public'));
+```
+
+However, we don't have a `public` directory with the frontend files in it. This will happen when we deploy to our web server in AWS. For now, you can test that it is working by creating a simple index.html file in the `service/public` directory and then requesting it with curl. Once you have done this delete the test `service/public` directory so that we don't leave any cruft around.
 
 ### Configuring Vite for debugging
 
-When running in production, the Simon web service running under Node.js on port 3000 serves up the Simon React application code when the browser requests `index.html`. This is the same as we did with previous Simon deliverables. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory that we set up when we build the production distribution package.
-
-![Setting up React ports](simonProduction.jpg)
+When running in production, the Simon web service running under Node.js on port 3000 serves up the bundled Simon React application code when the browser requests `index.html`. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory as described above.
 
 However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running: one for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
 
-By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP and WebSocket requests to the Node.js HTTP server by providing a configuration file named `vite.config.js` with the following contents.
+By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP and WebSocket requests to the Node.js HTTP server by creating a configuration file named `vite.config.js` in the root of the project with the following contents.
 
 ```js
 import { defineConfig } from 'vite';
@@ -148,10 +267,6 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'http://localhost:3000',
-      '/ws': {
-        target: 'ws://localhost:3000',
-        ws: true,
-      },
     },
   },
 });
@@ -161,7 +276,118 @@ When running in this configuration, the network requests now flow as shown below
 
 ![Setting up React ports](simonDevelopmentDebugging.jpg)
 
-With our server running, and our files in the place where Vite expects them, we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup, make sure that you commit your changes.
+With the backend service running, and our files in the place where Vite expects them, we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup, make sure that you commit your changes.
+
+## Frontend changes
+
+Now that we have the service endpoints all set up we need to call them from the frontend code. This happens when we want to save and retrieve scores, as well as when we want to register or login a user.
+
+### Saving scores
+
+The `play/simonGame.jsx` file is modified to store scores by making a fetch request to the Simon service.
+
+```jsx
+async function saveScore(score) {
+  const date = new Date().toLocaleDateString();
+  const newScore = { name: userName, score: score, date: date };
+
+  await fetch('/api/score', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(newScore),
+  });
+
+  // Let other players know the game has concluded
+  GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
+}
+```
+
+The scores are loaded in `scores/scores.jxs` where we use a React useEffect hook to reactively display the scores once they are loaded from the service.
+
+```jsx
+React.useEffect(() => {
+  fetch('/api/scores')
+    .then((response) => response.json())
+    .then((scores) => {
+      setScores(scores);
+    });
+}, []);
+```
+
+Now you can shutdown the frontend and restart it without losing your scoring data.
+
+### Registering and logging in users
+
+We follow a similar process for handling users. This is done by altering `login/unauthenticated.jsx` to contain code that handles register and login requests.
+
+```jsx
+async function loginOrCreate(endpoint) {
+  const response = await fetch(endpoint, {
+    method: 'post',
+    body: JSON.stringify({ email: userName, password: password }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  if (response?.status === 200) {
+    localStorage.setItem('userName', userName);
+    props.onLogin(userName);
+  } else {
+    const body = await response.json();
+    setDisplayError(`⚠ Error: ${body.msg}`);
+  }
+}
+```
+
+Likewise, `login/authenticated.jsx` is altered to handle the logout event.
+
+```jsx
+function logout() {
+  fetch(`/api/auth/logout`, {
+    method: 'delete',
+  })
+    .catch(() => {
+      // Logout failed. Assuming offline
+    })
+    .finally(() => {
+      localStorage.removeItem('userName');
+      props.onLogout();
+    });
+}
+```
+
+### Remove localstorage usage
+
+Since we now persist scores in the service we no longer need to persistent them in local storage. We can remove that code from both `simonGame.jsx` and `scores.jsx`.
+
+## Third party endpoints
+
+The `about.jsx` file contains code for making calls to third party endpoints using `fetch`. The requests are triggered by the React useEffect hook. We make one call to `picsum.photos` to get a random picture and another to `quote.cs260.click` to get a random quote. Once the endpoint asynchronously returns, the React state variables are updated. Here is an example of the quote endpoint call.
+
+```js
+React.useEffect(() => {
+  const random = Math.floor(Math.random() * 1000);
+  fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
+    .then((response) => response.json())
+    .then((data) => {
+      const containerEl = document.querySelector('#picture');
+
+      const width = containerEl.offsetWidth;
+      const height = containerEl.offsetHeight;
+      const apiUrl = `https://picsum.photos/id/${data[0].id}/${width}/${height}?grayscale`;
+      setImageUrl(apiUrl);
+    })
+    .catch();
+
+  fetch('https://quote.cs260.click')
+    .then((response) => response.json())
+    .then((data) => {
+      setQuote(data.quote);
+      setQuoteAuthor(data.author);
+    })
+    .catch();
+}, []);
+```
 
 ## Study this code
 
@@ -174,9 +400,10 @@ Get familiar with what the example code teaches.
   ```
 
 - Review the code and get comfortable with everything it represents.
-- Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
+- Debug the backend code by launching it with a VS Code debug session.
+- Debug the frontend code by launching it with Vite and using the browser debugger.
 
-  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of VS Code.
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser. Instead you will start your backend code with node.js and your frontend code with `npm run dev`. Set breakpoints in your backend code inside of VS Code and inside the browser for your frontend.
 
 - Use the browser's dev tools to set breakpoints in the frontend code and step through it each line.
 - Make modifications to the code as desired. Experiment and see what happens.

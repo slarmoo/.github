@@ -102,8 +102,3 @@ While these steps should resolve most issues, it may not resolve every issue. If
 - Missing `peerProxy.js` file (if using a separate file for backend websocket)
 - Incorrect path to file location of `peerProxy.js`
 - Missing node modules: ws, bcrypt, uuid, mongodb, express, cookie-parser
-
-### React
-
-- Build file was created incorrectly
-- Incorrect port listed in `index.js` & `vite.config.js`

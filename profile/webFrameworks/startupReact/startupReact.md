@@ -46,9 +46,9 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread accross multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Application converted to use React
   - 10% Bundled using Vite
-  - 30% Multiple functional react components
-  - 30% React router
-  - 30% React hooks
+  - 50% Multiple react components that implement or mock all app functionality
+  - 20% React router
+  - 20% React hooks
 
 ## Go celebrate
 
