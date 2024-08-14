@@ -12,6 +12,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Git](essentials/git/git.md)
 - ☑ [GitHub](essentials/gitHub/gitHub.md)
 - [Startup application](essentials/startup/startup.md)
+- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
 - ☑ [Startup Specification](essentials/startupSpec/startupSpec.md)
 - [Let's play Simon](essentials/simon/simon.md)
 - ☑ [Discord](essentials/discord/discord.md)
@@ -77,14 +78,28 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Promises](javascript/promises/promises.md)
 - ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
-- [Simon JavaScript](simon/simonJavascript/simonJavascript.md)
-- ☑ [Startup JavaScript](javascript/startupJavascript/startupJavascript.md)
 
 ## Midterm
 
 ⚠ Make sure you take the midterm in Canvas during the open period.
 
 - [Midterm study guide](test/midterm.md)
+
+## Web frameworks
+
+- [Web frameworks](webFrameworks/introduction/introduction.md)
+- [React](webFrameworks/react/introduction/introduction.md)
+- ☑ [Components](webFrameworks/react/components/components.md)
+- [Toolchains](webFrameworks/react/toolChains/toolChains.md)
+- ☑ [Vite](webFrameworks/react/vite/vite.md)
+- ☑ [Router](webFrameworks/react/router/router.md)
+- ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
+- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
+- [Hooks](webFrameworks/react/hooks/hooks.md)
+- ❌ [Simon JavaScript](simon/simonJavascript/simonJavascript.md)
+- ❌ ☑ [Startup JavaScript](javascript/startupJavascript/startupJavascript.md)
+- 🚧 [Simon React](simon/simonReact/simonReact.md)
+- 🚧 ☑ [Startup React](webFrameworks/startupReact/startupReact.md)
 
 ## HTTP service
 
@@ -99,8 +114,8 @@ It is expected that you will start at the top of the list and work your way down
 - [Node.js](webServices/node/node.md)
 - ☑ [Express](webServices/express/express.md)
 - [Troubleshoot 502](webServices/troubleshoot502/troubleshoot502.md)
-- [Simon service](simon/simonService/simonService.md)
-- ☑ [Startup Service](webServices/startupService/startupService.md)
+- 🚧 [Simon service](simon/simonService/simonService.md)
+- 🚧 ☑ [Startup Service](webServices/startupService/startupService.md)
 - [SOP and CORS](webServices/cors/cors.md)
 - [Service design](webServices/design/design.md)
 - [Debugging Node.js](webServices/debuggingNode/debuggingNode.md)
@@ -113,8 +128,8 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Data services](webServices/dataServices/dataServices.md)
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
 - [Account creation and login](webServices/login/login.md)
-- [Simon Login](simon/simonLogin/simonLogin.md)
-- ☑ [Startup Login](webServices/startupLogin/startupLogin.md)
+- 🚧 [Simon Login](simon/simonLogin/simonLogin.md)
+- 🚧 ☑ [Startup Login](webServices/startupLogin/startupLogin.md)
 - [Service daemons - PM2](webServices/pm2/pm2.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
 - [Endpoint testing](webServices/endpointTesting/endpointTesting.md)
@@ -124,29 +139,14 @@ It is expected that you will start at the top of the list and work your way down
 - [WebSocket](webServices/webSocket/webSocket.md)
 - [Debugging WebSocket](webServices/webSocket/debugging.md)
 - [WebSocket chat](webServices/webSocket/chat.md)
-- [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
-- ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
+- 🚧 [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
+- 🚧 ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
 
 ## Security
 
 - [Security](security/overview/overview.md)
 - [OWASP top 10](security/owasp/owasp.md)
 - [Security practice](security/practice/practice.md)
-
-## Web frameworks
-
-- [Web frameworks](webFrameworks/introduction/introduction.md)
-- [React](webFrameworks/react/introduction/introduction.md)
-- ☑ [Components](webFrameworks/react/components/components.md)
-- [Toolchains](webFrameworks/react/toolChains/toolChains.md)
-- ☑ [Vite](webFrameworks/react/vite/vite.md)
-- ☑ [Router](webFrameworks/react/router/router.md)
-- ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
-- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
-- [Hooks](webFrameworks/react/hooks/hooks.md)
-- [Simon React](simon/simonReact/simonReact.md)
-- ☑ [Startup React](webFrameworks/startupReact/startupReact.md)
-- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
 
 ## Assorted topics
 
