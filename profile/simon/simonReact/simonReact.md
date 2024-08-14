@@ -1,24 +1,22 @@
 # Simon React
 
-🎥 **Instruction video**: [Simon React](https://youtu.be/wO20-h3qNXE)
-
 ![Simon](../simon.png)
 
-This deliverable demonstrates using [React](https://reactjs.org/) as a web framework and Vite as your frontend tooling. This helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
+This deliverable demonstrates using JavaScript for user interaction, [React](https://reactjs.org/) as a web framework, and Vite as your frontend tooling. This helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
 
-As part of the move to React, we convert Simon from a **multi-page application** to a **single-page application**. In a single-page application, the browser only loads a single HTML file (index.html), and then we use JavaScript to interactively change the rendered content and components. This is a significant architectural shift to the application and will require you to reorganize your code to fit the single-page, component driven, model.
+As part of the move to React, we convert Simon from a **multi-page application** (MPA) to a **single-page application** (SPA). In a single-page application, the browser only loads a single HTML file (index.html), and then we use JavaScript to interactively change the rendered content and components. This is a significant architectural shift to the application and will require you to reorganize your code to fit the single-page, component driven, model.
 
 # Steps to convert Simon to React
 
-The following section discusses the general steps taken to convert the Simon application from a simple HTML/CSS/JavaScript application to a React application. You will need to take similar steps for your startup project, and so it is important to understand what is happening at each step of the conversion process. You don't necessarily have to go through this process with the Simon demonstration application, but it is a safe place to try since you have both the starting version (simon-websocket) and the ending version (simon-react) to reference.
+The following section discusses the general steps taken to convert the Simon application from a simple HTML/CSS application to a React application. You will need to take similar steps for your startup project, and so it is important to understand what is happening at each step of the conversion process. You don't necessarily have to go through this process with the Simon demonstration application, but it is a safe place to try since you have both the starting version (simon-css) and the ending version (simon-react) to reference.
 
-We begin by introducing `vite`, our frontend tooling. The HTML, CSS, and JavaScript is then reworked into React components. The React components are then reworked to take advantage of functionality that React provides. This includes function style components, modularization, reactive interactions, and a React representation of Bootstrap.
+We begin by introducing `vite`, our frontend tooling. The HTML and CSS is then reworked into React components. The React components are then reworked to take advantage of functionality that React provides. This includes function style components, modularization, reactive interactions, and a React representation of Bootstrap.
 
 Here is a complete list of all the steps involved to convert Simon to a React application. When you port your startup to React you will want to commit your changes as you complete each step in the process.
 
-1. Clone the `simon-websocket` repository
-1. Reorganize the code
 1. Install and configure Vite
+1. Replace deployment script
+1. Reorganize the code
 1. Convert to React Bootstrap
 1. Enable React
 1. Create app component
@@ -27,84 +25,18 @@ Here is a complete list of all the steps involved to convert Simon to a React ap
 1. Convert scores component
 1. Convert other components
 
-To give you a picture of where we will end up after porting to React, the final Simon project structure looks like the following.
-
-```sh
-├─ vite.config.js              # Config for Vite dev debugging
-├─ deployReact.sh              # React specific deployment
-├─ index.html                  # Single HTML file for the App
-├─ index.jsx                   # Loads the top level component
-├─ package.json                # Defines dependent modules
-├─ public                      # Static assets used in the app
-│   ├─ button-bottom-left.mp3
-│   ├─ button-bottom-right.mp3
-│   ├─ button-top-left.mp3
-│   ├─ button-top-right.mp3
-│   ├─ error.mp3
-│   └─ favicon.ico
-├─ service                     # Backend service code
-│   ├─ database.js
-│   ├─ dbConfig.json
-│   ├─ index.js
-│   ├─ package-lock.json
-│   ├─ package.json
-│   └─ peerProxy.js
-└─ src                         # Frontend React code
-    ├─ app.jsx                 # Top level component
-    ├─ app.css
-    ├─ about                   # About component
-    │   ├─ about.css
-    │   └─ about.jsx
-    ├─ login                   # Login component
-    │   ├─ login.jsx           # Renders auth sub-components
-    │   ├─ authState.js        # Enum for auth state
-    │   ├─ unauthenticated.jsx # Renders if unauthenticated
-    │   ├─ authenticated.jsx   # Renders if authenticated
-    │   ├─ authenticated.css
-    │   └─ messageDialog.jsx
-    ├─ play                    # Game play component
-    │   ├─ delay.js
-    │   ├─ gameNotifier.js
-    │   ├─ play.jsx
-    │   ├─ players.css
-    │   ├─ players.jsx
-    │   ├─ simonButton.jsx
-    │   ├─ simonGame.css
-    │   └─ simonGame.jsx
-    └─ scores                 # Scores component
-        ├─ scores.css
-        └─ scores.jsx
-```
-
-## Reorganize the code
-
-Because we are hosting both the Simon React application and the Simon service web service in the same project, we need to put them each in separate directories. We want the service code in a `service` directory and the React code in the `src` directory. To accomplish this, first delete the `node_modules` directory from the `simon` directory. Then move the service code (`package.json`, `package-lock.json`, `index.js`, `database.js`, `peerProxy.js`, and `dbConfig.json`) into a subdirectory named `service`. Then run `npm install` in the `service` directory in order to get the NPM packages for the service.
-
-Once you move the service to the `service` directory, you can test that the service is still working by running `node index.js` from a console window in the `service` directory, or by pressing `F5` in VS Code. Try it out and make sure you can hit the service endpoints using `curl`.
-
-```sh
-➜  curl 'localhost:3000/api/user/joe'
-
-{"msg":"Unknown"}
-```
-
-Next, we want to move the existing UI code to a location where Vite expects to find it. To do this we move all of the files out of `public` into the project root directory. This will allow us to run our existing code under Vite to make sure everything is working. Once we start porting over to React, we will convert each of these files to React components located in a directory called `src`. From the root project directory run:
-
-```sh
-mv public/* .
-rm -r public
-```
+Once we have completed the port we will talk about how to add JavaScript to the application.
 
 ## Install and configure Vite
 
-While in your project root directory, install Vite as a development dependency by running:
+While in the project root directory, setup NPM and install Vite as a development dependency by running:
 
 ```sh
 npm init -y
 npm install vite@latest -D
 ```
 
-Then insert/replace the `scripts` found in the newly created `package.json` file located in your project root directory to include the commands for running Vite.
+Then insert/replace the `scripts` found in the newly created `package.json` file located in your project root directory to include the commands for running Vite. You can also clean up the description field and remove other unused fields.
 
 ```json
   "scripts": {
@@ -114,37 +46,62 @@ Then insert/replace the `scripts` found in the newly created `package.json` file
   }
 ```
 
-### Configuring Vite for debugging
+⚠ Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
 
-When running in production, the Simon web service running under Node.js on port 3000 serves up the Simon React application code when the browser requests `index.html`. This is the same as we did with previous Simon deliverables. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory that we set up when we build the production distribution package.
+This script is similar to the previous script, but it includes a step
 
-![Setting up React ports](simonProduction.jpg)
+## Reorganize the code
 
-However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running: one for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
+We start with the simon-css code that currently looks like this:
 
-By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP and WebSocket requests to the Node.js HTTP server by providing a configuration file named `vite.config.js` with the following contents.
-
-```js
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  server: {
-    proxy: {
-      '/api': 'http://localhost:3000',
-      '/ws': {
-        target: 'ws://localhost:3000',
-        ws: true,
-      },
-    },
-  },
-});
+```sh
+├─ LICENSE
+├─ README.md
+├─ about.css
+├─ about.html
+├─ deployFiles.sh
+├─ favicon.ico
+├─ index.html
+├─ main.css
+├─ placeholder.jpg
+├─ play.css
+├─ play.html
+└─ scores.html
 ```
 
-When running in this configuration, the network requests now flow as shown below. Without this you will not be able to debug your React application in your development environment.
+Create a `public` directory that is going to hold all the application image and sound assets. After we create the folder we move the `placeholder.jpg` and `favicon.jpg` files into it. We then add new files that represent the sounds we want to use as we play the game.
 
-![Setting up React ports](simonDevelopmentDebugging.jpg)
+Next we create a `src` directory where we will put all of the React code. Under the `src` directory we create a folder for each of the view component that represent the major functionality of the Simon application.
 
-With our server running, and our files in the place where Vite expects them, we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup, make sure that you commit your changes.
+Finally rename `main.css` to `app.css` and move it to the `src` directory. This will contain all the styles that are shared across the application. You will need to tweak the `body` rule set to use the `.body` selector since our SPA works on components within the body element. This change should look like the following.
+
+```css
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+}
+```
+
+When we are done it will look like this.
+
+```sh
+├─ public                      # Static assets used in the app
+│   ├─ button-bottom-left.mp3
+│   ├─ button-bottom-right.mp3
+│   ├─ button-top-left.mp3
+│   ├─ button-top-right.mp3
+│   ├─ error.mp3
+│   ├─ favicon.ico
+│   └─ placeholder.jpg
+└─ src                         # Frontend React code
+    ├─ app.css                 # Top level styles
+    ├─ about                   # About component
+    ├─ login                   # Login component
+    ├─ play                    # Game play component
+    └─ scores                  # Scores component
+
+```
 
 ## Convert to React Bootstrap
 
@@ -190,7 +147,7 @@ npm install react react-dom react-router-dom
 
 ### `index.html` and `index.jsx`
 
-With React we have a single HTML file that dynamically loads all of the other application components into its DOM using JavaScript. We replace the existing `index.html` file with the following React version.
+With React we have a single HTML file that dynamically loads all of the other application components into its DOM using JavaScript. We rename the existing `index.html` to `login.html`, since that is what it really is anyway, and create a new `index.html` that represents the React SPA entry point.
 
 **`index.html`**
 
@@ -323,7 +280,9 @@ export function Login() {
 
 ## Create the router
 
-With `app.jsx` containing the header and footer, and all the application view component stubs created, we can now create the router that will display each component as the navigation UI requests it. The router controls the whole application by determining what component to display based upon what navigation the user chooses. To implement the router, we import the router component into the `App` component, and wrap all of the `App` component's elements with the `BrowserRouter` component. We also import all of our view components.
+With `app.jsx` containing the header and footer, and all the application view component stubs created, we can now create the router that will display each component as the navigation UI requests it. The router controls the whole application by determining what component to display based upon what navigation the user chooses.
+
+To implement the router, we import the router component into the `App` component along with all of our view components.
 
 ```jsx
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
@@ -331,18 +290,23 @@ import { Login } from './login/login';
 import { Play } from './play/play';
 import { Scores } from './scores/scores';
 import { About } from './about/about';
+```
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-    <div className='body bg-dark text-light'><!-- sub-elements here --></div>
-  </BrowserRouter>
-);
+Next we wrap all of the `App` component's pervious elements with the `BrowserRouter` component so that the browser router can control links and rendered components for all of its child elements.
+
+```jsx
+export default function App() {
+  return (
+    <BrowserRouter>
+      <!-- The previous component elements goes here -->
+    </BrowserRouter>
+  );
+}
 ```
 
 ### Navigating routes
 
-We then we replace the `a` elements with the router's `NavLink` component. The anchor element's `href` attribute is replaced with the router's `to` attribute. The `NavLink` component prevents the browser's default navigation functionality and instead handles it by replacing the currently displayed component.
+We then we replace the `a` elements with the router's `NavLink` component. The anchor element's `href` attribute is replaced with the router's `to` attribute. Here is what the conversion for the Play component looks like.
 
 ```jsx
 <a className="nav-link" href="play.html">Play</a>
@@ -352,7 +316,7 @@ We then we replace the `a` elements with the router's `NavLink` component. The a
 <NavLink className='nav-link' to='play'>Play</NavLink>
 ```
 
-The `nav` element's code now looks like the following.
+The `NavLink` component prevents the browser's default navigation functionality and instead handles it by replacing the currently displayed component. Once we have converted all the links, the `nav` element's code now looks like the following.
 
 ```jsx
 <nav className='navbar fixed-top navbar-dark'>
@@ -410,9 +374,11 @@ function NotFound() {
 }
 ```
 
-At this point the application should support navigating to the different components. When you reach this point with your startup, make sure that you commit your changes.
+At this point the application should support navigating to the different components.
 
 ![Routing](routingComponents.gif)
+
+This is a big milestone. If you are following along then congratulations on getting this far. When you are porting your application make sure you commit your changes to Git.
 
 ## Converting to React components
 
@@ -422,39 +388,275 @@ The basic steps for converting the component include the following.
 
 - Copy the `main` element HTML over and put it in the return value of the component. Don't copy the header and footer HTML since they are now represented in `app.jsx`.
 - Rename the `class` to `className` so that it doesn't conflict with the JavaScript keyword `class`.
-- Copy the JavaScript over and turn the functions into inner functions of the React component.
 - Move the CSS over to the component directory and use an `import` statement to bring it into the component's `jsx` file.
-- Create React state variables for each of the stateful objects in the component.
-- Replace DOM query selectors with React state variables.
-- Move state up to parent components as necessary. For example, authentication state, or user name state.
-- Create child components as necessary. For example, a `SimonGame` and `SimonButton` component.
 
 In order for you to have a feel for how this is done we will demonstrate how this is done with the `Scores` component.
 
-## Convert `Scores` component
+### Convert `Scores` component
 
-The first step to implementing the `Scores` component is to create a state variable that will represent the scores that we read from the server. We will update the scores as a side effect when our `fetch` request to get the scores asynchronously completes. This is done with the following code:
+Open the `scores.html` file and copy out the **main** element from the HTML. Paste it over the **main** element in the `scores.jsx` file. Rename the `class` attribute to `className`. Move the `scores.css` file to the `src/scores` component directory and import the css into the `scores.jsx` component file.
 
 ```jsx
-const [scores, setScores] = React.useState([]);
-
-React.useEffect(() => {
-  fetch('/api/scores')
-    .then((response) => response.json())
-    .then((scores) => {
-      setScores(scores);
-      localStorage.setItem('scores', JSON.stringify(scores));
-    })
-    .catch(() => {
-      const scoresText = localStorage.getItem('scores');
-      if (scoresText) {
-        setScores(JSON.parse(scoresText));
-      }
-    });
-}, []);
+import './scores.css';
 ```
 
-When we get the scores back from the backend server, we want to convert them to JSX. This is done by iterating through the scores and pushing them into a variable named `scoreRows` that represents an array of JSX elements for each high score.
+Then delete the `scores.html` file. When this is all done the scores component should now render the same thing the old CSS deliverable rendered.
+
+![Scores CSS version](scoresCssVersion.png)
+
+### Convert the other components
+
+Using the scores component as an example we convert the login, about, and play components. You can review the resulting code in the simon-react repository to see how that was done.
+
+## Deployment script
+
+Now that we are using Vite to bundle our code we need a different deployment script. Delete the `deployFiles.sh` script and create a new file named `deployReact.sh` with the following contents.
+
+```sh
+while getopts k:h:s: flag
+do
+    case "${flag}" in
+        k) key=${OPTARG};;
+        h) hostname=${OPTARG};;
+        s) service=${OPTARG};;
+    esac
+done
+
+if [[ -z "$key" || -z "$hostname" || -z "$service" ]]; then
+    printf "\nMissing required parameter.\n"
+    printf "  syntax: deployReact.sh -k <pem key file> -h <hostname> -s <service>\n\n"
+    exit 1
+fi
+
+printf "\n----> Deploying React bundle $service to $hostname with $key\n"
+
+# Step 1
+printf "\n----> Build the distribution package\n"
+rm -rf build
+mkdir build
+npm install # make sure vite is installed so that we can bundle
+npm run build # build the React front end
+cp -rf dist/* build # move the React front end to the target distribution
+
+# Step 2
+printf "\n----> Clearing out previous distribution on the target\n"
+ssh -i "$key" ubuntu@$hostname << ENDSSH
+rm -rf services/${service}/public
+mkdir -p services/${service}/public
+ENDSSH
+
+# Step 3
+printf "\n----> Copy the distribution package to the target\n"
+scp -r -i "$key" build/* ubuntu@$hostname:services/$service/public
+
+# Step 5
+printf "\n----> Removing local copy of the distribution package\n"
+rm -rf build
+rm -rf dist
+```
+
+## Port complete
+
+At this point we are done porting the CSS deliverable to React, the final Simon project structure looks like the following.
+
+```sh
+├─ LICENSE
+├─ README.md
+├─ deployReact.sh              # React specific deployment
+├─ index.html                  # Single HTML file for the App
+├─ index.jsx                   # Loads the top level component
+├─ package.json                # Defines dependent modules
+├─ public                      # Static assets used in the app
+│   ├─ button-bottom-left.mp3
+│   ├─ button-bottom-right.mp3
+│   ├─ button-top-left.mp3
+│   ├─ button-top-right.mp3
+│   ├─ error.mp3
+│   ├─ favicon.ico
+│   └─ placeholder.jpg
+└─ src                         # Frontend React code
+    ├─ app.jsx                 # Top level component
+    ├─ app.css
+    ├─ about                   # About component
+    │   ├─ about.css
+    │   └─ about.jsx
+    ├─ login                   # Login component
+    │   └─ login.jsx
+    ├─ play                    # Game play component
+    │   ├─ play.jsx
+    │   └─ play.css
+    └─ scores                  # Scores component
+        ├─ scores.css
+        └─ scores.jsx
+```
+
+Notice how much better structured the code is and how we have leveraged Vite and React to not only build a reactive SPA, but to modularize the code.
+
+If you run the code in the debugger by running `npm run dev` or deploy the code using the `deployReact.sh` script you should see the following.
+
+![CSS Port](cssPort.gif)
+
+## Implement the JavaScript
+
+Now it is time to actually make Simon fully functional by adding JavaScript to make it into an interactive game. Let's start with the **About** component because it is the simplest.
+
+### About component
+
+The **About** component is basically an `img` tag and a hard coded quote by the mighty Linus.
+
+```html
+<main className="container-fluid bg-secondary text-center">
+  <div>
+    <div id="picture" className="picture-box">
+      <img src="placeholder.jpg" alt="random" />
+    </div>
+    <p>...</p>
+
+    <div id="quote" className="quote-box bg-light text-dark">
+      <p className="quote">Words are cheap. Show me the code.</p>
+      <p className="author">Linus Torvalds</p>
+    </div>
+  </div>
+</main>
+```
+
+We are not yet ready to make fetch requests to hit a 3rd party service, but we can set up the JavaScript to get ready for those calls. Basically, we want when this component loads, for it to make a fetch requests to get the URLs for a random image and quote to display. We do this with a `useEffect` hook that sets the image and quote values for the corresponding variables. We then simply display the state variables in the JSX. This looks roughly like the following.
+
+```jsx
+export function About(props) {
+  const [imageUrl, setImageUrl] = React.useState('');
+  const [quote, setQuote] = React.useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
+
+  React.useEffect(() => {
+    setImageUrl(`placeholder.jpg`);
+    setQuote('Show me the code');
+    setQuoteAuthor('Linus Torvalds');
+  }, []);
+
+  return (
+    <main className='container-fluid bg-secondary text-center'>
+      <div>
+        <div id='picture' className='picture-box'>
+          <img src={imageUrl} alt='random image' />
+        </div>
+
+        <p>...</p>
+
+        <div className='quote-box bg-light text-dark'>
+          <p className='quote'>{quote}</p>
+          <p className='author'>{quoteAuthor}</p>
+        </div>
+      </div>
+    </main>
+  );
+}
+```
+
+This might seem like we just added complexity without adding value, but we now have the full power of JavaScript to control how the page renders and it will be really easy to make the fetch requests in the next deliverable.
+
+### Play component
+
+The **play** component is significantly more complex than the About. Here we want to create a parent component that represents the **Play** view and is composed of two children. One for displaying the web socket messages from other players, and one for the game itself. The game is then composed of four button components.
+
+There are also two JavaScript files that provide support for a simple delay between button pushes (delay.js), and the WebSocket messages that will come in the future.
+
+```mermaid
+classDiagram
+  Play *-- Players
+  Players --> gameNotifier
+  Play *-- SimonGame
+  SimonGame *-- SimonButton
+  SimonGame --> delay
+```
+
+For now, the `gameNotifier.js` will just employ a timer that injects random scores from other players. When we reach the WebSocket deliverable this will be replaced with actual messages that are sent from other players.
+
+```js
+setInterval(() => {
+  const score = Math.floor(Math.random() * 3000);
+  const date = new Date().toLocaleDateString();
+  const userName = 'Eich';
+  this.broadcastEvent(userName, GameEvent.End, { name: userName, score: score, date: date });
+}, 5000);
+```
+
+The `play.jsx` file contains simple references to the children components. That means there is not a lot of JavaScript here.
+
+```jsx
+import { Players } from './players';
+import { SimonGame } from './simonGame';
+
+export function Play(props) {
+  return (
+    <main className='bg-secondary'>
+      <Players userName={props.userName} />
+      <SimonGame userName={props.userName} />
+    </main>
+  );
+}
+```
+
+The `players.jsx` file sets an effect hook to listen for game notifier events. These are set in the events state for rendering in the JSX.
+
+```jsx
+const [events, setEvent] = React.useState([]);
+
+React.useEffect(() => {
+  GameNotifier.addHandler(handleGameEvent);
+
+  return () => {
+    GameNotifier.removeHandler(handleGameEvent);
+  };
+});
+
+function handleGameEvent(event) {
+  let newEvents = [event, ...events];
+  if (newEvents.length > 10) {
+    newEvents = newEvents.slice(1, 10);
+  }
+  setEvent(newEvents);
+}
+```
+
+The `simonGame.jsx` implements all of the game play for Simon. The application logic is driven by three state variables:
+
+| state       | description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| allowPlayer | Boolean that controls if a player can interact with the game |
+| sequence    | The current sequence the player is suppose to reproduce      |
+| playbackPos | The current sequence position that the player is attempting  |
+
+Let's look at one function from the code. The `onPressed` button is called when a player clicks on a button. The first thing the code does is checks to make sure the player is allowed to interact with the game. It then disallows the player form making any further button presses until it has processed the current one. The sequence is then checked to see if it matches the current playback position. If it does then it advances. If the entire sequence has completed then the sequence is increased. If they player pressed the wrong button then the score is saved, the mistake sound played and all the buttons start flashing. Scores are saved in local storage.
+
+```jsx
+async function onPressed(buttonPosition) {
+  if (allowPlayer) {
+    setAllowPlayer(false);
+    await buttons.get(buttonPosition).ref.current.press();
+
+    if (sequence[playbackPos].position === buttonPosition) {
+      if (playbackPos + 1 === sequence.length) {
+        setPlaybackPos(0);
+        increaseSequence(sequence);
+      } else {
+        setPlaybackPos(playbackPos + 1);
+        setAllowPlayer(true);
+      }
+    } else {
+      saveScore(sequence.length - 1);
+      mistakeSound.play();
+      await buttonDance();
+    }
+  }
+}
+```
+
+The rest of the code implements all of the details of resetting the game, updating scores, and generating sequences. But it all fits nicely in around 150 lines.
+
+## Scores component
+
+The **Scores** component reads the scores from local storage and displays them in a table that is generated by combining JavaScript with JSX.
 
 ```jsx
 const scoreRows = [];
@@ -478,39 +680,11 @@ if (scores.length) {
 }
 ```
 
-Now we can bring over the `main` element from the existing `scores.html` file to the `src/scores/scores.jsx` file and place it as the return value from the component function. Next, we insert a reference to the `scoreRows` variable that will display the score JSX. That should look like the following:
-
-```jsx
-return (
-  <main className='container-fluid bg-secondary text-center'>
-    <table className='table table-warning table-striped-columns'>
-      <thead className='table-dark'>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Score</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody id='scores'>{scoreRows}</tbody>
-    </table>
-  </main>
-);
-```
-
-That completes the conversion of the HTML and JavaScript files that represent the scores functionality. You can safely delete the original `scores.html` and `scores.js` files.
-
-Now we just need to move `scores.css` to `src/scores/scores.css` and import the CSS into the `src/scores/scores.jsx`.
-
-```jsx
-import './scores.css';
-```
-
-With that all done, the scores should render nicely. You can follow a similar process to convert the other three application views to components.
+Once you play a few rounds you should see a nice table being generated.
 
 ![Scores component](scoresComponent.png)
 
-## Test as you go
+## Commit and test as you go
 
 That was a lot of changes and it is easy to make a mistake during the process. When you do this with your startup application, you will find it easier if you make a small change, and test that it still works. If it does, commit that change to Git. That way you can recover when things get broken before it gets out of hand.
 
@@ -524,12 +698,10 @@ Get familiar with what the example code teaches.
   git clone https://github.com/webprogramming260/simon-react.git
   ```
 
-- Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
-- Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
 - Review the code and get comfortable with everything it represents.
 - Debug the front and backend.
 
-  ⚠ Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your backend code inside of Visual Studio Code. Set breakpoints for your frontend code in the browser.
+  ⚠ Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your frontend code in the browser.
 
 - Make modifications to the code as desired. Experiment and see what happens.
 
@@ -537,7 +709,7 @@ Get familiar with what the example code teaches.
 
 - Deploy to your production environment using a copy of the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
 
-  ⚠ **NOTE** - The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment and served up using the Express static files middleware.
+  ⚠ **NOTE** - The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment.
 
   ```sh
   ./deployReact.sh -k <yourpemkey> -h <yourdomain> -s simon

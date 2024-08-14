@@ -75,7 +75,7 @@ Converting Simon to a service involved the following steps.
 
    When running our service the static file middleware takes care of reading the frontend code from the `public` directory and returning it to the browser. The service only directly handles the endpoint requests.
 
-   ![Simon service](../simonReact/simonProduction.jpg)
+   ![Simon service](simonProduction.jpg)
 
 1. Within the project directory run `npm init -y`. This configures the directory to work with **node.js**.
 1. Modify or create `.gitignore` to ignore `node_modules`.
@@ -130,6 +130,38 @@ Converting Simon to a service involved the following steps.
 
      // Modify the DOM to display the scores
    ```
+
+### Configuring Vite for debugging
+
+When running in production, the Simon web service running under Node.js on port 3000 serves up the Simon React application code when the browser requests `index.html`. This is the same as we did with previous Simon deliverables. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory that we set up when we build the production distribution package.
+
+![Setting up React ports](simonProduction.jpg)
+
+However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running: one for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
+
+By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP and WebSocket requests to the Node.js HTTP server by providing a configuration file named `vite.config.js` with the following contents.
+
+```js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+      '/ws': {
+        target: 'ws://localhost:3000',
+        ws: true,
+      },
+    },
+  },
+});
+```
+
+When running in this configuration, the network requests now flow as shown below. Without this you will not be able to debug your React application in your development environment.
+
+![Setting up React ports](simonDevelopmentDebugging.jpg)
+
+With our server running, and our files in the place where Vite expects them, we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup, make sure that you commit your changes.
 
 ## Study this code
 

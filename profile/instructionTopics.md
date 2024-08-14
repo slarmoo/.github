@@ -98,7 +98,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Hooks](webFrameworks/react/hooks/hooks.md)
 - ❌ [Simon JavaScript](simon/simonJavascript/simonJavascript.md)
 - ❌ ☑ [Startup JavaScript](javascript/startupJavascript/startupJavascript.md)
-- 🚧 [Simon React](simon/simonReact/simonReact.md)
+- [Simon React](simon/simonReact/simonReact.md)
 - 🚧 ☑ [Startup React](webFrameworks/startupReact/startupReact.md)
 
 ## HTTP service
