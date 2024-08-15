@@ -4,7 +4,6 @@ printf "\n-------------------------------\nPulling repos\n----------------------
 
 cd ../simon-html && git pull
 cd ../simon-css && git pull
-cd ../simon-javascript && git pull
 cd ../simon-service && git pull
 cd ../simon-db && git pull
 cd ../simon-login && git pull

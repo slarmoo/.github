@@ -93,7 +93,6 @@ If you want to install all of the class examples then run the following:
 - Run `./deployall.sh` from the webprogramming260 repo. Also deploy websocket-chat.
 - `cd ~/services/simon-html && pm2 start index.js -n simon-html -- 3001 simon-html`
 - `cd ~/services/simon-css && pm2 start index.js -n simon-css -- 3002 simon-css`
-- `cd ~/services/simon-javascript && pm2 start index.js -n simon-javascript -- 3003 simon-javascript`
 - `cd ~/services/simon-db && pm2 start index.js -n simon-db -- 3004 simon-db`
 - `cd ~/services/simon-login && pm2 start index.js -n simon-login -- 3005 simon-login`
 - `cd ~/services/simon-websocket && pm2 start index.js -n simon-websocket -- 3006 simon-websocket`

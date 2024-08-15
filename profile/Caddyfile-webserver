@@ -54,11 +54,6 @@ simon-css.cs260.click {
   header Cache-Control none
 }
 
-simon-javascript.cs260.click {
-  reverse_proxy * localhost:3003
-  header Cache-Control none
-}
-
 simon-service.cs260.click {
   reverse_proxy * localhost:3004
   header Cache-Control none

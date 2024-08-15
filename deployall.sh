@@ -19,7 +19,6 @@ printf "\n-------------------------------\nDeploying all services to with $key\n
 # Deploy each of the individual services
 cd ../simon-html && ./deployFiles.sh -k ${key} -h ${hostname} -s simon-html
 cd ../simon-css && ./deployFiles.sh -k ${key} -h ${hostname} -s simon-css
-cd ../simon-javascript && ./deployFiles.sh -k ${key} -h ${hostname} -s simon-javascript
 cd ../simon-service && npm install && ./deployService.sh -k ${key} -h ${hostname} -s simon-service
 cd ../simon-db && npm install && ./deployService.sh -k ${key} -h ${hostname} -s simon-db
 cd ../simon-login && npm install && ./deployService.sh -k ${key} -h ${hostname} -s simon-login
