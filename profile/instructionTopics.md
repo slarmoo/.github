@@ -96,7 +96,8 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
 - ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
 - [Hooks](webFrameworks/react/hooks/hooks.md)
-- [Simon React](simon/simonReact/simonReact.md)
+- [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
+- [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
 - ☑ [Startup React](webFrameworks/startupReact/startupReact.md)
 
 ## HTTP service
