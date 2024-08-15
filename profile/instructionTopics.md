@@ -137,8 +137,8 @@ It is expected that you will start at the top of the list and work your way down
 - [WebSocket](webServices/webSocket/webSocket.md)
 - [Debugging WebSocket](webServices/webSocket/debugging.md)
 - [WebSocket chat](webServices/webSocket/chat.md)
-- 🚧 [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
-- 🚧 ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
+- [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
+- ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
 
 ## Security
 

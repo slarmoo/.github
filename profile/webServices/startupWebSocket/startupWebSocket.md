@@ -34,6 +34,7 @@ Doing this will make this deliverable of your startup available from `https://st
 1. Connect the WebSocket from your frontend.
 1. Send messages over your WebSocket connection.
 1. Connect your WebSocket functionality to your application interface.
+1. Configure the `vite.config.js` file to proxy WebSocket requests during debugging.
 1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
 1. Periodically commit and push your code to GitHub.
 1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
@@ -56,4 +57,4 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Go celebrate
 
-You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate by eating some cheese 🧀.
+You did it! This is a significant milestone. You have completely implemented your startup! You are now an official Startup Founder. Time to grab some friends and throw a **Going Live** party. Show them what you have accomplished, and celebrate with sushi for everyone 🍣.

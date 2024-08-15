@@ -8,11 +8,23 @@ This deliverable demonstrates peer-to-peer communication using WebSocket. The fu
 
 You can view this application running here: [Example Simon WebSocket](https://simon-websocket.cs260.click)
 
+## Handling WebSocket requests
+
+After installing the `ws` NPM package the next step is to attach a WebSocket listener to the HTTP server that was created in an earlier deliverable. This work is all done in the PeerProxy class implemented in the `peerProxy.js` file. The PeerProxy class contains the protocol upgrade from HTTP to WebSocket, tracks new WebSocket connections, passes (or proxies) requests between connections, and implements ping/pong to keep connections alive.
+
+## Displaying and generating WebSocket messages
+
+The `public/play.js` file contains the functions for connecting, broadcasting, receiving, and displaying events using WebSocket.
+
+![Simon WebSocket](simonWebSocket.jpg)
+
+Leveraging the concepts demonstrated in this deliverable, you can implement additional functionality that uses peer-to-peer interactions. For example, you could make it so each connected peer has to complete one of the Simon patterns in turn.
+
 ## Configuring Vite to proxy ws requests
 
-Just like we configured Vite to proxy endpoint requests with the Simon Service deliverable, we need to proxy WebSocket requests while debugging our frontend in our development environment.
+In order to debug WebSocket messages in your development environment using Vite you need to instruct Vite to proxy WebSocket requests to your service. This is similar to what you already do to proxy endpoint requests.
 
-This is done by modifying `vite.config.js` and adding the path for `/ws`.
+This is done by modifying `vite.config.js` and adding the path for `/ws`. You will need to make a similar change for your startup application in order to proxy the WebSocket messages to your service.
 
 ```js
 import { defineConfig } from 'vite';
@@ -30,17 +42,7 @@ export default defineConfig({
 });
 ```
 
-## Handling WebSocket requests
-
-After installing the `ws` NPM package the next step is to attach a WebSocket listener to the HTTP server that was created in an earlier deliverable. This work is all done in the PeerProxy class implemented in the `peerProxy.js` file. The PeerProxy class contains the protocol upgrade from HTTP to WebSocket, tracks new WebSocket connections, passes (or proxies) requests between connections, and implements ping/pong to keep connections alive.
-
-## Displaying and generating WebSocket messages
-
-The `public/play.js` file contains the functions for connecting, broadcasting, receiving, and displaying events using WebSocket.
-
-![Simon WebSocket](simonWebSocket.jpg)
-
-Leveraging the concepts demonstrated in this deliverable, you can implement additional functionality that uses peer-to-peer interactions. For example, you could make it so each connected peer has to complete one of the Simon patterns in turn.
+Note that this is only used for debugging in your development environment. It is completely ignored in your production deployment.
 
 ## Study this code
 
