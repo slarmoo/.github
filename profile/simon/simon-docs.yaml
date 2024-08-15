@@ -87,38 +87,6 @@ paths:
       responses:
         '204':
           description: successful operation.
-  '/api/user/{email}':
-    get:
-      tags:
-        - user
-      summary: Get the requested user
-      description: Returns information about the requested user
-      operationId: getUser
-      parameters:
-        - name: email
-          in: path
-          description: The user's email
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: successful operation.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    email:
-                      description: The user's email
-                      type: string
-                    authenticated:
-                      description: Indicates that the user has been authenticated on this device
-                      type: boolean
-        '404':
-          description: Unknown user requested
   '/api/score':
     get:
       tags:

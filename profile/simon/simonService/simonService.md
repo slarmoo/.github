@@ -12,7 +12,7 @@ You can view this application running here: [Example Simon Service](https://simo
 
 ## Service endpoint definitions
 
-Here is our design, documented using `curl` commands, for the endpoints that the Simon web service provides.
+Here is our design, documented using `curl` commands, for the endpoints that the Simon web service provides. Note that the auth endpoints are using authorization tokens in the HTTP body. During the Login deliverable we will change this over to use HTTP cookies.
 
 **CreateAuth** - Create a new user.
 
@@ -39,15 +39,6 @@ curl -v -X DELETE $host/api/auth/logout -
 H 'Content-Type: application/json' -d '{"token":"6b2ab581-05ca-4df0-8897-5671e7febdd8"}'
 
 # Response 204
-```
-
-**GetUser** - Get information about a user
-
-```sh
-curl $host/api/user/s@byu.edu
-
-# Response 200
-{"email":"s@byu.edu","authenticated":true}
 ```
 
 **GetScores** - Get the latest high scores.
@@ -118,7 +109,7 @@ curl localhost:3000
 
 Now that we have the service up and running, we want to add the Simon backend service endpoints. To support our endpoints we do the following:
 
-1. **Install UUID**. The service represents its tokens with a UUID and so we need to import that NPM package using `npm install uuid` and then import it into the code.
+1. **Install UUID**. The service represents its tokens with a universally unique ID (UUID) and so we need to import that NPM package using `npm install uuid` and then import it into the code.
 
    ```js
    const uuid = require('uuid');
@@ -182,16 +173,6 @@ Now that we have the service up and running, we want to add the Simon backend se
        delete user.token;
      }
      res.status(204).end();
-   });
-
-   // GetUser returns information about a user
-   apiRouter.get('/user/:email', async (req, res) => {
-     const user = users[req.params.email];
-     if (user) {
-       res.send({ email: user.email, authenticated: !!user.token });
-       return;
-     }
-     res.status(404).send({ msg: 'Unknown' });
    });
 
    // GetScores
