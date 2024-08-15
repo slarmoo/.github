@@ -391,7 +391,9 @@ Get familiar with what the example code teaches.
 
 ## Deploy to production
 
-- Deploy to your production environment using a copy of the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-service/blob/main/deployService.sh). Take some time to understand how it works.
+- Deploy to your production environment using the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-service/blob/main/deployService.sh). This script will bundle your React frontend application as well as build your backend application. Take some time to understand how it works.
+
+  ⚠ **NOTE** - The `deployService.sh` deployment script is different from the previous scripts as it deploys and installs your service on your production server.
 
   ```sh
   ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon

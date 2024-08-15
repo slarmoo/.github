@@ -77,9 +77,30 @@ When a user is logged in, the cookie is added. When a user makes a secure reques
 
 ### Application service endpoints
 
-The service endpoints are contained in `index.js`. The endpoints include `authCreate`, `authLogin`, `authLogout`, and `userGet`. These all work with the database to store and get credentials and update the authorization cookie.
+The service endpoints are contained in `index.js`. The endpoints include `createAuth`, `getAuth`, and `deleteAuth`. These all work with the database to store and get credentials and update the authorization cookie.
 
 A new Express router, `secureApiRouter` wraps the existing router to add a middleware function that verifies that the authorization cookie is valid before passing the request to endpoints that require authorization. That makes it easy to create secure endpoints by just registering them with `secureApiRouter`.
+
+```js
+const secureApiRouter = express.Router();
+apiRouter.use(secureApiRouter);
+
+secureApiRouter.use(async (req, res, next) => {
+  const authToken = req.cookies[authCookieName];
+  const user = await DB.getUserByToken(authToken);
+  if (user) {
+    next();
+  } else {
+    res.status(401).send({ msg: 'Unauthorized' });
+  }
+});
+
+// GetScores
+secureApiRouter.get('/scores', async (req, res) => {
+  const scores = await DB.getHighScores();
+  res.send(scores);
+});
+```
 
 ## Study this code
 
@@ -101,7 +122,7 @@ Get familiar with what this code teaches.
 
 ## Deploy to production
 
-- Deploy to your production environment using a copy of the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-login/blob/main/deployService.sh). Take some time to understand how it works.
+- Deploy to your production environment using the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-login/blob/main/deployService.sh). Take some time to understand how it works.
 
   ```sh
   ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon

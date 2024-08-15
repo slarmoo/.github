@@ -126,7 +126,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Data services](webServices/dataServices/dataServices.md)
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
 - [Account creation and login](webServices/login/login.md)
-- 🚧 [Simon Login](simon/simonLogin/simonLogin.md)
+- [Simon Login](simon/simonLogin/simonLogin.md)
 - 🚧 ☑ [Startup Login](webServices/startupLogin/startupLogin.md)
 - [Service daemons - PM2](webServices/pm2/pm2.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
