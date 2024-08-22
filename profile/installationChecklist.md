@@ -9,8 +9,10 @@
   alias c=code
   alias ll='ls -lh'
   alias idea='open -na "IntelliJ IDEA CE.app" --args '
-  alias c=code
   alias obs='open -n -a OBS.app'
+  alias 260='cd ~/byu/260/webprogramming/'
+  alias 240='cd ~/byu/240/softwareconstruction/'
+  alias 329='cd ~/byu/329/devops'
 
   set +o prompt_cr +o prompt_sp
   ```
