@@ -65,3 +65,15 @@
 - Installed Homebrew
 - Used `brew install ffmpeg`
 - Changed VS Code setting to format on file save.
+
+### Hammerspoon
+
+Install - download zip and move to Applications
+Modify ~/.hammerspoon/init.lua
+
+```
+hs.loadSpoon("WindowHalfsAndThirds")
+spoon.WindowHalfsAndThirds:bindHotkeys(spoon.WindowHalfsAndThirds.defaultHotkeys)
+```
+
+Copy in WindowHalfsAndThirds to ~/.hammerspoon/Spoons
