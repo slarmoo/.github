@@ -78,6 +78,8 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Promises](javascript/promises/promises.md)
 - ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
+- [Node.js](javascript/node/node.md)
+- [Debugging Node.js](javascript/debuggingNode/debuggingNode.md)
 
 ## Midterm
 
@@ -110,14 +112,13 @@ It is expected that you will start at the top of the list and work your way down
 - [Ports](webServices/ports/ports.md)
 - [HTTP](webServices/http/http.md)
 - ☑ [Fetch](webServices/fetch/fetch.md)
-- [Node.js](webServices/node/node.md)
+- [Node web service](webServices/nodeWebService/nodeWebService.md)
 - ☑ [Express](webServices/express/express.md)
 - [Troubleshoot 502](webServices/troubleshoot502/troubleshoot502.md)
-- [Simon service](simon/simonService/simonService.md)
-- ☑ [Startup Service](webServices/startupService/startupService.md)
 - [SOP and CORS](webServices/cors/cors.md)
 - [Service design](webServices/design/design.md)
-- [Debugging Node.js](webServices/debuggingNode/debuggingNode.md)
+- [Simon service](simon/simonService/simonService.md)
+- ☑ [Startup Service](webServices/startupService/startupService.md)
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
 
 ## Data and authentication services
