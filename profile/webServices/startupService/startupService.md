@@ -6,6 +6,12 @@ You must use the same startup GitHub repository that you created in the earlier 
 
 Remember to use the browser's debugger window to debug your frontend HTML, CSS and JavaScript. You can also debug your backend service JavaScript running on Node.js using the built in VS Code Node.js debugger. You should no longer be using the VS Code Live Server extension to serve up your frontend code to the browser since Vite does that now.
 
+## Third party APIs
+
+You can find a list of free third party APIs on [FreePublicApis.com](https://www.freepublicapis.com/).
+
+## Deployment
+
 Once you have developed your application to where you want it, you need to release it to your production environment. **Replace** your previous startup deployment script with a copy of the `deployService.sh` script from the [Simon Service repository](https://github.com/webprogramming260/simon-service/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
 
 ```sh
