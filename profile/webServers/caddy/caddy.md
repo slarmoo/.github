@@ -26,7 +26,7 @@ Caddy is preinstalled and configured on your server and so you do not need to do
 
 ## Important Caddy files
 
-As part of the installation of Caddy we created two links in the Ubuntu user's home directory that point to the key Caddy configuration files. There links were created in the home directory so that you do not have to hunt around your server looking for these files.
+As part of the installation of Caddy we created two links in the Ubuntu user's home directory that point to the key Caddy configuration files. The links were created in the home directory so that you do not have to hunt around your server looking for these files.
 
 - **Configuration file**: `~/Caddyfile`
 
