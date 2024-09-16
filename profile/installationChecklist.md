@@ -3,6 +3,8 @@
 - [Warp Console](https://app.warp.dev/get_warp)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - XCode Command Line Developer Tools. This was initiated by typing `git` from the default terminal. This caused git to be installed.
+- Install OBS
+- Install Davinci Resolve
 - Created `.zshrc` Add alias and disable printing % at the end of commands that don't output a newline.
 
   ```sh
