@@ -56,5 +56,5 @@ Get familiar with what the example code teaches.
   ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
-- Update your `startup` repository notes.md to record, what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example. Also update your notes.md to record what you learned.
+- Update your `startup` repository notes.md to record what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
