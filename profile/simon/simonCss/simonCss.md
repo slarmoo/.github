@@ -8,10 +8,16 @@ This application deliverable demonstrates the use of basic CSS for styling and a
 
 The addition of CSS makes our application visually appealing and adds intuitive user interface elements, but it is still not functional due to the lack of interactivity. We will add that in the next deliverable when we introduce JavaScript.
 
-This deliverable adds a single CSS file (`main.css`) that contains the CSS for the entire application. Each of the HTML files references the CSS file using the `link` element.
+This deliverable adds a CSS file (`main.css`) that contains CSS for the entire application. Each of the HTML files references the CSS file using the `link` element.
 
 ```html
 <link rel="stylesheet" href="main.css" />
+```
+
+In addition, there are three other CSS files (`about.css`, `scores.css`, `play.css`) that add styling specific to their respective HTML pages.  Those HTML pages each reference their particular specific CSS file (in addition to the `main.css` file.  For example, `play.html` has this `link` element in its head: 
+
+```html
+<link rel="stylesheet" href="play.css" />
 ```
 
 Some things you might want to note include:
