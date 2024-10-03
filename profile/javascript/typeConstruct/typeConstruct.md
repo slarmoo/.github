@@ -12,7 +12,7 @@ let x = 1;
 const y = 2;
 ```
 
-⚠ Originally JavaScript used the keyword `var` to define variables. This has been deprecated because they cause hard-to-detect errors in code related to the scope of the variable. You should avoid `var` and always declare your variables either with `let` or `const`.
+⚠ Originally JavaScript used the keyword `var` to define variables. This has been deprecated because it causes hard-to-detect errors in code related to the scope of the variable. You should avoid `var` and always declare your variables either with `let` or `const`.
 
 ## Type
 
