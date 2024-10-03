@@ -28,7 +28,7 @@ JavaScript defines several primitive types.
 | `String`    | A textual sequence of characters.                          |
 | `Symbol`    | A unique value.                                            |
 
-Of these types Boolean, Number, and String are the types commonly thought of when creating variables. However, variables may commonly refer to the Null or Undefined primitive. Because JavaScript does not enforce the declaration of a variable before you use it, it is entirely possible for a variable to have the type of Undefined.
+Of these types Boolean, Number, and String are the types commonly thought of when creating variables. However, variables may refer to the Null or Undefined primitive. Because JavaScript does not enforce the declaration of a variable before you use it, it is entirely possible for a variable to have the type of Undefined.
 
 In addition to the above primitives, JavaScript defines several object types. Some of the more commonly used objects include the following:
 
