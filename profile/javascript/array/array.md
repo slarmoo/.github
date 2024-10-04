@@ -30,7 +30,7 @@ The Array object has several interesting static functions associated with it. He
 | map      | Run a function to map an array to a new array             | `a.map(i => i+i)`             |
 | filter   | Run a function to remove items                            | `a.filter(i => i%2)`          |
 | every    | Run a function to test if all items match                 | `a.every(i => i < 3)`         |
-| some     | Run a function to test if any items match                 | `a.some(i => 1 < 1)`          |
+| some     | Run a function to test if any items match                 | `a.some(i => i < 1)`          |
 
 ```js
 const a = [1, 2, 3];
