@@ -66,7 +66,7 @@ const b = 'b';
 const closure = makeClosure(a);
 ```
 
-Now, when we call `closure` function it will output the values contained in scope where it was created instead of the current values of the variables.
+Now, when we call the `closure` function it will output the values contained in scope where it was created instead of the current values of the variables.
 
 ```js
 console.log(closure());
