@@ -67,7 +67,7 @@ console.log(coinToss);
 // OUTPUT: Promise {<pending>}
 ```
 
-If you then wait ten seconds and the log the coinToss promise object again, the state will either show as `fulfilled` or `rejected` depending upon the way the coin landed.
+If you wait ten seconds and then log the coinToss promise object again, the state will either show as `fulfilled` or `rejected` depending upon the way the coin landed.
 
 ```js
 console.log(coinToss);
