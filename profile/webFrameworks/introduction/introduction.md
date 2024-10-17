@@ -68,7 +68,7 @@ Like Vue, [Svelte](https://svelte.dev/) combines HTML, CSS, and JavaScript into 
 
 ### React
 
-React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself highly leverages the functionality of JavaScript and can be represented as a function or class.
+React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself leverages the functionality of JavaScript and can be represented as a function or class.
 
 **JSX**
 
