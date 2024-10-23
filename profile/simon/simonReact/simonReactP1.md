@@ -297,7 +297,7 @@ import { Scores } from './scores/scores';
 import { About } from './about/about';
 ```
 
-Next we wrap all of the `App` component's pervious elements with the `BrowserRouter` component so that the browser router can control links and rendered components for all of its child elements.
+Next we wrap all of the `App` component's previous elements with the `BrowserRouter` component so that the browser router can control links and rendered components for all of its child elements.
 
 ```jsx
 export default function App() {
