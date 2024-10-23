@@ -53,7 +53,7 @@ Then insert/replace the `scripts` found in the newly created `package.json` file
 
 ⚠ Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
 
-This script is similar to the previous script, but it includes a step
+This script is similar to the previous script, but it includes a step [???]
 
 ## Reorganize the code
 
@@ -76,7 +76,7 @@ We start with the simon-css code that currently looks like this:
 
 Create a `public` directory that is going to hold all the application image and sound assets. After we create the folder we move the `placeholder.jpg` and `favicon.jpg` files into it. We then add new files that represent the sounds we want to use as we play the game.
 
-Next we create a `src` directory where we will put all of the React code. Under the `src` directory we create a folder for each of the view component that represent the major functionality of the Simon application.
+Next we create a `src` directory where we will put all of the React code. Under the `src` directory we create a folder for each of the view components that represent the major functionality of the Simon application.
 
 Finally rename `main.css` to `app.css` and move it to the `src` directory. This will contain all the styles that are shared across the application. You will need to tweak the `body` rule set to use the `.body` selector since our SPA works on components within the body element. This change should look like the following.
 
