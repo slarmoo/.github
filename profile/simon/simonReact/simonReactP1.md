@@ -495,7 +495,7 @@ At this point we are done porting the CSS deliverable to React.  The final Simon
         └─ scores.jsx
 ```
 
-Notice how much better structured the code is and how we have leveraged Vite and React to not only build a reactive SPA, but to modularize the code.
+Notice how much better structured the code is and how we have leveraged Vite and React not only to build a reactive SPA but also to modularize the code.
 
 If you run the code in the debugger by running `npm run dev` or deploy the code using the `deployReact.sh` script you should see the following.
 
