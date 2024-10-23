@@ -462,7 +462,7 @@ rm -rf dist
 
 ## Port complete
 
-At this point we are done porting the CSS deliverable to React, the final Simon project structure looks like the following.
+At this point we are done porting the CSS deliverable to React.  The final Simon project structure looks like the following.
 
 ```sh
 ├─ LICENSE
