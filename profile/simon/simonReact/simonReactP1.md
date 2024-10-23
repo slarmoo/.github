@@ -303,7 +303,7 @@ Next we wrap all of the `App` component's previous elements with the `BrowserRou
 export default function App() {
   return (
     <BrowserRouter>
-      <!-- The previous component elements goes here -->
+      <!-- The previous component elements go here -->
     </BrowserRouter>
   );
 }
