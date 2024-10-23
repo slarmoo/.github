@@ -311,7 +311,7 @@ export default function App() {
 
 ### Navigating routes
 
-We then we replace the `a` elements with the router's `NavLink` component. The anchor element's `href` attribute is replaced with the router's `to` attribute. Here is what the conversion for the Play component looks like.
+We then we replace the `a` elements with the router's `NavLink` component. The anchor element's `href` attribute is replaced with the router's `to` attribute. The `.html` file reference is replaced with a route name. Here is what the conversion for the Play component looks like.
 
 ```jsx
 <a className="nav-link" href="play.html">Play</a>
