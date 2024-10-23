@@ -8,7 +8,7 @@ As part of the move to React, we convert Simon from a **multi-page application**
 
 We are going to move to React in two phases.
 
-1. **Phase 1**: The first phase will covert the Simon HTML/CSS code into a modern we application using Vite and React. The will introduce routing, modularize the code, and remove redundancy.
+1. **Phase 1**: The first phase will covert the Simon HTML/CSS code into a modern web application using Vite and React. The will introduce routing, modularize the code, and remove redundancy.
 1. **Phase 2**: The second phase will introduce the JavaScript necessary to make Simon interaction and functionally complete.
 
 ## Porting process steps
