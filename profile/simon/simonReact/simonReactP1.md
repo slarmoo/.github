@@ -26,8 +26,7 @@ Here is a complete list of all the steps involved to convert Simon to a React ap
 1. Create app component
 1. Create view components
 1. Create the router
-1. Convert scores component
-1. Convert other components
+1. Convert HTML to React components
 1. Replace deployment script
 
 Once we have completed the port we will talk about how to add JavaScript to the application.
