@@ -20,7 +20,6 @@ We begin by introducing `vite`, our frontend tooling. The HTML and CSS is then r
 Here is a complete list of all the steps involved to convert Simon to a React application. When you port your startup to React you will want to commit your changes as you complete each step in the process.
 
 1. Install and configure Vite
-1. Replace deployment script
 1. Reorganize the code
 1. Convert to React Bootstrap
 1. Enable React
@@ -29,6 +28,7 @@ Here is a complete list of all the steps involved to convert Simon to a React ap
 1. Create the router
 1. Convert scores component
 1. Convert other components
+1. Replace deployment script
 
 Once we have completed the port we will talk about how to add JavaScript to the application.
 
