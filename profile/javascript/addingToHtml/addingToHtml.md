@@ -14,7 +14,7 @@ function sayHello() {
 
 ```html
 <head>
-  <script src="javascript.js"></script>
+  <script src="index.js"></script>
 </head>
 <body>
   <button onclick="sayHello()">Say Hello</button>
