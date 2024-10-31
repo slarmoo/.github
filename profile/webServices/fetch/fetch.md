@@ -11,7 +11,7 @@ The basic usage of fetch takes a URL and returns a promise. The promise `then` f
 The following example makes a fetch request to get and display an inspirational quote. If the request method is unspecified, it defaults to GET.
 
 ```js
-fetch('https://api.quotable.io/random')
+fetch('https://quote.cs260.click')
   .then((response) => response.json())
   .then((jsonResponse) => {
     console.log(jsonResponse);
@@ -22,9 +22,9 @@ fetch('https://api.quotable.io/random')
 
 ```js
 {
-  content: 'Never put off till tomorrow what you can do today.',
-  author: 'Thomas Jefferson',
-};
+  author: 'Kyle Simpson',
+  quote: "There's nothing more permanent than a temporary hack."
+}
 ```
 
 To do a POST request you populate the options parameter with the HTTP method and headers.
@@ -57,7 +57,7 @@ Replace the quotable service call with a different one. Here are some suggestion
 - **Jokes** - https://api.chucknorris.io/jokes/random?category=dev
 - **GitHub user** - https://api.github.com/users/octocat
 - **Photos** - https://picsum.photos/id/0/info
-- **Quote** - https://api.quotable.io/random
+- **Quote** - https://quote.cs260.click
 
 When you are done submit your CodePen URL to the Canvas assignment.
 
