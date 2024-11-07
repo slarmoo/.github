@@ -221,7 +221,7 @@ curl $host/api/scores
 
 ### Serving the frontend static file
 
-In addition to serving up endpoints, we also use the Simon service to serve the static files generated when we bundled the React frontend. Our endpoints will be service on the `/api` path and everything else will look in the `public` directory of the service. If it finds a match, for `index.html` for example, then that file is returned.
+In addition to serving up endpoints, we also use the Simon service to serve the static files generated when we bundled the React frontend. Our endpoints will be services on the `/api` path and everything else will look in the `public` directory of the service. If it finds a match, for `index.html` for example, then that file is returned.
 
 ![Simon service](simonProduction.jpg)
 
