@@ -94,7 +94,7 @@ app.listen(port, () => {
 });
 ```
 
-Now we can run the application with `node index.js` and hit then service with any Curl URL.
+Now we can run the application with `node index.js` and hit the service with Curl.
 
 ```sh
 node index.js &
