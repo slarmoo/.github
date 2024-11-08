@@ -37,6 +37,10 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Open your browser to http://localhost:5173 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Convert your startup application into a web service using Node.js and Express.
+1. Make sure you can start your service on the port specified as a parameter to the application. Default to use port 4000.
+   ```js
+   const port = process.argv.length > 2 ? process.argv[2] : 4000;
+   ```
 1. Serve up your frontend code using the Express static middleware.
 1. Provide endpoints for your service.
 1. Call your endpoints from your frontend code.
