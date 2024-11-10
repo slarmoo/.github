@@ -72,4 +72,4 @@ If you get stuck consider [this](https://developer.mozilla.org/en-US/docs/Web/CS
 
 ### Extra Help With Debugging
 
-This [video]([https://developer.mozilla.org/en-US/docs/Web/CSS/text-align](https://youtu.be/NKyVgzYnYoU)) shows you how to use the "inspect" tool to debug your CSS.
+This [video](https://youtu.be/NKyVgzYnYoU) shows you how to use the "inspect" tool to debug your CSS.
