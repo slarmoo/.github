@@ -69,3 +69,7 @@ Experiment with debugging and altering the CSS. Note that you can open up any we
 ### 🧧 Possible solution
 
 If you get stuck consider [this](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align).
+
+### Extra Help With Debugging
+
+This [video]([https://developer.mozilla.org/en-US/docs/Web/CSS/text-align](https://youtu.be/NKyVgzYnYoU)) shows you how to use the "inspect" tool to debug your CSS.
