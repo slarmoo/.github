@@ -52,6 +52,7 @@ Doing this will make this deliverable of your startup available from `https://st
 1. Deploy your startup application to your production environment (your server).
 1. Make sure your application is available from your production environment.
 1. Upload the URL to your startup application to the Canvas assignment.
+2. This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develop, debug and deploy your startup as a service.
 
 ## Grading Rubric
 
