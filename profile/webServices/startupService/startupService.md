@@ -42,6 +42,9 @@ Doing this will make this deliverable of your startup available from `https://st
    const port = process.argv.length > 2 ? process.argv[2] : 4000;
    ```
 1. Serve up your frontend code using the Express static middleware.
+   ```js
+   app.use(express.static('public'));
+   ```
 1. Provide endpoints for your service.
 1. Call your endpoints from your frontend code.
 1. Call third party endpoints from your frontend code. This can be as simple as displaying a quote like Simon does.
