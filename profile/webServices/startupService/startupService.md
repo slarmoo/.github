@@ -29,7 +29,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## ☑ Assignment
 
 1. Review and deploy Simon Service
-   1. Clone the Simon Service repository to your development environment.
+   1. Clone the Simon Service repository to your development environment (git clone https://github.com/webprogramming260/simon-service.git).
    1. Run `npm install` in the root of the project.
    1. Open the project in VS Code and examine the application's use of Node.js, Express, and JavaScript to create service endpoints.
    1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing `index.js`). Set breakpoints in VS Code and step through the backend JavaScript.
@@ -37,24 +37,37 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Open your browser to http://localhost:5173 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Convert your startup application into a web service using Node.js and Express.
-1. Make sure you can start your service on the port specified as a parameter to the application. Default to use port 4000.
+   1. Create a service/index.js file for your back end
+   2. Add this code to service/index.js to allow your code to select a port to run on based on the command line parameters.
    ```js
    const port = process.argv.length > 2 ? process.argv[2] : 4000;
    ```
-1. Serve up your frontend code using the Express static middleware.
+   1. Add this code to serice.index.js to cause Express static middleware to serve files from the public directory once your code has been deployed to your AWS server.
    ```js
    app.use(express.static('public'));
    ```
-1. Provide endpoints for your service.
-1. Call your endpoints from your frontend code.
-1. Call third party endpoints from your frontend code. This can be as simple as displaying a quote like Simon does.
-1. Debug your application using VS Code's Node debugger and the browser's dev tools, in your development environment, to verify it is working correctly.
-1. Periodically commit and push your code to GitHub.
-1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
-1. Push your final version of your project to GitHub.
-1. Deploy your startup application to your production environment (your server).
-1. Make sure your application is available from your production environment.
-1. Upload the URL to your startup application to the Canvas assignment.
+   1. Add a vite.config.js file to your main startup directory (right above the service and src directories) with the following content (or copy it over from Simon). This will forward fetch requests that go to a path like "fetch('/api/scores')" to connect to your back end server running on port 4000.
+```js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': 'http://localhost:4000',
+    },
+  },
+});
+```
+   1. Create new endpoints for your back end (service/index.js) that are similar to those created by Simon.
+   1. Call your endpoints from your frontend code using fetch.
+   1. Call third party endpoints from your frontend code using fetch. This can be as simple as displaying a quote like Simon does.
+   1. Debug your application by running your back end using VS Code's Node debugger on the service/index.js file and the browser's inspect dev tools to verify it is working correctly.  You will have to run "npm run dev" to get your front end running.
+   1. Periodically commit and push your code to GitHub.
+   1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
+   1. Push your final version of your project to GitHub.
+   1. Deploy your startup application to your production environment (your server) using "deployService.sh".
+   1. Make sure your application is available from your production environment.
+   1. Upload the URL to your startup application to the Canvas assignment.
 2. This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develop, debug and deploy your startup as a service.
 
 ## Grading Rubric
