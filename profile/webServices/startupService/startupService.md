@@ -46,9 +46,9 @@ Doing this will make this deliverable of your startup available from `https://st
       const port = process.argv.length > 2 ? process.argv[2] : 4000;
       ```
    1. Add this code to serice.index.js to cause Express static middleware to serve files from the public directory once your code has been deployed to your AWS server.
-   ```js
-   app.use(express.static('public'));
-   ```
+      ```js
+      app.use(express.static('public'));
+      ```
    1. Add a vite.config.js file to your main startup directory (right above the service and src directories) with the following content (or copy it over from Simon). This will forward fetch requests that go to a path like "fetch('/api/scores')" to connect to your back end server running on port 4000.
       ```js
       import { defineConfig } from 'vite';
