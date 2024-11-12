@@ -29,7 +29,10 @@ Doing this will make this deliverable of your startup available from `https://st
 ## ☑ Assignment
 
 1. Review and deploy Simon Service
-   1. Clone the Simon Service repository to your development environment (git clone https://github.com/webprogramming260/simon-service.git).
+   1. Clone the Simon Service repository to your development environment.
+     ```
+     git clone https://github.com/webprogramming260/simon-service.git
+     ```
    1. Run `npm install` in the root of the project.
    1. Open the project in VS Code and examine the application's use of Node.js, Express, and JavaScript to create service endpoints.
    1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing `index.js`). Set breakpoints in VS Code and step through the backend JavaScript.
