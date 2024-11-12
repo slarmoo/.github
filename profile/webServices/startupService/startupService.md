@@ -47,17 +47,17 @@ Doing this will make this deliverable of your startup available from `https://st
    app.use(express.static('public'));
    ```
    1. Add a vite.config.js file to your main startup directory (right above the service and src directories) with the following content (or copy it over from Simon). This will forward fetch requests that go to a path like "fetch('/api/scores')" to connect to your back end server running on port 4000.
-```js
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  server: {
-    proxy: {
-      '/api': 'http://localhost:4000',
-    },
-  },
-});
-```
+      ```js
+      import { defineConfig } from 'vite';
+      
+      export default defineConfig({
+        server: {
+          proxy: {
+            '/api': 'http://localhost:4000',
+          },
+        },
+      });
+      ```
    1. Create new endpoints for your back end (service/index.js) that are similar to those created by Simon.
    1. Call your endpoints from your frontend code using fetch.
    1. Call third party endpoints from your frontend code using fetch. This can be as simple as displaying a quote like Simon does.
