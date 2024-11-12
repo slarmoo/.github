@@ -239,7 +239,7 @@ When running in production, the Simon web service running under Node.js on port 
 
 However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running: one for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
 
-By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP and WebSocket requests to the Node.js HTTP server by creating a configuration file named `vite.config.js` in the root of the project with the following contents.
+By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP to the Node.js HTTP server by creating a configuration file named `vite.config.js` in the root of the project with the following contents (later, we will modify this file to allow proxying of WebSocket requests as well).
 
 ```js
 import { defineConfig } from 'vite';
