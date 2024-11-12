@@ -42,9 +42,9 @@ Doing this will make this deliverable of your startup available from `https://st
 1. Convert your startup application into a web service using Node.js and Express.
    1. Create a service/index.js file for your back end
    1. Add this code to service/index.js to allow your code to select a port to run on based on the command line parameters.
-   ```js
-   const port = process.argv.length > 2 ? process.argv[2] : 4000;
-   ```
+      ```js
+      const port = process.argv.length > 2 ? process.argv[2] : 4000;
+      ```
    1. Add this code to serice.index.js to cause Express static middleware to serve files from the public directory once your code has been deployed to your AWS server.
    ```js
    app.use(express.static('public'));
