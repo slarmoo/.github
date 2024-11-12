@@ -68,10 +68,11 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Periodically commit and push your code to GitHub.
    1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
    1. Push your final version of your project to GitHub.
+   1. Copy deployService.sh over from your Simon Service sourcebase. You wont be able to use the deploy scripts from previous projects.
    1. Deploy your startup application to your production environment (your server) using "deployService.sh".
    1. Make sure your application is available from your production environment.
    1. Upload the URL to your startup application to the Canvas assignment.
-2. This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develop, debug and deploy your startup as a service.
+1. This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develop, debug and deploy your startup as a service.
 
 ## Grading Rubric
 
