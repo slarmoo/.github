@@ -38,7 +38,7 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Convert your startup application into a web service using Node.js and Express.
    1. Create a service/index.js file for your back end
-   2. Add this code to service/index.js to allow your code to select a port to run on based on the command line parameters.
+   1. Add this code to service/index.js to allow your code to select a port to run on based on the command line parameters.
    ```js
    const port = process.argv.length > 2 ? process.argv[2] : 4000;
    ```
