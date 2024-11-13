@@ -51,9 +51,9 @@ The `database.js` file contains the functions for getting and adding high scores
 
 ### Authorization UI
 
-The `public/index.html`, `public/login.js`, and `public/login.css` files provide all the login UI. Bootstrap provides the styling for the controls.
+The React components found in the `src/login` folder provide all the login UI. Bootstrap provides the styling for the controls.
 
-When `index.html` is loaded, an anonymous function in `login.js` determines if the user is already authenticated and uses that state to hide or show the login controls.
+When the login route is requested from `app.jsx` the `src/login/login.jsx` component is loaded. This determines if the user is already authenticated and loads either the `authenticated.jsx` or `unauthenticated.jsx` component to hide or show the login controls.
 
 When a user logs in, logs out, or creates credentials the service endpoints are called.
 
