@@ -199,7 +199,7 @@ wss.on('connection', (ws) => {
 
 A WebSocket connection will eventually close automatically if no data is sent across it. In order to prevent that from happening the WebSocket protocol supports the ability to send a `ping` message to see if the peer is still there and receive `pong` responses to indicate the affirmative.
 
-To make this work we use `setInterval` to send out a ping every 10 seconds to each of our peer connections and clean up any connections that did not response to our previous ping.
+To make this work, we use `setInterval` to send out a ping every 10 seconds to each of our peer connections and clean up any connections that did not respond to our previous ping.
 
 ```js
 setInterval(() => {
