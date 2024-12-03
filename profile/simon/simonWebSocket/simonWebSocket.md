@@ -14,7 +14,7 @@ After installing the `ws` NPM package the next step is to attach a WebSocket lis
 
 ## Displaying and generating WebSocket messages
 
-The `public/play.js` file contains the functions for connecting, broadcasting, receiving, and displaying events using WebSocket.
+The `src/play.js` file contains the functions for connecting, broadcasting, receiving, and displaying events using WebSocket.
 
 ![Simon WebSocket](simonWebSocket.jpg)
 
