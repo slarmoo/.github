@@ -52,8 +52,9 @@ Doing this will make this deliverable of your startup available from `https://st
 - WebSocket support for data pushed from the backend
   - 20% - Backend listens for WebSocket connection
   - 20% - Frontend makes WebSocket connection
-  - 30% - Data sent over WebSocket connection
-  - 30% - WebSocket data displayed in the application interface
+  - 20% - Data sent over WebSocket connection
+  - 20% - WebSocket data displayed in the application interface
+  - 20% - All visible elements are working - Some of your application functionality has been mocked up in previous version of the startup. Your application should feel fully functional.
 
 ## Go celebrate
 
