@@ -1,7 +1,5 @@
 # Node web service
 
-
-
 With JavaScript we can write code that listens on a network port (e.g. 80, 443, 3000, or 8080), receives HTTP requests, processes them, and then responds. We can use this to create a simple web service that we then execute using Node.js.
 
 First create your project.
@@ -48,7 +46,6 @@ Note that you can also start up Node and execute the `index.js` code directly in
 
 ⚠ Make sure you complete the above steps. For the rest of the course you will be executing your code using Node.js to run your backend code and serve up your frontend code to the browser. This means you will no longer be using the `VS Code Live Server extension` to serve your frontend code in the browser.
 
-
 ## Debugging a Node.js web service
 
 In order to debug a web service running under Node.js we first need to write our code. Replace the code in your `main.js` file with the following.
@@ -77,18 +74,34 @@ Now, instead of pressing `F5` to continue, press `F11` to step into the `res.sen
 
 ![Debug step in](webServicesDebugStepIn.png)
 
-## Nodemon
+## Node --watch
 
 Once you start writing complex web applications you will find yourself making changes in the middle of debugging sessions and you would like to have `node` restart automatically and update the browser as the changes are saved. This seems like a simple thing, but over the course of hundreds of changes, every second you can save really starts to add up.
 
-The [Nodemon package](https://www.npmjs.com/package/nodemon) is basically a wrapper around `node` that watches for files in the project directory to change. When it detects that you saved something it will automatically restart `node`.
+To accomplish this you can start Node with the `watch` option. This causes Node to watch all your source code files and automatically reload itself if anything changes.
 
-If you would like to experiment with this then take the following steps. First install Nodemon globally so that you can use it to debug all of your projects.
+You can experiment with this by starting node with the `--watch` parameter
 
 ```sh
-npm install -g nodemon
+node --watch main.js
 ```
 
-Then, because VS Code does not know how to launch Nodemon automatically, you need create a VS Code launch configuration. In VS Code press `CTRL-SHIFT-P` (on Windows) or `⌘-SHIFT-P` (on Mac) and type the command `Debug: Add configuration`. This will then ask you what type of configuration you would like to create. Type `Node.js` and select the `Node.js: Nodemon setup` option. In the launch configuration file that it creates, change the program from `app.js` to `main.js` (or whatever the main JavaScript file is for your application) and save the configuration file.
+With VS Code you can create a launch configuration that specifies the watch parameter when every you debug with VS Code. In VS Code press `CTRL-SHIFT-P` (on Windows) or `⌘-SHIFT-P` (on Mac) and type the command `Debug: Add configuration`. Select the `Node.js` option. This will create a launch configuration named `.vscode/launch.json`. Modify the configuration so that it includes the `--watch` parameter. This should look something like the following.
 
-Now when you press `F5` to start debugging it will run Nodemon instead of Node.js, and your changes will automatically update your application when you save.
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["--watch"],
+      "program": "${workspaceFolder}/main.js"
+    }
+  ]
+}
+```
+
+Now when you press `F5` to start debugging VS Code will start up `main.js` and automatically restart node each time you modify your code.
