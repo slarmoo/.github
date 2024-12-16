@@ -50,9 +50,57 @@
 |      | 44  | Wed Apr 16     | Student Ratings              | 🎉 Demo Day</br>☑ [Wrap up](../webFrameworks/wrapUp/wrapUp.md)</br>                                                                                                                                                                                                                                                                                                                   | _Demo Day_                                                                                                                                                                                                                                                                                                       |
 |  16  |     | Apr 23         | Last final day               |                                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                                                                                                                                                                                                                                  |
 
+# 📅 Winter 2025 Schedule
+
+Development essentials
+Web server setup
+HTML
+CSS
+JavaScript
+Web frameworks
+HTTP service
+Data and authentication services
+WebSocket
+Security
+Assorted topics
+
+[BYU Academic Calendar](https://academiccalendar.byu.edu/)
+
+| Week | Date       | Module | Discussion Topics                  | Deliverable due | Slides |
+| :--: | ---------- | ------ | ---------------------------------- | --------------- | ------ |
+|  1   | Thu Jan 9  |        |                                    |                 |        |
+|  2   | Tue Jan 14 |        |                                    |                 |        |
+|      | Thu Jan 16 |        |                                    |                 |        |
+|  3   | Tue Jan 21 |        |                                    |                 |        |
+|      | Thu Jan 23 |        |                                    |                 |        |
+|  4   | Tue Jan 28 |        |                                    |                 |        |
+|      | Thu Jan 30 |        |                                    |                 |        |
+|  5   | Tue Feb 4  |        |                                    |                 |        |
+|      | Thu Feb 6  |        |                                    |                 |        |
+|  6   | Tue Feb 11 |        |                                    |                 |        |
+|      | Thu Feb 13 |        |                                    |                 |        |
+|  7   | Tue Feb 18 |        | ** No class: Monday instruction ** |                 |        |
+|      | Thu Feb 20 |        |                                    |                 |        |
+|  8   | Tue Feb 25 |        |                                    |                 |        |
+|      | Thu Feb 27 |        |                                    |                 |        |
+|  9   | Tue Mar 4  |        |                                    |                 |        |
+|      | Thu Mar 6  |        |                                    |                 |        |
+|  10  | Tue Mar 11 |        |                                    |                 |        |
+|      | Thu Mar 13 |        |                                    |                 |        |
+|  11  | Tue Mar 15 |        |                                    |                 |        |
+|      | Thu Mar 18 |        |                                    |                 |        |
+|  12  | Tue Mar 20 |        |                                    |                 |        |
+|      | Thu Mar 24 |        |                                    |                 |        |
+|  13  | Tue Apr 1  |        |                                    |                 |        |
+|      | Thu Apr 3  |        |                                    |                 |        |
+|  14  | Tue Apr 8  |        |                                    |                 |        |
+|      | Thu Apr 10 |        |                                    |                 |        |
+|  15  | Tue Apr 15 |        |                                    |                 |        |
+|      | Wed Apr 16 |        |                                    |                 |        |
+
 ## Special days
 
-- **Jan 8**: First day of
+- **Jan 8**: First day of class
 - **Jan 20**: Holiday
 - **Feb 17**: Holiday (Tuesday 18 is Monday instruction)
 - **Feb 26**: Last day of midterm
