@@ -63,7 +63,7 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Simon HTML deployed to your production environment
 - **Prerequisite**: A link to your GitHub startup repository prominently displayed on your application's home page
 - **Prerequisite**: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
-- **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread accross multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
+- **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread across multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Properly structured HTML
   - 20% HTML pages for each component of your application
   - 10% Proper use of HTML tags including BODY, NAV, MAIN, HEADER, FOOTER

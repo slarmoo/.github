@@ -30,9 +30,9 @@ Doing this will make this deliverable of your startup available from `https://st
 
 1. Review and deploy Simon Service
    1. Clone the Simon Service repository to your development environment.
-     ```
-     git clone https://github.com/webprogramming260/simon-service.git
-     ```
+   ```
+   git clone https://github.com/webprogramming260/simon-service.git
+   ```
    1. Run `npm install` in the root of the project.
    1. Open the project in VS Code and examine the application's use of Node.js, Express, and JavaScript to create service endpoints.
    1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing `index.js`). Set breakpoints in VS Code and step through the backend JavaScript.
@@ -50,9 +50,10 @@ Doing this will make this deliverable of your startup available from `https://st
       app.use(express.static('public'));
       ```
    1. Add a vite.config.js file to your main startup directory (right above the service and src directories) with the following content (or copy it over from Simon). This will forward fetch requests that go to a path like "fetch('/api/scores')" to connect to your back end server running on port 4000.
+
       ```js
       import { defineConfig } from 'vite';
-      
+
       export default defineConfig({
         server: {
           proxy: {
@@ -61,10 +62,11 @@ Doing this will make this deliverable of your startup available from `https://st
         },
       });
       ```
+
    1. Create new endpoints for your back end (service/index.js) that are similar to those created by Simon.
    1. Call your endpoints from your frontend code using fetch.
    1. Call third party endpoints from your frontend code using fetch. This can be as simple as displaying a quote like Simon does.
-   1. Debug your application by running your back end using VS Code's Node debugger on the service/index.js file and the browser's inspect dev tools to verify it is working correctly.  You will have to run "npm run dev" to get your front end running.
+   1. Debug your application by running your back end using VS Code's Node debugger on the service/index.js file and the browser's inspect dev tools to verify it is working correctly. You will have to run "npm run dev" to get your front end running.
    1. Periodically commit and push your code to GitHub.
    1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
    1. Push your final version of your project to GitHub.
@@ -79,7 +81,7 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Simon Service deployed to your production environment
 - **Prerequisite**: A link to your GitHub startup repository prominently displayed on your application's home page
 - **Prerequisite**: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
-- **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread accross multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
+- **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread across multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Backend web service support and interaction
   - 40% - Create an HTTP service using Node.js and Express
   - 10% - Frontend served up using Express static middleware
