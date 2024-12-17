@@ -76,6 +76,8 @@ It is expected that you will start at the top of the list and work your way down
 
 ⁉️ - JS has been moved here, but needs to use React for examples
 
+⁉️ - Add prerequisite instruction topics to the beginning of each deliverable
+
 - [JavaScript Console](javascript/console/console.md)
 - [Types, operators, conditionals, and loops](javascript/typeConstruct/typeConstruct.md)
 - [String](javascript/string/string.md)

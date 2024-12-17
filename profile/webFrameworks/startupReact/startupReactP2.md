@@ -1,12 +1,37 @@
 # Startup React Phase 2: JavaScript
 
-Now that you have experience with using a web framework, it is time to convert your application to use React. This will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
+With your startup ported to React it is time to implement all of the interactivity necessary to make your application functional. This includes writing significant JavaScript such that a user can fully interact with the application.
+
+Making your application interactive will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
+
+## Mocking out functionality
+
+For parts of your application that require third party services, backend service support, or database persistence, you will need to stub, or mock, out those pieces in your JavaScript. Here are some examples of how you can stub out functionality.
+
+1. **Local storage**: If you need to store credentials or game state you can use the browser's [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) until you have a database where you can store such information. Note that this data will only be available on the browser where the data was created.
+   ```js
+   localStorage.setItem('userName', 'Tom');
+   const userName = localStorage.getItem('userName');
+   ```
+1. **Hard coded responses**: If you need an endpoint that provides external data such as a weather report or a LLM response you can simply hard code a single response that looks exactly like what a future endpoint will return.
+   ```js
+   function getWeather() {
+     return { date: '2026-05-20', outlook: 'fair' };
+   }
+   const weather = getWeather();
+   ```
+1. **setInterval**: If you need data that would have be pushed from a server over a WebSocket for functionality such as a stock price update or a peer chat message, you can use the `setInterval` function.
+   ```js
+   setInterval(() => console.log('event'), 1000);
+   ```
+
+## Getting started
 
 You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. Make sure you have enough commits that you can demonstrate your ownership of the code and protect yourself from loss. Usually this will mean at least ten commits, but in reality you may have many more than that. Failing to fully document your work may result in the rejection of your submission.
 
 Remember to use the the browser's debugger window to debug your CSS and JavaScript. You can also debug your service JavaScript running on Node.js using the built in VS Code Node.js debugger.
 
-Once you have developed your application to where you want it, you need to release it to your production environment. **Replace** your previous startup deployment script with a copy of the `deployReact.sh` script from the [Simon React repository](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh) and use `startup` for the service parameter (`-s`).
+Once you have developed your application to where you want it, you need to release it to your production environment. Use the same `deployReact.sh` script that you used in the previous React deliverable. Make sure to use `startup` for the service parameter (`-s`).
 
 ```sh
 ./deployReact.sh -k <yourpemkey> -h <yourdomain> -s startup
@@ -45,10 +70,8 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Notes in your startup Git repository `README.md` file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
 - **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread across multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Application converted to use React
-  - 10% Bundled using Vite
-  - 50% Multiple react components that implement or mock all app functionality
-  - 20% React router
-  - 20% React hooks
+  - 60% Multiple react components that implement or mock all app functionality
+  - 40% React `useState` and `useEffect` hooks
 
 ## Go celebrate
 
