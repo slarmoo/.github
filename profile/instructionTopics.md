@@ -60,10 +60,8 @@ It is expected that you will start at the top of the list and work your way down
 ## JavaScript & Web frameworks
 
 - [JavaScript introduction](javascript/introduction/introduction.md)
-
 - [Node.js](javascript/node/node.md)
 - [Debugging Node.js](javascript/debuggingNode/debuggingNode.md)
-
 - [Adding JavaScript to HTML](javascript/addingToHtml/addingToHtml.md)
 
 - [Web frameworks](webFrameworks/introduction/introduction.md)
