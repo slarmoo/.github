@@ -40,7 +40,7 @@ npm init -y
 npm install vite@latest -D
 ```
 
-Then insert/replace the `scripts` found in the newly created `package.json` file located in your project root directory to include the commands for running Vite. You can also clean up the description field and remove other unused fields.
+Then open the `package.json` file, found in the root of the project, that was created by the `npm init` command. Within the `package.json` file, locate the `scripts` section. Replace what is found there with commands for running Vite.
 
 ```json
   "scripts": {
@@ -50,13 +50,17 @@ Then insert/replace the `scripts` found in the newly created `package.json` file
   }
 ```
 
-⚠ Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
+| Command | Purpose                                                                                                                                                            |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| dev     | Bundles a debugging version of the React application and starts Vite's hot reloading HTTP server the hosts the newly bundled application for development purposes. |
+| build   | Bundles a production version of the React application and copies it to the `dist` directory.                                                                       |
+| preview | Bundles a production version of the React application and starts Vite's hot reloading HTTP server. This is used to test a production version before deployment.    |
 
-This script is similar to the previous script, but it includes a step [???]
+⚠ Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
 
 ## Reorganize the code
 
-We start with the simon-css code that currently looks like this:
+The simon-css repository starts contains code that is structured looks like this:
 
 ```sh
 ├─ LICENSE
@@ -73,19 +77,13 @@ We start with the simon-css code that currently looks like this:
 └─ scores.html
 ```
 
-Create a `public` directory that is going to hold all the application image and sound assets. After we create the folder we move the `placeholder.jpg` and `favicon.jpg` files into it.
+We want to modify it to match the directory structure that Vite expects.
+
+Create a `public` directory that is going to hold all the application image and sound assets. After we create the folder we move the `placeholder.jpg` and `favicon.ico` files into it.
 
 Next we create a `src` directory where we will put all of the React code. Under the `src` directory we create a folder for each of the view components that represent the major functionality of the Simon application.
 
-Finally rename `main.css` to `app.css` and move it to the `src` directory. This will contain all the styles that are shared across the application. You will need to tweak the `body` rule set to use the `.body` selector since our SPA works on components within the body element. This change should look like the following.
-
-```css
-.body {
-  display: flex;
-  flex-direction: column;
-  min-width: 375px;
-}
-```
+Finally rename `main.css` to `app.css` and move it to the `src` directory. This will contain all the styles that are shared across the application.
 
 When we are done it will look like this.
 
@@ -121,18 +119,18 @@ Now, in the components where you want to refer to the Bootstrap styles, you can 
 imported NPM package just like you would other CSS files.
 
 ```jsx
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 ```
 
 To use a React Bootstrap component, you would import and reference the specific component you want to use. Here is an example of using the `Button` component.
 
 ```jsx
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 export function NavButton({ text, url }) {
   const navigate = useNavigate();
   return (
-    <Button variant='primary' onClick={() => navigate({ url })}>
+    <Button variant="primary" onClick={() => navigate({ url })}>
       {text}
     </Button>
   );
@@ -143,13 +141,13 @@ For Simon we converted the modal dialog and button implementations to use the Re
 
 ## Enabling React
 
-We now have everything set up to start using React for the application. To make this happen, we need to install the React components for the basic functionality, DOM manipulation, and request routing to display individual components. React is installed by running the following console command:
+We now have everything necessary to start using React for the application. To make this happen, we need to install the React components for the basic functionality, DOM manipulation, and request routing to display individual components. React is installed by running the following console command:
 
 ```sh
 npm install react react-dom react-router-dom
 ```
 
-### `index.html` and `index.jsx`
+### index.html and index.jsx
 
 With React we have a single HTML file that dynamically loads all of the other application components into its DOM using JavaScript. We rename the existing `index.html` to `login.html`, since that is what it really is anyway, and create a new `index.html` that represents the React SPA entry point.
 
@@ -179,27 +177,39 @@ Notice that the div with an ID of `root` is where all the content will be inject
 **`index.jsx`**
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './src/app';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./src/app";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
 ## Create App component
 
-To begin the transformation to using React components in our application, we create a top-level component, stored in `src/app.jsx`, and add some placeholder content that will get replaced later. In order for the styling to show up, we include Bootstrap, move the `main.css` content into a file named `src/app.css`, and import the CSS file into the `app.jsx` file. Because we don't have a `body` element in our `App` component, we modify the `app.css` so that the selector for the `body` element is changed to a class selector `.body`.
+To begin the transformation to using React components in our application, we create a top-level component, stored in `src/app.jsx`, and add some simple placeholder content that will get replaced later. In order for the styling to show up, we import Bootstrap, and the top level CSS found in `src/app.css`.
 
 **app.jsx**
 
 ```jsx
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./app.css";
 
 export default function App() {
-  return <div className='body bg-dark text-light'>App will display here</div>;
+  return <div className="body bg-dark text-light">App will display here</div>;
+}
+```
+
+Because we don't have a `body` element in our `App` component, we modify the `app.css` so that the selector for the `body` element is changed to a class selector `.body`. This change should look like the following.
+
+**app.css**
+
+```css
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
 }
 ```
 
@@ -214,30 +224,30 @@ To make `app.jsx` represent the actual Simon content, we enhance the `app.jsx` f
 ```jsx
 export default function App() {
   return (
-    <div className='body bg-dark text-light'>
-      <header className='container-fluid'>
-        <nav className='navbar fixed-top navbar-dark'>
-          <div className='navbar-brand'>
+    <div className="body bg-dark text-light">
+      <header className="container-fluid">
+        <nav className="navbar fixed-top navbar-dark">
+          <div className="navbar-brand">
             Simon<sup>&reg;</sup>
           </div>
-          <menu className='navbar-nav'>
-            <li className='nav-item'>
-              <a className='nav-link' href='index.html'>
+          <menu className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="index.html">
                 Home
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='play.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="play.html">
                 Play
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='scores.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="scores.html">
                 Scores
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='about.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="about.html">
                 About
               </a>
             </li>
@@ -247,10 +257,13 @@ export default function App() {
 
       <main>App components go here</main>
 
-      <footer className='bg-dark text-white-50'>
-        <div className='container-fluid'>
-          <span className='text-reset'>Author Name(s)</span>
-          <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
+      <footer className="bg-dark text-white-50">
+        <div className="container-fluid">
+          <span className="text-reset">Author Name(s)</span>
+          <a
+            className="text-reset"
+            href="https://github.com/webprogramming260/simon-react"
+          >
             Source
           </a>
         </div>
@@ -266,20 +279,35 @@ This will display the header, navigation elements, placeholder content, and the 
 
 ## Create view components
 
-We now create React component files `login.jsx`, `play.jsx`, `scores.jsx`, and `about.jsx` to represent each of the application views. To begin with, these are just stubs that we will soon begin populating as we port code from the requisitie `.html` files and which we will further develop with javascript functionality in part 2. We place each of the stubbed components in a separate directory (e.g. `src/login/login.jsx`) so that we can keep all of the component files together.
+We now create React component files `login.jsx`, `play.jsx`, `scores.jsx`, and `about.jsx` to represent each of the application views. To begin with, these are just stubs that we will soon begin populating as we port code from the requisite `.html` files and which we will further develop with javascript functionality in part 2. We place each of the stubbed components in a separate directory (e.g. `src/login/login.jsx`) so that we can keep all of the component files together.
 
-Here is the `login.jsx` stub before any code is converted over. The other components are similar.
+Here is the `login.jsx` stub before any code is converted over. The other components are similar, but simply replace **login** with the appropriate component name.
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 export function Login() {
   return (
-    <main className='container-fluid bg-secondary text-center'>
+    <main className="container-fluid bg-secondary text-center">
       <div>login displayed here</div>
     </main>
   );
 }
+```
+
+The directory structure should look like this once all the view component stubs are created.
+
+```sh
+└─ src
+    ├─ app.css                 # Top level styles
+    ├─ about                   # About component
+    │   └─ about.jsx
+    ├─ login                   # Login component
+    │   └─ login.jsx
+    ├─ play                    # Game play component
+    │   └─ play.jsx
+    └─ scores                  # Scores component
+        └─ scores.jsx
 ```
 
 ## Create the router
@@ -289,11 +317,11 @@ With `app.jsx` containing the header and footer, and all the application view co
 To implement the router, we import the router component into the `App` component along with all of our view components.
 
 ```jsx
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { Login } from './login/login';
-import { Play } from './play/play';
-import { Scores } from './scores/scores';
-import { About } from './about/about';
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { Login } from "./login/login";
+import { Play } from "./play/play";
+import { Scores } from "./scores/scores";
+import { About } from "./about/about";
 ```
 
 Next we wrap all of the `App` component's previous elements with the `BrowserRouter` component so that the browser router can control links and rendered components for all of its child elements.
@@ -323,28 +351,28 @@ We then we replace the `a` elements with the router's `NavLink` component. The a
 The `NavLink` component prevents the browser's default navigation functionality and instead handles it by replacing the currently displayed component. Once we have converted all the links, the `nav` element's code now looks like the following.
 
 ```jsx
-<nav className='navbar fixed-top navbar-dark'>
-  <div className='navbar-brand'>
+<nav className="navbar fixed-top navbar-dark">
+  <div className="navbar-brand">
     Simon<sup>&reg;</sup>
   </div>
-  <menu className='navbar-nav'>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to=''>
+  <menu className="navbar-nav">
+    <li className="nav-item">
+      <NavLink className="nav-link" to="">
         Login
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='play'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="play">
         Play
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='scores'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="scores">
         Scores
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='about'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="about">
         About
       </NavLink>
     </li>
@@ -374,7 +402,11 @@ Notice that the `*` (default matcher) was added to handle the case where an unkn
 
 ```js
 function NotFound() {
-  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  return (
+    <main className="container-fluid bg-secondary text-center">
+      404: Return to sender. Address unknown.
+    </main>
+  );
 }
 ```
 
@@ -401,7 +433,7 @@ In order for you to have a feel for how this is done we will demonstrate how thi
 Open the `scores.html` file and copy out the **main** element from the HTML. Paste it over the **main** element in the `scores.jsx` file. Rename the `class` attribute to `className`. Move the `scores.css` file to the `src/scores` component directory and import the css into the `scores.jsx` component file.
 
 ```jsx
-import './scores.css';
+import "./scores.css";
 ```
 
 Then delete the `scores.html` file. When this is all done the scores component should now render the same thing the old CSS deliverable rendered.
@@ -461,7 +493,7 @@ rm -rf dist
 
 ## Port complete
 
-At this point we are done porting the CSS deliverable to React.  The final Simon project structure looks like the following.
+At this point we are done porting the CSS deliverable to React. The final Simon project structure looks like the following.
 
 ```sh
 ├─ LICENSE
