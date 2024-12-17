@@ -39,3 +39,35 @@ Now start the debugger again by pressing `F5`. The code will start running, but 
 You can continue execution of the code by pressing `F10` to step to the next line, `F11` to step into a function call, or `F5` to continue running from the current line. When the last line of code executes the debugger will automatically exit and you will need to press `F5` to start it running again. You can stop debugging at any time by pressing `SHIFT-F5`.
 
 Experiment with this simple file until you are comfortable running the debugger, setting breakpoints, and inspecting variables.
+
+## Node --watch
+
+Once you start writing complex web applications you will find yourself making changes in the middle of debugging sessions and you would like to have `node` restart automatically and update the browser as the changes are saved. This seems like a simple thing, but over the course of hundreds of changes, every second you can save really starts to add up.
+
+To accomplish this you can start Node with the `watch` option. This causes Node to watch all your source code files and automatically reload itself if anything changes.
+
+You can experiment with this by starting node with the `--watch` parameter
+
+```sh
+node --watch main.js
+```
+
+With VS Code you can create a launch configuration that specifies the watch parameter when every you debug with VS Code. In VS Code press `CTRL-SHIFT-P` (on Windows) or `⌘-SHIFT-P` (on Mac) and type the command `Debug: Add configuration`. Select the `Node.js` option. This will create a launch configuration named `.vscode/launch.json`. Modify the configuration so that it includes the `--watch` parameter. This should look something like the following.
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["--watch"],
+      "program": "${workspaceFolder}/main.js"
+    }
+  ]
+}
+```
+
+Now when you press `F5` to start debugging VS Code will start up `main.js` and automatically restart node each time you modify your code.

@@ -25,7 +25,7 @@ You create an Express application by using NPM to install the Express package an
 ```
 
 ```js
-const express = require('express');
+const express = require("express");
 const app = express();
 
 app.listen(8080);
@@ -38,8 +38,8 @@ With the `app` object you can now add HTTP routing and middleware functions to t
 HTTP endpoints are implemented in Express by defining routes that call a function based upon an HTTP path. The Express `app` object supports all of the HTTP verbs as functions on the object. For example, if you want to have a route function that handles an HTTP GET request for the URL path `/store/provo` you would call the `get` method on the app.
 
 ```js
-app.get('/store/provo', (req, res, next) => {
-  res.send({name: 'provo'});
+app.get("/store/provo", (req, res, next) => {
+  res.send({ name: "provo" });
 });
 ```
 
@@ -52,8 +52,8 @@ The Express `app` compares the routing function patterns in the order that they 
 In our example above we hard coded the store name to be `provo`. A real store endpoint would allow any store name to be provided as a parameter in the path. Express supports path parameters by prefixing the parameter name with a colon (`:`). Express creates a map of path parameters and populates it with the matching values found in the URL path. You then reference the parameters using the `req.params` object. Using this pattern you can rewrite our getStore endpoint as follows.
 
 ```js
-app.get('/store/:storeName', (req, res, next) => {
-  res.send({name: req.params.storeName});
+app.get("/store/:storeName", (req, res, next) => {
+  res.send({ name: req.params.storeName });
 });
 ```
 
@@ -70,10 +70,12 @@ The route path can also include a limited wildcard syntax or even full regular e
 
 ```js
 // Wildcard - matches /store/x and /star/y
-app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
+app.put("/st*/:storeName", (req, res) =>
+  res.send({ update: req.params.storeName })
+);
 
 // Pure regular expression
-app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
+app.delete(/\/store\/(.+)/, (req, res) => res.send({ delete: req.params[0] }));
 ```
 
 Notice that in these examples the `next` parameter was omitted. Since we are not calling `next` we do not need to include it as a parameter. However, if you do not call `next` then no following middleware functions will be invoked for the request.
@@ -114,7 +116,7 @@ Remember that the order that you add your middleware to the Express app object c
 In addition to creating your own middleware functions, you can use a built-in middleware function. Here is an example of using the `static` middleware function. This middleware responds with static files, found in a given directory, that match the request URL.
 
 ```js
-app.use(express.static('public'));
+app.use(express.static("public"));
 ```
 
 Now if you create a subdirectory in your project directory and name it `public` you can serve up any static content that you would like. For example, you could create an `index.html` file that is the default content for your web service. Then when you call your web service without any path the `index.html` file will be returned.
@@ -128,17 +130,17 @@ You can also use third party middleware functions by using NPM to install the pa
 ```
 
 ```js
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 
 app.use(cookieParser());
 
-app.post('/cookie/:name/:value', (req, res, next) => {
+app.post("/cookie/:name/:value", (req, res, next) => {
   res.cookie(req.params.name, req.params.value);
-  res.send({cookie: `${req.params.name}:${req.params.value}`});
+  res.send({ cookie: `${req.params.name}:${req.params.value}` });
 });
 
-app.get('/cookie', (req, res, next) => {
-  res.send({cookie: req.cookies});
+app.get("/cookie", (req, res, next) => {
+  res.send({ cookie: req.cookies });
 });
 ```
 
@@ -156,15 +158,15 @@ If you wanted to add a simple error handler for anything that might go wrong whi
 
 ```js
 app.use(function (err, req, res, next) {
-  res.status(500).send({type: err.name, message: err.message});
+  res.status(500).send({ type: err.name, message: err.message });
 });
 ```
 
 We can test that our error middleware is getting used by adding a new endpoint that generates an error.
 
 ```js
-app.get('/error', (req, res, next) => {
-  throw new Error('Trouble in river city');
+app.get("/error", (req, res, next) => {
+  throw new Error("Trouble in river city");
 });
 ```
 
@@ -180,20 +182,20 @@ Now if we use `curl` to call our error endpoint we can see that the response com
 Here is a full example of our web service built using Express.
 
 ```js
-const express = require('express');
-const cookieParser = require('cookie-parser');
+const express = require("express");
+const cookieParser = require("cookie-parser");
 const app = express();
 
 // Third party middleware - Cookies
 app.use(cookieParser());
 
-app.post('/cookie/:name/:value', (req, res, next) => {
+app.post("/cookie/:name/:value", (req, res, next) => {
   res.cookie(req.params.name, req.params.value);
-  res.send({cookie: `${req.params.name}:${req.params.value}`});
+  res.send({ cookie: `${req.params.name}:${req.params.value}` });
 });
 
-app.get('/cookie', (req, res, next) => {
-  res.send({cookie: req.cookies});
+app.get("/cookie", (req, res, next) => {
+  res.send({ cookie: req.cookies });
 });
 
 // Creating your own middleware - logging
@@ -203,24 +205,30 @@ app.use((req, res, next) => {
 });
 
 // Built in middleware - Static file hosting
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // Routing middleware
-app.get('/store/:storeName', (req, res) => {
-  res.send({name: req.params.storeName});
+
+// Get store endpoint
+app.get("/store/:storeName", (req, res) => {
+  res.send({ name: req.params.storeName });
 });
 
-app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
+// Update store endpoint
+app.put("/st*/:storeName", (req, res) =>
+  res.send({ update: req.params.storeName })
+);
 
-app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
+// Delete store endpoint
+app.delete(/\/store\/(.+)/, (req, res) => res.send({ delete: req.params[0] }));
 
 // Error middleware
-app.get('/error', (req, res, next) => {
-  throw new Error('Trouble in river city');
+app.get("/error", (req, res, next) => {
+  throw new Error("Trouble in river city");
 });
 
 app.use(function (err, req, res, next) {
-  res.status(500).send({type: err.name, message: err.message});
+  res.status(500).send({ type: err.name, message: err.message });
 });
 
 // Listening to a network port
@@ -229,6 +237,16 @@ app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
 ```
+
+## Debugging an Express web service
+
+Let's take a moment to talk about how you can debug a web service running with the Express package under Node.js. Using the code that you created above, set a breakpoint on the code inside the getStore endpoint callback and another breakpoint on the `app.listen` call. Start debugging by pressing `F5`. The debugger should stop on the `listen` call where you can inspect the `app` variable. Press `F5` again to continue running. Now open up your browser and set the location to `localhost:8080/store/provo`. This should hit the breakpoint on the endpoint. Take some time to inspect the `req` object. You should be able to see what the HTTP method is, what parameters are provided, and what the path currently is. Press `F5` to continue. Your browser should display the JSON object that you returned from your endpoint.
+
+Make another request from our browser, but this time include some query parameters. Something like `http://localhost:8080/store/orem?order=2`. Requesting that URL should cause your breakpoint to hit again where you can see the URL changes reflected in the req object.
+
+Now, instead of pressing `F5` to continue, press `F11` to step into the `res.send` function. This will take you out of your code and into the Express code that handles sending a response. Because you installed the Express package using NPM, all of Express's source code is sitting in the `node_modules` directory. You can also set breakpoints there, examine variables, and step into functions. Debugging into popular packages is a great way to learn how to code by seeing how really good programmers do things. Take some time to walk around Holowaychuk's code and see if you can understand what it is doing.
+
+![Debug step in](webServicesDebugStepIn.png)
 
 # ☑ Assignment
 
@@ -283,5 +301,7 @@ Create a web service with Express using the following steps.
 1. Develop a mental model in your head about what these commands are doing and how your service is responding. Perhaps creating a [sequence diagram](https://sequencediagram.org/index.html#initialData=C4S2BsFMAIGVIE4DcQGMYCVIEcCukBnYAgKBIENVgB7BaAYVwXDMeYFoA+eZNSALmgBtAAoBVACoBdaAHois2pAC2JAHbVgMBCADmAC2DRqAMziIU6fuQAONgHQ3cwABQByecABUs-kSUAcuTKkG4ANAA6atAuCDhh0HEEAJTQALyciYT2BJBqACYuUQDe0Lg2+eRagnHYjuQIwQQ5NHFBIdAAvsnJANwkbOAAPEPs7DyWAtDFAETllVoz-DNKyjOdJEA) will help clarify the interaction if it is still unclear.
 
    ![HTTP request](httpRequestSequenceDiagram.jpg)
+
+1. Debug your application by setting breakpoints, inspecting variables, and walking through the code.
 
 When you are done executing the above commands, copy the output from the curl commands and paste it into the Canvas assignment.

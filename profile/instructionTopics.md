@@ -109,7 +109,6 @@ It is expected that you will start at the top of the list and work your way down
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
 - ☑ [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
 
-
 ## Midterm - ⁉️ get rid of this?
 
 ⚠ Make sure you take the midterm in Canvas during the open period.
@@ -125,7 +124,7 @@ It is expected that you will start at the top of the list and work your way down
 - [URL](webServices/url/url.md)
 - [Ports](webServices/ports/ports.md)
 - [HTTP](webServices/http/http.md)
-- [Modules](javascript/modules/modules.md) - ⁉️ Move to HTTP Service
+- [Modules](javascript/modules/modules.md)
 - ☑ [Fetch](webServices/fetch/fetch.md)
 - [Node web service](webServices/nodeWebService/nodeWebService.md)
 - ☑ [Express](webServices/express/express.md)
