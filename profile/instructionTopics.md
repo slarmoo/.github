@@ -63,21 +63,16 @@ It is expected that you will start at the top of the list and work your way down
 - [Node.js](javascript/node/node.md)
 - [Debugging Node.js](javascript/debuggingNode/debuggingNode.md)
 - [Adding JavaScript to HTML](javascript/addingToHtml/addingToHtml.md)
-
 - [Web frameworks](webFrameworks/introduction/introduction.md)
 - [React](webFrameworks/react/introduction/introduction.md)
 - ☑ [Components](webFrameworks/react/components/components.md)
 - [Toolchains](webFrameworks/react/toolChains/toolChains.md)
 - ☑ [Vite](webFrameworks/react/vite/vite.md)
 - ☑ [Router](webFrameworks/react/router/router.md)
-
-⁉️ - moved up: I think we need at least some of what is above
-⁉️ - No repo for this. just have them move HTML/CSS to p1.
-
-⁉️ - simon and react p1 and p2 need a full rework and review
-
 - [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
 - ☑ [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
+
+⁉️ - simon and react p1 and p2 need a full rework and review
 
 ⁉️ - JS has been moved here, but needs to use React for examples
 
