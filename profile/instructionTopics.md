@@ -29,8 +29,6 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [The Console](essentials/console/console.md)
 - [Editors](essentials/editors/editors.md)
 
-⁉️ - Make this a deliverable?
-
 ## HTML
 
 - ☑ [CodePen](essentials/codePen/codepen.md)
@@ -71,13 +69,6 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Router](webFrameworks/react/router/router.md)
 - [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
 - ☑ [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
-
-⁉️ - simon and react p1 and p2 need a full rework and review
-
-⁉️ - JS has been moved here, but needs to use React for examples
-
-⁉️ - Add prerequisite instruction topics to the beginning of each deliverable
-
 - [JavaScript Console](javascript/console/console.md)
 - [Types, operators, conditionals, and loops](javascript/typeConstruct/typeConstruct.md)
 - [String](javascript/string/string.md)
@@ -96,15 +87,13 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Promises](javascript/promises/promises.md)
 - ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
-
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
 - ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
 - [Hooks](webFrameworks/react/hooks/hooks.md)
-
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
 - ☑ [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
 
-## Midterm - ⁉️ get rid of this?
+## Midterm
 
 ⚠ Make sure you take the midterm in Canvas during the open period.
 
@@ -159,7 +148,7 @@ It is expected that you will start at the top of the list and work your way down
 
 ## Assorted topics
 
-- [TypeScript](webFrameworks/typeScript/typeScript.md) - ⁉️ move this up to react
+- [TypeScript](webFrameworks/typeScript/typeScript.md)
 - [Performance monitoring](webFrameworks/performanceMonitoring/performanceMonditoring.md)
 - [UX design](uxdesign/uxdesign.md)
 - [Search Engine Optimization](webFrameworks/seo/seo.md)
@@ -168,7 +157,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Simon PWA](simon/simonPwa/simonPwa.md)
 - ☑ [Wrap up](webFrameworks/wrapUp/wrapUp.md)
 
-## Final - ⁉️ get rid of this?
+## Final
 
 ⚠ Make sure you take the final in Canvas during the open period.
 
