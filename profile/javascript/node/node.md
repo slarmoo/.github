@@ -16,8 +16,6 @@ Browsers run JavaScript using a JavaScript interpreter and execution engine. For
 
 ## Installing Node.js
 
-⁉️ - We should move away from NVM and just use Node.js directly
-
 Your production environment web server comes with Node.js already installed. However, you will need to install Node.js in your development environment if you have not already. The easiest way to install Node.js is to use the official download found on [nodejs.org](https://nodejs.org/en/download/package-manager).
 
 You can pick the method that you would like to use to install, but it is suggested to use the **Prebuilt Installer** for your operating system and computer processor. Make sure that you select the latest Long Term Support version (LTS) in order to get the most stable version. In the image below this will install 22.12.0, however the version may be different by the time you view this instruction.
