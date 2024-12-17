@@ -1,4 +1,4 @@
-# Startup React
+# Startup React Phase 1: HTML/CSS
 
 Now that you have experience with using a web framework, it is time to convert your application to use React. This will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
 

@@ -14,36 +14,16 @@ Browsers run JavaScript using a JavaScript interpreter and execution engine. For
 
 ![Node.js](webServicesNode.jpg)
 
-## Installing NVM and Node.js
+## Installing Node.js
 
-Your production environment web server comes with Node.js already installed. However, you will need to install Node.js in your development environment if you have not already. The easiest way to install Node.js is to first install the `Node Version Manager` (NVM) and use it to install, and manage, Node.js.
+⁉️ - We should move away from NVM and just use Node.js directly
 
-### Installing on Windows
+Your production environment web server comes with Node.js already installed. However, you will need to install Node.js in your development environment if you have not already. The easiest way to install Node.js is to use the official download found on [nodejs.org](https://nodejs.org/en/download/package-manager).
 
-If you are using Windows, then follow the installation instructions from the [windows-nvm](https://github.com/coreybutler/nvm-windows#installation--upgrades) repository. Click on `latest installer` and then scroll down to the `Assets` and download and execute nvm-setup.exe. Once the installation is complete, you will need to open a new console window so that it gets the updated path that includes NVM.
+You can pick the method that you would like to use to install, but it is suggested to use the **Prebuilt Installer** for your operating system and computer processor. Make sure that you select the latest Long Term Support version (LTS) in order to get the most stable version. In the image below this will install 22.12.0, however the version may be different by the time you view this instruction.
 
-In the console application install the long term support (LTS) version of Node.
+![Node installer](nodeInstaller.png)
 
-```sh
-➜ nvm install lts
-➜ nvm use lts
-```
-
-### Installing on Linux or MacOS
-
-If you are using Linux or MacOS then you can install NVM with the following console commands.
-
-```sh
-➜ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-
-➜ . ~/.nvm/nvm.sh
-```
-
-In the console application install the long term support (LTS) version of Node.
-
-```sh
-➜ nvm install --lts
-```
 
 ## Checking that Node is installed
 
@@ -51,7 +31,7 @@ The node.js console application is simply called `node`. You can verify that Nod
 
 ```sh
 ➜ node -v
-v20.10.0
+v22.12.0
 ```
 
 ## Running programs
@@ -61,6 +41,17 @@ You can execute a line of JavaScript with Node.js from your console with the `-e
 ```sh
 ➜  node -e "console.log(1+1)"
 2
+```
+
+You can also run `node` in interpretive mode by executing it without any parameters and then typing your JavaScript code directly into the interpreter.
+
+```sh
+➜ node
+Welcome to Node.js v16.15.1.
+> 1+1
+2
+> console.log('hello')
+hello
 ```
 
 However, to do real work you need to execute an entire project composed of dozens or even hundreds of JavaScript files. You do this by creating a single starting JavaScript file, named something like `index.js`, that references the code found in the rest of your project. You then execute your code by running `node` with `index.js` as a parameter. For example, with the following JavaScript saved to a file named `index.js`
@@ -87,16 +78,6 @@ Counting ... 4
 Counting ... 5
 ```
 
-You can also run `node` in interpretive mode by executing it without any parameters and then typing your JavaScript code directly into the interpreter.
-
-```sh
-➜ node
-Welcome to Node.js v16.15.1.
-> 1+1
-2
-> console.log('hello')
-hello
-```
 
 ## Node package manager
 

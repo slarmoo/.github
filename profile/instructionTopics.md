@@ -59,6 +59,13 @@ It is expected that you will start at the top of the list and work your way down
 
 ## JavaScript & Web frameworks
 
+- [JavaScript introduction](javascript/introduction/introduction.md)
+
+- [Node.js](javascript/node/node.md)
+- [Debugging Node.js](javascript/debuggingNode/debuggingNode.md)
+
+- [Adding JavaScript to HTML](javascript/addingToHtml/addingToHtml.md)
+
 - [Web frameworks](webFrameworks/introduction/introduction.md)
 - [React](webFrameworks/react/introduction/introduction.md)
 - ☑ [Components](webFrameworks/react/components/components.md)
@@ -67,29 +74,16 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Router](webFrameworks/react/router/router.md)
 
 ⁉️ - moved up: I think we need at least some of what is above
-⁉️ - No repo for this. just have them move CSS to p1.
+⁉️ - No repo for this. just have them move HTML/CSS to p1.
+
+⁉️ - simon and react p1 and p2 need a full rework and review
 
 - [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
-- ☑ [Startup React P1](webFrameworks/startupReact/startupReact.md)
+- ☑ [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
 
-⁉️ - The rest can wait for P2
+⁉️ - JS has been moved here, but needs to use React for examples
 
-⁉️ - I think the JS stuff needs to be moved here before you can really start talking about components
-
-- ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
-- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
-- [Hooks](webFrameworks/react/hooks/hooks.md)
-
-- [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
-- ☑ [Startup React P2](webFrameworks/startupReact/startupReact.md)
-
-## JavaScript
-
-⁉️ - Can we get rid of all this? Is there a better way than the giant JS debugging session?
-
-- [JavaScript introduction](javascript/introduction/introduction.md)
 - [JavaScript Console](javascript/console/console.md)
-- [Adding JavaScript to HTML](javascript/addingToHtml/addingToHtml.md)
 - [Types, operators, conditionals, and loops](javascript/typeConstruct/typeConstruct.md)
 - [String](javascript/string/string.md)
 - [Functions](javascript/functions/functions.md)
@@ -102,14 +96,19 @@ It is expected that you will start at the top of the list and work your way down
 - [Exceptions](javascript/exceptions/exceptions.md)
 - [Destructuring](javascript/destructuring/destructuring.md)
 - [Scope](javascript/scope/scope.md)
-- [Modules](javascript/modules/modules.md) - ⁉️ Move to HTTP Service
 - ☑ [Document object model (DOM)](javascript/dom/dom.md)
 - [LocalStorage](javascript/localStorage/localStorage.md)
 - ☑ [Promises](javascript/promises/promises.md)
 - ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
-- [Node.js](javascript/node/node.md) - ⁉️ Move to HTTP Service
-- [Debugging Node.js](javascript/debuggingNode/debuggingNode.md) - ⁉️ Move to HTTP Service
+
+- ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
+- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
+- [Hooks](webFrameworks/react/hooks/hooks.md)
+
+- [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
+- ☑ [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
+
 
 ## Midterm - ⁉️ get rid of this?
 
@@ -126,6 +125,7 @@ It is expected that you will start at the top of the list and work your way down
 - [URL](webServices/url/url.md)
 - [Ports](webServices/ports/ports.md)
 - [HTTP](webServices/http/http.md)
+- [Modules](javascript/modules/modules.md) - ⁉️ Move to HTTP Service
 - ☑ [Fetch](webServices/fetch/fetch.md)
 - [Node web service](webServices/nodeWebService/nodeWebService.md)
 - ☑ [Express](webServices/express/express.md)
