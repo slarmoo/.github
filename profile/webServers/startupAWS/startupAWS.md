@@ -1,10 +1,10 @@
 # Startup AWS
 
 This startup just requires you to create your AWS web server and set up a DNS Route53 domain for your server.
-The difficulty is that you need to follow the instructions with exactness.  
+You need to follow the instructions with exactness.  
 Typing in one wrong character can cause your server to not respond or to crash with an error.
 
-Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
+When you are finished, your startup will be available from `https://startup.yourdomainname`.
 
 ## ☑ Assignment
 
