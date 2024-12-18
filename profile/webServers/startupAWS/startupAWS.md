@@ -20,7 +20,7 @@ Doing this will make this deliverable of your startup available from `https://st
 ## Grading Rubric
   - 10% Your web page can be displayed using HTTP and an IP address like http://6.5.4.3 (where 6.5.4.3 is your IP address)(This will stop working once you modify your Caddyfile for https)
   - 40% Your web page can be displayed using HTTP and your domain name http://startup.yourdomain (where yourdomain is replaced with the domain you leased from Route53)
-  - 40% Your web page can be displayed using HTTPS and your domain name https://startup.yourdomain (where yourdomain is replaced with the domain you leased from Route53)
+  - 50% Your web page can be displayed using HTTPS and your domain name https://startup.yourdomain (where yourdomain is replaced with the domain you leased from Route53)
 
 ## Go celebrate
 
