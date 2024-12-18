@@ -49,7 +49,7 @@ Now we can install Caddy, NVM, Node, and PM2
 - Install node.js
   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
   - `. ~/.nvm/nvm.sh`
-  - `nvm install --lts` (this installed version 20.12.2)
+  - `nvm install --lts` (this installed version 22.12.2)
 - Set up PM2
   - npm install pm2 -g
 - Add services for Simon and Startup
