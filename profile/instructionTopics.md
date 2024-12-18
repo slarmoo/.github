@@ -23,6 +23,7 @@ It is expected that you will start at the top of the list and work your way down
 
 - [Technology stack](essentials/techStack/techStack.md)
 - ☑ [Amazon Web Services - EC2](webServers/amazonWebServicesEc2/amazonWebServicesEc2.md)
+- [Domain names](webServers/domainNames/domainNames.md)
 - [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
 - [Caddy](webServers/caddy/caddy.md)
 - ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
@@ -64,9 +65,9 @@ It is expected that you will start at the top of the list and work your way down
 - [Web frameworks](webFrameworks/introduction/introduction.md)
 - [React](webFrameworks/react/introduction/introduction.md)
 - ☑ [Components](webFrameworks/react/components/components.md)
+- ☑ [Router](webFrameworks/react/router/router.md)
 - [Toolchains](webFrameworks/react/toolChains/toolChains.md)
 - ☑ [Vite](webFrameworks/react/vite/vite.md)
-- ☑ [Router](webFrameworks/react/router/router.md)
 - [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
 - ☑ [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
 - [JavaScript Console](javascript/console/console.md)
@@ -75,23 +76,26 @@ It is expected that you will start at the top of the list and work your way down
 - [Functions](javascript/functions/functions.md)
 - [Arrow functions](javascript/arrow/arrow.md)
 - ☑ [Arrays](javascript/array/array.md)
-- [JSON](javascript/json/json.md)
 - [Objects and classes](javascript/objectClasses/objectClasses.md)
-- [Regular expressions](javascript/regularExpressions/regularExpressions.md)
-- [Rest and spread](javascript/restSpread/restSpread.md)
-- [Exceptions](javascript/exceptions/exceptions.md)
-- [Destructuring](javascript/destructuring/destructuring.md)
-- [Scope](javascript/scope/scope.md)
-- ☑ [Document object model (DOM)](javascript/dom/dom.md)
+- [JSON](javascript/json/json.md)
 - [LocalStorage](javascript/localStorage/localStorage.md)
 - ☑ [Promises](javascript/promises/promises.md)
 - ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
+- [Destructuring](javascript/destructuring/destructuring.md)
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
-- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
 - [Hooks](webFrameworks/react/hooks/hooks.md)
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
 - ☑ [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
+
+### Additional JavaScript reference topics
+
+- ☑ [Document object model (DOM)](javascript/dom/dom.md)
+- [Regular expressions](javascript/regularExpressions/regularExpressions.md)
+- [Rest and spread](javascript/restSpread/restSpread.md)
+- [Exceptions](javascript/exceptions/exceptions.md)
+- [Scope](javascript/scope/scope.md)
+- ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
 
 ## Midterm
 
@@ -103,7 +107,6 @@ It is expected that you will start at the top of the list and work your way down
 
 - [The internet](webServers/internet/internet.md)
 - [Web servers](webServers/webServers/webServers.md)
-- [Domain names](webServers/domainNames/domainNames.md)
 - [Web Services Introduction](webServices/introduction/introduction.md)
 - [URL](webServices/url/url.md)
 - [Ports](webServices/ports/ports.md)

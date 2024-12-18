@@ -44,7 +44,7 @@ Technically speaking, `rest` allows JavaScript to provide what is called variadi
 
 ## Spread
 
-Spread does the opposite of rest. It take an object that is iterable (e.g. array or string) and expands it into a function's parameters. Consider the following.
+Spread does the opposite of rest. It take an object that is iterable (e.g. array or string) and expands, or spreads, it into a function's parameters. Consider the following.
 
 ```js
 function person(firstName, lastName) {
