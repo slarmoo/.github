@@ -27,6 +27,7 @@ Now we can install Caddy, NVM, Node, and PM2
 - Install Caddy
 
   ```sh
+  sudo apt update
   sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
   curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
   curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
@@ -50,6 +51,7 @@ Now we can install Caddy, NVM, Node, and PM2
   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
   - `. ~/.nvm/nvm.sh`
   - `nvm install --lts` (this installed version 22.12.2)
+  - Verify installed `node --version`
 - Set up PM2
   - npm install pm2 -g
 - Add services for Simon and Startup
@@ -60,8 +62,7 @@ Now we can install Caddy, NVM, Node, and PM2
     - `scp -i ~/keys/cs260/cs260.pem -r public index.js package.json ubuntu@0.0.0.0:services/simon`
     - `scp -i ~/keys/cs260/cs260.pem -r public index.js package.json ubuntu@0.0.0.0:services/startup`
   - On your production environment install the dependent packages for each service.
-    - `cd ~/services/simon && npm install`
-    - `cd ~/services/startup && npm install`
+    - `cd ~/services/simon && npm install && cd ~/services/startup && npm install && cd ~`
   - Test that they work with `node` and `curl`
     - `cd ~/services/startup`
     - `node index.js 4000 startup`

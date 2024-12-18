@@ -21,11 +21,11 @@ Assuming you already have an AWS account it is time to create your web server.
 
    ![AWS Instance name](webServerAWSName.jpg)
 
-1. We have created an Amazon Machine Image (AMI) for you to use as the base for your server. It has Ubuntu, Node.js, NVM, Caddy Server, and PM2 built right in so that you do not have to install them. Paste this AMI ID (`ami-0b009f6c56cdd83ed`) into the search box and press enter. Then select the `Community AMIs` tab. If no matches are found, make sure that your region is set to `US East (N. Virginia) - us-east-1` (You can check this by looking in the top right corner of the page).
+1. We have created an Amazon Machine Image (AMI) for you to use as the base for your server. It has Ubuntu, Node.js, NVM, Caddy Server, and PM2 built right in so that you do not have to install them. Paste this AMI ID (`ami-018f3a022e128a6b2`) into the search box and press enter. Then select the `Community AMIs` tab. If no matches are found, make sure that your region is set to `US East (N. Virginia) - us-east-1` (You can check this by looking in the top right corner of the page).
 
    ![AWS Instance name](webServerAWSAmi.jpg)
 
-   This should display the information about the class AMI. If the AMI ID matches `ami-0b009f6c56cdd83ed` select it.
+   This should display the information about the class AMI. If the AMI ID matches `ami-018f3a022e128a6b2` select it.
 
    ![AWS class AMI](webServerAWS260Ami.jpg)
 
@@ -140,7 +140,7 @@ The `t3.nano` instance size has just enough memory and CPU to meet the requireme
 
 ## ☑ Assignment
 
-1. Create an EC2 instance using the class AMI (`ami-0b009f6c56cdd83ed`).
+1. Create an EC2 instance using the class AMI (`ami-018f3a022e128a6b2`).
 1. Assign an elastic IP address (highly suggested).
 1. Test that you can see the default class web page from a browser using the server's public IP address.
 
