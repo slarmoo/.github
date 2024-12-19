@@ -8,7 +8,7 @@ Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/ExdZwgK) and u
 
 ![CSS practice](cssPracticeAssignment.gif)
 
-_If assignment submission is required for this section of the course_: Upload the URL of your CodePen to the Canvas assignment.
+_If your section of this course requires that you submit assignments for grading_: Upload the URL of your CodePen to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
 

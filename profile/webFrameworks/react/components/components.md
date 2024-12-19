@@ -99,7 +99,7 @@ Try the following:
 1. Add a new property to the Demo component that provides the background color for the component.
 2. Add another state variable that changes the color on a mouse over event.
 
-_If assignment submission is required for this section of the course_: Submit your CodePen URL to the Canvas assignment.
+_If your section of this course requires that you submit assignments for grading_: Submit your CodePen URL to the Canvas assignment.
 
 ### 🧧 Possible solution
 

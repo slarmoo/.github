@@ -141,7 +141,7 @@ This [CodePen](https://codepen.io/leesjensen/pen/RwJJZBb) dynamically manipulate
 
 1. Sort the table when a header is clicked on
 
-_If assignment submission is required for this section of the course_: Submit your CodePen URL to the Canvas assignment.
+_If your section of this course requires that you submit assignments for grading_: Submit your CodePen URL to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
 

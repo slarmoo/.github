@@ -300,4 +300,4 @@ Create a web service with Express using the following steps.
 
 1. Debug your application by setting breakpoints, inspecting variables, and walking through the code.
 
-_If assignment submission is required for this section of the course_: Submit the output from the curl commands to the Canvas assignment.
+_If your section of this course requires that you submit assignments for grading_: Submit the output from the curl commands to the Canvas assignment.

@@ -102,4 +102,4 @@ It should look like this when you are done.
 
 ![Bootstrap assignment](bootstrapAssignment.png)
 
-_If assignment submission is required for this section of the course_: Upload the URL of your CodePen to the Canvas assignment.
+_If your section of this course requires that you submit assignments for grading_: Upload the URL of your CodePen to the Canvas assignment.

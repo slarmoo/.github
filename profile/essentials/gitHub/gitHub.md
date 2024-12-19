@@ -258,4 +258,4 @@ Do the following steps to set up your `Startup application repository` in GitHub
 1. Create a file in your repository called `notes.md`. You can use the contents of this file while taking the midterm and final exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `.md` files and reference them from your `notes.md` file in order make it easier to organize your content.
 1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link in your `README.md` file to your `notes.md` file. Commit and push your notes to GitHub.
 
-_If assignment submission is required for this section of the course_: Submit in the Canvas assignment the URL of your GitHub startup repository.
+_If your section of this course requires that you submit assignments for grading_: Submit in the Canvas assignment the URL of your GitHub startup repository.

@@ -97,4 +97,4 @@ This [CodePen](https://codepen.io/leesjensen/pen/dyVdNej) demonstrates all of th
 1. Add an additional radio button.
 1. Change the color input to default to red.
 
-_If assignment submission is required for this section of the course_: Submit your CodePen URL to the Canvas assignment.
+_If your section of this course requires that you submit assignments for grading_: Submit your CodePen URL to the Canvas assignment.
