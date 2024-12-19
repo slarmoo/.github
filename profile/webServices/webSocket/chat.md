@@ -247,30 +247,29 @@ With the WebSocket server we can use the `connection`, `message`, and `close` ev
 ```js
 // Keep track of all the connections so we can forward messages
 let connections = [];
+let id = 0;
 
-wss.on('connection', (ws) => {
-  const connection = { id: connections.length + 1, alive: true, ws: ws };
+socketserver.on('connection', (socket) => {
+  const connection = { id: ++id, alive: true, socket: socket };
   connections.push(connection);
 
   // Forward messages to everyone except the sender
-  ws.on('message', function message(data) {
+  socket.on('message', function message(data) {
     connections.forEach((c) => {
       if (c.id !== connection.id) {
-        c.ws.send(data);
+        c.socket.send(data);
       }
     });
   });
 
   // Remove the closed connection so we don't try to forward anymore
-  ws.on('close', () => {
-    connections.findIndex((o, i) => {
-      if (o.id === connection.id) {
-        connections.splice(i, 1);
-        return true;
-      }
-    });
+  socket.on('close', () => {
+    const pos = connections.findIndex((o, i) => o.id === connection.id);
+
+    if (pos >= 0) {
+      connections.splice(pos, 1);
+    }
   });
-});
 ```
 
 ### Keeping connections alive
