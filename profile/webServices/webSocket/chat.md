@@ -234,8 +234,8 @@ const socketserver = new WebSocketServer({ noServer: true });
 
 // Handle the protocol upgrade from HTTP to WebSocket
 server.on('upgrade', (request, sckt, head) => {
-  wss.handleUpgrade(request, sckt, head, function done(socket) {
-    wss.emit('connection', socket, request);
+  socketserver.handleUpgrade(request, sckt, head, function done(socket) {
+    socketserver.emit('connection', socket, request);
   });
 });
 ```
