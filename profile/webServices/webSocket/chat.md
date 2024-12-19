@@ -122,7 +122,7 @@ export function Messages() {
 }
 ```
 
-##Front end chat client
+## Front end chat client
 
 The JavaScript for the application provides the interaction with the DOM for creating and displaying messages, and manages the WebSockets in order to connect, send, and receive messages.
 
