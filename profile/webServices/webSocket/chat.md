@@ -28,22 +28,14 @@ The front end consists of an `index.html` file that provides an empty DOM into w
 </html>
 ```
 
-and an `index.jsx` file that injects the top-level `<App/>` component:
+and an `index.jsx` file that injects the top-level `<Chat/>` component:
 
 ```jsx
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(<Chat />);
 ```
 
-The main component `app.jsx` simply injects the `chat.jsx` component and adds some simple styling.
-
-```jsx
-export default function App() {
-  return <div className='body'><Chat /></div>;
-}
-```
-
-The `chat.jsx` component introduces a state variable for the user's name and injects three sub-compenents.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the users name; and the third is a `Chatter` object that implements the frontend websocket connection.
+The main component `chat.jsx` introduces a state variable for the user's name and injects three sub-compenents.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the users name; and the third is a `Chatter` object that implements the frontend websocket connection.
 
 ```jsx
 export function Chat() {
