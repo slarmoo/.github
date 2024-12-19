@@ -230,12 +230,12 @@ When we create our WebSocket we do things a little differently than we did with 
 
 ```js
 // Create a websocket object
-const wss = new WebSocketServer({ noServer: true });
+const socketserver = new WebSocketServer({ noServer: true });
 
 // Handle the protocol upgrade from HTTP to WebSocket
-server.on('upgrade', (request, socket, head) => {
-  wss.handleUpgrade(request, socket, head, function done(ws) {
-    wss.emit('connection', ws, request);
+server.on('upgrade', (request, sckt, head) => {
+  wss.handleUpgrade(request, sckt, head, function done(socket) {
+    wss.emit('connection', socket, request);
   });
 });
 ```
