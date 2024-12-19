@@ -305,7 +305,7 @@ Any connection that did not respond will remain in the not alive state and get c
 
 ### Vite.config.js
 
-The vite.config.js file in the example's root directory routes websocket traffic away from port 5137 (where vite is serving the front end) to port 3000 (where the backend is listening for chat traffice).  We have seen something similar before when we used vite to reroute our service endpoints while debugging in our development environment.  Here, again, this file is only used for debugging during development and is not pushed to the production environment.  Note that the file is routing traffic on the `/ws` path, which is why above, this path was included when we instantiated the `WebSocketServer` object in the frontend client code.
+The vite.config.js file in the example's root directory routes websocket traffic away from port 5137 (where vite is serving the front end) to port 3000 (where the backend is listening for chat traffic).  We have seen something similar before when we used vite to reroute our service endpoints while debugging in our development environment.  Here, again, this file is only used for debugging during development and is not pushed to the production environment.  Note that the file is routing traffic on the `/ws` path, which is why above, this path was included when we instantiated the `WebSocketServer` object in the frontend client code.
 
 # Experiment
 
