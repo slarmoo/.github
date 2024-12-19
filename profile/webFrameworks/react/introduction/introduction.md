@@ -136,6 +136,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
 
+First we introduce the concept of event handlers. All HTML elements can generate events that JavaScript code can respond to. In this case we are registering an event handler that will call the **handleClick** function whenever the **div** is clicked on. This function will toggle the background color of the element. Because the CSS backgroundColor rule is set to a variable, it will reactively change whenever the variable is changed.
+
 Now the background color will toggle every time you click on the page.
 
 ![Colorized React](colorizedHelloReact.gif)
