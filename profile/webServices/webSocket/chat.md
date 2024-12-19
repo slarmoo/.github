@@ -35,7 +35,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Chat />);
 ```
 
-The main component `chat.jsx` introduces a state variable for the user's name and injects three sub-compenents.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the users name; and the third is a `Chatter` object that implements the frontend websocket connection.
+The main component `chat.jsx` introduces a state variable for the user's name and injects three sub-compenents.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the user's name; and the third is a `Chatter` object that implements the frontend websocket connection.
 
 ```jsx
 export default function Chat() {
