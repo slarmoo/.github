@@ -1,8 +1,6 @@
 # Instruction topics
 
-The course covers a full stack of technologies including HTML, CSS, JavaScript, HTTP, DNS, web servers, database services, security, client side web frameworks, and progressive web applications. The instruction topics given below include assignments and projects to help you explore the concepts and demonstrate your mastery.
-
-It is expected that you will start at the top of the list and work your way down. Make sure that you complete every assignment (marked with the ☑ icon) and submit the result in Canvas so that you can receive credit for what you have mastered.
+The course covers a full stack of technologies including HTML, CSS, JavaScript, HTTP, DNS, web servers, services, security, and web frameworks. It is expected that you will start at the top of the list and work your way down. Not taking the time to fully grok the content will significantly decrease your mastery of the course and increase the time it takes for you to build your startup deliverables.
 
 ## Development essentials
 
@@ -89,7 +87,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
 - 🦄 [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
 
-### Additional JavaScript reference topics
+### Additional JavaScript enrichment topics
 
 - ☑ [Document object model (DOM)](javascript/dom/dom.md)
 - [Regular expressions](javascript/regularExpressions/regularExpressions.md)
@@ -97,12 +95,6 @@ It is expected that you will start at the top of the list and work your way down
 - [Exceptions](javascript/exceptions/exceptions.md)
 - [Scope](javascript/scope/scope.md)
 - ☑ [Tic-tac-toe tutorial](webFrameworks/react/ticTacToe/ticTacToe.md)
-
-## Midterm
-
-⚠ Make sure you take the midterm in Canvas during the open period.
-
-- [Midterm study guide](test/midterm.md)
 
 ## HTTP service
 
@@ -160,12 +152,6 @@ It is expected that you will start at the top of the list and work your way down
 - [Progressive web applications](webFrameworks/pwa/pwa.md)
 - [Simon PWA](simon/simonPwa/simonPwa.md)
 - ☑ [Wrap up](webFrameworks/wrapUp/wrapUp.md)
-
-## Final
-
-⚠ Make sure you take the final in Canvas during the open period.
-
-- [Final study guide](test/final.md)
 
 ## Legend
 
