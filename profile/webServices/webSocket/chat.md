@@ -4,11 +4,11 @@ With the understanding of what WebSockets are, the basics of using them from Nod
 
 ![WebSocket Peers](webServicesWebSocketPeers.jpg)
 
-In this example we will create an HTML page that uses WebSockets and displays the resulting chat. The server will forward the WebSocket communication from the different clients.
+In this example we will create a React front end that uses WebSockets and displays the resulting chat.  The React code for the client will be organized similarly to Simon and your Startup.  A backend Express server will forward the WebSocket communication from the different clients.
 
-## Chat client
+## Front end chat client
 
-The HTML for the client provides an input for the user's name, an input for creating messages, and an element to display the messages that are sent and received.
+The front   provides an input for the user's name, an input for creating messages, and an element to display the messages that are sent and received.
 
 ```html
 <!DOCTYPE html>
