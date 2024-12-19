@@ -8,35 +8,141 @@ In this example we will create a React front end that uses WebSockets and displa
 
 ## Front end chat client
 
-The front   provides an input for the user's name, an input for creating messages, and an element to display the messages that are sent and received.
+The front end consists of an `index.html` file that provides an empty DOM into which React components will be injected.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebSocket Chat</title>
-    <link rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <div class="name">
-      <fieldset id="name-controls">
-        <legend>My Name</legend>
-        <input id="my-name" type="text" />
-      </fieldset>
-    </div>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
 
-    <fieldset id="chat-controls" disabled>
-      <legend>Chat</legend>
-      <input id="new-msg" type="text" />
-      <button onclick="sendMessage()">Send</button>
-    </fieldset>
-    <div id="chat-text"></div>
+    <title>Chat React</title>
+  </head>
+  <body style="background: #fff8d8;">  <!--don't love this style hack-->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
   </body>
-  <script src="chatClient.js"></script>
 </html>
 ```
+
+an `index.jsx` file that injects the top-level `<App/>` component.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './src/app';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+
+The main component `app.jsx` simply injects the `chat.jsx` component and adds some simple styling.
+
+```jsx
+import React from 'react';
+import { Chat } from './chat/chat';
+import './app.css';
+
+export default function App() {
+  return <div className='body'><Chat /></div>;
+}
+```
+
+The `chat.jsx` component introduces a state variable for the user's name and injects three sub-compenents.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the users name; and the third is a `Chatter` object that implements the frontend websocket connection.
+
+```jsx
+import React from 'react';
+import { Name } from './name';
+import { Message } from './message';
+import { Messages } from './messages';
+import { Chatter } from './chatClient';
+
+export function Chat() {
+    const [name, setName] = React.useState('');
+
+    return (
+    <main>
+        <Name updateName={setName}/>
+        <Message disabled={name===''} name={name} client={Chatter}/>
+        <Messages />
+    </main>
+  );
+}
+```
+
+The `name.jsx` component implements a simple input element that uses the passed in setter function to update the name variable (in the calling component) whenever text is entered in the input field.
+
+```jsx
+import React from 'react';
+
+export function Name({updateName}) {
+
+  return (
+    <main>
+        <div className="name">
+            <fieldset id="name-controls">
+                <legend>My Name</legend>
+                <input onChange={(e) => updateName(e.target.value)} id="my-name" type="text" />
+            </fieldset>
+        </div>
+    </main>
+  );
+}
+```
+
+The `message.jsx` component provides an input element for chat text as well as a button for sending the message.  Notice that if the disabled prop is true, the chat box and button are disabled.  The `doneMessage` function provides alternative message sending capability when the `return` key is pressed.  Notice that the `sendMsg` function calls the `sendMessage` method on the 'client' object received as one of the props (we'll see how that works in a minute), passing it both the prop name and the text contained in the message input box.
+
+```jsx
+import React from 'react';
+
+export function Message({disabled,name,client}) {
+
+  function doneMessage(e) {
+      if (e.key === 'Enter') {
+        sendMsg();
+      }
+  }
+
+  function sendMsg() {
+    client.sendMessage(name,document.querySelector('#new-msg').value);
+  }
+
+  return (
+    <main>
+        {disabled && (<fieldset id="chat-controls" disabled>
+            <legend>Chat</legend>
+            <input id="new-msg" type="text" />
+            <button>Send</button>
+        </fieldset>)}
+        {!disabled && (<fieldset id="chat-controls">
+            <legend>Chat</legend>
+            <input onKeyUp={(e)=>doneMessage(e)} id="new-msg" type="text" />
+            <button onClick={sendMsg}>Send</button>
+        </fieldset>)}
+    </main>
+  );
+}
+```
+
+Finally, the `messages.jsx` component provides a place for chat messages to be displayed.
+
+```jsx
+import React from 'react';
+
+export function Messages() {
+
+  return (
+    <main>
+        <div id="chat-text"></div>
+    </main>
+  );
+}
+```
+
+
 
 The JavaScript for the application provides the interaction with the DOM for creating and displaying messages, and manages the WebSockets in order to connect, send, and receive messages.
 
