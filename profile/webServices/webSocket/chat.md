@@ -69,7 +69,7 @@ export function Name({updateName}) {
 }
 ```
 
-The `message.jsx` component provides an input element for chat text as well as a button for sending the message.  Notice that if the disabled prop is true, the chat box and button are disabled.  The `doneMessage` function provides alternative message sending capability when the `return` key is pressed.  Notice that the `sendMsg` function calls the `sendMessage` method on the 'client' object received as one of the props (we'll see how that works in a minute), passing it both the prop name and the text contained in the message input box.
+The `message.jsx` component provides an input element for chat text as well as a button for sending the message.  Notice that if the `disabled prop` is true, the chat box and button are disabled.  The `doneMessage` function provides alternative message sending capability when the `return` key is pressed.  Notice that the `sendMsg` function calls the `sendMessage` method on the 'client' object which is received as one of the props (we'll see how that works in a minute), passing it both the prop `name` and the text contained in the message input box.
 
 ```jsx
 export function Message({disabled,name,client}) {
