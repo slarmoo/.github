@@ -29,6 +29,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
 - ☑ [The Console](essentials/console/console.md)
 - [Editors](essentials/editors/editors.md)
+-  ☑ [Startup AWS](webServers/startupAWS/startupAWS.md)
 
 ## HTML
 
