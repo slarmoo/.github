@@ -89,11 +89,6 @@ When we are done it will look like this.
 
 ```sh
 ├─ public                      # Static assets used in the app
-│   ├─ button-bottom-left.mp3
-│   ├─ button-bottom-right.mp3
-│   ├─ button-top-left.mp3
-│   ├─ button-top-right.mp3
-│   ├─ error.mp3
 │   ├─ favicon.ico
 │   └─ placeholder.jpg
 └─ src                         # Frontend React code
@@ -119,13 +114,13 @@ Now, in the components where you want to refer to the Bootstrap styles, you can 
 imported NPM package just like you would other CSS files.
 
 ```jsx
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 ```
 
 To use a React Bootstrap component, you would import and reference the specific component you want to use. Here is an example of using the `Button` component.
 
 ```jsx
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 
 export function NavButton({ text, url }) {
   const navigate = useNavigate();
@@ -177,11 +172,11 @@ Notice that the div with an ID of `root` is where all the content will be inject
 **`index.jsx`**
 
 ```jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./src/app";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './src/app';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
 
@@ -192,9 +187,9 @@ To begin the transformation to using React components in our application, we cre
 **app.jsx**
 
 ```jsx
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./app.css";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
 
 export default function App() {
   return <div className="body bg-dark text-light">App will display here</div>;
@@ -260,10 +255,7 @@ export default function App() {
       <footer className="bg-dark text-white-50">
         <div className="container-fluid">
           <span className="text-reset">Author Name(s)</span>
-          <a
-            className="text-reset"
-            href="https://github.com/webprogramming260/simon-react"
-          >
+          <a className="text-reset" href="https://github.com/webprogramming260/simon-react">
             Source
           </a>
         </div>
@@ -284,7 +276,7 @@ We now create React component files `login.jsx`, `play.jsx`, `scores.jsx`, and `
 Here is the `login.jsx` stub before any code is converted over. The other components are similar, but simply replace **login** with the appropriate component name.
 
 ```jsx
-import React from "react";
+import React from 'react';
 
 export function Login() {
   return (
@@ -317,11 +309,11 @@ With `app.jsx` containing the header and footer, and all the application view co
 To implement the router, we import the router component into the `App` component along with all of our view components.
 
 ```jsx
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import { Login } from "./login/login";
-import { Play } from "./play/play";
-import { Scores } from "./scores/scores";
-import { About } from "./about/about";
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Login } from './login/login';
+import { Play } from './play/play';
+import { Scores } from './scores/scores';
+import { About } from './about/about';
 ```
 
 Next we wrap all of the `App` component's previous elements with the `BrowserRouter` component so that the browser router can control links and rendered components for all of its child elements.
@@ -402,11 +394,7 @@ Notice that the `*` (default matcher) was added to handle the case where an unkn
 
 ```js
 function NotFound() {
-  return (
-    <main className="container-fluid bg-secondary text-center">
-      404: Return to sender. Address unknown.
-    </main>
-  );
+  return <main className="container-fluid bg-secondary text-center">404: Return to sender. Address unknown.</main>;
 }
 ```
 
@@ -433,7 +421,7 @@ In order for you to have a feel for how this is done we will demonstrate how thi
 Open the `scores.html` file and copy out the **main** element from the HTML. Paste it over the **main** element in the `scores.jsx` file. Rename the `class` attribute to `className`. Move the `scores.css` file to the `src/scores` component directory and import the css into the `scores.jsx` component file.
 
 ```jsx
-import "./scores.css";
+import './scores.css';
 ```
 
 Then delete the `scores.html` file. When this is all done the scores component should now render the same thing the old CSS deliverable rendered.
@@ -503,11 +491,6 @@ At this point we are done porting the CSS deliverable to React. The final Simon 
 ├─ index.jsx                   # Loads the top level component
 ├─ package.json                # Defines dependent modules
 ├─ public                      # Static assets used in the app
-│   ├─ button-bottom-left.mp3
-│   ├─ button-bottom-right.mp3
-│   ├─ button-top-left.mp3
-│   ├─ button-top-right.mp3
-│   ├─ error.mp3
 │   ├─ favicon.ico
 │   └─ placeholder.jpg
 └─ src                         # Frontend React code
