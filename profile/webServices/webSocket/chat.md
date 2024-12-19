@@ -116,21 +116,13 @@ export function Messages() {
 
 ## Front end chat client 
 
-The JavaScript for the application provides the interaction with the DOM for creating and displaying messages, and manages the WebSockets in order to connect, send, and receive messages.
+The `chatClient.js` file provides manages the WebSockets in order to connect, send, and receive messages.  It consists of a single `ChatClient` class, which is instantiated as a `Chatter` object that is exported (that object is imported by the `chat.jsx` component file where it is used as a prop, which is passed to the `message.jsx` component).
 
-Now we can set up our WebSocket. We want to be able to support both secure and non-secure WebSocket connections. To do this we look at the protocol that is currently being used as represented by the `window.location.protocol` variable. If it is non-secure HTTP then we set our WebSocket protocol to be non-secure WebSocket (`ws`). Otherwise we use secure WebSocket (`wss`). We use that to then connect the WebSocket to the same location that we loaded the HTML from by referencing the `window.location.host` variable.
+The class constructor sets up the WebSocket.  First, we look at the protocol that is currently being used, as represented by the `window.location.protocol` variable. If it is non-secure HTTP then we set our WebSocket protocol to be non-secure WebSocket (`ws`). Otherwise we use secure WebSocket (`wss`). Second, we use that protocol to then connect the WebSocket to the same location that we loaded the HTML from by referencing the `window.location.host` variable.
 
-We can notify the user that chat is ready to go by listening to the `onopen` event and appending some text to the display using the `appendMsg` function we created earlier.
+Third, we connect several listeners to the websocket: for `open`, `message` and `close` events.  For an `open` event, the socket will notify the user that chat is ready to go by appending some text to the display using the `appendMsg` function. For a `message` event, it displays it using the `appendMsg` function; notice that the message will be received as JSON and must be parsed into a JS object.  For a `close` event, we also display that to the user and disable the controls.
 
-When the WebSocket receives a message from a peer it displays it using the `appendMsg` function.
-
-And if the WebSocket closes for any reason we also display that to the user and disable the controls.
-
-We then create a function that will update the displayed messages by selecting the element with the `chat-text` ID and appending the new message to its HTML. Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
-
-When Enter is pressed the sendMessage function is called. This selects the text out of the `new-msg` element and the name out of the `my-name` element and sends that over the WebSocket. The value of the message element is then cleared so that it is ready for the next message.
-
-
+Besides its constructor, the class implement two functions: `sendMessage` calls appendMsg to update the local diplay with the new message, sends the `name` and `msg` parameters over the WebSocket (where they'll trigger a `message` event and be handled as discussed above), and clears the value of the message input element so that it is ready for the next message.  `appendMsg` updatse the displayed messages by selecting the element with the `chat-text` ID and prepending the new message to its HTML. Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
 
 ```jsx
 class ChatClient {
