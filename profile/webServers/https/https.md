@@ -147,7 +147,7 @@ If you have not already leased a domain name then go back and review that instru
 
 Secure your web server communication by configuring Caddy to request a certificate from Let's Encrypt for you domain name.
 
-Submit a URL for web server's hostname to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit a URL for web server's hostname to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
 

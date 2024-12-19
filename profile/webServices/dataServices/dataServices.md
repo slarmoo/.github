@@ -297,7 +297,7 @@ beds: 1
 
 First, set up your MongoDB Atlas database service. Then use the instructions above. Run the example program for testing that you have things set up correctly.
 
-When you are done, submit the hostname for your Atlas database cluster to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit the hostname for your Atlas database cluster to the Canvas assignment.
 
 Here is an example hostname:
 

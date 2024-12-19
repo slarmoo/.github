@@ -82,7 +82,7 @@ Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/GRGBqbw) do th
 1. Add your name in a h1 element to the `header` element.
 1. Add a hyperlink to the `footer` element to your GitHub repository.
 
-When you are done save your changes and submit your CodePen URL to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit your CodePen URL to the Canvas assignment.
 
 ![HTML structure assignment](htmlStructureAssignment.png)
 

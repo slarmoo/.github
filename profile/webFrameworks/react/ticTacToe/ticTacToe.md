@@ -8,4 +8,4 @@ The tic-tac-toe tutorial provided on the React website is a good way to get fami
 
 Complete the [tic-tac-toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe). Note that the tutorial uses `codesandbox.io` instead of CodePen. You will need to create an account there in order to save your fork of the project. Don't worry about following the tutorial exactly. Feel free to take things in whatever direction interests you. The point is to experiment and have fun.
 
-When you are done submit your CodeSandbox URL to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit your CodeSandbox URL to the Canvas assignment.

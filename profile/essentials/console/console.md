@@ -126,6 +126,6 @@ less other.txt # press `q` to exit less
 for i in {1..2}; do printf 'y' >> other.txt; done;
 ```
 
-Once you have done this, go over to the assignments page in Canvas and submit the text that results from running `cat other.txt`.
+_If assignment submission is required for this section of the course_: Submit in the Canvas assignment the text that results from running `cat other.txt`.
 
 The better you get at working with the console the more efficient your programming will be.

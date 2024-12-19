@@ -29,7 +29,7 @@ const Survey = () => {
         <span>Pick a color: </span>
         {/* Set the Survey color state as a the value of the color picker.
             When the color changes, the value will also be updated and rendered. */}
-        <input type='color' onChange={(e) => onChange(e)} value={color} />
+        <input type="color" onChange={(e) => onChange(e)} value={color} />
       </p>
     </div>
   );
@@ -52,7 +52,7 @@ ReactDOM.render(<Survey />, document.getElementById('root'));
 
 Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/NWzYzXE) and experiment. Try changing the input from using the color and radio button, to using an edit box that reactively displays the text as you type.
 
-When you are done submit your CodePen URL to the Canvas assignment.
+_4 for this section of the course_: When you are done submit your CodePen URL to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository `notes.md` with all of the things you learned and want to remember.
 
@@ -74,11 +74,7 @@ const Survey = () => {
 
       <p>
         <span>Type some text: </span>
-        <input
-          type='text'
-          onChange={(e) => onChange(e)}
-          placeholder='type here'
-        />
+        <input type="text" onChange={(e) => onChange(e)} placeholder="type here" />
       </p>
     </div>
   );

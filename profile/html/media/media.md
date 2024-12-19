@@ -104,4 +104,4 @@ This [CodePen](https://codepen.io/leesjensen/pen/OJEwgBa) demonstrates the diffe
 1. Change the video to something else.
 1. Change the canvas element to display a blue circle.
 
-When you are done save and submit your CodePen URL to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit your CodePen URL to the Canvas assignment.

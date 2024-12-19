@@ -127,7 +127,7 @@ Try the following:
 1. Add a new property to the Demo component that provides the background color for the component.
 2. Add another state variable that changes the color on a mouse over event.
 
-When you are done submit your CodePen URL to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit your CodePen URL to the Canvas assignment.
 
 ### 🧧 Possible solution
 
@@ -137,7 +137,7 @@ If you get stuck here is a possible solution.
 function App() {
   return (
     <div>
-      Function Style Component: <Demo who='function' initialColor='yellow' />
+      Function Style Component: <Demo who="function" initialColor="yellow" />
     </div>
   );
 }
@@ -156,7 +156,7 @@ const Demo = ({ who, initialColor }) => {
   }
 
   return (
-    <div className='component' onMouseOver={changeColor} style={{ background: color }}>
+    <div className="component" onMouseOver={changeColor} style={{ background: color }}>
       <p>
         Hello {outlook} {who}
       </p>

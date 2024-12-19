@@ -29,7 +29,7 @@ Now, let's explore the application files that Vite created. From the console, us
 
 | Directory    | File              | Purpose                                                                                                                   |
 | ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| ./           |                   |                                                                                                                                |
+| ./           |                   |                                                                                                                           |
 |              | index.html        | Primary page for the application. This is the starting point to load all of the JSX components beginning with `main.jsx`. |
 |              | package.json      | NPM definition for package dependencies and script commands. This is what maps `npm run dev` to actually start up Vite.   |
 |              | package-lock.json | Version constraints for included packages (do not edit this).                                                             |
@@ -93,6 +93,6 @@ After these changes, the application should look similar to this:
 
 ![React altered](reactAppAltered.png)
 
-When you are done, submit a screen capture of the altered application to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit a screen capture of the altered application to the Canvas assignment.
 
 Don't forget to update your GitHub startup repository `notes.md` with all of the things you learned and want to remember.

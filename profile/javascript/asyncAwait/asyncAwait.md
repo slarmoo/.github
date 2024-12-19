@@ -126,7 +126,7 @@ console.log('done');
 
 Fork this [CodePen](https://codepen.io/leesjensen/pen/RwJJKwj) that uses promises and convert it to use `async`/`await`.
 
-When you are done submit your CodePen URL to the Canvas assignment.
+_If assignment submission is required for this section of the course_: Submit your CodePen URL to the Canvas assignment.
 
 ### 🧧 Possible solution
 

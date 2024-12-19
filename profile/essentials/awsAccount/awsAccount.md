@@ -23,4 +23,4 @@ There are lots of ways to get free usage of services. For example, as of when th
 1. Create your AWS [account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 2. Create a browser bookmark for your AWS browser console page that contains your account ID. That way you will be able to access your account quickly.
 
-Once you are done, go over to Canvas and submit that you have completed this.
+_If assignment submission is required for this section of the course_: Submit in the Canvas assignment that you have completed this.
