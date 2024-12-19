@@ -13,7 +13,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [GitHub](essentials/gitHub/gitHub.md)
 - [Startup application](essentials/startup/startup.md)
 - ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
-- ☑ [Startup Specification](essentials/startupSpec/startupSpec.md)
+- 🦄 [Startup Specification](essentials/startupSpec/startupSpec.md)
 - [Let's play Simon](essentials/simon/simon.md)
 - ☑ [Discord](essentials/discord/discord.md)
 - [History of the web](essentials/history/history.md)
@@ -29,7 +29,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
 - ☑ [The Console](essentials/console/console.md)
 - [Editors](essentials/editors/editors.md)
-- ☑ [Startup AWS](webServers/startupAWS/startupAWS.md)
+- 🦄 [Startup AWS](webServers/startupAWS/startupAWS.md)
 
 ## HTML
 
@@ -39,7 +39,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Input](html/input/input.md)
 - ☑ [Media](html/media/media.md)
 - [Simon HTML](simon/simonHtml/simonHtml.md)
-- ☑ [Startup HTML](html/startupHtml/startupHtml.md)
+- 🦄 [Startup HTML](html/startupHtml/startupHtml.md)
 
 ## CSS
 
@@ -55,7 +55,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Debugging CSS](css/debuggingCss/debuggingCss.md)
 - ☑ [CSS frameworks](css/frameworks/frameworks.md)
 - [Simon CSS](simon/simonCss/simonCss.md)
-- ☑ [Startup CSS](css/startupCss/startupCss.md)
+- 🦄 [Startup CSS](css/startupCss/startupCss.md)
 
 ## JavaScript & Web frameworks
 
@@ -69,7 +69,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Router](webFrameworks/react/router/router.md)
 - [Toolchains](webFrameworks/react/toolChains/toolChains.md)
 - ☑ [Vite](webFrameworks/react/vite/vite.md)
-- [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
+- 🦄 [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
 - ☑ [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
 - [JavaScript Console](javascript/console/console.md)
 - [Types, operators, conditionals, and loops](javascript/typeConstruct/typeConstruct.md)
@@ -87,7 +87,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
 - [Hooks](webFrameworks/react/hooks/hooks.md)
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
-- ☑ [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
+- 🦄 [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
 
 ### Additional JavaScript reference topics
 
@@ -121,7 +121,7 @@ It is expected that you will start at the top of the list and work your way down
 - [SOP and CORS](webServices/cors/cors.md)
 - [Service design](webServices/design/design.md)
 - [Simon service](simon/simonService/simonService.md)
-- ☑ [Startup Service](webServices/startupService/startupService.md)
+- 🦄 [Startup Service](webServices/startupService/startupService.md)
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
 
 ## Data and authentication services
@@ -132,7 +132,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
 - [Account creation and login](webServices/login/login.md)
 - [Simon Login](simon/simonLogin/simonLogin.md)
-- ☑ [Startup Login](webServices/startupLogin/startupLogin.md)
+- 🦄 [Startup Login](webServices/startupLogin/startupLogin.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
 - [Endpoint testing](webServices/endpointTesting/endpointTesting.md)
 
@@ -142,7 +142,7 @@ It is expected that you will start at the top of the list and work your way down
 - [Debugging WebSocket](webServices/webSocket/debugging.md)
 - [WebSocket chat](webServices/webSocket/chat.md)
 - [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
-- ☑ [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
+- 🦄 [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
 
 ## Security
 
@@ -170,8 +170,9 @@ It is expected that you will start at the top of the list and work your way down
 ## Legend
 
 | Icon | Meaning                                             |
-| ---- | --------------------------------------------------- |
-| ⚠    | Important concepts, or pitfalls, to note            |
-| ☑    | Assignments that you must submit in Canvas          |
-| 🔑   | Required reading                                    |
-| 📖   | Deeper dive reading for when you want to learn more |
+| :--: | --------------------------------------------------- |
+|  ⚠   | Important concepts, or pitfalls, to note            |
+|  ☑   | Assignments                                         |
+|  🦄  | Startup deliverable                                 |
+|  🔑  | Required reading                                    |
+|  📖  | Deeper dive reading for when you want to learn more |

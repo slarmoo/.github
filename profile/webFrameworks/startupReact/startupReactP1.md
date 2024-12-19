@@ -46,7 +46,7 @@ For example,
 
 Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
 
-## ☑ Assignment
+## 🦄 Deliverable
 
 1. Port Simon CSS to use React as defined in the [Simon React Part 1](../../simon/simonReact/simonReactP1.md) instruction.
    1. Clone the Simon CSS repository to your development environment.

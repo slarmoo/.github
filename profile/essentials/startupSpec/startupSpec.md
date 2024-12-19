@@ -61,7 +61,7 @@ Here is an theoretical example of what a voter application might supply in a spe
 
 Take some time to properly learn how to use Markdown in your `README.md` and `notes.md` files. Read the [GitHub documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for examples on how to use Markdown. Refer to the [example design](https://github.com/webprogramming260/startup-example/blob/main) to see how to embed images. Make sure your images are in a format that browsers natively support such as JPG, GIF, or PNG.
 
-## ☑ Assignment
+## 🦄 Deliverable
 
 Update the `README.md` file for your startup GitHub repository that you created in the earlier instruction to include your startup specification. This should include an elevator pitch, key features, a description of how you will use each technology, and design images.
 

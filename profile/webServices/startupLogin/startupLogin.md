@@ -37,7 +37,7 @@ For example,
 
 Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
 
-## ☑ Assignment
+## 🦄 Deliverable
 
 1. Review and deploy Simon Login
    1. Clone the Simon Login repository to your development environment.

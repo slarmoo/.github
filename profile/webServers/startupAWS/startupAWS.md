@@ -22,7 +22,7 @@ Typing in one wrong character can cause your server to not respond or to crash w
 
 When you are finished, the placeholder for your startup will be available from `https://startup.yourdomainname`.
 
-## ☑ Assignment
+## 🦄 Deliverable
 
 1. [Set up your AWS account](../../essentials/awsAccount/awsAccount.md) using your byu.edu email address.
 1. [Create a new EC2 instance](../amazonWebServicesEc2/amazonWebServicesEc2.md) and access the server using `http://6.5.4.3` (where 6.5.4.3 is your IP address).

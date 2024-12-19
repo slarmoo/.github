@@ -51,19 +51,21 @@ For example,
 
 Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
 
-## ☑ Assignment
+## 🦄 Deliverable
 
 1. Review and deploy Simon Service
+
    1. Clone the Simon Service repository to your development environment.
-   ```
-   git clone https://github.com/webprogramming260/simon-service.git
-   ```
+      ```
+      git clone https://github.com/webprogramming260/simon-service.git
+      ```
    1. Run `npm install` in the root of the project.
    1. Open the project in VS Code and examine the application's use of Node.js, Express, and JavaScript to create service endpoints.
    1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing `index.js`). Set breakpoints in VS Code and step through the backend JavaScript.
    1. Start your frontend code using Vite by running `npm run dev`.
    1. Open your browser to http://localhost:5173 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+
 1. Convert your startup application into a web service using Node.js and Express.
 
    1. Create a service/index.js file for your back end
@@ -101,7 +103,7 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Make sure your application is available from your production environment.
    1. Upload the URL to your startup application to the Canvas assignment.
 
-1. This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develop, debug and deploy your startup as a service.
+This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develop, debug and deploy your startup as a service.
 
 ## Grading Rubric
 
