@@ -165,16 +165,6 @@ export { Chatter };
 
 ### DOM interaction
 
-We do not want to be able to send messages if the user has not specified a name. So we add an event listener on the name input and disable the chat controls if the name ever is empty.
-
-```js
-const chatControls = document.querySelector('#chat-controls');
-const myName = document.querySelector('#my-name');
-myName.addEventListener('keyup', (e) => {
-  chatControls.disabled = myName.value === '';
-});
-```
-
 We then create a function that will update the displayed messages by selecting the element with the `chat-text` ID and appending the new message to its HTML. Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
 
 ```js
