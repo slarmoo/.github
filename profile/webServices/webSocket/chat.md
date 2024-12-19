@@ -118,6 +118,51 @@ export function Messages() {
 
 The JavaScript for the application provides the interaction with the DOM for creating and displaying messages, and manages the WebSockets in order to connect, send, and receive messages.
 
+```jsx
+class ChatClient {
+
+  constructor() {
+    // Adjust the webSocket protocol to what is being used for HTTP
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    // Display that we have opened the webSocket
+    this.socket.onopen = (event) => {
+      this.appendMsg('system', 'websocket', 'connected');
+    };
+    // Display messages we receive from our friends
+    this.socket.onmessage = async (event) => {
+      const text = await event.data.text();
+      const chat = JSON.parse(text);
+      this.appendMsg('friend', chat.name, chat.msg);
+    };
+    // If the webSocket is closed then disable the interface
+    this.socket.onclose = (event) => {
+      this.appendMsg('system', 'websocket', 'disconnected');
+      document.querySelector('#name-controls').disabled = true;
+      document.querySelector('#chat-controls').disabled = true;
+    };
+  }
+
+  // Send a message over the webSocket
+  sendMessage(name, msg) {
+    this.appendMsg('me', 'me', msg);
+    this.socket.send(`{"name":"${name}", "msg":"${msg}"}`);
+    document.querySelector('#new-msg').value='';
+  }
+
+  // Create one long list of messages
+  appendMsg(cls, from, msg) {
+    const chatText = document.querySelector('#chat-text');
+    const chatEl = document.createElement('div');
+    chatEl.innerHTML = `<span class="${cls}">${from}</span>: ${msg}</div>`;
+    chatText.prepend(chatEl);
+  }
+}
+
+const Chatter = new ChatClient();
+export { Chatter };
+```
+
 ### DOM interaction
 
 We do not want to be able to send messages if the user has not specified a name. So we add an event listener on the name input and disable the chat controls if the name ever is empty.
