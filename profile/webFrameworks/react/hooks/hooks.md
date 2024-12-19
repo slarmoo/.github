@@ -5,12 +5,13 @@
 React hooks allow React function style components to be able to do everything that a class style component can do and more. Additionally, as new features are added to React they are including them as hooks. This makes function style components the preferred way of doing things in React. You have already seen one use of hooks to declare and update state in a function component with the `useState` hook.
 
 ```jsx
-function Clicker({initialCount}) {
+function Clicker({ initialCount }) {
   const [count, updateCount] = React.useState(initialCount);
   return <div onClick={() => updateCount(count + 1)}>Click count: {count}</div>;
 }
 
-ReactDOM.render(<Clicker initialCount={3} />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clicker initialCount={3} />);
 ```
 
 ## useEffect hook
@@ -26,7 +27,8 @@ function UseEffectHookDemo() {
   return <div>useEffectExample</div>;
 }
 
-ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<UseEffectHookDemo />);
 ```
 
 You can also take action when the component cleans up by returning a cleanup function from the function registered with `useEffect`. In the following example, every time the component is clicked the state changes and so the component is rerendered. This causes both the cleanup function to be called in addition to the hook function. If the function was not rerendered then only the cleanup function would be called.
@@ -45,7 +47,8 @@ function UseEffectHookDemo() {
   return <div onClick={() => updateCount(count + 1)}>useEffectExample {count}</div>;
 }
 
-ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<UseEffectHookDemo />);
 ```
 
 This is useful when you want to create side effects for things such as tracking when a component is displayed or hidden, or creating and disposing of resources.
@@ -71,7 +74,8 @@ function UseEffectHookDemo() {
   );
 }
 
-ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<UseEffectHookDemo />);
 ```
 
 If you specify an empty array `[]` as the hook dependency then it is only called when the component is first rendered.

@@ -35,6 +35,14 @@ function Demo() {
 <div>Component: <b>Hello world</b></div>
 ```
 
+You should note that you can use JSX even without a function. A simple variable representing JSX will work anyplace you would otherwise provide a component.
+
+```jsx
+const hello = <div>Hello</div>;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(hello);
+```
+
 ## Properties
 
 React components also allow you to pass information to them in the form of element properties. The component receives the properties in its constructor and then can display them when it renders.
@@ -64,54 +72,18 @@ function Demo(props) {
 In addition to properties, a component can have internal state. Component state is created by calling the `React.useState` hook function. The `useState` function returns a variable that contains the current state and a function to update the state. The following example creates a state variable called `clicked` and toggles the click state in the `updateClicked` function that gets called when the paragraph text is clicked.
 
 ```jsx
-const Clicker = () => {
+function App() {
   const [clicked, updateClicked] = React.useState(false);
 
-  const onClicked = (e) => {
+  function onClicked() {
     updateClicked(!clicked);
-  };
-
-  return <p onClick={(e) => onClicked(e)}>clicked: {`${clicked}`}</p>;
-};
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Clicker />);
-```
-
-You should note that you can use JSX even without a function. A simple variable representing JSX will work anyplace you would otherwise provide a component.
-
-```jsx
-const hello = <div>Hello</div>;
-
-ReactDOM.render(hello, document.getElementById('root'));
-```
-
-## Class style components
-
-In addition to the preferred `function style` components demonstrated above, React also supports `class style` components. However, you should note that the React team is moving away from the class style representation, and for that reason you should probably not use it. With that said, you are likely to see class style components and so you should be aware of the syntax. Below is the equivalent class style component for the `Clicker` component that we created above.
-
-The major difference is that properties are loaded on the constructor and state is set using a `setState` function on the component object.
-
-```jsx
-class Clicker extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      clicked: false,
-    };
   }
-  onClicked() {
-    this.setState({
-      clicked: !this.state.clicked,
-    });
-  }
-  render() {
-    return <p onClick={(e) => this.onClicked(e)}>clicked: {`${this.state.clicked}`}</p>;
-  }
+
+  return <p onClick={onClicked}>clicked: {`${clicked}`}</p>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Clicker />);
+root.render(<App />);
 ```
 
 ## Reactivity
@@ -142,8 +114,8 @@ function App() {
   );
 }
 
-const Demo = ({ who, initialColor }) => {
-  const [color, setColor] = React.useState(initialColor);
+function Demo(props) {
+  const [color, setColor] = React.useState(props.initialColor);
   const [outlook, setOutlook] = React.useState('beautiful');
 
   function changeOutlook() {
@@ -158,10 +130,13 @@ const Demo = ({ who, initialColor }) => {
   return (
     <div className="component" onMouseOver={changeColor} style={{ background: color }}>
       <p>
-        Hello {outlook} {who}
+        Hello {outlook} {props.who}
       </p>
       <button onClick={changeOutlook}>change</button>
     </div>
   );
-};
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 ```
