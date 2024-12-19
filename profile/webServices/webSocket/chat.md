@@ -6,9 +6,9 @@ With the understanding of what WebSockets are, the basics of using them from Nod
 
 In this example we will create a React front end that uses WebSockets and displays the resulting chat.  The React code for the client will be organized similarly to Simon and your Startup.  A backend Express server will forward the WebSocket communication from the different clients.
 
-## Front end chat client
+## Front end React
 
-The front end consists of an `index.html` file that provides an empty DOM into which React components will be injected.
+The front end consists of an `index.html` file that provides an empty DOM into which React components will be injected:
 
 ```html
 <!DOCTYPE html>
@@ -28,13 +28,9 @@ The front end consists of an `index.html` file that provides an empty DOM into w
 </html>
 ```
 
-an `index.jsx` file that injects the top-level `<App/>` component.
+and an `index.jsx` file that injects the top-level `<App/>` component:
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './src/app';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
@@ -42,10 +38,6 @@ root.render(<App />);
 The main component `app.jsx` simply injects the `chat.jsx` component and adds some simple styling.
 
 ```jsx
-import React from 'react';
-import { Chat } from './chat/chat';
-import './app.css';
-
 export default function App() {
   return <div className='body'><Chat /></div>;
 }
@@ -54,12 +46,6 @@ export default function App() {
 The `chat.jsx` component introduces a state variable for the user's name and injects three sub-compenents.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the users name; and the third is a `Chatter` object that implements the frontend websocket connection.
 
 ```jsx
-import React from 'react';
-import { Name } from './name';
-import { Message } from './message';
-import { Messages } from './messages';
-import { Chatter } from './chatClient';
-
 export function Chat() {
     const [name, setName] = React.useState('');
 
@@ -76,8 +62,6 @@ export function Chat() {
 The `name.jsx` component implements a simple input element that uses the passed in setter function to update the name variable (in the calling component) whenever text is entered in the input field.
 
 ```jsx
-import React from 'react';
-
 export function Name({updateName}) {
 
   return (
@@ -96,8 +80,6 @@ export function Name({updateName}) {
 The `message.jsx` component provides an input element for chat text as well as a button for sending the message.  Notice that if the disabled prop is true, the chat box and button are disabled.  The `doneMessage` function provides alternative message sending capability when the `return` key is pressed.  Notice that the `sendMsg` function calls the `sendMessage` method on the 'client' object received as one of the props (we'll see how that works in a minute), passing it both the prop name and the text contained in the message input box.
 
 ```jsx
-import React from 'react';
-
 export function Message({disabled,name,client}) {
 
   function doneMessage(e) {
@@ -130,8 +112,6 @@ export function Message({disabled,name,client}) {
 Finally, the `messages.jsx` component provides a place for chat messages to be displayed.
 
 ```jsx
-import React from 'react';
-
 export function Messages() {
 
   return (
@@ -142,7 +122,7 @@ export function Messages() {
 }
 ```
 
-
+##Front end chat client
 
 The JavaScript for the application provides the interaction with the DOM for creating and displaying messages, and manages the WebSockets in order to connect, send, and receive messages.
 
