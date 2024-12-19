@@ -78,7 +78,9 @@ The additional `NS` and `SOA` type records that were listed for your domain name
 
 The start of authority (`SOA`) record provides contact information about the owner of this domain name.
 
-## Lease a domain name
+## ☑ Assignment
+
+If you do not already own a domain name that you want to use for this course, then lease one from Route 53 now.
 
 1. Open the AWS browser console and log in.
 1. Use Route 53 to purchase a domain name.
@@ -94,5 +96,5 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 | I leased my domain name and set up DNS, but I can't hit it with the browser | Give it some time. Perhaps 10 minutes. Use `dig` or `nslookup` to see if the DNS records are publicly available. Check to see if the IP address is correct. Make sure the DNS records are correct.                                        |
 | The browser doesn't display my website                                      | Check that you are not trying to use `https`. Check that the browser hasn't inserted a `www` subdomain prefix. Some browsers will hide this. You must actually click on the domain name in the address bar to see what it is really using |
 | My root domain works, but not the `simon` or `startup` subdomains           | Check your DNS records. Make sure you created a wildcard `*.yourdomain` record.                                                                                                                                                           |
-| My `simon` or `startup` subdomains work, but not my root domain            | Check your DNS records. Make sure you have a root record.                                                                                                                                                                                 |
+| My `simon` or `startup` subdomains work, but not my root domain             | Check your DNS records. Make sure you have a root record.                                                                                                                                                                                 |
 | My domain name was working, but after 30 days it stopped.                   | Make sure you received and responded the the email from the registrar to verify your email address. Check your spam folder if you did not receive an email.                                                                               |

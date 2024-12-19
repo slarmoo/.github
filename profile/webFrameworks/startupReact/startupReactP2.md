@@ -1,5 +1,32 @@
 # Startup React Phase 2: JavaScript
 
+![Overview](../../technologies.png)
+
+## Prerequisites
+
+Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
+
+- [JavaScript Console](../../javascript/console/console.md)
+- [Types, operators, conditionals, and loops](../../javascript/typeConstruct/typeConstruct.md)
+- [String](../../javascript/string/string.md)
+- [Functions](../../javascript/functions/functions.md)
+- [Arrow functions](../../javascript/arrow/arrow.md)
+- ☑ [Arrays](../../javascript/array/array.md)
+- [Objects and classes](../../javascript/objectClasses/objectClasses.md)
+- [JSON](../../javascript/json/json.md)
+- [LocalStorage](../../javascript/localStorage/localStorage.md)
+- ☑ [Promises](../../javascript/promises/promises.md)
+- ☑ [Async/await](../../javascript/asyncAwait/asyncAwait.md)
+- [Destructuring](../../javascript/destructuring/destructuring.md)
+- [Debugging JavaScript](../../javascript/debuggingJavascript/debuggingJavascript.md)
+- ☑ [Reactivity](../react/reactivity/reactivity.md)
+- [Hooks](../react/hooks/hooks.md)
+- [Simon React P2: JavaScript](../../simon/simonReact/simonReactP2.md)
+
+Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.
+
+## Getting started
+
 With your startup ported to React it is time to implement all of the interactivity necessary to make your application functional. This includes writing significant JavaScript such that a user can fully interact with the application.
 
 Making your application interactive will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.

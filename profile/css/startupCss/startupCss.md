@@ -1,5 +1,28 @@
 # Startup CSS
 
+![Overview](../../technologies.png)
+
+## Prerequisites
+
+Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
+
+- [CSS introduction](../introduction/introduction.md)
+- [Selectors](../selectors/selectors.md)
+- [Declarations](../declarations/declarations.md)
+- [Fonts](../fonts/fonts.md)
+- [Animation](../animation/animation.md)
+- ☑ [CSS practice](../practice/practice.md)
+- [Responsive design](../responsive/responsive.md)
+  - [Grid](../grid/grid.md)
+  - ☑ [Flex](../flexbox/flexbox.md)
+- [Debugging CSS](../debuggingCss/debuggingCss.md)
+- ☑ [CSS frameworks](../frameworks/frameworks.md)
+- [Simon CSS](../../simon/simonCss/simonCss.md)
+
+Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.
+
+## Getting started
+
 Now that you have learned the basics of CSS, is time to style your startup application. The application doesn't have to do anything, but it should appear basically like what you expect your final application to look like. This includes styling of placeholder data that you expect to get from the user logging in, application data, and webSocket data. In the next deliverable you will add JavaScript to make your application functional.
 
 You must use the same startup GitHub repository that you created for the previous deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your CSS commit those changes and push them to GitHub. Make sure you have enough commits that you can demonstrate your ownership of the code and protect yourself from loss. Usually this will mean at least ten commits, but in reality you may have many more than that. Failing to fully document your work may result in the rejection of your submission.

@@ -1,5 +1,27 @@
 # Startup React Phase 1: HTML/CSS
 
+![Overview](../../technologies.png)
+
+## Prerequisites
+
+Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
+
+- [JavaScript introduction](../../javascript/introduction/introduction.md)
+- [Node.js](../../javascript/node/node.md)
+- [Debugging Node.js](../../javascript/debuggingNode/debuggingNode.md)
+- [Adding JavaScript to HTML](../../javascript/addingToHtml/addingToHtml.md)
+- [Web frameworks](../introduction/introduction.md)
+- [React](../react/introduction/introduction.md)
+- ☑ [Components](../react/components/components.md)
+- ☑ [Router](../react/router/router.md)
+- [Toolchains](../react/toolChains/toolChains.md)
+- ☑ [Vite](../react/vite/vite.md)
+- [Simon React P1: HTML/CSS](../../simon/simonReact/simonReactP1.md)
+
+Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.
+
+## Getting started
+
 Now that you understand what a web framework is and have practiced by converting Simon CSS into a React application, it is time to convert your application to use React. The process of converting code from one way of doing things to different way is called **porting**. Porting is a very common software engineering task and hopefully this deliverable will help you to start getting comfortable with the process.
 
 Porting your application to React will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.

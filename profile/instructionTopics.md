@@ -24,12 +24,12 @@ It is expected that you will start at the top of the list and work your way down
 - [Technology stack](essentials/techStack/techStack.md)
 - ☑ [Amazon Web Services - EC2](webServers/amazonWebServicesEc2/amazonWebServicesEc2.md)
 - [Domain names](webServers/domainNames/domainNames.md)
-- [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
+- ☑ [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
 - [Caddy](webServers/caddy/caddy.md)
 - ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
 - ☑ [The Console](essentials/console/console.md)
 - [Editors](essentials/editors/editors.md)
--  ☑ [Startup AWS](webServers/startupAWS/startupAWS.md)
+- ☑ [Startup AWS](webServers/startupAWS/startupAWS.md)
 
 ## HTML
 
@@ -116,6 +116,7 @@ It is expected that you will start at the top of the list and work your way down
 - ☑ [Fetch](webServices/fetch/fetch.md)
 - [Node web service](webServices/nodeWebService/nodeWebService.md)
 - ☑ [Express](webServices/express/express.md)
+- [Service daemons - PM2](webServices/pm2/pm2.md)
 - [Troubleshoot 502](webServices/troubleshoot502/troubleshoot502.md)
 - [SOP and CORS](webServices/cors/cors.md)
 - [Service design](webServices/design/design.md)
@@ -132,7 +133,6 @@ It is expected that you will start at the top of the list and work your way down
 - [Account creation and login](webServices/login/login.md)
 - [Simon Login](simon/simonLogin/simonLogin.md)
 - ☑ [Startup Login](webServices/startupLogin/startupLogin.md)
-- [Service daemons - PM2](webServices/pm2/pm2.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
 - [Endpoint testing](webServices/endpointTesting/endpointTesting.md)
 

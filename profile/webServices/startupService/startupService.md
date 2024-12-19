@@ -1,5 +1,30 @@
 # Startup Service
 
+![Overview](../../technologies.png)
+
+## Prerequisites
+
+Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
+
+- [The internet](../../webServers/internet/internet.md)
+- [Web servers](../../webServers/webServers/webServers.md)
+- [Web Services Introduction](../introduction/introduction.md)
+- [URL](../url/url.md)
+- [Ports](../ports/ports.md)
+- [HTTP](../http/http.md)
+- [Modules](javascript/modules/modules.md)
+- ☑ [Fetch](../fetch/fetch.md)
+- [Node web service](../nodeWebService/nodeWebService.md)
+- ☑ [Express](../express/express.md)
+- [Troubleshoot 502](../troubleshoot502/troubleshoot502.md)
+- [SOP and CORS](../cors/cors.md)
+- [Service design](../design/design.md)
+- [Simon service](../../simon/simonService/simonService.md)
+
+Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.
+
+## Getting started
+
 Now that you have learned how to use and create services, it is time to add backend support to your startup application. The main things you should focus on in this deliverable include serving up your frontend code through Node.js, calling third party services, and providing your own service endpoints.
 
 You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your HTML, CSS, and JavaScript, commit those changes and push them to GitHub. Make sure you have enough commits that you can demonstrate your ownership of the code and protect yourself from loss. Usually this will mean at least ten commits, but in reality you may have many more than that. Failing to fully document your work may result in the rejection of your submission.
@@ -40,6 +65,7 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Open your browser to http://localhost:5173 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
    1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
 1. Convert your startup application into a web service using Node.js and Express.
+
    1. Create a service/index.js file for your back end
    1. Add this code to service/index.js to allow your code to select a port to run on based on the command line parameters.
       ```js
@@ -74,6 +100,7 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Deploy your startup application to your production environment (your server) using "deployService.sh".
    1. Make sure your application is available from your production environment.
    1. Upload the URL to your startup application to the Canvas assignment.
+
 1. This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develop, debug and deploy your startup as a service.
 
 ## Grading Rubric
