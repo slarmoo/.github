@@ -283,10 +283,10 @@ setInterval(() => {
   connections.forEach((c) => {
     // Kill any connection that didn't respond to the ping last time
     if (!c.alive) {
-      c.ws.terminate();
+      c.socket.terminate();
     } else {
       c.alive = false;
-      c.ws.ping();
+      c.socket.ping();
     }
   });
 }, 10000);
@@ -296,20 +296,26 @@ In our `connection` handler we listen for the `pong` response and mark the conne
 
 ```js
 // Respond to pong messages by marking the connection alive
-ws.on('pong', () => {
+socket.on('pong', () => {
   connection.alive = true;
 });
 ```
 
 Any connection that did not respond will remain in the not alive state and get cleaned up on the next pass.
 
+### Vite.config.js
+
+The vite.config.js file in the examples root directory routes websocket traffic away from port 5137 (where vite is serving the front end) to port 3000 (where the backend is listening for chat traffice).  We have seen something similar before when we used vite to reroute our service endpoints while debugging in our development environment.  Here, again, this file is only used for debugging during development and is not pushed to the production environment.  Note that the file is routing traffic on the `/ws` path, which is why above, this path was included when we instantiated the `WebSocketServer` object in the frontend client code.
+
 # Experiment
 
 You can find the complete example described above in this [GitHub repository](https://github.com/webprogramming260/websocket-chat).
 
 1. Clone the repository.
-1. Run `npm install` from a console window in the example directory.
+1. Run `npm install` from a console window in the example root directory.
+1. Run `npm install` from a console window in the example service subdirectory.
 1. Open up the code in VS Code and review what it is doing.
-1. Run and debug the example by pressing `F5`. You may need to select node.js as the debugger the first time you run.
-1. Open multiple browser windows and point them to http://localhost:3000 and start chatting.
+1. Run and debug the example by pressing `F5` for the file `service/index.js`. You may need to select node.js as the debugger the first time you run.
+1. Run `npm run dev` from a console window in the example root directory. 
+1. Open multiple browser windows and point them to http://localhost:5137 and start chatting.
 1. Use the browser's debugger to view the WebSocket communication.
