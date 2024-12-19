@@ -202,7 +202,7 @@ socket.onclose = (event) => {
 };
 ```
 
-## Chat server
+## Back end chat server
 
 The chat server runs the web service, serves up the client code, manages the WebSocket connections, and forwards messages from the peers.
 
