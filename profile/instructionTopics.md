@@ -8,16 +8,18 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 - ☑ [Course Introduction](essentials/introduction/introduction.md)
 - ☑ [AWS account](essentials/awsAccount/awsAccount.md)
+- [Startup application](essentials/startup/startup.md)
+- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
+- [Let's play Simon](essentials/simon/simon.md)
+- 🦄 [Startup Specification](essentials/startupSpec/startupSpec.md)
 - [Demonstration](essentials/demo/demo.md)
 - [Git](essentials/git/git.md)
 - ☑ [GitHub](essentials/gitHub/gitHub.md)
-- [Startup application](essentials/startup/startup.md)
-- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
-- 🦄 [Startup Specification](essentials/startupSpec/startupSpec.md)
-- [Let's play Simon](essentials/simon/simon.md)
-- ☑ [Discord](essentials/discord/discord.md)
-- [History of the web](essentials/history/history.md)
 - [Asking questions](essentials/askingQuestions/askingQuestions.md)
+- ☑ [Discord](essentials/discord/discord.md)
+- ☑ [The Console](essentials/console/console.md)
+- [Editors](essentials/editors/editors.md)
+- [History of the web](essentials/history/history.md)
 
 ## Web server setup
 
@@ -27,8 +29,6 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
 - [Caddy](webServers/caddy/caddy.md)
 - ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
-- ☑ [The Console](essentials/console/console.md)
-- [Editors](essentials/editors/editors.md)
 - 🦄 [Startup AWS](webServers/startupAWS/startupAWS.md)
 
 ## HTML
@@ -50,8 +50,8 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Animation](css/animation/animation.md)
 - ☑ [CSS practice](css/practice/practice.md)
 - [Responsive design](css/responsive/responsive.md)
-  - [Grid](css/grid/grid.md)
-  - ☑ [Flex](css/flexbox/flexbox.md)
+- [Grid](css/grid/grid.md)
+- ☑ [Flex](css/flexbox/flexbox.md)
 - [Debugging CSS](css/debuggingCss/debuggingCss.md)
 - ☑ [CSS frameworks](css/frameworks/frameworks.md)
 - [Simon CSS](simon/simonCss/simonCss.md)
@@ -85,7 +85,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
 - 🦄 [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
 
-### Additional JavaScript enrichment topics
+### Enrichment topics
 
 - [String](javascript/string/string.md)
 - [Types, operators, conditionals, and loops](javascript/typeConstruct/typeConstruct.md)
