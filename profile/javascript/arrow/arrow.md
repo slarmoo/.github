@@ -43,40 +43,34 @@ Arrow functions also have special rules for the `return` keyword. The return key
 // RETURNS: 3
 ```
 
-## This pointer
+## Closure
 
-Next, arrow functions inherit the `this` pointer from the scope in which they are created. This makes what is known as a `closure`. A closure allows a function to continue referencing its creation scope, even after it has passed out of that scope. This can be tricky to wrap your head around, and we discuss it in detail when we later talk about JavaScript `scope`. For now consider the following example.
+Next, arrow functions inherit the `this` pointer from the scope in which they are created. This makes what is known as a `closure`. A closure allows a function to continue referencing its creation scope, even after it has passed out of that scope. This can be tricky to wrap your head around, but just remember that a closure includes a function and its creation scope.
 
-The function `makeClosure` returns an anonymous function using the arrow syntax. Notice that the `a` parameter is overridden, a new `b` variable is created, and both `a` and `b` are referenced in the arrow function. Because of that reference, they are both part of the closure for the returned function.
+The function `makeClosure` returns an anonymous function using the arrow syntax. The function create a variable from an initialization parameter. Both the parameter and the locally scoped variables are included in closure for the returned function.
 
 ```js
-function makeClosure(a) {
-  a = 'a2';
-  const b = 'b2';
-  return () => [a, b];
+function makeClosure(init) {
+  let closureValue = init;
+  return () => {
+    return `closure ${++closureValue}`;
+  };
 }
 ```
 
-Next, we declare the variables `a` and `b` at the top level scope, and call `makeClosure` with `a`.
+Now, when we call the **createClosure** function it returns the arrow function that includes the closure of the variables that existed when it was created. That is why the closure function can reference a variable that is declared outside of the scope that it executes in. We demonstrate this by calling the closure function multiple times with different resulting values.
 
 ```js
-const a = 'a';
-const b = 'b';
+const closure = makeClosure(0);
 
-const closure = makeClosure(a);
-```
-
-Now, when we call the `closure` function, it will output the values contained in the scope in which it was created, instead of the current values of the variables.
-
-```js
 console.log(closure());
-// OUTPUT: ['a2', 'b2']
+// OUTPUT: closure 1
 
-console.log(a, b);
-// OUTPUT: 'a' 'b'
+console.log(closure());
+// OUTPUT: closure 2
 ```
 
-Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page, because it can remember the values of variables when the function was created instead of what they are when they are executed.
+Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page. This is because it remembers the values of variables that were in scope when the function was created.
 
 ## Using arrow functions with React
 
@@ -150,7 +144,7 @@ function App() {
 }
 ```
 
-However, our nice concise code is now looking a little clunky as we put more logic inline for the **onClick** handler. We can fix this by moving the creation of the arrow function out of the JSX and in to the component body. At the same time let's reduce the duplication of code caused by the different counter operations and make it easy to add new operations by using the factory pattern to create our operations.
+However, our nice concise code is now looking a little clunky as we put more duplicated logic inline for the **onClick** handler. We can fix this by moving the creation of the arrow function out of the JSX and in to the component body. At the same time let's reduce the duplication of code caused by the different counter operations and make it easy to add new operations by using the factory pattern to create our operations. Notice the use of closure to reference the operation that is used by the arrow function that is returned from the factory.
 
 ```jsx
 function App() {
@@ -159,6 +153,7 @@ function App() {
   function counterOpFactory(op) {
     return () => setCount((prevCount) => op(prevCount));
   }
+
   const incOp = counterOpFactory((c) => c + 1);
   const decOp = counterOpFactory((c) => c - 1);
   const tenXOp = counterOpFactory((c) => c * 10);
