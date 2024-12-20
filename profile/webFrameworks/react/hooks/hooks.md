@@ -44,7 +44,9 @@ function UseEffectHookDemo() {
     };
   });
 
-  return <div onClick={() => updateCount(count + 1)}>useEffectExample {count}</div>;
+  return (
+    <div onClick={() => updateCount(count + 1)}>useEffectExample {count}</div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -53,9 +55,9 @@ root.render(<UseEffectHookDemo />);
 
 This is useful when you want to create side effects for things such as tracking when a component is displayed or hidden, or creating and disposing of resources.
 
-## Hook dependencies
+## UseEffect dependencies
 
-You can control what triggers a `useEffect` hook by specifying its dependencies. In the following example we have two state variables, but we only want the `useEffect` hook to be called when the component is initially called and when the first variable is clicked. To accomplish this you pass an array of dependencies as a second parameter to the `useEffect` call.
+By default, the **useEffect** callback is called every time the component is rendered. You can control what triggers a **useEffect** hook by specifying its dependencies. In the following example we have two state variables, but we only want the **useEffect** hook to be called when the component is initially called and when the first variable is clicked. To accomplish this you pass an array of dependencies as a second parameter to the **useEffect** call.
 
 ```jsx
 function UseEffectHookDemo() {
@@ -80,4 +82,4 @@ root.render(<UseEffectHookDemo />);
 
 If you specify an empty array `[]` as the hook dependency then it is only called when the component is first rendered.
 
-Note that hooks can only be used in function style components and must be called at the top scope of the function. That means a hook cannot be called inside of a loop or conditional. This restriction ensures that hooks are always called in the same order when a component is rendered.
+⚠ Note that hooks must be called at the top scope of the function and cannot be called inside of a loop or conditional. This restriction ensures that hooks are always called in the same order when a component is rendered.
