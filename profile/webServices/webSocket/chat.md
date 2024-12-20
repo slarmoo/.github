@@ -35,7 +35,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Chat />);
 ```
 
-The main component `chat.jsx` introduces a state variable for the user's name and injects three sub-compenents.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the user's name; and the third is a `Chatter` object that implements the frontend websocket connection.
+The main component `chat.jsx` introduces a state variable for the user's name and injects three sub-components.  Notice that the setter for the `name` variable is passed as a prop into the `<Name/>` component.  There are also three props passed into the `<Message/>` component.  The first checks to make sure that the name field is not blank; the second is the user's name; and the third is a `Chatter` object that implements the frontend websocket connection.
 
 ```jsx
 export default function Chat() {
@@ -122,7 +122,7 @@ The class constructor sets up the WebSocket.  First, we look at the protocol tha
 
 Third, we connect several listeners to the websocket: for `open`, `message` and `close` events.  For an `open` event, the socket will notify the user that chat is ready to go by appending some text to the display using the `appendMsg` function. For a `message` event, it displays it using the `appendMsg` function; notice that the message will be received as JSON and must be parsed into a JS object.  For a `close` event, we also display that to the user and disable the controls.
 
-Besides its constructor, the class implement two functions: `sendMessage` calls appendMsg to update the local diplay with the new message, sends the `name` and `msg` parameters over the WebSocket (where they'll trigger a `message` event and be handled as discussed above), and clears the value of the message input element so that it is ready for the next message.  `appendMsg` updatse the displayed messages by selecting the element with the `chat-text` ID and prepending the new message to its HTML. Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
+Besides its constructor, the class implement two functions: `sendMessage` calls appendMsg to update the local display with the new message, sends the `name` and `msg` parameters over the WebSocket (where they'll trigger a `message` event and be handled as discussed above), and clears the value of the message input element so that it is ready for the next message.  `appendMsg` update the displayed messages by selecting the element with the `chat-text` ID and prepending the new message to its HTML. Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
 
 ```jsx
 class ChatClient {
@@ -237,6 +237,12 @@ socketserver.on('connection', (socket) => {
       connections.splice(pos, 1);
     }
   });
+
+  // Respond to pong messages by marking the connection alive
+  socket.on('pong', () => {
+    connection.alive = true;
+  });
+});
 ```
 
 ### Keeping connections alive
@@ -273,6 +279,21 @@ Any connection that did not respond will remain in the not alive state and get c
 ## Vite.config.js
 
 The vite.config.js file in the example's root directory routes websocket traffic away from port 5137 (where vite is serving the front end) to port 3000 (where the backend is listening for chat traffic).  We have seen something similar before when we used vite to reroute our service endpoints while debugging in our development environment.  Here, again, this file is only used for debugging during development and is not pushed to the production environment.  Note that the file is routing traffic on the `/ws` path, which is why above, this path was included when we instantiated the `WebSocketServer` object in the frontend client code.
+
+```js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/ws': {
+        target: 'ws://localhost:3000',
+        ws: true,
+      },
+    },
+  },
+});
+```
 
 # Experiment
 
