@@ -70,8 +70,6 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
 - 🦄 [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
 - [JavaScript Console](javascript/console/console.md)
-- [Types, operators, conditionals, and loops](javascript/typeConstruct/typeConstruct.md)
-- [String](javascript/string/string.md)
 - [Functions](javascript/functions/functions.md)
 - [Arrow functions](javascript/arrow/arrow.md)
 - ☑ [Arrays](javascript/array/array.md)
@@ -89,6 +87,8 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 ### Additional JavaScript enrichment topics
 
+- [String](javascript/string/string.md)
+- [Types, operators, conditionals, and loops](javascript/typeConstruct/typeConstruct.md)
 - ☑ [Document object model (DOM)](javascript/dom/dom.md)
 - [Regular expressions](javascript/regularExpressions/regularExpressions.md)
 - [Rest and spread](javascript/restSpread/restSpread.md)

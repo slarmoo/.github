@@ -22,7 +22,7 @@ a.sort(function (v1, v2) {
 a.sort((v1, v2) => v1 - v2);
 ```
 
-Besides being compact, the `arrow` function syntax has some important semantic differences from the standard function syntax. This includes restrictions that arrow functions cannot be used for constructors or iterator generators.
+Besides being compact, the `arrow` function syntax has some important semantic differences from the standard function syntax. This includes how a return value is specified and the scope of variables that an arrow function can access.
 
 ## Return values
 
@@ -78,9 +78,107 @@ console.log(a, b);
 
 Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page, because it can remember the values of variables when the function was created instead of what they are when they are executed.
 
-## Putting it all together
+## Using arrow functions with React
 
-Now that you know how functions work in JavaScript, let's look at an example that demonstrates the use of functions, arrow functions, parameters, a function as a parameter (callback), closures, and browser event listeners. This is done by implementing a `debounce` function.
+React components are a great place to learn how to use arrow functions. The following is a simple React application that increments and decrements a counter when the appropriate buttons are pressed. This code uses standard JavaScript functions.
+
+```jsx
+function App() {
+  const [count, setCount] = React.useState(0);
+
+  function Increment() {
+    setCount(count + 1);
+  }
+
+  function Decrement() {
+    setCount(count - 1);
+  }
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={Increment}>n++</button>
+      <button onClick={Decrement}>n--</button>
+    </div>
+  );
+}
+```
+
+By using arrow functions the counter logic can be moved directly into the JSX. This makes the code much more concise and actually clarifying what the buttons are doing.
+
+```jsx
+function App() {
+  const [count, setCount] = React.useState(0);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>n++</button>
+      <button onClick={() => setCount(count - 1)}>n--</button>
+    </div>
+  );
+}
+```
+
+There is however, a problem with this code. Setting state with the function provided by the React useState function is asynchronous. That means you don't know if other, concurrently running code, has changed the value of **count** between when you read it and when you set it. That can lead to the counter being incremented multiple time in some cases or not at all in others. To fix this we need to supply an arrow function to the setCount function that sets the state instead of simply supplying the desired value. The following compares the two versions.
+
+```jsx
+// not thread safe
+setCount(count + 1);
+
+// thread safe
+setCount((prevCount) => prevCount + 1);
+```
+
+This works because React can control when the state variable is updated instead of allowing your code to do the read operation. Our counter app now looks like this:
+
+```jsx
+function App() {
+  const [count, setCount] = React.useState(0);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        n++
+      </button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>
+        n--
+      </button>
+    </div>
+  );
+}
+```
+
+However, our nice concise code is now looking a little clunky as we put more logic inline for the **onClick** handler. We can fix this by moving the creation of the arrow function out of the JSX and in to the component body. At the same time let's reduce the duplication of code caused by the different counter operations and make it easy to add new operations by using the factory pattern to create our operations.
+
+```jsx
+function App() {
+  const [count, setCount] = React.useState(0);
+
+  function counterOpFactory(op) {
+    return () => setCount((prevCount) => op(prevCount));
+  }
+  const incOp = counterOpFactory((c) => c + 1);
+  const decOp = counterOpFactory((c) => c - 1);
+  const tenXOp = counterOpFactory((c) => c * 10);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={incOp}>n++</button>
+      <button onClick={decOp}>n--</button>
+      <button onClick={tenXOp}>n*10</button>
+    </div>
+  );
+}
+```
+
+This results in concise, simple, thread safe code in a functional programming style.
+
+## An advanced example
+
+If you are still wanting more, take a look at this complex example that demonstrates the use of functions, arrow functions, parameters, a function as a parameter (callback), closures, and browser event listeners. This is done by implementing a `debounce` function.
 
 The point of a debounce function is to only execute a specified function once within a given time window. Any requests to execute the debounce function more frequently than this will case the time window to reset. This is important in cases where a user can trigger expensive events thousands of times per second. Without a debounce the performance of your application can greatly suffer.
 
