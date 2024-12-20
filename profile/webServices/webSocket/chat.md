@@ -237,11 +237,6 @@ socketserver.on('connection', (socket) => {
       connections.splice(pos, 1);
     }
   });
-
-  // Respond to pong messages by marking the connection alive
-  socket.on('pong', () => {
-    connection.alive = true;
-  });
 });
 ```
 
