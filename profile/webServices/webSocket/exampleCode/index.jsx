@@ -1,55 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-class ChatClient {
-  constructor() {
-    // Adjust the webSocket protocol to what is being used for HTTP
-    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-    // Display that we have opened the webSocket
-    this.socket.onopen = (event) => {
-      this.appendMsg('system', 'websocket', 'connected');
-    };
-    // Display messages we receive from our friends
-    this.socket.onmessage = async (event) => {
-      const text = await event.data.text();
-      const chat = JSON.parse(text);
-      this.appendMsg('friend', chat.name, chat.msg);
-    };
-    // If the webSocket is closed then disable the interface
-    this.socket.onclose = (event) => {
-      this.appendMsg('system', 'websocket', 'disconnected');
-      document.querySelector('#name-controls').disabled = true;
-      document.querySelector('#chat-controls').disabled = true;
-    };
-  }
-
-  // Send a message over the webSocket
-  sendMessage(name, msg) {
-    this.appendMsg('me', 'me', msg);
-    this.socket.send(`{"name":"${name}", "msg":"${msg}"}`);
-    document.querySelector('#new-msg').value = '';
-  }
-
-  // Create one long list of messages
-  appendMsg(cls, from, msg) {
-    const chatText = document.querySelector('#chat-text');
-    const chatEl = document.createElement('div');
-    chatEl.innerHTML = `<span class="${cls}">${from}</span>: ${msg}</div>`;
-    chatText.prepend(chatEl);
-  }
-}
-
-const Chatter = new ChatClient();
-
-function Chat() {
+function ChatApp({ webSocket }) {
   const [name, setName] = React.useState('');
 
   return (
     <main>
       <Name updateName={setName} />
-      <Message disabled={name === ''} name={name} client={Chatter} />
-      <Messages />
+      <Message name={name} webSocket={webSocket} />
+      <Conversation webSocket={webSocket} />
     </main>
   );
 }
@@ -71,7 +30,9 @@ function Name({ updateName }) {
   );
 }
 
-function Message({ disabled, name, client }) {
+function Message({ name, webSocket }) {
+  const [message, setMessage] = React.useState('');
+
   function doneMessage(e) {
     if (e.key === 'Enter') {
       sendMsg();
@@ -79,36 +40,94 @@ function Message({ disabled, name, client }) {
   }
 
   function sendMsg() {
-    client.sendMessage(name, document.querySelector('#new-msg').value);
+    webSocket.sendMessage(name, message);
+    setMessage('');
   }
 
+  const disabled = name === '' || !webSocket.connected;
   return (
     <main>
-      {disabled && (
-        <fieldset id='chat-controls' disabled>
-          <legend>Chat</legend>
-          <input id='new-msg' type='text' />
-          <button>Send</button>
-        </fieldset>
-      )}
-      {!disabled && (
-        <fieldset id='chat-controls'>
-          <legend>Chat</legend>
-          <input onKeyUp={(e) => doneMessage(e)} id='new-msg' type='text' />
-          <button onClick={sendMsg}>Send</button>
-        </fieldset>
-      )}
+      <fieldset id='chat-controls'>
+        <legend>Chat</legend>
+        <input
+          disabled={disabled}
+          onKeyDown={(e) => doneMessage(e)}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          type='text'
+        />
+        <button disabled={disabled || !message} onClick={sendMsg}>
+          Send
+        </button>
+      </fieldset>
     </main>
   );
 }
 
-function Messages() {
+function Conversation({ webSocket }) {
+  const [chats, setChats] = React.useState([]);
+  React.useEffect(() => {
+    webSocket.addObserver((chat) => {
+      setChats((prevMessages) => [...prevMessages, chat]);
+    });
+  }, [webSocket]);
+
+  const chatEls = chats.map((chat, index) => (
+    <div key={index}>
+      <span className={chat.event}>{chat.from}</span> {chat.msg}
+    </div>
+  ));
+
   return (
     <main>
-      <div id='chat-text'></div>
+      <div id='chat-text'>{chatEls}</div>
     </main>
   );
+}
+
+class ChatClient {
+  observers = [];
+  connected = false;
+
+  constructor() {
+    // Adjust the webSocket protocol to what is being used for HTTP
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+    // Display that we have opened the webSocket
+    this.socket.onopen = (event) => {
+      this.notifyObservers('system', 'websocket', 'connected');
+      this.connected = true;
+    };
+
+    // Display messages we receive from our friends
+    this.socket.onmessage = async (event) => {
+      const text = await event.data.text();
+      const chat = JSON.parse(text);
+      this.notifyObservers('received', chat.name, chat.msg);
+    };
+
+    // If the webSocket is closed then disable the interface
+    this.socket.onclose = (event) => {
+      this.notifyObservers('system', 'websocket', 'disconnected');
+      this.connected = false;
+    };
+  }
+
+  // Send a message over the webSocket
+  sendMessage(name, msg) {
+    this.notifyObservers('sent', 'me', msg);
+    this.socket.send(JSON.stringify({ name, msg }));
+  }
+
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+
+  notifyObservers(event, from, msg) {
+    this.observers.forEach((h) => h({ event, from, msg }));
+  }
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Chat />);
+root.render(<ChatApp webSocket={new ChatClient()} />);
