@@ -302,3 +302,5 @@ You can find the complete example described above in this [GitHub repository](ht
 1. Run `npm run dev` from a console window in the example root directory. 
 1. Open multiple browser windows and point them to http://localhost:5137 and start chatting.
 1. Use the browser's debugger to view the WebSocket communication.
+
+![WebSocket Chat](webSocketChat.png)
