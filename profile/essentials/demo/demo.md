@@ -27,8 +27,8 @@ The CSS is a bit more complex to cover in detail, but it basically handles the s
 ```css
 .card {
   background: #191c29;
-  width: var(--card-width);
-  height: var(--card-height);
+  width: 45vh;
+  height: 65vh;
   padding: 3px;
   position: relative;
   border-radius: 6px;
@@ -66,4 +66,4 @@ The rotating border is animated with the following CSS that tells what colors to
 }
 ```
 
-If you would like to see the complete code listing and play with the code you can do this on [CodePen](https://codepen.io/leesjensen/pen/KKBwYKR). We will talk a lot about how this code like this works and what CodePen is later in the instruction.
+If you would like to see the complete code listing and play with the code you can do this on [CodePen](https://codepen.io/leesjensen/pen/OPLgvvV?editors=0100). We will talk a lot about how this code like this works and what CodePen is later in the instruction.
