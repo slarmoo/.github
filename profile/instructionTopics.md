@@ -11,7 +11,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Startup application](essentials/startup/startup.md)
 - ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
 - [Let's play Simon](essentials/simon/simon.md)
-- 🦄 [Startup Specification](essentials/startupSpec/startupSpec.md)
+- 🚀 [Startup Specification](essentials/startupSpec/startupSpec.md)
 - [Demonstration](essentials/demo/demo.md)
 - [Git](essentials/git/git.md)
 - ☑ [GitHub](essentials/gitHub/gitHub.md)
@@ -29,7 +29,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
 - [Caddy](webServers/caddy/caddy.md)
 - ☑ [HTTPS, TLS, and certificates](webServers/https/https.md)
-- 🦄 [Startup AWS](webServers/startupAWS/startupAWS.md)
+- 🚀 [Startup AWS](webServers/startupAWS/startupAWS.md)
 
 ## HTML
 
@@ -39,7 +39,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Input](html/input/input.md)
 - ☑ [Media](html/media/media.md)
 - [Simon HTML](simon/simonHtml/simonHtml.md)
-- 🦄 [Startup HTML](html/startupHtml/startupHtml.md)
+- 🚀 [Startup HTML](html/startupHtml/startupHtml.md)
 
 ## CSS
 
@@ -55,7 +55,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Debugging CSS](css/debuggingCss/debuggingCss.md)
 - ☑ [CSS frameworks](css/frameworks/frameworks.md)
 - [Simon CSS](simon/simonCss/simonCss.md)
-- 🦄 [Startup CSS](css/startupCss/startupCss.md)
+- 🚀 [Startup CSS](css/startupCss/startupCss.md)
 
 ## JavaScript & Web frameworks
 
@@ -70,7 +70,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Toolchains](webFrameworks/react/toolChains/toolChains.md)
 - ☑ [Vite](webFrameworks/react/vite/vite.md)
 - ☑ [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
-- 🦄 [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
+- 🚀 [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
 - [JavaScript Console](javascript/console/console.md)
 - [Functions](javascript/functions/functions.md)
 - [Arrow functions](javascript/arrow/arrow.md)
@@ -83,7 +83,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [LocalStorage](javascript/localStorage/localStorage.md)
 - [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
-- 🦄 [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
+- 🚀 [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
 
 ### Enrichment topics
 
@@ -115,7 +115,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [SOP and CORS](webServices/cors/cors.md)
 - [Service design](webServices/design/design.md)
 - [Simon service](simon/simonService/simonService.md)
-- 🦄 [Startup Service](webServices/startupService/startupService.md)
+- 🚀 [Startup Service](webServices/startupService/startupService.md)
 - [Development and production environments](essentials/devAndProd/devAndProd.md)
 
 ## Data and authentication services
@@ -126,7 +126,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
 - [Account creation and login](webServices/login/login.md)
 - [Simon Login](simon/simonLogin/simonLogin.md)
-- 🦄 [Startup Login](webServices/startupLogin/startupLogin.md)
+- 🚀 [Startup Login](webServices/startupLogin/startupLogin.md)
 - [UI testing](webServices/uiTesting/uiTesting.md)
 - [Endpoint testing](webServices/endpointTesting/endpointTesting.md)
 
@@ -136,7 +136,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Debugging WebSocket](webServices/webSocket/debugging.md)
 - [WebSocket chat](webServices/webSocket/chat.md)
 - [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
-- 🦄 [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
+- 🚀 [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
 
 ## Security
 
@@ -161,6 +161,6 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 | :--: | --------------------------------------------------- |
 |  ⚠   | Important concepts, or pitfalls, to note            |
 |  ☑   | Assignments                                         |
-|  🦄  | Startup deliverable                                 |
+|  🚀  | Startup deliverable                                 |
 |  🔑  | Required reading                                    |
 |  📖  | Deeper dive reading for when you want to learn more |
