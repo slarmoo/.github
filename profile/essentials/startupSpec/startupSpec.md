@@ -6,9 +6,13 @@
 
 Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
 
-- [Git](../git/git.md)
-- ☑ [GitHub](../gitHub/gitHub.md)
-- [Startup application](../startup/startup.md)
+- ☑ [Course Introduction](essentials/introduction/introduction.md)
+- ☑ [AWS account](essentials/awsAccount/awsAccount.md)
+- [Startup application](essentials/startup/startup.md)
+- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
+- [Let's play Simon](essentials/simon/simon.md)
+- [Git](essentials/git/git.md)
+- ☑ [GitHub](essentials/gitHub/gitHub.md)
 
 Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.
 
@@ -63,7 +67,7 @@ Take some time to properly learn how to use Markdown in your `README.md` and `no
 
 ## 🚀 Deliverable
 
-Update the `README.md` file for your startup GitHub repository that you created in the earlier instruction to include your startup specification. This should include an elevator pitch, key features, a description of how you will use each technology, and design images.
+Update the `README.md` file for your startup GitHub repository that you created in the [earlier instruction](essentials/gitHub/gitHub.md) to include your startup specification. This should include an elevator pitch, key features, a description of how you will use each technology, and design images.
 
 You only need to provide the specification for this deliverable. Do not include information about future deliverables.
 
