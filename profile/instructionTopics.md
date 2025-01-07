@@ -48,11 +48,11 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Declarations](css/declarations/declarations.md)
 - [Fonts](css/fonts/fonts.md)
 - [Animation](css/animation/animation.md)
+- [Debugging CSS](css/debuggingCss/debuggingCss.md)
 - ☑ [CSS practice](css/practice/practice.md)
 - [Responsive design](css/responsive/responsive.md)
 - [Grid](css/grid/grid.md)
 - ☑ [Flex](css/flexbox/flexbox.md)
-- [Debugging CSS](css/debuggingCss/debuggingCss.md)
 - ☑ [CSS frameworks](css/frameworks/frameworks.md)
 - [Simon CSS](simon/simonCss/simonCss.md)
 - 🚀 [Startup CSS](css/startupCss/startupCss.md)
@@ -60,9 +60,10 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 ## JavaScript & Web frameworks
 
 - [JavaScript introduction](javascript/introduction/introduction.md)
-- [Node.js](javascript/node/node.md)
-- [Debugging Node.js](javascript/debuggingNode/debuggingNode.md)
 - [Adding JavaScript to HTML](javascript/addingToHtml/addingToHtml.md)
+- [Node.js](javascript/node/node.md)
+- [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
+- [Debugging Node.js](javascript/debuggingNode/debuggingNode.md)
 - [Web frameworks](webFrameworks/introduction/introduction.md)
 - [React](webFrameworks/react/introduction/introduction.md)
 - ☑ [Components](webFrameworks/react/components/components.md)
@@ -81,7 +82,6 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
 - [JSON](javascript/json/json.md)
 - [LocalStorage](javascript/localStorage/localStorage.md)
-- [Debugging JavaScript](javascript/debuggingJavascript/debuggingJavascript.md)
 - [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
 - 🚀 [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
 
