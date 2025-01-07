@@ -14,12 +14,12 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [Git](essentials/git/git.md)
 - ☑ [GitHub](essentials/gitHub/gitHub.md)
 - 🚀 [Startup Specification](essentials/startupSpec/startupSpec.md)
-- [Demonstration](essentials/demo/demo.md)
 - [Asking questions](essentials/askingQuestions/askingQuestions.md)
 - ☑ [Discord](essentials/discord/discord.md)
 - ☑ [The Console](essentials/console/console.md)
 - [Editors](essentials/editors/editors.md)
 - [History of the web](essentials/history/history.md)
+- [Demonstration](essentials/demo/demo.md)
 
 ## Web server setup
 
