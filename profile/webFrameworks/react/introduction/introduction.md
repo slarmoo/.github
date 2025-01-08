@@ -124,8 +124,8 @@ function App() {
 
   return (
     <div
-     onClick={handleClick}
-     style={{ backgroundColor: bgColor, height:'100vh', font: 'bold 20vh Arial`,  display: 'flex',  alignItems: 'center',  justifyContent: 'center'}}
+      onClick={handleClick}
+      style={{ backgroundColor: bgColor, height: '100vh', font: 'bold 20vh Arial', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
     >
       <div> Hello React </div>
     </div>

@@ -13,32 +13,146 @@ The following show how the router toggles between content as a user clicks on th
 A basic implementation of the router consists of a `BrowserRouter` component that encapsulates the entire application and controls the routing action. The `Link`, or `NavLink`, component captures user navigation events and modifies what is rendered by the `Routes` component by matching up the `to` and `path` attributes.
 
 ```jsx
-// Inject the router into the application root DOM element
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  // BrowserRouter component that controls what is rendered
-  // NavLink component captures user navigation requests
-  // Routes component defines what component is routed to
-  <BrowserRouter>
-    <div className='app'>
-      <nav>
-        <NavLink to='/'>Home</Link>
-        <NavLink to='/about'>About</Link>
-        <NavLink to='/users'>Users</Link>
-      </nav>
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="app">
+        <nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/users">Users</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </nav>
 
-      <main>
-        <Routes>
-          <Route path='/' element={<Home />} exact />
-          <Route path='/about' element={<About />} />
-          <Route path='/users' element={<Users />} />
-          <Route path='*' element={<Navigate to='/' replace />} />
-        </Routes>
-      </main>
-    </div>
-  </BrowserRouter>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} exact />
+            <Route path="/about" element={<About />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+
+        <footer>Footer</footer>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
 );
 ```
+
+## Router example
+
+You can enhance the simple [Hello World React](../introduction/introduction.md#react-hello-world) app that you created in previous instruction to include a router by first installing the React Router Dom dependency.
+
+```sh
+npm install react-router-dom
+```
+
+Now you can replace the JSX for the application found in `index.jsx` to be the following code that contains two components. The **App** component with the router and a **Page** component that is routed to when a link is pressed.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+
+import './styles.css';
+
+function Page({ color }) {
+  return (
+    <div className="page" style={{ backgroundColor: color }}>
+      <h1>{color}</h1>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="app">
+        <nav>
+          <NavLink to="/">Red</NavLink>
+          <NavLink to="/green">Green</NavLink>
+          <NavLink to="/blue">Blue</NavLink>
+        </nav>
+
+        <main>
+          <Routes>
+            <Route path="/" element={<Page color="red" />} exact />
+            <Route path="/green" element={<Page color="green" />} />
+            <Route path="/blue" element={<Page color="blue" />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+
+Finally, add a little CSS and you should have a nice looking example of how React routing works.
+
+```css
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  font-size: 2em;
+  background-color: #f1f1f1;
+}
+
+a {
+  margin: 0 10px;
+  color: rgb(76, 146, 171);
+  text-decoration: none;
+  border: 1px solid rgb(76, 146, 171);
+  padding: 10px;
+}
+
+a:hover {
+  background-color: rgb(76, 146, 171);
+  color: #f1f1f1;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.page {
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 10vw;
+  background-color: #f9f9f9;
+}
+```
+
+Notice that as you click on the different navigation links the URL of the application changes to match the route. This is happens because the Routes component plugs into the browser's location API and modifies the displayed path so that it gives the appearance that a different resource is being displayed, when in reality the DOM is simply being manipulated to display a different React component.
+
+![Router coded example](routerCodedExample.gif)
 
 ## ☑ Assignment
 

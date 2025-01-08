@@ -59,6 +59,8 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 ## JavaScript & Web frameworks
 
+### Part 1: HTML/CSS components and routing
+
 - [JavaScript introduction](javascript/introduction/introduction.md)
 - [Adding JavaScript to HTML](javascript/addingToHtml/addingToHtml.md)
 - [Node.js](javascript/node/node.md)
@@ -72,6 +74,9 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Vite](webFrameworks/react/vite/vite.md)
 - ☑ [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
 - 🚀 [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
+
+### Part 2: Reactivity
+
 - [JavaScript Console](javascript/console/console.md)
 - [Functions](javascript/functions/functions.md)
 - [Arrow functions](javascript/arrow/arrow.md)
