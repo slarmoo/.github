@@ -60,7 +60,7 @@ Then open the `package.json` file, found in the root of the project, that was cr
 
 ## Reorganize the code
 
-The simon-css repository starts contains code that is structured looks like this:
+The simon-css repository starts with code that is structured like this:
 
 ```sh
 ├─ LICENSE
