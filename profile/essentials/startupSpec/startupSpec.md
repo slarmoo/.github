@@ -67,7 +67,7 @@ Take some time to properly learn how to use Markdown in your `README.md` and `no
 
 ## 🚀 Deliverable
 
-Update the `README.md` file for your startup GitHub repository that you created in the [earlier instruction](essentials/gitHub/gitHub.md) to include your startup specification. This should include an elevator pitch, key features, a description of how you will use each technology, and design images.
+Update the `README.md` file for your startup GitHub repository that you created in the [earlier instruction](../gitHub/gitHub.md) to include your startup specification. This should include an elevator pitch, key features, a description of how you will use each technology, and design images.
 
 You only need to provide the specification for this deliverable. Do not include information about future deliverables.
 

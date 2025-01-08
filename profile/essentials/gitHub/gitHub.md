@@ -108,70 +108,11 @@ Fast-forward
 
 After running the pull command, your development clone and the GitHub clone are now the same.
 
-## Handling merge conflicts
-
-By pushing and pulling often, everyone keeps an up to date copy of the repository. This is important so that you don't run into merging problems caused by two peers modifying the exact same code. Merging only becomes something you have to deal with when two people modify the exact same line of code. However, when you have two peers working together you are always going to have a merge conflict at some point in time and so let's discuss how to handle this.
-
-We can simulate a merge conflict by editing a line in a file and committing the file in your development environment, and before pushing that change, modifying the same line using GitHub. Now, run `fetch` and `status` again in your console.
-
-```sh
-➜  git fetch
-➜  git status
-Your branch and 'origin/main' have diverged,
-and have 1 and 1 different commits each, respectively.
-  (use "git pull" to merge the remote branch into yours)
-```
-
-This shows that the cloned repositories have diverged from each other. Normally this is fine and we can just push and pull the different commits, but if we do that this time, we will get an error because the exact same line was changed in the two different commits. Git doesn't know which change to keep.
-
-```sh
-➜  git pull
-
-Auto-merging test.md
-CONFLICT (content): Merge conflict in test.md
-Automatic merge failed; fix conflicts and then commit the result.
-```
-
-We now need to resolve the merge conflict that it says has happened with our `test.md` file. If you are using VS Code with the GitLens extension installed it will visually walk you through this process. However, so you can understand what is going on, we will do this using the console. The first step is to open up `test.md` in an editor. You will see that git has injected lines that highlight where the conflict is. Both your local change and the change made on GitHub are included.
-
-```diff
-An example startup application
-
-Change from my development environment!
-
-Change from GitHub
-
-<<<<< HEAD
-Conflict change made in development environment
-=======
-Conflict change made in GitHub
->>>>> b9f4c53c91eff509993d7291e60148f903827de0
-```
-
-We resolve the conflict by modifying the file to remove the textual conflict delimiters and modifying the file to keep the changes we want. When we are done editing, our file contains what we want from both commits.
-
-```md
-# startup-example
-
-An example startup application
-
-Change from my development environment and from GitHub
-```
-
-Now that the conflict is resolved we commit our resolution and push up the result.
-
-```sh
-➜  git commit -am "merge(notes) combined both edits"
-➜  git push
-```
-
-If you go look at the file again on GitHub you will see the additional commit in the history and the result of our merge in the file content.
-
-## README.md
+## GitHub readme.md
 
 Keeping notes of what you have learned and things that you want to remember is an essential step for accelerating your web programming skills. GitHub supports the inclusion of a file with the special name `README.md` in the root of your repository. The `README.md` file is displayed in GitHub when you view your repository. This file uses `Markdown` syntax. If you have not used Markdown before, then take some time to [learn how to use it](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). For this course you will use your startup application's `README.md` file to describe the modifications and alterations that you make to your startup.
 
-You will also create another Markdown file named `notes.md` to track what you have learned in the course. You can use anything that you put in your `notes.md` file when taking the midterm or final.
+In this course you will use the `readme.md` to record your progress on the startup application deliverables. You will also use another Markdown file named `notes.md` to track what you have learned in the course. You can use anything that you put in your `notes.md` file when taking the midterm or final.
 
 ## Forks
 
@@ -194,7 +135,7 @@ GitHub allows you to create a fork of any repository on GitHub. You just push th
 
 In this class, if you notice something in the instruction that needs to be enhanced, feel free to fork the repo, and make a pull request. This will give you experience with this practice and improve the instruction for others at the same time. Plus your name will be included as a contributor. How cool is that!
 
-## ☑ Assignment
+## Creating a history of your work
 
 The majority of your course work will revolve around your Startup Application GitHub repository. In this assignment you will create your repository. For each of your Startup deliverables you will add to, and enhance, the content you have created in a GitHub repository. The commit history that you establish through the course serves the following valuable purposes:
 
@@ -219,12 +160,19 @@ For all of the above reasons, it is required that you use GitHub for your startu
 
 If you do not have the required number of commits, or if they are all clustered in a single burst of activity, then you will need to justify the discrepancy before the deliverable will be accepted.
 
+## ☑ Assignment
+
 Do the following steps to set up your `Startup application repository` in GitHub and clone it to your development environment.
 
 ### Creating Your Startup GitHub Repository
 
-1. Open your web browser to [GitHub](https://github.com)
-1. Create a GitHub repository for your startup project
+1. Open your web browser to the course [template repository](https://github.com/webprogramming260/startup)
+1. Use the template to create a GitHub repository for your startup project
+
+   1. Click on the `Use this template` button.
+   1. Choose the `Create a new repository` option.
+
+      ![alt text](useTemplate.png)
 
    1. Name it `startup`.
    1. Mark the repository as `public` so that it can be reviewed by the TAs and instructors.
@@ -233,7 +181,7 @@ Do the following steps to set up your `Startup application repository` in GitHub
       ![create repo](create-repo.png)
 
 1. Open a command line console window.
-1. Clone the repository to your development environment. Make sure you put the clone of the repository in a directory that you use for this class's coursework. These commands will look something like the following.
+1. Clone your newly created repository to your development environment. Make sure you put the clone of the repository in a directory that you use for this class's coursework. These commands will look something like the following.
 
    ```sh
    cd ~/byu/cs260
@@ -241,21 +189,18 @@ Do the following steps to set up your `Startup application repository` in GitHub
    cd startup
    ```
 
-### Practice using Git and resolving conflicts
+### Practice using Git
 
-1. Open up the repository directory in VS Code and create a file named `conflictTest.md`. Add some text to the file.
-1. Use the Git functionality of VS Code to add `conflictTest.md` to Git, commit your changes, and push them to GitHub.
-1. In GitHub modify your `conflictTest.md` file and commit the changes.
+1. Open up the repository directory in VS Code and modify the `readme.md` and `notes.md` file.create a file. Commit your changes, and push them to GitHub.
+1. Using the GitHub web console modify your `readme.md` file and commit the changes.
 1. In VS Code pull down and review the changes.
-1. Make another change to the `conflictTest.md` file on GitHub and commit the change.
-1. Before you pull the changes to your development environment, change the same line in the `conflictTest.md` file and commit the change.
-1. Attempt to pull the GitHub changes to your development environment. Note and resolve the merge conflict. Commit the merged changes. Push the merge commit.
-1. On GitHub observe the resolved merge.
 
-### Create your notes.md
+### Your notes.md
+
+Your notes file is meant as a place to remember all the things you have learned from this course. You should modify this file frequently.
 
 1. Read the GitHub documentation about the basics of [writing markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-1. Create a file in your repository called `notes.md`. You can use the contents of this file while taking the midterm and final exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `.md` files and reference them from your `notes.md` file in order make it easier to organize your content.
-1. Make your first notes in your `notes.md` file about what you learned from this assignment. Consider adding a link in your `README.md` file to your `notes.md` file. Commit and push your notes to GitHub.
+1. Access the file in your repository called `notes.md`. You can use the contents of this file on any exam. As you modify your `notes.md` file throughout the class. Make sure that you keep it organized and clean. You can add multiple `.md` files and reference them from your `notes.md` file in order make it easier to organize your content.
+1. Make your first notes in your `notes.md` file about what you learned from this assignment. Commit and push your notes to GitHub.
 
 _If your section of this course requires that you submit assignments for grading_: Submit in the Canvas assignment the URL of your GitHub startup repository.
