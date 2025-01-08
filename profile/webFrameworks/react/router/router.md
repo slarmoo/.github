@@ -2,64 +2,23 @@
 
 🔑 **Required reading**: [React Router DOM Tutorial](https://blog.webdevsimplified.com/2022-07/react-router/)
 
-A web framework router provides essential functionality for single-page applications that otherwise would have been handled by rendering multiple HTML pages. With a multiple-webpage application the headers, footers, navigation, and common components must be either duplicated in each HTML page, or injected before the server sends the page to the browser. With a single page application, the browser only loads one HTML page and then JavaScript is used to manipulate the DOM and give it the appearance of multiple pages. The router defines the routes a user can take through the application, and automatically manipulates the DOM to display the appropriate framework components. This has the advantage of being able to store state as the user interacts with the page and not having to continually go to the server to get new HTML pages.
+A web framework router provides essential functionality for single-page applications that otherwise would have been handled by rendering multiple HTML pages. With a multiple-webpage application the headers, footers, navigation, and common components must be either duplicated in each HTML page, or injected before the server sends the page to the browser.
+
+![Multi page app](multipageapp.png)
+
+With a single page application, the browser only loads one HTML page and then JavaScript is used to manipulate the DOM and give it the appearance of multiple pages. The router defines the routes a user can take through the application, and automatically manipulates the DOM to display the appropriate framework components. This has the advantage of being able to store state as the user interacts with the page and not having to continually go to the server to get new HTML pages.
+
+![Single page app](singlepageapp.png)
 
 React does not have a standard router package, and there are many that you can choose from. We will use [react-router-dom](https://www.npmjs.com/package/react-router-dom). The simplified routing functionality of React-router-dom derives from the project [react-router](https://www.npmjs.com/package/react-router) for its core functionality. Do not confuse the two when reading tutorials and documentation.
 
 The following show how the router toggles between content as a user clicks on the header elements.
 
-![React Router](routerExample.gif)
+![React Router](routerPenExample.gif)
 
-A basic implementation of the router consists of a `BrowserRouter` component that encapsulates the entire application and controls the routing action. The `Link`, or `NavLink`, component captures user navigation events and modifies what is rendered by the `Routes` component by matching up the `to` and `path` attributes.
-
-```jsx
-function App() {
-  return (
-    <BrowserRouter>
-      <div className="app">
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/users">Users</NavLink>
-          <NavLink to="/about">About</NavLink>
-        </nav>
-
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} exact />
-            <Route path="/about" element={<About />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
-
-        <footer>Footer</footer>
-      </div>
-    </BrowserRouter>
-  );
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
-);
-```
-
-## Router example
-
-You can enhance the simple [Hello World React](../introduction/introduction.md#react-hello-world) app that you created in previous instruction to include a router by first installing the React Router Dom dependency.
-
-```sh
-npm install react-router-dom
-```
-
-Now you can replace the JSX for the application found in `index.jsx` to be the following code that contains two components. The **App** component with the router and a **Page** component that is routed to when a link is pressed.
+A basic implementation of the router consists of a `BrowserRouter` component that encapsulates the entire application and controls the routing action. The `Link`, or `NavLink`, component captures user navigation events and modifies what is rendered by the `Routes` component by matching up the `to` and `path` attributes. The example contains two components. The **App** component with the router and a **Page** component that is routed to when a link is pressed.
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-
-import './styles.css';
-
 function Page({ color }) {
   return (
     <div className="page" style={{ backgroundColor: color }}>
@@ -94,7 +53,23 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
 
-Finally, add a little CSS and you should have a nice looking example of how React routing works.
+## Router example
+
+You can enhance the simple [Hello World React](../introduction/introduction.md#react-hello-world) app that you created in previous instruction to include a router by first installing the React Router Dom dependency.
+
+```sh
+npm install react-router-dom
+```
+
+Now you can replace the JSX for the application found in `index.jsx` with the router code given above. You will need to add the reference to the route dom import as well as the CSS that is used for making things look pretty.
+
+```jsx
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+
+import './styles.css';
+```
+
+Place the following CSS in a new file named `styles.css`.
 
 ```css
 * {
@@ -116,7 +91,7 @@ nav {
   align-items: center;
   width: 100%;
   height: 10vh;
-  font-size: 2em;
+  font-size: 1em;
   background-color: #f1f1f1;
 }
 
@@ -149,6 +124,8 @@ main {
   background-color: #f9f9f9;
 }
 ```
+
+Now you are ready to start up the application by running `npm run dev` and opening up the application in your browser.
 
 Notice that as you click on the different navigation links the URL of the application changes to match the route. This is happens because the Routes component plugs into the browser's location API and modifies the displayed path so that it gives the appearance that a different resource is being displayed, when in reality the DOM is simply being manipulated to display a different React component.
 
