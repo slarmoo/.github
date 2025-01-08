@@ -1,4 +1,4 @@
-# Startup React Phase 1: HTML/CSS
+# Startup React Phase 1: Routing
 
 ![Overview](../../technologies.png)
 
@@ -16,7 +16,7 @@ Before you start work on this deliverable make sure you have read all of the pro
 - ☑ [Router](../react/router/router.md)
 - [Toolchains](../react/toolChains/toolChains.md)
 - ☑ [Vite](../react/vite/vite.md)
-- [Simon React P1: HTML/CSS](../../simon/simonReact/simonReactP1.md)
+- [Simon React P1: Routing](../../simon/simonReact/simonReactP1.md)
 
 Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.
 

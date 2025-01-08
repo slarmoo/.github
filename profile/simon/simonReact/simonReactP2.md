@@ -1,4 +1,4 @@
-# Simon React Phase 2: JavaScript
+# Simon React Phase 2: Reactivity
 
 ![Simon](../simon.png)
 

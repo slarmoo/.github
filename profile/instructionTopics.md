@@ -72,8 +72,8 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Router](webFrameworks/react/router/router.md)
 - [Toolchains](webFrameworks/react/toolChains/toolChains.md)
 - ☑ [Vite](webFrameworks/react/vite/vite.md)
-- ☑ [Simon React P1: HTML/CSS](simon/simonReact/simonReactP1.md)
-- 🚀 [Startup React P1](webFrameworks/startupReact/startupReactP1.md)
+- ☑ [Simon React P1: Routing](simon/simonReact/simonReactP1.md)
+- 🚀 [Startup React P1: Routing](webFrameworks/startupReact/startupReactP1.md)
 
 ### Part 2: Reactivity
 
@@ -87,8 +87,8 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
 - [JSON](javascript/json/json.md)
 - [LocalStorage](javascript/localStorage/localStorage.md)
-- [Simon React P2: JavaScript](simon/simonReact/simonReactP2.md)
-- 🚀 [Startup React P2](webFrameworks/startupReact/startupReactP2.md)
+- [Simon React P2: Reactivity](simon/simonReact/simonReactP2.md)
+- 🚀 [Startup React P2: Reactivity](webFrameworks/startupReact/startupReactP2.md)
 
 ### Enrichment topics
 

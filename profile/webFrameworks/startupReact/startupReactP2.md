@@ -1,4 +1,4 @@
-# Startup React Phase 2: JavaScript
+# Startup React Phase 2: Reactivity
 
 ![Overview](../../technologies.png)
 
@@ -21,7 +21,7 @@ Before you start work on this deliverable make sure you have read all of the pro
 - [Debugging JavaScript](../../javascript/debuggingJavascript/debuggingJavascript.md)
 - ☑ [Reactivity](../react/reactivity/reactivity.md)
 - [Hooks](../react/hooks/hooks.md)
-- [Simon React P2: JavaScript](../../simon/simonReact/simonReactP2.md)
+- [Simon React P2: Reactivity](../../simon/simonReact/simonReactP2.md)
 
 Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.
 
