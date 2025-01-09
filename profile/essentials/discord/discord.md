@@ -38,11 +38,12 @@ Our server contains the following channels for asking and answering questions.
   - mongo
 
 > [!IMPORTANT]
-> You should use the channel that is most appropriate for your discussion.
-> Do not ask questions in multiple channels.
-> Only use `general` if it really is not specific to another channel.
-> If you are replying to someone multiple times then reply in a thread and not in the channel.
-> Make sure you review the instruction on [asking questions](../askingQuestions/askingQuestions.md) before you start asking questions.
+>
+> - You should use the channel that is most appropriate for your discussion.
+> - Do not ask questions in multiple channels.
+> - Only use `general` if it really is not specific to another channel.
+> - If you are replying to someone multiple times then reply in a thread and not in the channel.
+> - Make sure you review the instruction on [asking questions](../askingQuestions/askingQuestions.md) before you start asking questions.
 
 ### Getting help
 
