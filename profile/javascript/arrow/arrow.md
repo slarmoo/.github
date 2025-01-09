@@ -117,10 +117,10 @@ function App() {
 There is however, a problem with this code. Setting state with the function provided by the React useState function is asynchronous. That means you don't know if other, concurrently running code, has changed the value of **count** between when you read it and when you set it. That can lead to the counter being incremented multiple time in some cases or not at all in others. To fix this we need to supply an arrow function to the setCount function that sets the state instead of simply supplying the desired value. The following compares the two versions.
 
 ```jsx
-// not thread safe
+// may corrupt value
 setCount(count + 1);
 
-// thread safe
+// safe
 setCount((prevCount) => prevCount + 1);
 ```
 
@@ -133,12 +133,8 @@ function App() {
   return (
     <div>
       <h1>Count: {count}</h1>
-      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
-        n++
-      </button>
-      <button onClick={() => setCount((prevCount) => prevCount - 1)}>
-        n--
-      </button>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>n++</button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>n--</button>
     </div>
   );
 }

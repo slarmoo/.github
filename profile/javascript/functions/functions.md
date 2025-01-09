@@ -79,6 +79,12 @@ console.log(
 // OUTPUT: 2
 ```
 
+You can also use the abbreviated arrow syntax to write an anonymous function. The following is equivalent to the more verbose call demonstrated above. We will dive deeper into arrow functions in a later topic.
+
+```js
+console.log(doMath((a, b) => a - b, 5, 3));
+```
+
 ## Creating, passing, and returning functions
 
 Here are examples of assigning functions to variables, as well as using functions as parameters and return values.

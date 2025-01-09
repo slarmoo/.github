@@ -33,9 +33,10 @@ If you are trying to see how long a piece of code is running you can wrap it wit
 
 ```js
 console.time('demo time');
+for (let i = 0; i < 10000000; i++) {}
 // ... some code that takes a long time.
 console.timeEnd('demo time');
-// OUTPUT: demo time: 9762.74 ms
+// OUTPUT: demo time: 12.74 ms
 ```
 
 ## Count

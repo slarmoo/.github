@@ -80,7 +80,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [JavaScript Console](javascript/console/console.md)
 - [Functions](javascript/functions/functions.md)
 - [Arrow functions](javascript/arrow/arrow.md)
-- ☑ [Arrays](javascript/array/array.md)
+- ☑ [Arrays](javascript/array/arrOay.md)
 - [Objects and classes](javascript/objectClasses/objectClasses.md)
 - [Destructuring](javascript/destructuring/destructuring.md)
 - [Hooks](webFrameworks/react/hooks/hooks.md)
