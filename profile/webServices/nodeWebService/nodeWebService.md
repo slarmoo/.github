@@ -13,9 +13,9 @@ First create your project.
 Now, open VS Code and create a file named `index.js`. Paste the following code into the file and save.
 
 ```js
-const http = require("http");
+const http = require('http');
 const server = http.createServer(function (req, res) {
-  res.writeHead(200, { "Content-Type": "text/html" });
+  res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write(`<h1>Hello Node.js! [${req.method}] ${req.url}</h1>`);
   res.end();
 });
@@ -44,4 +44,5 @@ Use different URL paths in the browser and note that it will echo the HTTP metho
 
 Note that you can also start up Node and execute the `index.js` code directly in VS Code. To do this open index.js in VS Code and press the 'F5' key. This should ask you what program you want to run. Select `node.js`. This starts up Node.js with the `index.js` file, but also attaches a debugger so that you can set breakpoints in the code and step through each line of code.
 
-⚠ Make sure you complete the above steps. For the rest of the course you will be executing your code using Node.js to run your backend code and serve up your frontend code to the browser. This means you will no longer be using the `VS Code Live Server extension` to serve your frontend code in the browser.
+> [!NOTE]
+> Make sure you complete the above steps. For the rest of the course you will be executing your code using Node.js to run your backend code and serve up your frontend code to the browser. This means you will no longer be using the `VS Code Live Server extension` to serve your frontend code in the browser.

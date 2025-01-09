@@ -22,7 +22,7 @@ A web service is usually divided up into multiple service endpoints. Each endpoi
 
 ![HTTP](webServicesHTTPEndpoints.jpg)
 
-⚠ Note that service endpoints are often called an Application Programming Interface (API). This is a throwback to old desktop applications and the programming interfaces that they exposed. Sometimes the term API refers to the entire collection of endpoints, and sometimes it is used to refer to a single endpoint.
+Note that service endpoints are often called an Application Programming Interface (API). This is a throwback to old desktop applications and the programming interfaces that they exposed. Sometimes the term API refers to the entire collection of endpoints, and sometimes it is used to refer to a single endpoint.
 
 Here are some things you should consider when designing your service's endpoints.
 
@@ -120,7 +120,7 @@ Here is an example GraphQL query.
 ```graphql
 query {
   getOrder(id: "2197") {
-    orders(filter: {date: {allofterms: "20220505"}}) {
+    orders(filter: { date: { allofterms: "20220505" } }) {
       store
       description
       orderedBy

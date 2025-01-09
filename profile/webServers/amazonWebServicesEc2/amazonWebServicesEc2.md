@@ -10,12 +10,15 @@ When you rent a web server, it is physically located in a massive data center lo
 
 Assuming you already have an AWS account it is time to create your web server.
 
-⚠ Note that the AWS interface changes all the time, so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
+> [!NOTE]
+> AWS interface changes all the time, so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
+
+> [!IMPORTANT]
+> It is crucial that you use the N. Virginia AWS region because the Amazon Machine Image (AMI) you will use is only available in that region.
 
 1. Open the AWS console in your browser and log in.
 1. Navigate to the EC2 service.
 1. Change your region (top right corner) to `US East (N. Virginia) - us-east-1`. Changing your region to N. Virginia will make it so that your server is located there.
-   ⚠ This is crucial because the Amazon Machine Image (AMI) you will use is only available in N. Virginia.
 1. Select the option to `Launch instance`.
 1. Give your instance a meaningful name. Perhaps use a convention such as [owner]-[purpose]-[version].
 
@@ -79,13 +82,13 @@ For example,
 ➜  ssh -i ~/keys/production.pem ubuntu@53.104.2.123
 ```
 
-⚠ You may get a warning that your key pair file permissions are too open. If so then you can restrict the permissions on your file so that they are not accessible to all users by running the `chmod` console command:
+You may get a warning that your key pair file permissions are too open. If so then you can restrict the permissions on your file so that they are not accessible to all users by running the `chmod` console command:
 
 ```sh
 chmod  600 [key pair file]
 ```
 
-⚠ As it connects to the server it might warn you that it hasn't seen this server before. You can confidently say yes since you are sure of the identity of this server.
+As it connects to the server it might warn you that it hasn't seen this server before. You can confidently say yes since you are sure of the identity of this server.
 
 Once it has connected, you are now looking at a console window for the web server that you just launched and you should be in the ubuntu user's home directory. If you run `ls -l`, you should see something like the following. (Note that the dates might appear different.)
 

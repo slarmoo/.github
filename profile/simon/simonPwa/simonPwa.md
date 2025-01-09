@@ -1,6 +1,7 @@
 # Simon Progressive Web Application
 
-⚠ Note that this deliverable is optional and ungraded. The information provided here is meant as extended course content.
+> [!NOTE]
+> This deliverable is optional and ungraded. The information provided here is meant as extended course content.
 
 ![Simon](../simon.png)
 
@@ -110,9 +111,7 @@ async function loginOrCreate(endpoint) {
     });
     //...
   } catch {
-    setDisplayError(
-      `⚠ It appears that you are currently offline. You can play Simon offline, but you must be initially online to create or login to your account.`
-    );
+    setDisplayError(`⚠ It appears that you are currently offline. You can play Simon offline, but you must be initially online to create or login to your account.`);
   }
 }
 ```
@@ -173,5 +172,5 @@ Get familiar with what the example code teaches.
 - Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
 - Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
 - Review the code and get comfortable with everything it represents.
-- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+- View the code in your browser by hosting it from a VS Code debug session.
 - Make modifications to the code as desired. Experiment and see what happens.

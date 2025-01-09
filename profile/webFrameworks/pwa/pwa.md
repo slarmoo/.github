@@ -1,6 +1,7 @@
 # Progressive web application
 
-⚠ The information provided here is meant as extended course content. It will not be covered in class or appear on any test.
+> [!IMPORTANT]
+> The information provided here is meant as extended course content. It will not be covered in class or appear on any test.
 
 📖 **Deeper dive reading**:
 

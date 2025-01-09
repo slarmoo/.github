@@ -288,16 +288,17 @@ Get familiar with what the example code teaches.
 
 - Review the code and get comfortable with everything it represents.
 - Debug the front and backend.
-
-  ⚠ Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your frontend code in the browser.
-
 - Make modifications to the code as desired. Experiment and see what happens.
+
+> [!IMPORTANT]
+> Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your frontend code in the browser.
 
 ## Deploy to production
 
-- Deploy to your production environment using the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
+> [!IMPORTANT]
+> The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment.
 
-  ⚠ **NOTE** - The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment.
+- Deploy to your production environment using the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
 
   ```sh
   ./deployReact.sh -k <yourpemkey> -h <yourdomain> -s simon

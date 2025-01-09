@@ -160,12 +160,13 @@ All of the major cloud providers offer multiple data services. For this class we
 ![Mongo sign up](webServicesMongoSignUp.jpg)
 [MongoDB Atlas sign up](https://www.mongodb.com/atlas/database)
 
-⚠ This [video tutorial](https://www.youtube.com/watch?v=daIH4o75KE8) will step you through the process of creating your account and setting up your database. You really want to watch this video. Note that some of the Atlas website interface may be slightly different, but the basic concepts should all be there in some shape or form. The main steps you need to take are:
+> [!IMPORTANT]
+> This [video tutorial](https://www.youtube.com/watch?v=daIH4o75KE8) will step you through the process of creating your account and setting up your database. You really want to watch this video. Note that some of the Atlas website interface may be slightly different, but the basic concepts should all be there in some shape or form. The main steps you need to take are:
 
 1. Create your account.
 1. Create a database cluster.
 1. Create your root database user credentials. Remember these for later use.
-1. ⚠ Set network access to your database to be available from anywhere.
+1. **Set network access to your database to be available from anywhere**.
 
    ![Atlas IP Anywhere](webServicesMongoIpAnywhere.gif)
 
@@ -200,7 +201,8 @@ In order to accomplish this do the following:
    const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
    ```
 
-⚠ Make sure you include `dbConfig.json` in your `.gitignore` file so that it does not get pushed up to GitHub.
+> [!NOTE]
+> Make sure you include `dbConfig.json` in your `.gitignore` file so that it does not get pushed up to GitHub.
 
 ### Testing the connection on startup
 

@@ -56,7 +56,8 @@ Then open the `package.json` file, found in the root of the project, that was cr
 | build   | Bundles a production version of the React application and copies it to the `dist` directory.                                                                       |
 | preview | Bundles a production version of the React application and starts Vite's hot reloading HTTP server. This is used to test a production version before deployment.    |
 
-⚠ Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
+> [!IMPORTANT]
+> Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
 
 ## Reorganize the code
 

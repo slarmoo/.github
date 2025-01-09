@@ -51,7 +51,8 @@ For example,
 ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s startup
 ```
 
-⚠ Make sure you using a POSIX compliant console (not PowerShell or CMD) and that you run `deployFiles.sh` from the project directory that you want to deploy.
+> [!IMPORTANT]
+> Make sure you using a POSIX compliant console (not PowerShell or CMD) and that you run `deployFiles.sh` from the project directory that you want to deploy.
 
 Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
 

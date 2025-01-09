@@ -32,7 +32,8 @@ console.log('end', x);
 //         end 1
 ```
 
-⚠ There are few cases where it makes sense to use `var`. It is strongly suggested that you only use `const` and `let` unless you fully understand why you are using `var`.
+> [!IMPORTANT]
+> It rarely makes sense to use `var`. It is strongly suggested that you only use `const` and `let` unless you fully understand why you are using `var`.
 
 ## This
 

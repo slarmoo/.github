@@ -383,17 +383,18 @@ Get familiar with what the example code teaches.
 - Review the code and get comfortable with everything it represents.
 - Debug the backend code by launching it with a VS Code debug session.
 - Debug the frontend code by launching it with Vite and using the browser debugger.
-
-  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser. Instead you will start your backend code with node.js and your frontend code with `npm run dev`. Set breakpoints in your backend code inside of VS Code and inside the browser for your frontend.
-
 - Use the browser's dev tools to set breakpoints in the frontend code and step through it each line.
 - Make modifications to the code as desired. Experiment and see what happens.
 
 ## Deploy to production
 
-- Deploy to your production environment using the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-service/blob/main/deployService.sh). This script will bundle your React frontend application as well as build your backend application. Take some time to understand how it works.
+> [!IMPORTANT]
+> The `deployService.sh` deployment script is different from the previous scripts as it deploys and installs your service on your production server.
 
-  ⚠ **NOTE** - The `deployService.sh` deployment script is different from the previous scripts as it deploys and installs your service on your production server.
+> [!IMPORTANT]
+> The deployment script for this project is different from previous deployment scripts, since it needs to set up the Node.js service for your backend code, and copy your frontend code to the `public` directory. You also want to make sure that your Node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Startup you want to make sure that code is configured to listen on port 4000.
+
+- Deploy to your production environment using the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-service/blob/main/deployService.sh). This script will bundle your React frontend application as well as build your backend application. Take some time to understand how it works.
 
   ```sh
   ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon
@@ -404,8 +405,6 @@ Get familiar with what the example code teaches.
   ```sh
   ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
-
-  ⚠ **NOTE** - The deployment script for this project is different from previous deployment scripts, since it needs to set up the Node.js service for your backend code, and copy your frontend code to the `public` directory. You also want to make sure that your Node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Startup you want to make sure that code is configured to listen on port 4000.
 
 - Update your `startup` repository `notes.md` with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
