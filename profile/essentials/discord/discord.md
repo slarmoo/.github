@@ -4,8 +4,8 @@ Peer learning provides a great opportunity to build social, team building, skill
 
 We use the peer chat service [Discord](https://discord.com/) to ask and answer questions, as well as get online help from the TAs and Instructor.
 
-Use the following invite to join our discussion server:
-
+> [!IMPORTANT]
+> Use the following invite to join our discussion server:
 > [https://discord.gg/d6Q5RsxHXz](https://discord.gg/d6Q5RsxHXz)
 
 From a desktop computer, you can use Discord from your browser. From your phone you will need to install the application from the app store.
