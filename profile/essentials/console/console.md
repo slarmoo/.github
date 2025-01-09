@@ -22,7 +22,8 @@ Once it is installed, hit the Windows button on your keyboard, and type `Git Bas
 
 ![Git Bash](gitBash.jpg)
 
-⚠ Do not use `Git Command`, `cmd`, or `Powershell`. That will not work for the commands and scripts we run in this class.
+> [!CAUTION]
+> Do not use `Git Command`, `cmd`, or `Powershell`. That will not work for the commands and scripts we run in this class.
 
 You can use Windows Subsystem for Linux (WSL) (e.g Ubuntu on Windows) for your work in this class, but you must be very careful to do all of your work actually within WSL. Don't download files to your Windows partition and then access them from WSL. It is suggested that you use `Git Bash` instead of WSL, unless you are really familiar with WSL.
 
