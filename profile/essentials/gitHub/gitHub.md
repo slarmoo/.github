@@ -75,7 +75,8 @@ This is the pattern that you want to make a reflexive part of your development p
 1. Commit the changes (`git commit`)
 1. Push the changes to GitHub (`git push`)
 
-⚠ Note: The first time you make a push request to a repository Git will ask you how you want to identify yourself and what credential (e.g. password) to use in order to authenticate with GitHub. You will need to create a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and provide that as your password.
+> [!NOTE]
+> The first time you execute a push to a repository, Git will ask you how you want to identify yourself and what credential (e.g. password) to use in order to authenticate with GitHub. You will need to create a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and provide that as your password.
 
 ```sh
 *** Please tell me who you are
@@ -156,7 +157,7 @@ You will be most successful in this course if you set aside time each day, or ev
 
 For all of the above reasons, it is required that you use GitHub for your startup project. Additionally, you must use it consistently and frequently.
 
-⚠ **IMPORTANT**: **It is a prerequisite for all deliverables that you have at least 10 commits evenly spread across the assignment period for the deliverable.**
+> [!IMPORTANT] > **It is a prerequisite for all deliverables that you have at least 10 commits evenly spread across the assignment period for the deliverable.**
 
 If you do not have the required number of commits, or if they are all clustered in a single burst of activity, then you will need to justify the discrepancy before the deliverable will be accepted.
 

@@ -25,17 +25,7 @@ Our server contains the following channels for asking and answering questions.
 - **general**: Only use this if it doesn't fit anywhere else
 - **announcements**: Non-questions of interest to the whole class
 - **TA/common-problems**: A place for the TAs to put answers to questions you are likely to have
-- **Technology channels**
-  - github
-  - aws
-  - startup
-  - html
-  - css
-  - javascript
-  - node and express
-  - caddy
-  - react
-  - mongo
+- **Technology channels**: This includes specific topics such as AWS, HTML, React, and so forth.
 
 > [!IMPORTANT]
 >
