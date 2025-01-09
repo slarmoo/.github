@@ -69,7 +69,8 @@ You don't need to worry about this now, but later on, when we introduce the down
 npm install bootstrap@5.2.3
 ```
 
-⚠ Note that those links are version specific (version 5 in this case). You will want to get the latest version links when you begin building your application.
+> [!CAUTION]
+> The links given above are version specific (version 5 in this case). You will want to get the latest version links when you begin building your application.
 
 ### Using bootstrap
 
