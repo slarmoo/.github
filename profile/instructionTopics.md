@@ -83,6 +83,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - ☑ [Arrays](javascript/array/array.md)
 - [Objects and classes](javascript/objectClasses/objectClasses.md)
 - [Destructuring](javascript/destructuring/destructuring.md)
+- [Time and interval](javascript/timeoutAndInterval/timeoutAndInterval.md)
 - [Hooks](webFrameworks/react/hooks/hooks.md)
 - ☑ [Reactivity](webFrameworks/react/reactivity/reactivity.md)
 - [JSON](javascript/json/json.md)
