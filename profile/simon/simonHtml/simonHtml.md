@@ -37,6 +37,9 @@ Get familiar with what the example code teaches.
 
 ## Deploy to production
 
+> [!IMPORTANT]
+> Make sure you using a POSIX compliant console (not PowerShell or CMD) and that you run `deployFiles.sh` from the project directory that you want to deploy.
+
 - Deploy to your production environment using the `deployFiles.sh` script found in the [example class application](https://github.com/webprogramming260/simon-html/blob/main/deployFiles.sh). Take some time to understand how the script works. The script does three things. Deletes any previous deployment for simon, copies up all of the files found in the project directory, and makes sure Caddy is hosting the files under the `simon` subdomain of your domain (e.g. simon.yourdomain.click).
 
   ```sh
@@ -48,9 +51,6 @@ Get familiar with what the example code teaches.
   ```sh
   ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
-
-> [!IMPORTANT]
-> Make sure you using a POSIX compliant console (not PowerShell or CMD) and that you run `deployFiles.sh` from the project directory that you want to deploy.
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).

@@ -27,7 +27,7 @@ Now that you understand what a web framework is and have practiced by converting
 Porting your application to React will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
 
 > [!NOTE]
-> This phase only converts your HTML and CSS over to React. You do not need to implement any interactivity into your application for this phase. That will come in the [second JavaScript phase](startupReactP2.md) of this deliverable.
+> This phase only converts your HTML and CSS over to React. You do not need to implement any reactivity into your application for this phase. That will come in the [second JavaScript phase](startupReactP2.md) of this deliverable.
 
 You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. Make sure you have enough commits that you can demonstrate your ownership of the code and protect yourself from loss. Usually this will mean at least ten commits, but in reality you may have many more than that. Failing to fully document your work may result in the rejection of your submission.
 
@@ -73,7 +73,7 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread across multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Application converted to use React
   - 10% Bundled using Vite
-  - 50% Multiple react components that contain your HTML and CSS. No interactivity is required at this point.
+  - 50% Multiple react components that contain your HTML and CSS. No reactivity is required at this point.
   - 40% React router
 
 ## Go celebrate

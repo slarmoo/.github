@@ -27,7 +27,7 @@ Failing to do this will likely slow you down as you will not have the required k
 
 ## Getting started
 
-With your startup ported to React it is time to implement all of the interactivity necessary to make your application functional. This includes writing significant JavaScript such that a user can fully interact with the application.
+With your startup ported to React it is time to implement all of the reactivity necessary to make your application functional. This includes writing significant JavaScript such that a user can fully interact with the application.
 
 Making your application interactive will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
 
@@ -102,4 +102,4 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Go celebrate
 
-With the addition of interactivity to your startup it should be basically functional. Anything that remains should be stubbed out in some way that makes the application usable. Time to celebrate. I'm thinking tacos. 🌮
+With the addition of reactivity to your startup it should be basically functional. Anything that remains should be stubbed out in some way that makes the application usable. Time to celebrate. I'm thinking tacos. 🌮
