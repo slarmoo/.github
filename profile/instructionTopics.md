@@ -24,6 +24,7 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 ## Web server setup
 
 - [Technology stack](essentials/techStack/techStack.md)
+- [The internet](webServers/internet/internet.md)
 - ☑ [Amazon Web Services - EC2](webServers/amazonWebServicesEc2/amazonWebServicesEc2.md)
 - [Domain names](webServers/domainNames/domainNames.md)
 - ☑ [Amazon Web Services - Route 53](webServers/amazonWebServicesRoute53/amazonWebServicesRoute53.md)
@@ -104,7 +105,6 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 ## HTTP service
 
-- [The internet](webServers/internet/internet.md)
 - [Web servers](webServers/webServers/webServers.md)
 - [Web Services Introduction](webServices/introduction/introduction.md)
 - [URL](webServices/url/url.md)
