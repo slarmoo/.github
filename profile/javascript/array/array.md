@@ -13,7 +13,7 @@ console.log(a.length);
 // OUTPUT: 3
 ```
 
-## Object functions
+## Array functions
 
 The Array object has several interesting static functions associated with it. Here are some of the interesting ones.
 
