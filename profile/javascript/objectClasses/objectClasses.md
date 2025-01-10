@@ -31,6 +31,11 @@ You can also declare a variable of object type with the `object-literal` syntax.
 const obj = {
   a: 3,
   b: 'fish',
+  c: [1, true, 'dog'],
+  d: { e: false },
+  f: function () {
+    return 'hello';
+  },
 };
 ```
 

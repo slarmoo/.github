@@ -59,13 +59,16 @@ console.log(a, b, c);
 // OUTPUT: undefined, 22, 44
 ```
 
-Note that all of the above examples created new constant variables, but you can also use destructuring to reassign existing variables.
+## Destructuring in React
 
-```js
-let a = 22;
+React makes extensive use of destructuring when you pass parameters to components and create state. In the example below, React passes all the parameters to the component as an object, but it destructures the object to just the `initialCount` parameter. Likewise the return value from `React.useState` destructures the array to just the variable and the update function.
 
-[a] = [1, 2, 3];
+```jsx
+function Clicker({ initialCount }) {
+  const [count, updateCount] = React.useState(initialCount);
+  return <div onClick={() => updateCount(count + 1)}>Click count: {count}</div>;
+}
 
-console.log(a);
-// OUTPUT: 1
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clicker initialCount={3} />);
 ```
