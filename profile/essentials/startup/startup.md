@@ -107,7 +107,7 @@ Play an infinite game of mine sweeper with all of your fiends.
 
 ![Infinisweeper](startupInfinisweeper.gif)
 
-> Axel Reynolds
+> Abby Reynolds
 
 ### Musicards
 
