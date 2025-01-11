@@ -6,15 +6,72 @@ JavaScript modules allow for the partitioning and sharing of code. Initially Jav
 
 JavaScript got full module support with ES6, and they have become the standard module representation as [browser support](https://caniuse.com/es6-module-dynamic-import) for ES modules is now almost universal.
 
-In order to differentiate between the two implementations, Node.js modules are called CommonJS modules, and JavaScript modules are called ES modules. For this discussion, we will focus only on ES modules.
+Because of the complex history of modules they can be a confusing topic, but it is well worth the time to understand how they work as they are a core piece of a web programmer's toolkit. In order to differentiate between the two implementations, Node.js modules are called CommonJS modules, and JavaScript modules are called ES modules. The import and export syntax for ES modules is the major difference between the two formats. Let's start with CommonJS modules first.
 
-Because modules create a file-based scope for the code they represent, you must explicitly `export` the objects from one file and then `import` them into another file. For example, here is a simple module that exports a function that displays an alert.
+## Common JS modules
+
+Because modules create a file-based scope for the code they represent, you must explicitly `export` the objects from one file and then `import` them into another file. To import a module with CommonJS you use the format:
+
+```js
+const X = require('y');
+```
+
+For example, the following imports the Express library that was installed using NPM, and an object named DB that was exported from the local file `./database.js`.
+
+```
+const express = require('express');
+const DB = require('./database.js')
+```
+
+If you want to export something from your own code then you would use the `module.exports` global variable. For example, here is a simple module that exports a function that displays an alert.
+
+```js
+function alertDisplay(msg) {
+  alert(msg);
+}
+
+module.exports = {
+  alertDisplay,
+};
+```
+
+## ES Modules
+
+In order to use ES Modules with Node.js you need to specify this in you package.json file as follows.
+
+```json
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "This demonstrates a service for a web application.",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+```
+
+To import a module with ES modules you use the format:
+
+```js
+import X from 'y';
+```
+
+For example, the following imports the Express package that was installed using NPM.
+
+```js
+import express from 'express';
+
+express().listen(3000);
+```
+
+If you want to export something from your own code then you would use the `export` keyword. For example, here is a simple module that exports a function that displays an alert.
 
 **alert.js**
 
 ```js
 export function alertDisplay(msg) {
-  alert(msg);
+  console.log(msg);
 }
 ```
 
@@ -65,8 +122,6 @@ If we want to use a module in the global scope that our HTML or other non-module
 
 Now, if the button is pushed or a key is pressed our ES module function will be called.
 
-## Modules with web frameworks
+### ES Modules with web frameworks
 
 Fortunately, when you use a web framework bundler, discussed in later instruction, to generate your web application distribution code, you usually don't have to worry about differentiating between global scope and ES module scope. The bundler will inject all the necessary syntax to connect your HTML to your modules. Historically, this was done by removing the modules and placing all of the JavaScript in a namespaced global partition. Now that ES Modules are supported on most browsers, the bundler will expose the ES module directly.
-
-Because of the complex history of modules they can be a confusing topic, but it is well worth the time to understand how they work as they are a core piece of a web programmer's toolkit.
