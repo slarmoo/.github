@@ -7,7 +7,7 @@
 - Instructions on how to use [Discord](../discord/discord.md)
 - Consult this [document](https://docs.google.com/spreadsheets/d/1g1AMtgvyfSwMgp85QcwHuy0mVR-nN3bIGI6XNEJWB1U/edit?usp=sharing) to view the TA schedule
 - In-person TAs are located in 1156 TMCB
-- Professor Jensen's office: 2264 TMCB
+- Professor Jensen's office: 2264 TMCB - Office hours through [Calendly](https://calendly.com/lee-cs/30min)
 - Professor Ventura's office: 2214 TMCB
 - Professor Clement's office: 3374 TMCB
 
