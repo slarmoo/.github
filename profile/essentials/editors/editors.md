@@ -32,7 +32,7 @@ Congratulations! You have joined the 38 million other users already enjoying thi
 
 ### GitLens
 
-The basic support that VS Code offers for working with Git is sufficient for most tasks, but if you really want to unleash the power of git, consider installing the `GitLens` extension. It makes reviewing the commit history, stashing, merging, and comparing so much easier. With over 25 million users, you might enjoy joining the party.
+The basic support that VS Code offers for working with Git is sufficient for most tasks, but if you really want to unleash the power of Git, consider installing the `GitLens` extension. It makes reviewing the commit history, stashing, merging, and comparing so much easier. With over 25 million users, you might enjoy joining the party.
 
 ## VI
 
