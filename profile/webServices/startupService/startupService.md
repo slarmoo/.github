@@ -68,7 +68,7 @@ Doing this will make this deliverable of your startup available from `https://st
 
 1. Convert your startup application into a web service using Node.js and Express.
 
-   1. Create a service/index.js file for your back end
+   1. Create a service/index.js file for your backend
    1. Add this code to service/index.js to allow your code to select a port to run on based on the command line parameters.
       ```js
       const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -77,7 +77,7 @@ Doing this will make this deliverable of your startup available from `https://st
       ```js
       app.use(express.static('public'));
       ```
-   1. Add a vite.config.js file to your main startup directory (right above the service and src directories) with the following content (or copy it over from Simon). This will forward fetch requests that go to a path like "fetch('/api/scores')" to connect to your back end server running on port 4000.
+   1. Add a vite.config.js file to your main startup directory (right above the service and src directories) with the following content (or copy it over from Simon). This will forward fetch requests that go to a path like "fetch('/api/scores')" to connect to your backend server running on port 4000.
 
       ```js
       import { defineConfig } from 'vite';
@@ -91,10 +91,10 @@ Doing this will make this deliverable of your startup available from `https://st
       });
       ```
 
-   1. Create new endpoints for your back end (service/index.js) that are similar to those created by Simon.
+   1. Create new endpoints for your backend (service/index.js) that are similar to those created by Simon.
    1. Call your endpoints from your frontend code using fetch.
    1. Call third party endpoints from your frontend code using fetch. This can be as simple as displaying a quote like Simon does.
-   1. Debug your application by running your back end using VS Code's Node debugger on the service/index.js file and the browser's inspect dev tools to verify it is working correctly. You will have to run "npm run dev" to get your front end running.
+   1. Debug your application by running your backend using VS Code's Node debugger on the service/index.js file and the browser's inspect dev tools to verify it is working correctly. You will have to run "npm run dev" to get your front end running.
    1. Periodically commit and push your code to GitHub.
    1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
    1. Push your final version of your project to GitHub.
