@@ -131,7 +131,7 @@ Now that we have the service up and running, we want to add the Simon backend se
 1. **Set up a router path for the endpoints**. We want all of our endpoints to have a path prefix of `/api` so that we can distinguish them from requests to load the front end files. This is done with a `express.Router` call.
 
    ```js
-   var apiRouter = express.Router();
+   let apiRouter = express.Router();
    app.use(`/api`, apiRouter);
    ```
 

@@ -73,7 +73,7 @@ import './index.css';
 function App() {
   return (
     <div>
-      <pre className="code">console.log(1+1);</pre>
+      <pre className='code'>console.log(1+1);</pre>
       <p>Simple math</p>
     </div>
   );
@@ -100,10 +100,10 @@ import './index.css';
 
 function Header() {
   return (
-    <nav className="app-bar">
-      <Link label="home" />
-      <Link label="users" />
-      <Link label="about" />
+    <nav className='app-bar'>
+      <Link label='home' />
+      <Link label='users' />
+      <Link label='about' />
     </nav>
   );
 }
@@ -113,16 +113,16 @@ function Link(label) {
 }
 
 function Content() {
-  return <div className="content">Here is the content</div>;
+  return <div className='content'>Here is the content</div>;
 }
 
 function Footer() {
-  return <div className="app-bar">Footer</div>;
+  return <div className='app-bar'>Footer</div>;
 }
 
 function App() {
   return (
-    <div className="app">
+    <div className='app'>
       <Header />
 
       <Content />
@@ -223,7 +223,7 @@ If you get stuck here is a possible solution.
 function App() {
   return (
     <div>
-      Function Style Component: <Demo who="function" initialColor="yellow" />
+      Function Style Component: <Demo who='function' initialColor='yellow' />
     </div>
   );
 }
@@ -237,12 +237,12 @@ function Demo(props) {
   }
 
   function changeColor() {
-    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     setColor('#' + randomColor);
   }
 
   return (
-    <div className="component" onMouseOver={changeColor} style={{ background: color }}>
+    <div className='component' onMouseOver={changeColor} style={{ background: color }}>
       <p>
         Hello {outlook} {props.who}
       </p>
