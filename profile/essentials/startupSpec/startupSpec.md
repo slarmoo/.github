@@ -35,7 +35,7 @@ Make sure that your specification represents how you will represent all of the c
 
 - **HTML** - Basic structural and organizational elements
 - **CSS** - Styling and animating
-- **React** - React to what a user does, represent functionality with components, and route what is displayed using the React web framework. React helps you to modularize your code into components that represent things like a login form, a picture card, or a interactive part of a game. The routing that React provides changes what is displayed to the user based upon the actions they take. For example, after logging in, React whould change the display from the login conponents, to the game play components.
+- **React** - React to what a user does, represent functionality with components, and route what is displayed using the React web framework. React helps you to modularize your code into components that represent things like a login form, a picture card, or a interactive part of a game. The routing that React provides changes what is displayed to the user based upon the actions they take. For example, after logging in, React would change the display from the login conponents, to the game play components.
 - **Web service** - Remote functions that your application calls on your, and someone else's, web server _(e.g. saveScores, getWeather, chatWithFriend)_. You must include **at least one call to a service that you didn't write**. You can view a list of APIs here: [https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis).
 
 - **Authentication**: An input for your user to create an account and login. You will want to display the user's name after they login.
