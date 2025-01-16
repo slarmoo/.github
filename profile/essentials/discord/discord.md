@@ -20,7 +20,7 @@ Discord is organized by servers and channels. If you used the above invite link 
 
 ### Questions
 
-Our server contains the following channels for asking and answering questions.
+Our server contains the following channels for asking and answering questions:
 
 - **general**: Only use this if it doesn't fit anywhere else
 - **announcements**: Non-questions of interest to the whole class
