@@ -30,16 +30,17 @@ Here is an [example design](https://github.com/webprogramming260/startup-example
 
 ## Represent all technologies
 
-The purpose of having you specify how you are going to use the technologies is so that you don't get halfway through the startup and realized you forgot about calling 3rd party service endpoints or how you are going to use websocket. So **1**: make sure you understand at a general level what the technologies are, and **2**: make sure you have a placeholder in every deliverable for the technologies.
-Make sure that your specification represents how you will represent all of the class technologies. This includes the following:
+The purpose of having you specify how you are going to use the technologies is so that you don't get halfway through the startup and realized you forgot about calling 3rd party service endpoints or how you are going to use websocket. So **1**: make sure you understand at a general level what the technologies are, and **2**: make sure you have a placeholder, or an actual implementation, in every deliverable for the following required technologies.
 
 - **HTML** - Basic structural and organizational elements
 - **CSS** - Styling and animating
-- **React** - React to what a user does, represent functionality with components, and route what is displayed using the React web framework. React helps you to modularize your code into components that represent things like a login form, a picture card, or a interactive part of a game. The routing that React provides changes what is displayed to the user based upon the actions they take. For example, after logging in, React would change the display from the login component, to the game play component.
-- **Web service** - Remote functions that your application calls on your, and someone else's, web server _(e.g. saveScores, getWeather, chatWithFriend)_. You must include **at least one call to a service that you didn't write**. You can view a list of APIs here: [https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis).
-- **Authentication**: An input for your user to create an account and login. You will want to display the user's name after they login.
-- **Database data**: A rendering of application data that is stored in the database. For Simon, this is the high scores of all players.
-- **WebSocket data**: A rendering of data that is received from your server. This may be **realtime** data sent from other users (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this represents every time another user creates or ends a game.
+- **React** - Frontend code to interact with a user, represent functionality with components, and route what is displayed using JavaScript and the React web framework. React helps you to modularize your code into components that represent things like a login form, a picture card, or a interactive part of a game. The routing that React provides changes what is displayed to the user based upon the actions they take. For example, after logging in, React would change the display from the login component, to the game play component.
+- **Service** - Backend server functionality for the following:
+  - Multiple endpoints (server function calls) that provide functionality necessary to support your application. For example, storing scores, retrieving user preferences, or generating dynamic content.
+  - Login, logout, and register user support.
+  - At least one call to a third party (e.g. that you didn't write) service endpoint to do something like suggest a color pallette, get a joke, get the weather, or get images. You can view a list of APIs here: [https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis).
+- **Database**: A rendering of application data that is stored in the database. For Simon, this is the high scores of all players.
+- **WebSocket**: A rendering of data that is received from your server. This may be **realtime** data sent from other users (e.g. chat or scoring data), or realtime data that your service is generating (e.g. stock prices or latest high scores). For Simon, this represents every time another user creates or ends a game.
 
 ### Example of representing all technologies
 
@@ -77,12 +78,10 @@ Submit the URL for your GitHub startup repository to the Canvas assignment.
 - 20% - A concise and compelling elevator pitch in your `README.md`
 - 10% - Description of key features in your `README.md`
 - 30% - Description of how you will use each technology
-  - **HTML** - Basic structural and organizational elements
-  - **CSS** - Styling and animating
-  - **React** - Componentization, routing, and functional interactivity.
-  - **Web service** - Endpoints provided by your backend service.
-  - **Third party service** - Endpoint provided by some other service.
-  - **Authentication**: Register, login, and logout.
-  - **Database data**: Store authentication and application data.
-  - **WebSocket data**: Realtime information pushed from your backend to your frontend.
+  - **HTML** - Basic structural and organizational elements.
+  - **CSS** - Styling and animating.
+  - **React** - Componentization, routing, and user reactivity using the React framework and JavaScript.
+  - **Web service** - Endpoints provided by your backend service that support authentication and application specific functionality.
+  - **Database**: Store authentication and application data.
+  - **WebSocket**: Realtime information pushed from your backend to your frontend.
 - 30% - One or more rough sketches of your application. Images must be embedded in your `README.md`.
