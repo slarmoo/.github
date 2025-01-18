@@ -114,11 +114,12 @@ This [video](https://youtu.be/lr6rmjUhOc0) may help you understand how to develo
 - **Prerequisite**: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
 - **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread across multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Backend web service support and interaction
-  - 40% - Create an HTTP service using Node.js and Express
+  - 10% - Create an HTTP service using Node.js and Express
   - 10% - Frontend served up using Express static middleware
   - 10% - Your frontend calls third party service endpoints
   - 20% - Your backend provides service endpoints
   - 20% - Your frontend calls your service endpoints
+  - 30% - Supports registration, login, logout, and restricted endpoint
 
 ## Go celebrate
 

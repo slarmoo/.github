@@ -70,11 +70,8 @@ Doing this will make this deliverable of your startup available from `https://st
 - **Prerequisite**: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
 - **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread across multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
 - Application authentication and authorization
-  - 20% - Supports new user registration
-  - 20% - Supports existing user authentication and logout
-  - 20% - Stores application data in MongoDB
-  - 20% - Stores and retrieves credentials in MongoDB
-  - 20% - Restricts application functionality based upon authentication
+  - 50% - Stores application data in MongoDB
+  - 50% - Stores and retrieves credentials in MongoDB
 
 ## Go celebrate
 
