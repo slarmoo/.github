@@ -19,7 +19,6 @@ cd ../simon-html && git commit -am "$msg" && git push
 cd ../simon-css && git commit -am "$msg" && git push
 cd ../simon-service && git commit -am "$msg" && git push
 cd ../simon-db && git commit -am "$msg" && git push
-cd ../simon-login && git commit -am "$msg" && git push
 cd ../simon-websocket && git commit -am "$msg" && git push
 cd ../simon-react && git commit -am "$msg" && git push
 cd ../simon-pwa && git commit -am "$msg" && git push

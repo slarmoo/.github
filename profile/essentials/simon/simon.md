@@ -20,13 +20,13 @@ You can play the example production release [here](https://simon.cs260.click).
 
 The following are the different technologies we are going to demonstrate with our Simon iterations.
 
-| Instruction                                                         | Video                                 | Code                                                                | Production release                          |
-| ------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------- |
-| [Simon HTML](../../simon/simonHtml/simonHtml.md)                    | [video](https://youtu.be/zg7eDNRMnWA) | [code](https://github.com/webprogramming260/simon-html#readme)      | [play](https://simon-html.cs260.click)      |
-| [Simon CSS](../../simon/simonCss/simonCss.md)                       | [video](https://youtu.be/N7DVKsvUJgM) | [code](https://github.com/webprogramming260/simon-css#readme)       | [play](https://simon-css.cs260.click)       |
-| [Simon React P1: Router](../../simon/simonReact/simonReactP1.md)    |                                       | [code](https://github.com/webprogramming260/simon-react#readme)     | [play](https://simon-react.cs260.click)     |
-| [Simon React P2:Reactivity](../../simon/simonReact/simonReactP1.md) |                                       | [code](https://github.com/webprogramming260/simon-react#readme)     | [play](https://simon-react.cs260.click)     |
-| [Simon Service](../../simon/simonService/simonService.md)           |                                       | [code](https://github.com/webprogramming260/simon-service#readme)   | [play](https://simon-service.cs260.click)   |
-| [Simon Login](../../simon/simonLogin/simonLogin.md)                 |                                       | [code](https://github.com/webprogramming260/simon-login#readme)     | [play](https://simon-login.cs260.click)     |
-| [Simon WebSocket](../../simon/simonWebSocket/simonWebSocket.md)     | [video](https://youtu.be/oVO2VIG0zfI) | [code](https://github.com/webprogramming260/simon-websocket#readme) | [play](https://simon-websocket.cs260.click) |
-| [Simon PWA (_optional_)](../../simon/simonPwa/simonPwa.md)          |                                       | [code](https://github.com/webprogramming260/simon-pwa#readme)       | [play](https://simon-pwa.cs260.click)       |
+| Instruction                                                          | Video                                 | Code                                                                | Production release                          |
+| -------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------- |
+| [Simon HTML](../../simon/simonHtml/simonHtml.md)                     | [video](https://youtu.be/zg7eDNRMnWA) | [code](https://github.com/webprogramming260/simon-html#readme)      | [play](https://simon-html.cs260.click)      |
+| [Simon CSS](../../simon/simonCss/simonCss.md)                        | [video](https://youtu.be/N7DVKsvUJgM) | [code](https://github.com/webprogramming260/simon-css#readme)       | [play](https://simon-css.cs260.click)       |
+| [Simon React P1: Router](../../simon/simonReact/simonReactP1.md)     |                                       | [code](https://github.com/webprogramming260/simon-react#readme)     | [play](https://simon-react.cs260.click)     |
+| [Simon React P2: Reactivity](../../simon/simonReact/simonReactP1.md) |                                       | [code](https://github.com/webprogramming260/simon-react#readme)     | [play](https://simon-react.cs260.click)     |
+| [Simon Service](../../simon/simonService/simonService.md)            |                                       | [code](https://github.com/webprogramming260/simon-service#readme)   | [play](https://simon-service.cs260.click)   |
+| [Simon DB](../../simon/simonDb/simonDb.md)                           |                                       | [code](https://github.com/webprogramming260/simon-db#readme)        | [play](https://simon-db.cs260.click)        |
+| [Simon WebSocket](../../simon/simonWebSocket/simonWebSocket.md)      | [video](https://youtu.be/oVO2VIG0zfI) | [code](https://github.com/webprogramming260/simon-websocket#readme) | [play](https://simon-websocket.cs260.click) |
+| [Simon PWA (_optional_)](../../simon/simonPwa/simonPwa.md)           |                                       | [code](https://github.com/webprogramming260/simon-pwa#readme)       | [play](https://simon-pwa.cs260.click)       |

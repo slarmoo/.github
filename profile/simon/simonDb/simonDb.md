@@ -4,7 +4,7 @@
 
 This deliverable demonstrates using MongoDB to persistently store user's scores and authentication data.
 
-You can view this application running here: [Example Simon DB](https://simon-login.cs260.click)
+You can view this application running here: [Example Simon DB](https://simon-db.cs260.click)
 
 ![Simon DB](simonDb.jpg)
 
@@ -87,7 +87,7 @@ Get familiar with what this code teaches.
 
 - Clone the repository to your development environment.
   ```sh
-  git clone https://github.com/webprogramming260/simon-login.git
+  git clone https://github.com/webprogramming260/simon-db.git
   ```
 - Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
 - Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
@@ -98,7 +98,7 @@ Get familiar with what this code teaches.
 
 ## Deploy to production
 
-- Deploy to your production environment using the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-login/blob/main/deployService.sh). Take some time to understand how it works.
+- Deploy to your production environment using the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh). Take some time to understand how it works.
 
   ```sh
   ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon

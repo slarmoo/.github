@@ -59,7 +59,7 @@ simon-db.cs260.click {
   header Cache-Control none
 }
 
-simon-login.cs260.click {
+simon-db.cs260.click {
   reverse_proxy * localhost:3006
   header Cache-Control none
 }

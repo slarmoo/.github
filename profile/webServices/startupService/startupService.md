@@ -19,6 +19,8 @@ Before you start work on this deliverable make sure you have read all of the pro
 - [Troubleshoot 502](../troubleshoot502/troubleshoot502.md)
 - [SOP and CORS](../cors/cors.md)
 - [Service design](../design/design.md)
+- [Authorization services](../authorizationServices/authorizationServices.md)
+- [Account creation and login](../login/login.md)
 - [Simon service](../../simon/simonService/simonService.md)
 
 Failing to do this will likely slow you down as you will not have the required knowledge to complete the deliverable.

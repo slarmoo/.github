@@ -21,7 +21,6 @@ cd ../simon-html && ./deployFiles.sh -k ${key} -h ${hostname} -s simon-html
 cd ../simon-css && ./deployFiles.sh -k ${key} -h ${hostname} -s simon-css
 cd ../simon-service && npm install && ./deployService.sh -k ${key} -h ${hostname} -s simon-service
 cd ../simon-db && npm install && ./deployService.sh -k ${key} -h ${hostname} -s simon-db
-cd ../simon-login && npm install && ./deployService.sh -k ${key} -h ${hostname} -s simon-login
 cd ../simon-websocket && npm install && ./deployService.sh -k ${key} -h ${hostname} -s simon-websocket
 cd ../simon-react && npm install && ./deployReact.sh -k ${key} -h ${hostname} -s simon-react
 cd ../simon-pwa && npm install && ./deployReact.sh -k ${key} -h ${hostname} -s simon-pwa
