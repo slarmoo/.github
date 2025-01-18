@@ -2,7 +2,7 @@
 
 ![Simon](../simon.png)
 
-This deliverable demonstrates adding a backend web service that serves up the frontend, handles HTTP endpoint requests, and stores information in memory on the server. The web service provides endpoints for getting and updating the scores. The application also uses a couple third party endpoints to display inspirational quotes on the about page and show a random header image.
+This deliverable demonstrates adding a backend web service that serves up the frontend application code, handles HTTP endpoint requests, authenticates users, and stores information in memory on the server. The web service provides endpoints for getting and updating the scores. The application also uses a couple third party endpoints to display inspirational quotes on the about page and show a random header image.
 
 We will use Node.js and Express to create our HTTP service.
 
@@ -17,26 +17,25 @@ Here is our design, documented using `curl` commands, for the endpoints that the
 **CreateAuth** - Create a new user.
 
 ```sh
-curl -X POST $host/api/auth/create -H 'Content-Type: application/json' -d '{"email":"s@byu.edu", "password":"byu"}'
+curl -X POST $host/api/auth/create -H 'Content-Type: application/json' -d '{"email":"s@byu.edu", "password":"byu"}' -c cookies.txt -b cookies.txt
 
 # Response 200
-{"token":"6b2ab581-05ca-4df0-8897-5671e7febdd8"}
+{"email":"s@byu.edu"}
 ```
 
 **GetAuth** - Login an existing user.
 
 ```sh
-curl -X POST $host/api/auth/login -H 'Content-Type: application/json' -d '{"email":"s@byu.edu", "password":"byu"}'
+curl -X POST $host/api/auth/login -H 'Content-Type: application/json' -d '{"email":"s@byu.edu", "password":"byu"}' -c cookies.txt -b cookies.txt
 
 # Response 200
-{"token":"6b2ab581-05ca-4df0-8897-5671e7febdd8"}
+{"email":"s@byu.edu"}
 ```
 
 **DeleteAuth** - Logout a user
 
 ```sh
-curl -v -X DELETE $host/api/auth/logout -
-H 'Content-Type: application/json' -d '{"token":"6b2ab581-05ca-4df0-8897-5671e7febdd8"}'
+curl -v -X DELETE $host/api/auth/logout -c cookies.txt -b cookies.txt
 
 # Response 204
 ```
@@ -44,7 +43,7 @@ H 'Content-Type: application/json' -d '{"token":"6b2ab581-05ca-4df0-8897-5671e7f
 **GetScores** - Get the latest high scores.
 
 ```sh
-curl $host/api/scores
+curl $host/api/scores -c cookies.txt -b cookies.txt
 
 # Response
 { "scores":[
@@ -56,7 +55,7 @@ curl $host/api/scores
 **SubmitScore** - Submit a score for consideration in the list of high scores.
 
 ```sh
-curl -X POST $host/api/score  -H 'Content-Type: application/json' -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}'
+curl -X POST $host/api/score  -H 'Content-Type: application/json' -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}' -c cookies.txt -b cookies.txt
 
 # Response
 [
@@ -65,7 +64,7 @@ curl -X POST $host/api/score  -H 'Content-Type: application/json' -d '{"name":"H
 ]
 ```
 
-## Steps to add the backend service
+## Backend changes
 
 We create our service with a new directory in the root of the project named `service`. To initialize the service code we open up a command console window and setup the NPM project and install **Express**.
 
@@ -109,11 +108,17 @@ curl localhost:3000
 
 Now that we have the service up and running, we want to add the Simon backend service endpoints. To support our endpoints we do the following:
 
-1. **Install UUID**. The service represents its tokens with a universally unique ID (UUID) and so we need to import that NPM package using `npm install uuid` and then import it into the code.
+1. **Install required packages**. The service supports authentication tracking with cookies, representing its tokens with a universally unique ID (UUID), and cryptographically hashing password with bcrypt and so we need to install and import those NPM packages.
 
-   ```js
-   const uuid = require('uuid');
-   ```
+```sh
+npm install cookie-parser bcrypt uuid
+```
+
+```js
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
+```
 
 1. **Parse JSON**. All of our endpoints use JSON and so we want Express to automatically parse that for us.
 
@@ -128,7 +133,7 @@ Now that we have the service up and running, we want to add the Simon backend se
    let scores = [];
    ```
 
-1. **Set up a router path for the endpoints**. We want all of our endpoints to have a path prefix of `/api` so that we can distinguish them from requests to load the front end files. This is done with a `express.Router` call.
+1. **Set up a router path for the endpoints**. We want all of our endpoints to have a path prefix of `/api` so that we can distinguish them from requests to load the frontend files. This is done with a `express.Router` call.
 
    ```js
    let apiRouter = express.Router();
@@ -137,29 +142,29 @@ Now that we have the service up and running, we want to add the Simon backend se
 
 1. **Delete the placeholder endpoint**. Delete the placeholder endpoint `app.get('*' ...` that we created to demonstrate that the service was working.
 
-1. **Add the service endpoints**. Add all of the code for the different Simon endpoints.
+1. **Add the service endpoints**. Add all of the code for the different Simon endpoints. This includes the authentication and score endpoints. This code uses some helper functions for dealing with cookies and creating and finding users. If you don't understand what this code is doing then go back and review the [login](../../webServices/login/login.md) and [Express](../../webServices/express/express.md) topics.
 
    ```js
    // CreateAuth a new user
    apiRouter.post('/auth/create', async (req, res) => {
-     const user = users[req.body.email];
-     if (user) {
+     if (await findUser('email', req.body.email)) {
        res.status(409).send({ msg: 'Existing user' });
      } else {
-       const user = { email: req.body.email, password: req.body.password, token: uuid.v4() };
-       users[user.email] = user;
+       const user = await createUser(req.body.email, req.body.password);
 
-       res.send({ token: user.token });
+       setAuthCookie(res, user.token);
+       res.send({ email: user.email });
      }
    });
 
    // GetAuth login an existing user
    apiRouter.post('/auth/login', async (req, res) => {
-     const user = users[req.body.email];
+     const user = await findUser('email', req.body.email);
      if (user) {
-       if (req.body.password === user.password) {
+       if (await bcrypt.compare(req.body.password, user.password)) {
          user.token = uuid.v4();
-         res.send({ token: user.token });
+         setAuthCookie(res, user.token);
+         res.send({ email: user.email });
          return;
        }
      }
@@ -167,27 +172,52 @@ Now that we have the service up and running, we want to add the Simon backend se
    });
 
    // DeleteAuth logout a user
-   apiRouter.delete('/auth/logout', (req, res) => {
-     const user = Object.values(users).find((u) => u.token === req.body.token);
+   apiRouter.delete('/auth/logout', async (req, res) => {
+     const user = await findUser('token', req.cookies[authCookieName]);
      if (user) {
        delete user.token;
      }
+     res.clearCookie(authCookieName);
      res.status(204).end();
    });
 
+   // Middleware to verify that the user is authorized to call an endpoint
+   const verifyAuth = async (req, res, next) => {
+     const user = await findUser('token', req.cookies[authCookieName]);
+     if (user) {
+       next();
+     } else {
+       res.status(401).send({ msg: 'Unauthorized' });
+     }
+   };
+
    // GetScores
-   apiRouter.get('/scores', (_req, res) => {
+   apiRouter.get('/scores', verifyAuth, (_req, res) => {
      res.send(scores);
    });
 
    // SubmitScore
-   apiRouter.post('/score', (req, res) => {
-     scores = updateScores(req.body, scores);
+   apiRouter.post('/score', verifyAuth, (req, res) => {
+     scores = updateScores(req.body);
      res.send(scores);
    });
 
+   // Default error handler
+   app.use(function (err, req, res, next) {
+     res.status(500).send({ type: err.name, message: err.message });
+   });
+
+   // Return the application's default page if the path is unknown
+   app.use((_req, res) => {
+     res.sendFile('index.html', { root: 'public' });
+   });
+   ```
+
+1. **Add the score and user helper functions**. The final part of the service code consists of some simple helper functions that will create and update users, as well as update the scores. When we move to the database implementation of the service these functions will be changed so that they store data in the database instead of in memory.
+
+   ```js
    // updateScores considers a new score for inclusion in the high scores.
-   function updateScores(newScore, scores) {
+   function updateScores(newScore) {
      let found = false;
      for (const [i, prevScore] of scores.entries()) {
        if (newScore.score > prevScore.score) {
@@ -207,16 +237,73 @@ Now that we have the service up and running, we want to add the Simon backend se
 
      return scores;
    }
+
+   async function createUser(email, password) {
+     const passwordHash = await bcrypt.hash(password, 10);
+
+     const user = {
+       email: email,
+       password: passwordHash,
+       token: uuid.v4(),
+     };
+     users.push(user);
+
+     return user;
+   }
+
+   async function findUser(field, value) {
+     if (!value) return null;
+
+     return users.find((u) => u[field] === value);
+   }
+
+   // setAuthCookie in the HTTP response
+   function setAuthCookie(res, authToken) {
+     res.cookie(authCookieName, authToken, {
+       secure: true,
+       httpOnly: true,
+       sameSite: 'strict',
+     });
+   }
    ```
+
+### Secure endpoints
+
+With the addition of authentication functionality we can restrict the access to endpoints using a simple Express middleware technique. The following code creates a middleware function named `verifyAuth` that gets the requesting user's authentication cooking. If there is a user that matches the cookie then it allows the HTTP request to continue to the next middleware handler. Otherwise it will fail the request with a 401 (unauthorized) HTTP status code.
+
+```js
+// Middleware to verify that the user is authorized to call an endpoint
+const verifyAuth = async (req, res, next) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  if (user) {
+    next();
+  } else {
+    res.status(401).send({ msg: 'Unauthorized' });
+  }
+};
+```
+
+We then use the middleware `verifyAuth` function as a parameter in any endpoint that we want to secure. By placing it as the first middleware callback, it stops the endpoint from being called if the user is not authenticated.
+
+```js
+// GetScores
+apiRouter.get('/scores', verifyAuth, (_req, res) => {
+  res.send(scores);
+});
+```
+
+### Testing the service
 
 Now we can start the service up by pressing `F5` inside of VS code and then open a command console window to execute some Curl commands.
 
 ```sh
 host=http://localhost:3000
 
-curl -X POST $host/api/score  -H 'Content-Type: application/json' -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}'
+curl -X POST $host/api/auth/create -H 'Content-Type: application/json' -d '{"email":"s@byu.edu", "password":"byu"}' -c cookies.txt -b cookies.txt
 
-curl $host/api/scores
+curl -X POST $host/api/score  -H 'Content-Type: application/json' -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}' -c cookies.txt -b cookies.txt
+
+curl $host/api/scores -c cookies.txt -b cookies.txt
 ```
 
 ### Serving the frontend static file
@@ -232,32 +319,6 @@ app.use(express.static('public'));
 ```
 
 However, we don't have a `public` directory with the frontend files in it. This will happen when we deploy to our web server in AWS. For now, you can test that it is working by creating a simple index.html file in the `service/public` directory and then requesting it with curl. Once you have done this delete the test `service/public` directory so that we don't leave any cruft around.
-
-### Configuring Vite for debugging
-
-When running in production, the Simon web service running under Node.js on port 3000 serves up the bundled Simon React application code when the browser requests `index.html`. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory as described above.
-
-However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running: one for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
-
-By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP to the Node.js HTTP server by creating a configuration file named `vite.config.js` in the root of the project with the following contents (later, we will modify this file to allow proxying of WebSocket requests as well).
-
-```js
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  server: {
-    proxy: {
-      '/api': 'http://localhost:3000',
-    },
-  },
-});
-```
-
-When running in this configuration, the network requests now flow as shown below. Without this you will not be able to debug your React application in your development environment.
-
-![Setting up React ports](simonDevelopmentDebugging.jpg)
-
-With the backend service running, and our files in the place where Vite expects them, we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup, make sure that you commit your changes.
 
 ## Frontend changes
 
@@ -341,7 +402,33 @@ function logout() {
 
 Since we now persist scores in the service we no longer need to persistent them in local storage. We can remove that code from both `simonGame.jsx` and `scores.jsx`.
 
-## Third party endpoints
+### Configuring Vite for debugging
+
+When running in production, the Simon web service running under Node.js on port 3000 serves up the bundled Simon React application code when the browser requests `index.html`. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory as described above.
+
+However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running: one for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
+
+By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP to the Node.js HTTP server by creating a configuration file named `vite.config.js` in the root of the project with the following contents (later, we will modify this file to allow proxying of WebSocket requests as well).
+
+```js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
+  },
+});
+```
+
+When running in this configuration, the network requests now flow as shown below. Without this you will not be able to debug your React application in your development environment.
+
+![Setting up React ports](simonDevelopmentDebugging.jpg)
+
+With the backend service running, and our files in the place where Vite expects them, we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup, make sure that you commit your changes.
+
+### Third party endpoints
 
 The `about.jsx` file contains code for making calls to third party endpoints using `fetch`. The requests are triggered by the React useEffect hook. We make one call to `picsum.photos` to get a random picture and another to `quote.cs260.click` to get a random quote. Once the endpoint asynchronously returns, the React state variables are updated. Here is an example of the quote endpoint call.
 
