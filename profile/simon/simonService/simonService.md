@@ -12,7 +12,7 @@ You can view this application running here: [Example Simon Service](https://simo
 
 ## Service endpoint definitions
 
-Here is our design, documented using `curl` commands, for the endpoints that the Simon web service provides. Note that the auth endpoints are using authorization tokens in the HTTP body. During the Login deliverable we will change this over to use HTTP cookies.
+Here is our design, documented using `curl` commands, for the endpoints that the Simon web service provides. Note that the auth endpoints are using authorization tokens contained in HTTP cookies.
 
 **CreateAuth** - Create a new user.
 
