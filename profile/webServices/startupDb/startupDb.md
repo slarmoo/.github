@@ -21,7 +21,7 @@ You must use the same startup GitHub repository that you created in the earlier 
 
 Remember to use the browser's debugger window to debug your frontend HTML, CSS and JavaScript. You can also debug your backend service JavaScript running on Node.js using the built in VS Code Node.js debugger.
 
-Once you have developed your application to where you want it, you need to release it to your production environment. Use the `deployService.sh` script from the [Simon Login repository](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
+Once you have developed your application to where you want it, you need to release it to your production environment. Use the `deployService.sh` script from the [Simon DB repository](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
 
 ```sh
 ./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
@@ -37,8 +37,8 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## 🚀 Deliverable
 
-1. Review and deploy Simon Login
-   1. Clone the Simon Login repository to your development environment.
+1. Review and deploy Simon DB
+   1. Clone the Simon DB repository to your development environment.
    1. Run `npm install` in root of the project.
    1. Open the project in VS Code and examine the application's use of JavaScript to support database storage and user authentication.
    1. Create and configure the `dbConfig.json` file with your MongoDB credentials.
@@ -65,7 +65,7 @@ Doing this will make this deliverable of your startup available from `https://st
 
 ## Grading Rubric
 
-- **Prerequisite**: Simon Login deployed to your production environment with your dbConfig.json credentials
+- **Prerequisite**: Simon DB deployed to your production environment with your dbConfig.json credentials
 - **Prerequisite**: A link to your GitHub startup repository prominently displayed on your application's home page
 - **Prerequisite**: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
 - **Prerequisite**: Enough Git commits to fully prove your ownership of your code. This usually means dozens of commits spread across multiple days of the deliverable development period. Failure to do this may result in the rejection of your submission.
