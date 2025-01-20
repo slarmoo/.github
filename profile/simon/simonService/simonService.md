@@ -74,7 +74,7 @@ npm init -y
 npm install express
 ```
 
-In the `service` directory, we create a file named `index.js`. `index.js` is the file we will use with **node.js** to start up our web service. In index.js we create a very basic simple service by adding very basic Express JavaScript code. This includes a temporary endpoint that accepts all HTTP GET requests by specifying `*` as the path. We will replace this endpoint later when we define the actual Simon endpoints. The code also parses the the arguments that you pass to node.js on startup to determine what HTTP port to use. If no port is specified then 3000 is used.
+In the `service` directory, we create a file named `index.js`. `index.js` is the file we will use with **node.js** to start up our web service. In index.js we create a very basic simple service by adding very basic Express JavaScript code. The code parses the arguments that are passed to node.js on startup to determine what HTTP port to use. If no port is specified then 3000 is used. We then include a temporary endpoint that accepts all HTTP GET requests by specifying `*` as the path. Later, we will replace this endpoint later with the ones we defined above.
 
 ```js
 const express = require('express');
@@ -104,7 +104,7 @@ curl localhost:3000
 
 ### Add the endpoints
 
-Now that we have the service up and running, we want to add the Simon backend service endpoints. To support our endpoints we do the following:
+Now that we have the service up and running, we want to replace the simple `*` endpoint with the ones needed for the Simon backend service endpoints. To fully implement the service we do the following:
 
 1. **Install required packages**. The service supports authentication tracking with cookies, representing its tokens with a universally unique ID (UUID), and cryptographically hashing password with bcrypt and so we need to install and import those NPM packages.
 
