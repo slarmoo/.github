@@ -4,7 +4,7 @@ With the understanding of what the WebSocket protocol is, the basics of using it
 
 ![WebSocket Peers](webServicesWebSocketPeers.jpg)
 
-In this example we will create a React frontend that uses WebSocket and displays the resulting chat. The React code for the client will be organized similarly to Simon and your Startup. A backend Express server will forward the WebSocket communication from the different clients.
+In this example we will create a React frontend that uses WebSocket and displays chats between multiple users. The React code for the client will be organized similarly to Simon and your Startup. A backend Express server will forward the WebSocket communication from the different clients.
 
 ## Configuring the project
 
@@ -16,7 +16,7 @@ Before we begin writing the code, we need to set up the React application projec
    npm install vite@latest -D
    npm install react react-dom
    ```
-1. Configuring Vite to proxy API requests through to the backend when debugging.
+1. Configuring Vite to proxy API requests through the backend when debugging.
 1. Creating a basic `index.html` file that loads your React application.
 1. Creating your React application in `index.jsx`.
 
@@ -52,7 +52,7 @@ root.render(<Chat />);
 
 ### Chat component
 
-The Chat component introduces a state variable for the user's name and injects three sub-components, Name, Message, and Conversation. The `Name` component allows the user to specify what name they want to associate with their messages. The `Message` component allows the user to create and send a message. The `Conversation` component displays the chat messages.
+The `Chat` component introduces a state variable for the user's name and injects three sub-components: `Name`, `Message`, and `Conversation`. The **Name** component allows the user to specify what name they want to associate with their messages. The **Message** component allows the user to create and send a message. The **Conversation** component displays the chat messages. Using component properties we can share the ability access the access the name and webSocket communication object.
 
 ```jsx
 function Chat({ webSocket }) {
@@ -70,7 +70,7 @@ function Chat({ webSocket }) {
 
 ### Name component
 
-The `Name` component implements a simple input element that uses the passed in setter function to update the name variable (in the calling component) whenever text is entered in the input field.
+The `Name` component implements a simple input element that uses the updateName function function to change the name used by the entire application.
 
 ```jsx
 function Name({ updateName }) {
@@ -89,7 +89,7 @@ function Name({ updateName }) {
 
 ### Message component
 
-The `Message` component provides an input element for chat text as well as a button for sending the message. Notice that if `disabled` evaluates to true, then the chat box and button are disabled. The `doneMessage` function provides alternative message sending capability when the `return` key is pressed. Notice that the `sendMsg` function calls the `sendMessage` method on the 'webSocket' object to send the message to other users, and calls the `setMessage` function to allow other components to process what the user has input.
+The `Message` component provides an input element for chat text as well as a button for sending the message. Notice that if `disabled` evaluates to true, then the chat box and button are disabled. The `doneMessage` function provides alternative message sending capability that is initiated when the `return` key is pressed. The `sendMsg` function calls the `sendMessage` method on the 'webSocket' object to send the message to other users, and also calls the `setMessage` function to allow other components to process what the user has input.
 
 ```jsx
 function Message({ name, webSocket }) {
@@ -123,7 +123,7 @@ function Message({ name, webSocket }) {
 
 ### Conversation component
 
-Finally, the `Conversation` component provides a place for chat messages to be displayed.
+The `Conversation` component provides a place for chat messages to be displayed. It maintains a list of all chats in the `chats` state variable and dynamically creates JSX to render the conversation.
 
 ```jsx
 function Conversation({ webSocket }) {
@@ -148,6 +148,8 @@ function Conversation({ webSocket }) {
 }
 ```
 
+Security-minded developers will realize that manipulating the DOM to include user supplied data may allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
+
 ## ChatClient
 
 The `ChatClient` class manages the WebSocket in order to connect, send, and receive messages. The class is instantiated as a parameter to the Chat component.
@@ -156,16 +158,14 @@ The `ChatClient` class manages the WebSocket in order to connect, send, and rece
 root.render(<Chat webSocket={new ChatClient()} />);
 ```
 
-The class constructor sets up the WebSocket. First, we look at the protocol that is currently being used, as represented by the `window.location.protocol` variable. If it is non-secure HTTP then we set our WebSocket protocol to be non-secure WebSocket (`ws`). Otherwise we use secure WebSocket (`wss`). Next, we use that protocol to then connect the WebSocket to the same location that we loaded the HTML from by referencing the `window.location.host` variable.
+In order to properly handle both secure and insecure WebSocket connections the ChatClient examines what protocol is currently being used for HTTP communication as represented by the browser's `window.location.protocol` variable. If it is non-secure HTTP then we set our WebSocket protocol to be non-secure WebSocket (`ws`). Otherwise we use secure WebSocket (`wss`). With the correct protocol in hand, we then connect the WebSocket to the same location that we loaded the HTML from by referencing the `window.location.host` variable.
 
 ```js
 const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
 this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 ```
 
-We then register several listeners to the websocket for the `onopen`, `onmessage` and `onclose` events. The ChatClient interacts with the React components by allowing them to register as observers for when chat messages are received. Then when the WebSocket events are triggered the ChatClient can forward those events onto the registered observers.
-
-Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
+We then register several listeners on the websocket connection. This incudes the `onopen`, `onmessage` and `onclose` events. The ChatClient interacts with the React components by allowing them to register as observers for when chat messages are received. Then when the WebSocket events are triggered, the ChatClient can notify the observers of the events.
 
 ```jsx
 class ChatClient {
@@ -228,14 +228,14 @@ Then we create a file named `service.js` and add our service code.
 
 ### Web service
 
-The web service is established using a simple Express application. Note that we serve up our client HTML, CSS, and JavaScript files using the `static` middleware.
+The web service HTTP communication is facilitated by using a simple Express configuration. Note that we serve up our frontend using the `static` middleware from the public directory.
 
 ```js
 const { WebSocketServer } = require('ws');
 const express = require('express');
 const app = express();
 
-// Serve up our webSocket client HTML
+// Serve up the webSocket frontend
 app.use(express.static('./public'));
 
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -246,7 +246,7 @@ server = app.listen(port, () => {
 
 ### WebSocket server
 
-When we create our WebSocket we simply provide our Express HTTP server object in the constructor. This allows the WebSocket code to intercept WebSocket upgrade requests and processing future WebSocket messages.
+When we create our WebSocket object, we simply provide our Express HTTP server object in the constructor. This allows the WebSocket code to intercept WebSocket upgrade requests and process future WebSocket messages.
 
 ```js
 server = app.listen(port, () => {
@@ -259,9 +259,9 @@ const socketServer = new WebSocketServer({ server });
 
 ### Forwarding messages
 
-With the WebSocket server we can use the `connection`, `message`, and `pong` events to receive and send data between peers. We use the WebSocket object's built in connection list to determine who we forward messages to, and to decide if the connections are still open.
+With the WebSocket object in place, we can use the on `connection`, `message`, and `pong` events to receive and send data between peers. We use the WebSocket object's built in connection list to determine who we forward messages to, and to decide if the connections are still open.
 
-So that we can test if a connection has closed we use the ping/pong protocol that is built into WebSocket. At a given interval we send a ping message and then respond to the pong event to update that the socket is still alive. Any connection that did not respond, will remain in the not alive, and get terminated on the next pass.
+So that we can test if a connection has closed, we use the ping/pong protocol that is built into WebSocket. At a given interval we send a ping message to the frontend. The frontend then responds with a pong message. When the backend receives the pong message it updates that the socket is still alive. Any connection that did not respond, will remain in the not alive state, and get terminated on the next pass.
 
 ```js
 socketServer.on('connection', (socket) => {
@@ -295,7 +295,7 @@ setInterval(() => {
 
 ## Vite.config.js
 
-The vite.config.js file in the example's root directory routes websocket traffic away from port 5137 (where vite is serving the frontend) to port 3000 (where the backend is listening for chat traffic). We have seen something similar before when we used vite to reroute our service endpoints while debugging in our development environment. Here, again, this file is only used for debugging during development and is not pushed to the production environment. Note that the file is routing traffic on the `/ws` path, which is why above, this path was included when we instantiated the `WebSocketServer` object in the frontend client code.
+When debugging, the vite.config.js file in the root directory is configured to route websocket traffic from port 5137 (where Vite is serving the frontend) to port 3000 (where the backend is listening for chat traffic). We have seen something similar before when we used Vite to reroute our service endpoints while debugging in our development environment. This configuration is only used for debugging during development and is not used in our production environment. Since we only use the insecure WebSocket protocol (ws) when debugging we only proxy that protocol in this configuration.
 
 ```js
 import { defineConfig } from 'vite';
@@ -314,7 +314,7 @@ export default defineConfig({
 
 ## Experiment
 
-You can find the complete example described above in this [GitHub repository](https://github.com/webprogramming260/websocket-chat).
+You can find the complete example described above in the [websocket-chat repository](https://github.com/webprogramming260/websocket-chat). To run it yourself, take the following steps:
 
 1. Clone the repository.
 1. Run `npm install` from a console window in the example root directory.
@@ -322,7 +322,8 @@ You can find the complete example described above in this [GitHub repository](ht
 1. Open up the code in VS Code and review what it is doing.
 1. Run and debug the example by pressing `F5` for the file `service/index.js`. You may need to select node.js as the debugger the first time you run.
 1. Run `npm run dev` from a console window in the example root directory.
-1. Open multiple browser windows and point them to http://localhost:5137 and start chatting.
+1. Open multiple browser windows and point them to http://localhost:5137.
+1. Provide a user name and start chatting.
 1. Use the browser's debugger to view the WebSocket communication.
 
 ![WebSocket Chat](webSocketChat.png)
