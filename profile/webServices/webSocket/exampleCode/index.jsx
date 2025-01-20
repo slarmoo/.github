@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-function ChatApp({ webSocket }) {
+function Chat({ webSocket }) {
   const [name, setName] = React.useState('');
 
   return (
@@ -19,11 +19,7 @@ function Name({ updateName }) {
       <div className='name'>
         <fieldset id='name-controls'>
           <legend>My Name</legend>
-          <input
-            onChange={(e) => updateName(e.target.value)}
-            id='my-name'
-            type='text'
-          />
+          <input onChange={(e) => updateName(e.target.value)} id='my-name' type='text' />
         </fieldset>
       </div>
     </main>
@@ -49,13 +45,7 @@ function Message({ name, webSocket }) {
     <main>
       <fieldset id='chat-controls'>
         <legend>Chat</legend>
-        <input
-          disabled={disabled}
-          onKeyDown={(e) => doneMessage(e)}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          type='text'
-        />
+        <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
         <button disabled={disabled || !message} onClick={sendMsg}>
           Send
         </button>
@@ -130,4 +120,4 @@ class ChatClient {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ChatApp webSocket={new ChatClient()} />);
+root.render(<Chat webSocket={new ChatClient()} />);
