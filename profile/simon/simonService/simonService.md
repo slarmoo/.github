@@ -74,9 +74,7 @@ npm init -y
 npm install express
 ```
 
-In that directory create a file named `index.js` in the root of the project. This is the entry point that **node.js** will call when you run your web service.
-
-Add the basic Express JavaScript code needed to make a service.
+In the `service` directory, we create a file named `index.js`. `index.js` is the file we will use with **node.js** to start up our web service. In index.js we create a very basic simple service by adding very basic Express JavaScript code. This includes a temporary endpoint that accepts all HTTP GET requests by specifying `*` as the path. We will replace this endpoint later when we define the actual Simon endpoints. The code also parses the the arguments that you pass to node.js on startup to determine what HTTP port to use. If no port is specified then 3000 is used.
 
 ```js
 const express = require('express');
