@@ -64,7 +64,7 @@ async function createUser(email, password) {
   return user;
 }
 
-async function getUser(field, value) {
+function getUser(field, value) {
   return users.find((user) => user[field] === value);
 }
 

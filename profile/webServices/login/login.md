@@ -188,9 +188,6 @@ To hash our passwords we will use the `bcrypt` package. This creates a very secu
 
 ### Working create and get user functions
 
-> [!NOTE]
-> Note that we make the `getUser` function async because we are going to need that when we move to using a database.
-
 ```js
 const bcrypt = require('bcrypt');
 
@@ -209,7 +206,7 @@ async function createUser(email, password) {
   return user;
 }
 
-async function getUser(field, value) {
+function getUser(field, value) {
   return users.find((user) => user[field] === value);
 }
 ```
