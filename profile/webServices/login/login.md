@@ -11,7 +11,7 @@ The following uses HTTP to define what each of our authentication endpoints look
 This takes an email and password and returns a cookie containing the authentication token and user ID. If the email already exists it returns a 409 (conflict) status code.
 
 ```http
-POST /auth HTTP/2
+POST /api/auth HTTP/2
 Content-Type: application/json
 
 {
@@ -35,7 +35,7 @@ Set-Cookie: auth=tokenHere
 This takes an email and password and returns a cookie containing the authentication token and user ID. If the email does not exist or the password is bad it returns a 401 (unauthorized) status code.
 
 ```http
-POST /auth HTTP/2
+POST /api/auth HTTP/2
 Content-Type: application/json
 
 {
@@ -60,7 +60,7 @@ Set-Cookie: auth=tokenHere
 This takes an email and password and returns a cookie containing the authentication token and user ID. If the email does not exist or the password is bad it returns a 401 (unauthorized) status code.
 
 ```http
-DELETE /auth HTTP/2
+DELETE /api/auth HTTP/2
 Cookie: auth=tokenHere
 ```
 
@@ -77,7 +77,7 @@ Content-Type: application/json
 This uses the authentication token stored in the cookie to look up and return information about the authenticated user. If the token or user do not exist it returns a `401 (unauthorized)` status code.
 
 ```http
-GET /user HTTP/2
+GET /api/user HTTP/2
 Cookie: auth=tokenHere
 ```
 
@@ -101,19 +101,19 @@ With our service endpoints defined, we can now build our web service using Expre
 const express = require('express');
 const app = express();
 
-app.post('/auth', async (req, res) => {
+app.post('/api/auth', async (req, res) => {
   res.send({ email: 'marta@id.com' });
 });
 
-app.put('/auth', async (req, res) => {
+app.put('/api/auth', async (req, res) => {
   res.send({ email: 'marta@id.com' });
 });
 
-app.delete('/auth', async (req, res) => {
+app.delete('/api/auth', async (req, res) => {
   res.send({});
 });
 
-app.get('/user', async (req, res) => {
+app.get('/api/user', async (req, res) => {
   res.send({ email: 'marta@id.com' });
 });
 
@@ -132,7 +132,7 @@ Using the above code, use the following steps to create and start the authentica
 1. You can now open a console window and use `curl` to try out one of the endpoints.
 
    ```sh
-   curl -X POST localhost:3000/auth -d '{"email":"test@id.com", "password":"a"}'
+   curl -X POST localhost:3000/api/auth -d '{"email":"test@id.com", "password":"a"}'
    ```
 
    ```sh
@@ -146,7 +146,7 @@ With our basic service created, we can now fill in the registration endpoint. Th
 ```js
 app.use(express.json());
 
-app.post('/auth', (req, res) => {
+app.post('/api/auth', (req, res) => {
   res.send({
     email: req.body.email,
     password: req.body.password,
@@ -155,7 +155,7 @@ app.post('/auth', (req, res) => {
 ```
 
 ```sh
-curl -X POST localhost:3000/auth -H "Content-Type: application/json" -d '{"email":"test@id.com", "password":"a"}'
+curl -X POST localhost:3000/api/auth -H "Content-Type: application/json" -d '{"email":"test@id.com", "password":"a"}'
 ```
 
 ```sh
@@ -219,7 +219,7 @@ async function getUser(field, value) {
 Now we can completely implement the registration endpoint by first checking to see if we already have a user with that email address. If we do, then we immediately return a 409 (conflict) status code. Otherwise we create a new user and only return the user's email.
 
 ```js
-app.post('/auth', async (req, res) => {
+app.post('/api/auth', async (req, res) => {
   if (await getUser('email', req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
@@ -255,7 +255,7 @@ const uuid = require('uuid');
 
 app.use(cookieParser());
 
-app.post('/auth', async (req, res) => {
+app.post('/api/auth', async (req, res) => {
   if (await getUser('email', req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
@@ -282,7 +282,7 @@ function setAuthCookie(res, user) {
 The login authorization endpoint needs to get the hashed password from the database, compare it to the provided password using `bcrypt.compare`, and if successful set the authentication token in the cookie. If the password does not match, or there is no user with the given email, the endpoint returns status 401 (unauthorized).
 
 ```js
-app.put('/auth', async (req, res) => {
+app.put('/api/auth', async (req, res) => {
   const user = await getUser('email', req.body.email);
   if (user && (await bcrypt.compare(req.body.password, user.password))) {
     setAuthCookie(res, user);
@@ -299,7 +299,7 @@ app.put('/auth', async (req, res) => {
 The logout authorization endpoint needs to remove the authorization token from the user get the hashed password from the database, compare it to the provided password using `bcrypt.compare`, and if successful set the authentication token in the cookie. If the password does not match, or there is no user with the given email, the endpoint returns status 401 (unauthorized).
 
 ```js
-app.delete('/auth', async (req, res) => {
+app.delete('/api/auth', async (req, res) => {
   const token = req.cookies['token'];
   const user = await getUser('token', token);
   if (user) {
@@ -320,7 +320,7 @@ function clearAuthCookie(res, user) {
 With everything in place to create credentials and login using the credentials, we can now implement the `getMe` endpoint to demonstrate that it all actually works. To implement this we get the user object from the database by querying on the authentication token. If there is not an authentication token, or there is no user with that token, we return status 401 (unauthorized).
 
 ```js
-app.get('/user/me', async (req, res) => {
+app.get('/api/user/me', async (req, res) => {
   const token = req.cookies['token'];
   const user = await getUser('token', token);
   if (user) {
@@ -331,7 +331,7 @@ app.get('/user/me', async (req, res) => {
 });
 ```
 
-## Final code
+## The final login backend code
 
 Here is the full example code.
 
@@ -345,7 +345,7 @@ const bcrypt = require('bcrypt');
 app.use(express.json());
 app.use(cookieParser());
 
-app.post('/auth', async (req, res) => {
+app.post('/api/auth', async (req, res) => {
   if (await getUser('email', req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
@@ -356,7 +356,7 @@ app.post('/auth', async (req, res) => {
   }
 });
 
-app.put('/auth', async (req, res) => {
+app.put('/api/auth', async (req, res) => {
   const user = await getUser('email', req.body.email);
   if (user && (await bcrypt.compare(req.body.password, user.password))) {
     setAuthCookie(res, user);
@@ -367,7 +367,7 @@ app.put('/auth', async (req, res) => {
   }
 });
 
-app.delete('/auth', async (req, res) => {
+app.delete('/api/auth', async (req, res) => {
   const token = req.cookies['token'];
   const user = await getUser('token', token);
   if (user) {
@@ -377,7 +377,7 @@ app.delete('/auth', async (req, res) => {
   res.send({});
 });
 
-app.get('/user/me', async (req, res) => {
+app.get('/api/user/me', async (req, res) => {
   const token = req.cookies['token'];
   const user = await getUser('token', token);
   if (user) {
@@ -432,25 +432,152 @@ app.listen(port, function () {
 With everything implemented, we can use `curl` to try it out. First start up the web service from VS Code by pressing `F5` and selecting `node.js` as the debugger if you have not already done that. You can set breakpoints on all of the different endpoints to see what they do and inspect the different variables. Then open a console window and run the following `curl` commands. You should see results similar to what is shown below. Note that the `-c` and `-b` parameters tell curl to store and use cookies with the given file.
 
 ```sh
-curl -X POST localhost:3000/auth/create -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
-```
-
-```sh
-{"id":"639bb9d644416bf7278dde44"}
-```
-
-```sh
-curl -c cookie.txt -X POST localhost:3000/auth/login -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
-```
-
-```sh
-{"id":"639bb9d644416bf7278dde44"}
-```
-
-```sh
-curl -b cookie.txt localhost:3000/user/me
+curl -X POST localhost:3000/api/auth -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
 ```
 
 ```sh
 {"email":"지안@id.com"}
 ```
+
+```sh
+curl -c cookie.txt -X PUT localhost:3000/api/auth -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
+```
+
+```sh
+{"email":"지안@id.com"}
+```
+
+```sh
+curl -b cookie.txt localhost:3000/api/user/me
+```
+
+```sh
+{"email":"지안@id.com"}
+```
+
+## Login frontend code
+
+With the backend service in place, we can create a simple React application that demonstrates the use of the authentication endpoints. First we need to follow the basic React setup that we discussed in the simple [Hello World React](../../webFrameworks/react/introduction/introduction.md#react-hello-world) app that we created in previous instruction. This includes:
+
+1. Creating an NPM project, installing Vite, and installing React.
+   ```sh
+   npm init -y
+   npm install vite@latest -D
+   npm install react react-dom react-router-dom
+   ```
+1. Configuring Vite to proxy API requests through to the backend when debugging.
+1. Creating a basic `index.html` file that loads your React application.
+1. Creating your React application in `index.jsx`.
+
+### The authentication components
+
+In the index.jsx file we will set up some simple routing between a **login** component and a user **profile** component.
+
+```jsx
+function App() {
+  return (
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path='/' element={<Login />} exact />
+          <Route path='/profile' element={<Profile />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  );
+}
+```
+
+The login component will handle the authentication calls to the backend.
+
+```jsx
+function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  function handleLogin() {
+    createAuth('PUT');
+  }
+
+  function handleRegister() {
+    createAuth('POST');
+  }
+
+  async function createAuth(method) {
+    const res = await fetch('api/auth', {
+      method: method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+    await res.json();
+    if (res.ok) {
+      navigate('/profile');
+    } else {
+      alert('Authentication failed');
+    }
+  }
+
+  return (
+    <div>
+      <h1>Login</h1>
+      <div>
+        <label>Email:</label>
+        <input type='text' onChange={(e) => setEmail(e.target.value)} required />
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type='password' onChange={(e) => setPassword(e.target.value)} required />
+      </div>
+      <button type='submit' disabled={!(email && password)} onClick={handleLogin}>
+        Login
+      </button>
+      <button type='button' disabled={!(email && password)} onClick={handleRegister}>
+        Register
+      </button>
+    </div>
+  );
+}
+```
+
+And the profile component will display the current user and provide the ability to logout.
+
+```jsx
+function Profile() {
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = React.useState('');
+
+  React.useEffect(() => {
+    (async () => {
+      const res = await fetch('api/user/me');
+      const data = await res.json();
+      setUserInfo(data);
+    })();
+  }, []);
+
+  function handleLogout() {
+    fetch('api/auth', {
+      method: 'DELETE',
+    });
+    navigate('/');
+  }
+
+  return (
+    <div>
+      <h1>Profile</h1>
+      <div>Logged in as: {userInfo.email}</div>
+      <button type='button' onClick={handleLogout}>
+        Logout
+      </button>
+    </div>
+  );
+}
+```
+
+### The finished product
+
+With the backend running on port 3000, and the frontend running with the Vite hot reloading HTTP server we will be able to debug the login application in both the browser, for the frontend, and with VS Code, for the backend.
+
+![Login demo](loginDemo.gif)
+
+You can find the complete frontend example [here](exampleCode).

@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 app.use(express.json());
 app.use(cookieParser());
 
-app.post('/auth', async (req, res) => {
+app.post('/api/auth', async (req, res) => {
   if (await getUser('email', req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
@@ -18,7 +18,7 @@ app.post('/auth', async (req, res) => {
   }
 });
 
-app.put('/auth', async (req, res) => {
+app.put('/api/auth', async (req, res) => {
   const user = await getUser('email', req.body.email);
   if (user && (await bcrypt.compare(req.body.password, user.password))) {
     setAuthCookie(res, user);
@@ -29,7 +29,7 @@ app.put('/auth', async (req, res) => {
   }
 });
 
-app.delete('/auth', async (req, res) => {
+app.delete('/api/auth', async (req, res) => {
   const token = req.cookies['token'];
   const user = await getUser('token', token);
   if (user) {
@@ -39,7 +39,7 @@ app.delete('/auth', async (req, res) => {
   res.send({});
 });
 
-app.get('/user/me', async (req, res) => {
+app.get('/api/user/me', async (req, res) => {
   const token = req.cookies['token'];
   const user = await getUser('token', token);
   if (user) {
