@@ -2,7 +2,7 @@
 
 With the understanding of what the WebSocket protocol is, the basics of using it from Node and the browser, and the ability to debug the communication, it is time to use WebSocket to build a simple chat application.
 
-![WebSocket Peers](webServicesWebSocketPeers.jpg)
+![WebSocket Peers](../webSocket/webServicesWebSocketPeers.jpg)
 
 In this example we will create a React frontend that uses WebSocket and displays chats between multiple users. The React code for the client will be organized similarly to Simon and your Startup. A backend Express server will forward the WebSocket communication from the different clients.
 
@@ -314,7 +314,7 @@ export default defineConfig({
 
 ## Experiment
 
-You can find the complete example described above in the [websocket-chat repository](https://github.com/webprogramming260/websocket-chat). To run it yourself, take the following steps:
+You can find this complete example [here](exampleCode). To run it yourself, take the following steps:
 
 1. Clone the repository.
 1. Run `npm install` from a console window in the example root directory.

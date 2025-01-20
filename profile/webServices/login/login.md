@@ -580,4 +580,16 @@ With the backend running on port 3000, and the frontend running with the Vite ho
 
 ![Login demo](loginDemo.gif)
 
-You can find the complete frontend example [here](exampleCode).
+## Experiment
+
+You can find this complete example [here](exampleCode). To run it yourself, take the following steps:
+
+1. Clone the repository.
+1. Run `npm install` from a console window in the example root directory.
+1. Run `npm install` from a console window in the example service subdirectory.
+1. Open up the code in VS Code and review what it is doing.
+1. Run and debug the example by pressing `F5` for the file `service/index.js`. You may need to select node.js as the debugger the first time you run.
+1. Run `npm run dev` from a console window in the example root directory.
+1. Open multiple browser windows and point them to http://localhost:5137.
+1. Register, login, logout, and access the protected endpoint to get your user information.
+1. Use the browser's debugger to view the authentication communication.

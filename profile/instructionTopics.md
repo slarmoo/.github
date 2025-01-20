@@ -138,9 +138,9 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 
 ## WebSocket
 
-- [WebSocket](webServices/webSocket/webSocket.md)
-- [Debugging WebSocket](webServices/webSocket/debugging.md)
-- [WebSocket chat](webServices/webSocket/chat.md)
+- [WebSocket](webServices/webSocket/webSocket/webSocket.md)
+- [Debugging WebSocket](webServices/webSocket/debugging/debugging.md)
+- [WebSocket chat](webServices/webSocket/chat/chat.md)
 - [Simon WebSocket](simon/simonWebSocket/simonWebSocket.md)
 - 🚀 [Startup WebSocket](webServices/startupWebSocket/startupWebSocket.md)
 
