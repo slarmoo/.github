@@ -235,7 +235,7 @@ const { WebSocketServer } = require('ws');
 const express = require('express');
 const app = express();
 
-// Serve up the webSocket frontend
+// Serve up the chat frontend
 app.use(express.static('./public'));
 
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
