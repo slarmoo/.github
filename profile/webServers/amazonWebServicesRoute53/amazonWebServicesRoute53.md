@@ -17,7 +17,7 @@ AWS provides extensive documentation for all their services. You can find the do
 1. Open the AWS console in your browser and log in.
 1. Navigate to the `Route 53` service.
 1. Select the `Domains > Registered domains` option from the menu on the left.
-1. Push the `Register Domain` option.
+1. Push the `Register Domains` option.
 1. Select the TLD that you want. AWS currently offers the `.click` TLD for $3 and `.link` for $5.
 1. Put your desired root domain into the search box and press the `Check` button to see if it is available. Common one or two word phrases are almost always taken. For example, `260.click` is taken, but `webprogramming260.click` is not. Keep searching until you find one you like.
 1. Press `Add to cart`.
