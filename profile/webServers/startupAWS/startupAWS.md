@@ -36,7 +36,10 @@ When you are finished, the placeholder for your startup will be available from `
 
 ## Grading Rubric
 
-- 100% Your web page can be displayed using HTTPS and your domain name https://startup.yourdomain (where your domain is replaced with the domain you leased from Route53)
+> [!IMPORTANT]
+> Submit your Startup URL that includes your domain name for this deliverable (e.g. `https://startup.yourdomain`). **Do not** submit your GitHub repository URL.
+
+- 100% Your web page can be displayed using HTTPS and your domain name.
 
 ## Go celebrate
 
