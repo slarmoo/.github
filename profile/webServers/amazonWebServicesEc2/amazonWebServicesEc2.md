@@ -157,4 +157,4 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | You can SSH into the server, but you can't use HTTP                           | Check that your security group exposes SSH, HTTP, and HTTPS.                                                       |
 | Using the browser to hit my server using my IP was working but now it doesn't | Check that your IP address hasn't changed. Perhaps due to assigning an elastic IP address or stopping your server. |
-| My server doesn't come up in the browser                                      | Check that you are not trying to use `https`.                                                                      |
+| My server doesn't come up in the browser                                      | Check that you are not trying to use `https` before you configure Caddy to use https.                                                                      |
