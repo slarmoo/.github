@@ -4,7 +4,8 @@
 
 ## Prerequisites
 
-Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
+> [!IMPORTANT]
+>  Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
 
 - ☑ [Amazon Web Services - EC2](../amazonWebServicesEc2/amazonWebServicesEc2.md)
 - [Domain names](../domainNames/domainNames.md)
