@@ -9,7 +9,7 @@ Before you start work on this deliverable make sure you have read all of the pro
 - ☑ [Course Introduction](../introduction/introduction.md)
 - ☑ [AWS account](../awsAccount/awsAccount.md)
 - [Startup application](../startup/startup.md)
-- ☑ [Demo day submission](webFrameworks/demoDay/demoDay.md)
+- ☑ [Demo day submission](../../webFrameworks/demoDay/demoDay.md)
 - [Let's play Simon](../simon/simon.md)
 - [Git](../git/git.md)
 - ☑ [GitHub](../gitHub/gitHub.md)
