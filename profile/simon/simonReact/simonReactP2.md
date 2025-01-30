@@ -310,5 +310,11 @@ Get familiar with what the example code teaches.
   ./deployReact.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
+  If you are getting a permissions denied error when running `deployReact.sh`, your shell script may not have the correct permissions. Run the below command to fix this. 
+  
+  ```sh
+  sudo chmod +x deployFiles.sh
+  ``` 
+
 - Update your `startup` repository `notes.md` with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
