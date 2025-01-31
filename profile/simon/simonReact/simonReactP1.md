@@ -56,8 +56,7 @@ Then open the `package.json` file, found in the root of the project, that was cr
 | build   | Bundles a production version of the React application and copies it to the `dist` directory.                                                                       |
 | preview | Bundles a production version of the React application and starts Vite's hot reloading HTTP server. This is used to test a production version before deployment.    |
 
-> [!IMPORTANT]
-> Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
+> [!IMPORTANT] Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
 
 ## Reorganize the code
 
@@ -111,8 +110,7 @@ To use the React version of Bootstrap, import the NPM package.
 npm install bootstrap react-bootstrap
 ```
 
-Now, in the components where you want to refer to the Bootstrap styles, you can import the Bootstrap style sheet from the
-imported NPM package just like you would other CSS files.
+Now, in the components where you want to refer to the Bootstrap styles, you can import the Bootstrap style sheet from the imported NPM package just like you would other CSS files.
 
 ```jsx
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -512,12 +510,6 @@ At this point we are done porting the CSS deliverable to React. The final Simon 
 
 Notice how much better structured the code is and how we have leveraged Vite and React not only to build a reactive SPA but also to modularize the code.
 
-If you run the code in the debugger by running `npm run dev` or deploy the code using the `deployReact.sh` script you should see the following.
+If you run the code in the debugger by running `npm run dev`, or deploy the code to your production environment using the `deployReact.sh` script, you should see the following.
 
 ![CSS Port](cssPort.gif)
-
-  If you are getting a permissions denied error when running `deployReact.sh`, your shell script may not have the correct permissions. Run the below command to fix this. 
-  
-  ```sh
-  sudo chmod +x deployFiles.sh
-  ``` 

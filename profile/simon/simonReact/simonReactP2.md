@@ -290,13 +290,11 @@ Get familiar with what the example code teaches.
 - Debug the front and backend.
 - Make modifications to the code as desired. Experiment and see what happens.
 
-> [!IMPORTANT]
-> Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your frontend code in the browser.
+> [!IMPORTANT] Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your frontend code in the browser.
 
 ## Deploy to production
 
-> [!IMPORTANT]
-> The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment.
+> [!IMPORTANT] The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment.
 
 - Deploy to your production environment using the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
 
@@ -309,12 +307,6 @@ Get familiar with what the example code teaches.
   ```sh
   ./deployReact.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
-
-  If you are getting a permissions denied error when running `deployReact.sh`, your shell script may not have the correct permissions. Run the below command to fix this. 
-  
-  ```sh
-  sudo chmod +x deployFiles.sh
-  ``` 
 
 - Update your `startup` repository `notes.md` with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
