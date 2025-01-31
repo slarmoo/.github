@@ -515,3 +515,9 @@ Notice how much better structured the code is and how we have leveraged Vite and
 If you run the code in the debugger by running `npm run dev` or deploy the code using the `deployReact.sh` script you should see the following.
 
 ![CSS Port](cssPort.gif)
+
+  If you are getting a permissions denied error when running `deployReact.sh`, your shell script may not have the correct permissions. Run the below command to fix this. 
+  
+  ```sh
+  sudo chmod +x deployFiles.sh
+  ``` 
