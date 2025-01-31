@@ -37,7 +37,7 @@ At this point, your application will look rather strange because it doesn't have
 
 You must use the same startup GitHub repository that you created for the specification deliverable. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML commit those changes and push them to GitHub. Make sure you have enough commits that you can demonstrate your ownership of the code and protect yourself from loss. Usually this will mean at least ten commits, but in reality you may have many more than that. Failing to fully document your work may result in the rejection of your submission.
 
-Remember to use the `Live Server VS Code extension` to see what your code looks like in the browser. Also use the browser's debugger window to debug your HTML.
+Remember to use the **Live Server VS Code extension** to see what your code looks like in the browser. Also use the browser's debugger window to debug your HTML.
 
 Once you have developed your application to where you want it, you need to release it to your production environment. **Copy** the `deployFiles.sh` script from the [Simon HTML repository](https://github.com/webprogramming260/simon-html/blob/main/deployFiles.sh) to your startup repository and use `startup` for the service parameter (`-s`)
 
@@ -52,7 +52,12 @@ For example,
 ```
 
 > [!IMPORTANT]
-> Make sure you using a POSIX compliant console (not PowerShell or CMD) and that you run `deployFiles.sh` from the project directory that you want to deploy.
+>
+> Make sure you using a POSIX compliant console (**not PowerShell or CMD on Windows**) and that you run `deployFiles.sh` from the project directory that you want to deploy. If you get a permission denied error when you run the deploy script, you need to run the following command in order to give the script the right to execute.
+>
+> ```sh
+> sudo chmod +x deployFiles.sh
+> ```
 
 Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
 
