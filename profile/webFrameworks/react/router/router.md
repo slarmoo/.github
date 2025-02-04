@@ -133,7 +133,7 @@ Notice that as you click on the different navigation links the URL of the applic
 
 ## ☑ Assignment
 
-Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/poKLKaX) and add another component for the path of `/scores`.
+Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/poKLKaX) and add another component for the path of `/yellow`.
 
 _If your section of this course requires that you submit assignments for grading_: Submit your CodePen URL to the Canvas assignment.
 
