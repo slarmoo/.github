@@ -15,7 +15,7 @@ Unlike the work you do with other technologies for Simon, there is not a reposit
 
 ## Porting process steps
 
-The following section discusses the general steps taken to convert the Simon application from a simple HTML/CSS application to a React application. You will need to take similar steps for your startup project, and so it is important to understand what is happening at each step of the conversion process.
+This section discusses the general steps taken to convert the Simon application from a simple HTML/CSS application to a React application. You will need to take similar steps for your startup project, and so it is important to understand what is happening at each step of the conversion process.
 
 The process of converting code from one way of doing things to different way is called **porting**. Porting is a very common software engineering task. Completing this phase will make you more competent with the porting process.
 
