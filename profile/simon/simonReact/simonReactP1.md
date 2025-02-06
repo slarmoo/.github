@@ -195,6 +195,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
 
+Note that both the `index.html` and the `index.jsx` are located in the root of your project.
+
 ## Create App component
 
 To begin the transformation to using React components in our application, we create a top-level component, stored in `src/app.jsx`, and add some simple placeholder content that will get replaced later. In order for the styling to show up, we import Bootstrap, and the top level CSS found in `src/app.css`.
@@ -283,6 +285,18 @@ export default function App() {
 This will display the header, navigation elements, placeholder content, and the footer. When you reach this point with your startup, make sure that you commit your changes.
 
 ![App React component](appReactComponent.png)
+
+Our directory structure should look like the following at this point.
+
+```sh
+├─ public          # Static assets used in the app
+├─ src             # Frontend React code
+│    ├─ app.jsx    # React app component
+│    └─ app.css    # React app CSS
+├─ index.html      # App entry HTML
+└─ index.jsx       # React entry point
+
+```
 
 ## Create view components
 
