@@ -1,6 +1,7 @@
 # Simon Progressive Web Application
 
 > [!NOTE]
+>
 > This deliverable is optional and ungraded. The information provided here is meant as extended course content.
 
 ![Simon](../simon.png)

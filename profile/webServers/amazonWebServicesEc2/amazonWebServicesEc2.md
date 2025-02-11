@@ -10,9 +10,13 @@ When you rent a web server, it is physically located in a massive data center lo
 
 Assuming you already have an AWS account it is time to create your web server.
 
-> [!NOTE] AWS interface changes all the time, so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
+> [!NOTE]
+>
+> AWS interface changes all the time, so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
 
-> [!IMPORTANT] It is crucial that you use the N. Virginia AWS region because the Amazon Machine Image (AMI) you will use is only available in that region.
+> [!IMPORTANT]
+>
+> It is crucial that you use the N. Virginia AWS region because the Amazon Machine Image (AMI) you will use is only available in that region.
 
 1. Open the AWS console in your browser and log in.
 1. Navigate to the EC2 service.

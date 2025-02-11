@@ -5,6 +5,7 @@ Referring to a web server by its IP address is fine for development, but it is n
 `Route 53` is the AWS service that handles everything DNS-related. With Route 53 you can buy a domain name, host your domain on their DNS servers, and create DNS records.
 
 > [!IMPORTANT]
+>
 > You should already have an account with AWS from your work to rent a EC2 server instance. If you haven't done that work, go create your account and server following the previous instruction.
 
 ## Purchasing a domain name
@@ -12,6 +13,7 @@ Referring to a web server by its IP address is fine for development, but it is n
 AWS provides extensive documentation for all their services. You can find the documentation for [registering a new domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html) on their website. You may find the simplified directions below easier to follow, but if you run into trouble, or have additional questions, refer to the official documentation. Remember that you are leasing a domain name for a year, and so make sure it is a name that you would like. Also note that AWS credits do not apply to purchase of domain names.
 
 > [!IMPORTANT]
+>
 > If you are using new contact information that a registrar has never seen before, it will require you to verify the email address. Usually this means you will receive an email that you must respond to within 15 days. If you fail to do this your domain name will be removed from the registry without warning. Check your spam folder if you do not receive this email.
 
 1. Open the AWS console in your browser and log in.
@@ -37,6 +39,7 @@ Now that you own a domain name you can use it to create DNS records that will ma
 You will need the public IP address for your server. You can get the public IP address by opening the AWS browser console and viewing the details of your server on the EC2 service page.
 
 > [!NOTE]
+>
 > The AWS browser console interface changes all the time; the directions below may not match exactly, but similar functionality should be there in some shape or form.
 
 1. Open the AWS console in your browser and log in.
@@ -93,10 +96,10 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 
 ## Common problems
 
-| Symptom                                                                     | Reason                                                                                                                                                                                                                                    |
-| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| I leased my domain name and set up DNS, but I can't hit it with the browser | Give it some time. Perhaps 10 minutes. Use `dig` or `nslookup` to see if the DNS records are publicly available. Check to see if the IP address is correct. Make sure the DNS records are correct.                                        |
-| The browser doesn't display my website                                      | Check that you are not trying to use `https`. Check that the browser hasn't inserted a `www` subdomain prefix. Some browsers will hide this. You must actually click on the domain name in the address bar to see what it is really using |
-| My root domain works, but not the `simon` or `startup` subdomains           | Check your DNS records. Make sure you created a wildcard `*.yourdomain` record.                                                                                                                                                           |
-| My `simon` or `startup` subdomains work, but not my root domain             | Check your DNS records. Make sure you have a root record.                                                                                                                                                                                 |
-| My domain name was working, but after 15 days it stopped.                   | Make sure you received and responded the the email from the registrar to verify your email address. Check your spam folder if you did not receive an email. If you open the Route 53 browser console and navigate to your Registered Domain information you can see if it thinks you are verified or not.                                                                             |
+| Symptom                                                                     | Reason                                                                                                                                                                                                                                                                                                    |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| I leased my domain name and set up DNS, but I can't hit it with the browser | Give it some time. Perhaps 10 minutes. Use `dig` or `nslookup` to see if the DNS records are publicly available. Check to see if the IP address is correct. Make sure the DNS records are correct.                                                                                                        |
+| The browser doesn't display my website                                      | Check that you are not trying to use `https`. Check that the browser hasn't inserted a `www` subdomain prefix. Some browsers will hide this. You must actually click on the domain name in the address bar to see what it is really using                                                                 |
+| My root domain works, but not the `simon` or `startup` subdomains           | Check your DNS records. Make sure you created a wildcard `*.yourdomain` record.                                                                                                                                                                                                                           |
+| My `simon` or `startup` subdomains work, but not my root domain             | Check your DNS records. Make sure you have a root record.                                                                                                                                                                                                                                                 |
+| My domain name was working, but after 15 days it stopped.                   | Make sure you received and responded the the email from the registrar to verify your email address. Check your spam folder if you did not receive an email. If you open the Route 53 browser console and navigate to your Registered Domain information you can see if it thinks you are verified or not. |

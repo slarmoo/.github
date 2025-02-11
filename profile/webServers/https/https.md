@@ -75,6 +75,7 @@ You can obtain, and renew, a web certificate by enabling the ACME protocol for y
 For our work we are using the web service Caddy to act as a gateway to our different services and to host our static web application files. Caddy has ACME support built into it by default, and so all you need to do is configure Caddy with the domain name for your web server. Here are the steps to take.
 
 > [!NOTE]
+>
 > This is one of the few modification that you will manually make to your web server. Most other production changes are completed with automated continuous integration processes.
 
 1. Open a console window.

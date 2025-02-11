@@ -83,7 +83,9 @@ Now we can install Caddy, NVM, Node, and PM2
 
 At this point you have a fully functioning web server. Now build an AMI.
 
-> [!NOTE] If you are creating this is a BYU account, you may need to enabled the right to publish a public AMI: https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Settings:tab=dataProtectionAndSecurity
+> [!NOTE]
+>
+> If you are creating this is a BYU account, you may need to enabled the right to publish a public AMI: https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Settings:tab=dataProtectionAndSecurity
 
 - Open the AWS EC2 Browser Console and choose the create AMI option.
 - After the AMI creates, select it and change it to be publicly available.

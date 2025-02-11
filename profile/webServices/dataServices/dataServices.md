@@ -161,6 +161,7 @@ All of the major cloud providers offer multiple data services. For this class we
 [MongoDB Atlas sign up](https://www.mongodb.com/atlas/database)
 
 > [!IMPORTANT]
+>
 > This [video tutorial](https://www.youtube.com/watch?v=daIH4o75KE8) will step you through the process of creating your account and setting up your database. You really want to watch this video. Note that some of the Atlas website interface may be slightly different, but the basic concepts should all be there in some shape or form. The main steps you need to take are:
 
 1. Create your account.
@@ -202,6 +203,7 @@ In order to accomplish this do the following:
    ```
 
 > [!NOTE]
+>
 > Make sure you include `dbConfig.json` in your `.gitignore` file so that it does not get pushed up to GitHub.
 
 ### Testing the connection on startup

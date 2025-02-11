@@ -72,7 +72,9 @@ Then open the `package.json` file, found in the root of the project, that was cr
 | build   | Bundles a production version of the React application and copies it to the `dist` directory.                                                                       |
 | preview | Bundles a production version of the React application and starts Vite's hot reloading HTTP server. This is used to test a production version before deployment.    |
 
-> [!IMPORTANT] Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
+> [!IMPORTANT]
+>
+> Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
 
 ## Reorganize the code
 
@@ -140,7 +142,7 @@ import Button from 'react-bootstrap/Button';
 export function NavButton({ text, url }) {
   const navigate = useNavigate();
   return (
-    <Button variant='primary' onClick={() => navigate({ url })}>
+    <Button variant="primary" onClick={() => navigate({ url })}>
       {text}
     </Button>
   );
@@ -209,7 +211,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
 export default function App() {
-  return <div className='body bg-dark text-light'>App will display here</div>;
+  return <div className="body bg-dark text-light">App will display here</div>;
 }
 ```
 
@@ -236,30 +238,30 @@ To make `app.jsx` represent the actual Simon content, we enhance the `app.jsx` f
 ```jsx
 export default function App() {
   return (
-    <div className='body bg-dark text-light'>
-      <header className='container-fluid'>
-        <nav className='navbar fixed-top navbar-dark'>
-          <div className='navbar-brand'>
+    <div className="body bg-dark text-light">
+      <header className="container-fluid">
+        <nav className="navbar fixed-top navbar-dark">
+          <div className="navbar-brand">
             Simon<sup>&reg;</sup>
           </div>
-          <menu className='navbar-nav'>
-            <li className='nav-item'>
-              <a className='nav-link' href='index.html'>
+          <menu className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="index.html">
                 Home
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='play.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="play.html">
                 Play
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='scores.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="scores.html">
                 Scores
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='about.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="about.html">
                 About
               </a>
             </li>
@@ -269,10 +271,10 @@ export default function App() {
 
       <main>App components go here</main>
 
-      <footer className='bg-dark text-white-50'>
-        <div className='container-fluid'>
-          <span className='text-reset'>Author Name(s)</span>
-          <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
+      <footer className="bg-dark text-white-50">
+        <div className="container-fluid">
+          <span className="text-reset">Author Name(s)</span>
+          <a className="text-reset" href="https://github.com/webprogramming260/simon-react">
             Source
           </a>
         </div>
@@ -309,7 +311,7 @@ import React from 'react';
 
 export function Login() {
   return (
-    <main className='container-fluid bg-secondary text-center'>
+    <main className="container-fluid bg-secondary text-center">
       <div>login displayed here</div>
     </main>
   );
@@ -372,28 +374,28 @@ We then we replace the `a` elements with the router's `NavLink` component. The a
 The `NavLink` component prevents the browser's default navigation functionality and instead handles it by replacing the currently displayed component. Once we have converted all the links, the `nav` element's code now looks like the following.
 
 ```jsx
-<nav className='navbar fixed-top navbar-dark'>
-  <div className='navbar-brand'>
+<nav className="navbar fixed-top navbar-dark">
+  <div className="navbar-brand">
     Simon<sup>&reg;</sup>
   </div>
-  <menu className='navbar-nav'>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to=''>
+  <menu className="navbar-nav">
+    <li className="nav-item">
+      <NavLink className="nav-link" to="">
         Login
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='play'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="play">
         Play
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='scores'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="scores">
         Scores
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='about'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="about">
         About
       </NavLink>
     </li>
@@ -423,7 +425,7 @@ Notice that the `*` (default matcher) was added to handle the case where an unkn
 
 ```js
 function NotFound() {
-  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  return <main className="container-fluid bg-secondary text-center">404: Return to sender. Address unknown.</main>;
 }
 ```
 

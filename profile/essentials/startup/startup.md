@@ -36,6 +36,7 @@ In order to make the submission and grading process as efficient as possible it 
 1. Inclusion of notes in your startup Git repository `README.md` file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example. Please reference the items from the rubric for each deliverable in your description of what you did, and what you did not.
 
 > [!IMPORTANT]
+>
 > Deliverables that do not include the above will not be accepted for grading.
 
 ## Ideas

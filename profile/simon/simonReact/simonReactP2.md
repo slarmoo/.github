@@ -39,17 +39,17 @@ export function About(props) {
   }, []);
 
   return (
-    <main className='container-fluid bg-secondary text-center'>
+    <main className="container-fluid bg-secondary text-center">
       <div>
-        <div id='picture' className='picture-box'>
-          <img src={imageUrl} alt='random image' />
+        <div id="picture" className="picture-box">
+          <img src={imageUrl} alt="random image" />
         </div>
 
         <p>...</p>
 
-        <div className='quote-box bg-light text-dark'>
-          <p className='quote'>{quote}</p>
-          <p className='author'>{quoteAuthor}</p>
+        <div className="quote-box bg-light text-dark">
+          <p className="quote">{quote}</p>
+          <p className="author">{quoteAuthor}</p>
         </div>
       </div>
     </main>
@@ -93,7 +93,7 @@ import { SimonGame } from './simonGame';
 
 export function Play(props) {
   return (
-    <main className='bg-secondary'>
+    <main className="bg-secondary">
       <Players userName={props.userName} />
       <SimonGame userName={props.userName} />
     </main>
@@ -177,8 +177,8 @@ if (scores.length) {
   }
 } else {
   scoreRows.push(
-    <tr key='0'>
-      <td colSpan='4'>Be the first to score</td>
+    <tr key="0">
+      <td colSpan="4">Be the first to score</td>
     </tr>
   );
 }
@@ -208,7 +208,7 @@ The **authState** represents if the player is logged in or not. It uses the [Lif
 ```jsx
 <Routes>
   <Route
-    path='/'
+    path="/"
     element={
       <Login
         userName={userName}
@@ -228,17 +228,17 @@ The **authState** represents if the player is logged in or not. It uses the [Lif
 #### App.jsx nav menu
 
 ```jsx
-<menu className='navbar-nav'>
+<menu className="navbar-nav">
   {authState === AuthState.Authenticated && (
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='play'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="play">
         Play
       </NavLink>
     </li>
   )}
   {authState === AuthState.Authenticated && (
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='scores'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="scores">
         Scores
       </NavLink>
     </li>
@@ -252,7 +252,7 @@ Based on the **authState** the Login component will render either the **Authenti
 ```jsx
 export function Login({ userName, authState, onAuthChange }) {
   return (
-    <main className='container-fluid bg-secondary text-center'>
+    <main className="container-fluid bg-secondary text-center">
       <div>
         {authState !== AuthState.Unknown && <h1>Welcome to Simon</h1>}
         {authState === AuthState.Authenticated && <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />}
@@ -290,11 +290,15 @@ Get familiar with what the example code teaches.
 - Debug the front and backend.
 - Make modifications to the code as desired. Experiment and see what happens.
 
-> [!IMPORTANT] Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your frontend code in the browser.
+> [!IMPORTANT]
+>
+> Do not use the `live server` extension since your frontend code will now be served up by the the Vite hot swappable HTTP server when you run `npm run dev`. Set breakpoints for your frontend code in the browser.
 
 ## Deploy to production
 
-> [!IMPORTANT] The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment.
+> [!IMPORTANT]
+>
+> The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment.
 
 - Deploy to your production environment using the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
 
