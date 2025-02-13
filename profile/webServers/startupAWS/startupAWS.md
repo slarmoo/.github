@@ -5,7 +5,8 @@
 ## Prerequisites
 
 > [!IMPORTANT]
->  Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
+>
+> Before you start work on this deliverable make sure you have read all of the proceeding instruction topics and have completed all of the dependant exercises (topics marked with a ☑). This includes:
 
 - ☑ [Amazon Web Services - EC2](../amazonWebServicesEc2/amazonWebServicesEc2.md)
 - [Domain names](../domainNames/domainNames.md)
@@ -38,6 +39,7 @@ When you are finished, the placeholder for your startup will be available from `
 ## Grading Rubric
 
 > [!IMPORTANT]
+>
 > Submit your Startup URL that includes your domain name for this deliverable (e.g. `https://startup.yourdomain`). **Do not** submit your GitHub repository URL.
 
 - 100% Your web page can be displayed using HTTPS and your domain name.

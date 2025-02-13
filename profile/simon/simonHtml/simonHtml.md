@@ -15,6 +15,7 @@ The application has a login (home), game play, high scores, and about page. Each
 The header and footer for each page is duplicated so that we have the same navigation controls on each view. Later in the class, when we move to React, the common navigation controls will be represented by a single component, and our application will have a single HTML page (index.html).
 
 > [!IMPORTANT]
+>
 > Simon provides placeholders for all of the technologies that we cover in the class. It is vital that you provide this in your Startup HTML version or you will not be able to demonstrate your mastery with each deliverable. This also helps you think about how you are going to include the technologies as they are introduced. This may mean that you have to create mocks or generated data that will be replaced later in your development.
 
 You can view this application running here: [Example Simon HTML](https://simon-html.cs260.click)
@@ -38,7 +39,12 @@ Get familiar with what the example code teaches.
 ## Deploy to production
 
 > [!IMPORTANT]
-> Make sure you using a POSIX compliant console (not PowerShell or CMD) and that you run `deployFiles.sh` from the project directory that you want to deploy.
+>
+> Make sure you using a POSIX compliant console (**not PowerShell or CMD on Windows**) and that you run `deployFiles.sh` from the project directory that you want to deploy. If you get a permission denied error when you run the deploy script, you need to run the following command in order to give the script the right to execute.
+>
+> ```sh
+> sudo chmod +x deployFiles.sh
+> ```
 
 - Deploy to your production environment using the `deployFiles.sh` script found in the [example class application](https://github.com/webprogramming260/simon-html/blob/main/deployFiles.sh). Take some time to understand how the script works. The script does three things. Deletes any previous deployment for simon, copies up all of the files found in the project directory, and makes sure Caddy is hosting the files under the `simon` subdomain of your domain (e.g. simon.yourdomain.click).
 
@@ -51,13 +57,6 @@ Get familiar with what the example code teaches.
   ```sh
   ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
-
-  If you are getting a permissions denied error, your shell script may not have the correct permissions. Run the below command
-  to fix this. 
-  
-  ```sh
-  sudo chmod +x deployFiles.sh
-  ``` 
 
 - Update your `startup` repository notes.md with what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).

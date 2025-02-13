@@ -91,6 +91,8 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [LocalStorage](javascript/localStorage/localStorage.md)
 - [Simon React P2: Reactivity](simon/simonReact/simonReactP2.md)
 - 🚀 [Startup React P2: Reactivity](webFrameworks/startupReact/startupReactP2.md)
+- ☑ [Promises](javascript/promises/promises.md)
+- ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
 
 ### Enrichment topics
 
@@ -110,16 +112,14 @@ The course covers a full stack of technologies including HTML, CSS, JavaScript, 
 - [URL](webServices/url/url.md)
 - [Ports](webServices/ports/ports.md)
 - [HTTP](webServices/http/http.md)
-- ☑ [Promises](javascript/promises/promises.md)
-- ☑ [Async/await](javascript/asyncAwait/asyncAwait.md)
 - ☑ [Fetch](webServices/fetch/fetch.md)
+- [Service design](webServices/design/design.md)
 - [Node web service](webServices/nodeWebService/nodeWebService.md)
-- [Modules](javascript/modules/modules.md)
 - ☑ [Express](webServices/express/express.md)
+- [Modules](javascript/modules/modules.md)
 - [Service daemons - PM2](webServices/pm2/pm2.md)
 - [Troubleshoot 502](webServices/troubleshoot502/troubleshoot502.md)
 - [SOP and CORS](webServices/cors/cors.md)
-- [Service design](webServices/design/design.md)
 - [Authorization services](webServices/authorizationServices/authorizationServices.md)
 - [Account creation and login](webServices/login/login.md)
 - [Simon service](simon/simonService/simonService.md)

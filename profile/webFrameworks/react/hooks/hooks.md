@@ -59,6 +59,7 @@ root.render(<UseEffectHookDemo />);
 If you specify an empty array `[]` as the hook dependency then it is only called when the component is first rendered.
 
 > [!NOTE]
+>
 > Hooks must be called at the top scope of the function and cannot be called inside of a loop or conditional. This restriction ensures that hooks are always called in the same order when a component is rendered.
 
 ## useEffect clean up

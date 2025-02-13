@@ -22,11 +22,10 @@ Failing to do this will likely slow you down as you will not have the required k
 
 ## Getting started
 
-Now that you understand what a web framework is and have practiced by converting Simon CSS into a React application, it is time to convert your application to use React. The process of converting code from one way of doing things to different way is called **porting**. Porting is a very common software engineering task and hopefully this deliverable will help you to start getting comfortable with the process.
-
-Porting your application to React will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
+Now that you understand what a web framework is and have practiced by converting Simon CSS into a React application, it is time to convert your application to use React. If you have not completed [Simon React P1: Routing](../../simon/simonReact/simonReactP1.md), then go and do that now.
 
 > [!NOTE]
+>
 > This phase only converts your HTML and CSS over to React. You do not need to implement any reactivity into your application for this phase. That will come in the [second JavaScript phase](startupReactP2.md) of this deliverable.
 
 You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. Make sure you have enough commits that you can demonstrate your ownership of the code and protect yourself from loss. Usually this will mean at least ten commits, but in reality you may have many more than that. Failing to fully document your work may result in the rejection of your submission.
@@ -54,7 +53,8 @@ Doing this will make this deliverable of your startup available from `https://st
    1. Follow all the instructions for porting Simon to [React](../../simon/simonReact/simonReactP1.md)
    1. Deploy your ported version of Simon CSS to your production environment copying and using the `deployReact.sh` deployment script from the [Simon React repository](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh).
 1. Convert your HTML/CSS startup frontend to use React. This includes:
-   1. Creating a template starting application using `vite` and cleaning up what it created.
+   1. Installing Vite, React, and Bootstrap.
+   1. Reorganizing your application so that it matches the pattern that Vite expects as demonstrated in the [Simon](../../simon/simonReact/simonReactP1.md) instruction. 
    1. Creating a react router that displays stubbed components for the main pieces of your application.
    1. Converting your previous HTML files into the stubbed components with proper references to your CSS files.
 1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.

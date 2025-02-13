@@ -14,7 +14,7 @@ This deliverable adds a CSS file (`main.css`) that contains CSS for the entire a
 <link rel="stylesheet" href="main.css" />
 ```
 
-In addition, there are three other CSS files (`about.css`, `scores.css`, `play.css`) that add styling specific to their respective HTML pages.  Those HTML pages each reference their particular specific CSS file (in addition to the `main.css` file).  For example, `play.html` has this `link` element in its head: 
+In addition, there are three other CSS files (`about.css`, `scores.css`, `play.css`) that add styling specific to their respective HTML pages. Those HTML pages each reference their particular specific CSS file (in addition to the `main.css` file). For example, `play.html` has this `link` element in its head:
 
 ```html
 <link rel="stylesheet" href="play.css" />
@@ -61,13 +61,6 @@ Get familiar with what the example code teaches.
   ```sh
   ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
-
-  If you are getting a permissions denied error, your shell script may not have the correct permissions. Run the below command
-  to fix this. 
-  
-  ```sh
-  sudo chmod +x deployFiles.sh
-  ``` 
 
 - Update your `startup` repository notes.md to record what you learned.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).

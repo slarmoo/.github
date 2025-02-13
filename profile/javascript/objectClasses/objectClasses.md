@@ -21,6 +21,7 @@ console.log(obj);
 The ability to dynamically modify an object is incredibly useful when manipulating data with an indeterminate structure.
 
 > [!NOTE]
+>
 > The different uses of the term `object`. Object can refer to the standard JavaScript objects (e.g. `Promise, Map, Object, Function, Date, ...`), or it can refer specifically to the JavaScript Object object (i.e. `new Object()`), or it can refer to any JavaScript object you create (e.g. `{a:'a', b:2}` ). This overloaded usage can be a bit confusing.
 
 ## Object-literals

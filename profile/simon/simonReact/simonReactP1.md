@@ -2,6 +2,8 @@
 
 ![Simon](../simon.png)
 
+[🎥 Video tutorial](https://youtu.be/-Gv27DPUPbQ)
+
 This deliverable demonstrates using [React](https://reactjs.org/) as a web framework, and Vite as your frontend tooling. This helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
 
 As part of the move to React, we convert Simon from a **multi-page application** (MPA) to a **single-page application** (SPA). In a single-page application, the browser only loads a single HTML file (index.html), and then we use JavaScript to interactively change the rendered content and components. This is a significant architectural shift to the application and will require you to reorganize your code to fit the single-page, component driven, model.
@@ -11,11 +13,25 @@ We are going to move to React in two phases.
 1. **Phase 1**: The first phase will covert the Simon HTML/CSS code into a modern web application using Vite and React. This will introduce routing, modularize the code, and remove redundancy.
 1. **Phase 2**: The second phase will introduce the JavaScript necessary to make Simon interactive and functionally complete.
 
+Unlike the work you do with other technologies for Simon, there is not a repository for this phase. Instead you use the [Simon CSS repository](https://github.com/webprogramming260/simon-css) as your starting place. You then complete all of the steps given below and deploy the result to your simon production environment (simon.yourdomain).
+
 ## Porting process steps
 
-The following section discusses the general steps taken to convert the Simon application from a simple HTML/CSS application to a React application. You will need to take similar steps for your startup project, and so it is important to understand what is happening at each step of the conversion process. You don't necessarily have to go through this process with the Simon demonstration application, but it is a safe place to try since you have both the starting version (simon-css) and the ending version (simon-react) to reference. If you are following along, then start by cloning the Simon CSS repo.
+This section discusses the general steps taken to convert the Simon application from a simple HTML/CSS application to a React application. You will need to take similar steps for your startup project, and so it is important to understand what is happening at each step of the conversion process.
 
-We begin by introducing `vite`, our frontend tooling. The HTML and CSS is then reworked into React components. The React components are then reworked to take advantage of functionality that React provides. This includes function style components, modularization, reactive interactions, and a React representation of Bootstrap.
+The process of converting code from one way of doing things to different way is called **porting**. Porting is a very common software engineering task. Completing this phase will make you more competent with the porting process.
+
+Porting your application to React will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
+
+You are required to follow the process defined below with the Simon demonstration application so that you will be successful with porting your startup application to React. Start by cloning the Simon CSS repo to your development environment.
+
+```sh
+git clone https://github.com/webprogramming260/simon-css.git simon-react-p1
+
+cd simon-react-p1
+```
+
+We then introduce `vite`, our frontend tooling. After that, the HTML and CSS is reworked into React components. The React components are then reworked to take advantage of functionality that React provides. This includes function style components, modularization, reactive interactions, and a React representation of Bootstrap.
 
 Here is a complete list of all the steps involved to convert Simon to a React application. When you port your startup to React you will want to commit your changes as you complete each step in the process.
 
@@ -29,7 +45,7 @@ Here is a complete list of all the steps involved to convert Simon to a React ap
 1. Convert HTML to React components
 1. Replace deployment script
 
-Once we have completed the port we will talk about how to add JavaScript to the application.
+In the next phase of your startup development, we will talk about how to add JavaScript to the application.
 
 ## Install and configure Vite
 
@@ -57,6 +73,7 @@ Then open the `package.json` file, found in the root of the project, that was cr
 | preview | Bundles a production version of the React application and starts Vite's hot reloading HTTP server. This is used to test a production version before deployment.    |
 
 > [!IMPORTANT]
+>
 > Make sure you add `node_modules` to your `.gitignore` file so that you don't commit the imported NPM code.
 
 ## Reorganize the code
@@ -147,6 +164,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
 
+Note that both the `index.html` and the `index.jsx` are located in the root of your project.
+
 ## Create App component
 
 To begin the transformation to using React components in our application, we create a top-level component, stored in `src/app.jsx`, and add some simple placeholder content that will get replaced later. In order for the styling to show up, we import Bootstrap, and the top level CSS found in `src/app.css`.
@@ -159,7 +178,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
 export default function App() {
-  return <div className='body bg-dark text-light'>App will display here</div>;
+  return <div className="body bg-dark text-light">App will display here</div>;
 }
 ```
 
@@ -220,30 +239,30 @@ To make `app.jsx` represent the actual Simon content, we enhance the `app.jsx` f
 ```jsx
 export default function App() {
   return (
-    <div className='body bg-dark text-light'>
-      <header className='container-fluid'>
-        <nav className='navbar fixed-top navbar-dark'>
-          <div className='navbar-brand'>
+    <div className="body bg-dark text-light">
+      <header className="container-fluid">
+        <nav className="navbar fixed-top navbar-dark">
+          <div className="navbar-brand">
             Simon<sup>&reg;</sup>
           </div>
-          <menu className='navbar-nav'>
-            <li className='nav-item'>
-              <a className='nav-link' href='index.html'>
+          <menu className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="index.html">
                 Home
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='play.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="play.html">
                 Play
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='scores.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="scores.html">
                 Scores
               </a>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='about.html'>
+            <li className="nav-item">
+              <a className="nav-link" href="about.html">
                 About
               </a>
             </li>
@@ -253,10 +272,10 @@ export default function App() {
 
       <main>App components go here</main>
 
-      <footer className='bg-dark text-white-50'>
-        <div className='container-fluid'>
-          <span className='text-reset'>Author Name(s)</span>
-          <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
+      <footer className="bg-dark text-white-50">
+        <div className="container-fluid">
+          <span className="text-reset">Author Name(s)</span>
+          <a className="text-reset" href="https://github.com/webprogramming260/simon-react">
             Source
           </a>
         </div>
@@ -270,6 +289,18 @@ This will display the header, navigation elements, placeholder content, and the 
 
 ![App React component](appReactComponent.png)
 
+Our directory structure should look like the following at this point.
+
+```sh
+├─ public          # Static assets used in the app
+├─ src             # Frontend React code
+│    ├─ app.jsx    # React app component
+│    └─ app.css    # React app CSS
+├─ index.html      # App entry HTML
+└─ index.jsx       # React entry point
+
+```
+
 ## Create view components
 
 We now create React component files `login.jsx`, `play.jsx`, `scores.jsx`, and `about.jsx` to represent each of the application views. To begin with, these are just stubs that we will soon begin populating as we port code from the requisite `.html` files and which we will further develop with javascript functionality in part 2. We place each of the stubbed components in a separate directory (e.g. `src/login/login.jsx`) so that we can keep all of the component files together.
@@ -281,7 +312,7 @@ import React from 'react';
 
 export function Login() {
   return (
-    <main className='container-fluid bg-secondary text-center'>
+    <main className="container-fluid bg-secondary text-center">
       <div>login displayed here</div>
     </main>
   );
@@ -344,28 +375,28 @@ We then we replace the `a` elements with the router's `NavLink` component. The a
 The `NavLink` component prevents the browser's default navigation functionality and instead handles it by replacing the currently displayed component. Once we have converted all the links, the `nav` element's code now looks like the following.
 
 ```jsx
-<nav className='navbar fixed-top navbar-dark'>
-  <div className='navbar-brand'>
+<nav className="navbar fixed-top navbar-dark">
+  <div className="navbar-brand">
     Simon<sup>&reg;</sup>
   </div>
-  <menu className='navbar-nav'>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to=''>
+  <menu className="navbar-nav">
+    <li className="nav-item">
+      <NavLink className="nav-link" to="">
         Login
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='play'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="play">
         Play
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='scores'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="scores">
         Scores
       </NavLink>
     </li>
-    <li className='nav-item'>
-      <NavLink className='nav-link' to='about'>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="about">
         About
       </NavLink>
     </li>
@@ -395,7 +426,7 @@ Notice that the `*` (default matcher) was added to handle the case where an unkn
 
 ```js
 function NotFound() {
-  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  return <main className="container-fluid bg-secondary text-center">404: Return to sender. Address unknown.</main>;
 }
 ```
 
@@ -510,14 +541,23 @@ At this point we are done porting the CSS deliverable to React. The final Simon 
         └─ scores.jsx
 ```
 
-Notice how much better structured the code is and how we have leveraged Vite and React not only to build a reactive SPA but also to modularize the code.
+Notice how much better structured the code is and how we have leveraged Vite and React, not only to build a reactive SPA, but also to modularize the code.
 
-If you run the code in the debugger by running `npm run dev` or deploy the code using the `deployReact.sh` script you should see the following.
+If you run the code in the debugger by running `npm run dev`, or deploy the code to your production environment using the `deployReact.sh` script, you should see the following.
 
 ![CSS Port](cssPort.gif)
 
-  If you are getting a permissions denied error when running `deployReact.sh`, your shell script may not have the correct permissions. Run the below command to fix this. 
-  
-  ```sh
-  sudo chmod +x deployFiles.sh
-  ``` 
+## Simon React Phase 1 deliverable
+
+Do the following as part of your mastery demonstration for this phase. This is a prerequisite for your work on the React version of your startup.
+
+1. Clone the [Simon CSS repository](https://github.com/webprogramming260/simon-css) to your development environment.
+   ```sh
+   git clone https://github.com/webprogramming260/simon-css.git simon-react-p1
+   ```
+1. Complete all of the steps given above to convert the CSS version over to a basic React version where your HTML and CSS are represented by **React components** and you have enabled **React routing**.
+1. Deploy the result to your simon production environment (simon.yourdomain) using the `deployReact.sh` deployment script from the [Simon React repository](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh).
+
+> [! IMPORTANT]
+>
+> Do not attempt to port your startup to React until you have completed and deployed your port of Simon to React.

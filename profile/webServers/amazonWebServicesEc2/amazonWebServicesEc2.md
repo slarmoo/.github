@@ -11,9 +11,11 @@ When you rent a web server, it is physically located in a massive data center lo
 Assuming you already have an AWS account it is time to create your web server.
 
 > [!NOTE]
+>
 > AWS interface changes all the time, so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
 
 > [!IMPORTANT]
+>
 > It is crucial that you use the N. Virginia AWS region because the Amazon Machine Image (AMI) you will use is only available in that region.
 
 1. Open the AWS console in your browser and log in.
@@ -85,7 +87,7 @@ For example,
 You may get a warning that your key pair file permissions are too open. If so then you can restrict the permissions on your file so that they are not accessible to all users by running the `chmod` console command:
 
 ```sh
-chmod  600 [key pair file]
+chmod  600 yourkeypairfile.pem
 ```
 
 As it connects to the server it might warn you that it hasn't seen this server before. You can confidently say yes since you are sure of the identity of this server.
@@ -157,4 +159,4 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | You can SSH into the server, but you can't use HTTP                           | Check that your security group exposes SSH, HTTP, and HTTPS.                                                       |
 | Using the browser to hit my server using my IP was working but now it doesn't | Check that your IP address hasn't changed. Perhaps due to assigning an elastic IP address or stopping your server. |
-| My server doesn't come up in the browser                                      | Check that you are not trying to use `https` before you configure Caddy to use https.                                                                      |
+| My server doesn't come up in the browser                                      | Check that you are not trying to use `https` before you configure Caddy to use https.                              |
