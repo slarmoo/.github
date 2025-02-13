@@ -40,8 +40,6 @@ function Result({ selectedColor }) {
     </div>
   );
 }
-
-ReactDOM.render(<ColorPicker />, document.getElementById('root'));
 ```
 
 ## ☑ Assignment
