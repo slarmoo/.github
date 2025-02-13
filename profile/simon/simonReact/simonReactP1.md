@@ -101,40 +101,6 @@ When we are done it will look like this.
 
 ```
 
-## Convert to React Bootstrap
-
-There is an NPM package called [React Bootstrap](https://react-bootstrap.github.io/) that wraps the Bootstrap CSS framework in React components. This allows you to treat the Bootstrap widgets, such as Button and Modal, as a React component instead of just imported CSS and JavaScript.
-
-To use the React version of Bootstrap, import the NPM package.
-
-```sh
-npm install bootstrap react-bootstrap
-```
-
-Now, in the components where you want to refer to the Bootstrap styles, you can import the Bootstrap style sheet from the
-imported NPM package just like you would other CSS files.
-
-```jsx
-import 'bootstrap/dist/css/bootstrap.min.css';
-```
-
-To use a React Bootstrap component, you would import and reference the specific component you want to use. Here is an example of using the `Button` component.
-
-```jsx
-import Button from 'react-bootstrap/Button';
-
-export function NavButton({ text, url }) {
-  const navigate = useNavigate();
-  return (
-    <Button variant='primary' onClick={() => navigate({ url })}>
-      {text}
-    </Button>
-  );
-}
-```
-
-For Simon we converted the modal dialog and button implementations to use the React Bootstrap components.
-
 ## Enabling React
 
 We now have everything necessary to start using React for the application. To make this happen, we need to install the React components for the basic functionality, DOM manipulation, and request routing to display individual components. React is installed by running the following console command:
@@ -210,6 +176,40 @@ Because we don't have a `body` element in our `App` component, we modify the `ap
 ```
 
 You should be able to view the results of these changes by running `npm run dev` from the console and pressing the `o` key to open it in the browser. The result won't be very exciting, but this successfully demonstrates the first visible step towards moving to React. When you reach this point with your startup, make sure that you commit your changes.
+
+## Convert to React Bootstrap
+
+You might have noticed that the CSS looks strange now. This is because we need to get Bootstrap to use React as well. There is an NPM package called [React Bootstrap](https://react-bootstrap.github.io/) that wraps the Bootstrap CSS framework in React components. This allows you to treat the Bootstrap widgets, such as Button and Modal, as a React component instead of just imported CSS and JavaScript.
+
+To use the React version of Bootstrap, import the NPM package.
+
+```sh
+npm install bootstrap react-bootstrap
+```
+
+Now, in the components where you want to refer to the Bootstrap styles (in Simon's case, at the top of `app.jsx`), you can import the Bootstrap style sheet from the
+imported NPM package just like you would other CSS files.
+
+```jsx
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+To use a specific React Bootstrap component, you would import and reference the specific component you want to use. Here is an example of using the `Button` component.
+
+```jsx
+import Button from 'react-bootstrap/Button';
+
+export function NavButton({ text, url }) {
+  const navigate = useNavigate();
+  return (
+    <Button variant='primary' onClick={() => navigate({ url })}>
+      {text}
+    </Button>
+  );
+}
+```
+
+For Simon we converted the modal dialog and button implementations to use the React Bootstrap components.
 
 ![First React component](firstReactComponent.png)
 
